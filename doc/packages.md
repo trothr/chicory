@@ -9,6 +9,7 @@ most recent at the top.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | libressl      | 2.7.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | openssl       | 1.0.2n    | https://www.openssl.org/source/openssl-1.0.2n.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0g    | https://www.openssl.org/source/openssl-1.1.0g.tar.gz                      | 0xd9c4d26d0e604491 |
