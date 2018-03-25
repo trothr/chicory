@@ -2,7 +2,8 @@
 
 This is the Chicory Packages list as a markdown file.
 
-This file lists the latest Chicory-built packages, latest at the top.
+This file lists the latest Chicory-built packages,
+most recent at the top.
 
 ## Packages Recently Built
 
@@ -62,7 +63,6 @@ This file is part of the collection found on GitHub at ...
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
 | gnupg         | 1.4.21    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.21.tar.gz                      | 0x249b39d24f25e3b6 |
 | openssl       | 1.0.1t    | http://www.openssl.org/source/openssl-1.0.1t.tar.gz                       | 0xd9c4d26d0e604491 |
-
 | bzip2         | 1.0.6     | http://sources.redhat.com/pub/bzip2/v106/bzip2-1.0.6.tar.gz               |                    |
 | dash          | 0.5.9.1   | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.9.1.tar.gz        |                    |
 | file          | 5.31      | http://distfiles.macports.org/file/file-5.31.tar.gz                       |                    |
@@ -109,7 +109,12 @@ This file is part of the collection found on GitHub at ...
 | libevent      | 2.0.22    |                                                                           |                    |
 | libgcrypt     | 1.6.2     |                                                                           |                    |
 
+\* Package name or "application ID" in Chicory is never hyphenated.
+Packages with a dash in the name do not have (and do not need)
+a dash in the name to work with Chicory. Since the dash is required for
+separating the package name from the version, only one dash is allowed.
 
-this page "Chicory Packages" last updated 2018-Mar-24 (Saturday) by RMT
+
+this page "Chicory Packages" last updated 2018-Mar-25 (Sunday) by RMT
 
 
