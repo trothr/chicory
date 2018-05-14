@@ -15,6 +15,7 @@ most recent at the top.
 | openssl       | 1.0.2n    | https://www.openssl.org/source/openssl-1.0.2n.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0g    | https://www.openssl.org/source/openssl-1.1.0g.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
+| gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
 
 ## Chicory docs
 
@@ -30,7 +31,6 @@ This file is part of the collection found on GitHub at ...
 
 Packages which fail to build usually just have some requirement
 which the build environment lacks.
-
 
 ## Packages Previously Built
 
@@ -50,7 +50,6 @@ which the build environment lacks.
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
 | gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
-| gnupg         | 1.4.21    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.21.tar.gz                      | 0x249b39d24f25e3b6 |
 | grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
 | gzip          | 1.8       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.8.tar.gz                           | 0x7fd9fccb000beeee |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
@@ -114,7 +113,6 @@ which the build environment lacks.
 Packages with a dash in the name do not have (and do not need)
 a dash in the name to work with Chicory. Since the dash is required for
 separating the package name from the version, only one dash is allowed.
-
 
 this page "Chicory Packages" last updated 2018-May-14 (Monday) by RMT
 
