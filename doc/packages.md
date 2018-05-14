@@ -9,20 +9,18 @@ most recent at the top.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 2.7.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.3.tar.gz         | 0x663af51bd5e4d8d5 |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
-| libressl      | 2.7.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | openssl       | 1.0.2n    | https://www.openssl.org/source/openssl-1.0.2n.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0g    | https://www.openssl.org/source/openssl-1.1.0g.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
-
 
 ## Chicory docs
 
 This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc
-
 
 ## Packages Recently Failed
 
@@ -118,6 +116,6 @@ a dash in the name to work with Chicory. Since the dash is required for
 separating the package name from the version, only one dash is allowed.
 
 
-this page "Chicory Packages" last updated 2018-Mar-25 (Sunday) by RMT
+this page "Chicory Packages" last updated 2018-May-14 (Monday) by RMT
 
 
