@@ -10,10 +10,10 @@ most recent at the top.
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
+| openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
 | libressl      | 2.7.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.3.tar.gz         | 0x663af51bd5e4d8d5 |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
-| openssl       | 1.1.0g    | https://www.openssl.org/source/openssl-1.1.0g.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
 
