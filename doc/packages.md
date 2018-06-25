@@ -9,6 +9,7 @@ most recent at the top.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
 | libressl      | 2.7.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.3.tar.gz         | 0x663af51bd5e4d8d5 |
@@ -16,6 +17,12 @@ most recent at the top.
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
+
+Notes:
+
+| package       | release   | notes                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| tcl           | 8.5.19    | cannot build static                                                                            |
 
 ## Chicory docs
 
@@ -98,7 +105,6 @@ which the build environment lacks.
 | sed           | 4.4       | http://ftp.gnu.org/pub/gnu/sed/sed-4.4.tar.gz                             |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    |
 | subversion    | 1.9.2     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.2.tar.bz2       |                    |
-| tcl           | 8.5.17    | http://prdownloads.sourceforge.net/tcl/tcl8.5.17-src.tar.gz               |                    |
 | tcsh          | 6.18.01   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.18.01.tar.gz               |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    |
