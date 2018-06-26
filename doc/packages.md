@@ -3,12 +3,15 @@
 This is the Chicory Packages list as a markdown file.
 
 This file lists the latest Chicory-built packages,
-most recent at the top.
+most recent at the top. Time of latest update at the bottom.
 
 ## Packages Recently Built
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gmp           | 6.1.0     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.0.tar.bz2                          | 0xf3599ff828c67298 |
+| mpfr          | 3.1.3     | http://www.mpfr.org/mpfr-3.1.3/mpfr-3.1.3.tar.xz                          | 0x980c197698c3739d |
+| mpc           | 1.0.3     | http://www.multiprecision.org/mpc/download/mpc-1.0.3.tar.gz               | 0xf7d5c9bf765c61e3 |
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
@@ -120,6 +123,6 @@ Packages with a dash in the name do not have (and do not need)
 a dash in the name to work with Chicory. Since the dash is required for
 separating the package name from the version, only one dash is allowed.
 
-this page "Chicory Packages" last updated 2018-May-14 (Monday) by RMT
+this page "Chicory Packages" last updated 2018-Jun-26 (Tuesday) by RMT
 
 
