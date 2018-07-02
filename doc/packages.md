@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
+| wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x263d6df2e163e1ea |
 | gmp           | 6.1.0     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.0.tar.bz2                          | 0xf3599ff828c67298 |
 | mpfr          | 3.1.3     | http://www.mpfr.org/mpfr-3.1.3/mpfr-3.1.3.tar.xz                          | 0x980c197698c3739d |
 | mpc           | 1.0.3     | http://www.multiprecision.org/mpc/download/mpc-1.0.3.tar.gz               | 0xf7d5c9bf765c61e3 |
@@ -25,6 +27,7 @@ Notes:
 
 | package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
 | tcl           | 8.5.19    | cannot build static                                                                            |
 
 ## Chicory docs
@@ -53,7 +56,6 @@ which the build environment lacks.
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | bison         | 3.0.4     | http://ftp.gnu.org/pub/gnu/bison/bison-3.0.4.tar.gz                       | 0x0ddcaa3278d5264e |
 | coreutils     | 8.27      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.27.tar.xz                | 0xdf6fd971306037d9 |
-| curl          | 7.54.1    | http://curl.haxx.se/download/curl-7.54.1.tar.gz                           | 0x78e11c6b279d5c91 |
 | diffutils     | 3.6       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.6.tar.xz                 | 0x7fd9fccb000beeee |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
 | gawk          | 4.1.4     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.1.4.tar.gz                         | 0xdf597815937ec0d2 |
@@ -71,7 +73,6 @@ which the build environment lacks.
 | rsync         | 3.1.2     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.2.tar.gz                   | 0x6c859fb14b96a8c5 |
 | tar           | 1.22      | http://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.gz                            | 0x3602b07f55d0c732 |
 | texinfo       | 6.4       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.4.tar.gz                     | 0xddbc579dab37fba9 |
-| wget          | 1.19      | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.tar.gz                          | 0x263d6df2e163e1ea |
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 |
 | xz            | 5.2.3     | http://www.tukaani.org/xz/xz-5.2.3.tar.gz                                 | 0x38ee757d69184620 |
 | bin86         | 0.16.18   | http://distro.ibiblio.org/slitaz/sources/packages-stable/b/bin86-0.16.18.tar.gz |              |
