@@ -21,7 +21,6 @@ With Chicory, we can …
 * Install mixed releases if needed
 * Recognize multi-platform storage savings (preemptive de-duplication)
 * (conditionally) Install without admin privileges
-* Common to any Linux distro; Portable to non-Linux
 
 Compare the above points with most systems …
 
@@ -186,11 +185,11 @@ Chicory is all about pre-compiled software independent from the package manageme
 
 Chicory is easy. Explaining it is hard. (There are features not everyone will use, but some might want, so we’d like to retain them all.) Here’s an early draft of … 
 
-Chicory Trickery doc: 
-A bug! Your app did stop. 
-New app pulled down; 
-New features found! 
-Chicory, smarter than Spock! 
+    Chicory Trickery doc: 
+    A bug! Your app did stop. 
+    New app pulled down; 
+    New features found! 
+    Chicory, smarter than Spock! 
 
 Okay, okay, we’re desperate for a last line in the rhyme. Help me out. 
 
@@ -204,6 +203,6 @@ Link
     https://docs.google.com/document/d/1AXLqM6g-cGnW-YwUYzO1MLygSrWCypUVpYFpSym4EpI
 
 
-this page “Chicory.md” last updated 2018-May-14 (Monday) by RMT
+this page “Chicory.md” last updated 2018-Jul-23 (Monday) by RMT
 
 
