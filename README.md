@@ -13,6 +13,8 @@ Nothing technically prefents someone from using it for a whole system, but
 Chicory works best when blended with other methods.
 
 Chicory allows that packages can reside remotely or on removable media.
+It does not require that software packages be shrink-wrapped for delivery.
+It supports point-and-shoot.
 
 ## Features
 
