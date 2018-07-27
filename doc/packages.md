@@ -9,11 +9,21 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
+| mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
+| mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
+| libassuan     | 2.4.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.4.5.tar.bz2              | 0x249b39d24f25e3b6 |
+| libgpg-error* | 1.27      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpgerror-1.27.tar.bz2          | 0x249b39d24f25e3b6 |
+| libgcrypt     | 1.8.1     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.1.tar.bz2              | 0x249b39d24f25e3b6 |
+| libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
+| npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
+| libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
+| gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
+| libevent      | 2.1.8     | https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz | 0xb86086848ef8686d |
+| bison         | 3.0.5     | http://ftp.gnu.org/pub/gnu/bison/bison-3.0.5.tar.xz                       | 0x0ddcaa3278d5264e |
+| pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x263d6df2e163e1ea |
-| gmp           | 6.1.0     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.0.tar.bz2                          | 0xf3599ff828c67298 |
-| mpfr          | 3.1.3     | http://www.mpfr.org/mpfr-3.1.3/mpfr-3.1.3.tar.xz                          | 0x980c197698c3739d |
-| mpc           | 1.0.3     | http://www.multiprecision.org/mpc/download/mpc-1.0.3.tar.gz               | 0xf7d5c9bf765c61e3 |
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
@@ -40,7 +50,6 @@ This file is part of the collection found on GitHub at ...
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| libressl      | 2.6.4     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.6.4.tar.gz         | 0x663af51bd5e4d8d5 |
 
 Packages which fail to build usually just have some requirement
 which the build environment lacks.
@@ -54,7 +63,6 @@ which the build environment lacks.
 | automake      | 1.15      | http://ftp.gnu.org/pub/gnu/automake/automake-1.15.tar.gz                  | 0x60f906016e407573 |
 | bash          | 4.4       | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.tar.gz                           | 0xbb5869f064ea74ab |
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
-| bison         | 3.0.4     | http://ftp.gnu.org/pub/gnu/bison/bison-3.0.4.tar.gz                       | 0x0ddcaa3278d5264e |
 | coreutils     | 8.27      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.27.tar.xz                | 0xdf6fd971306037d9 |
 | diffutils     | 3.6       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.6.tar.xz                 | 0x7fd9fccb000beeee |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
@@ -63,7 +71,6 @@ which the build environment lacks.
 | gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
 | grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
-| gzip          | 1.8       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.8.tar.gz                           | 0x7fd9fccb000beeee |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
 | make          | 3.82      | http://ftp.gnu.org/pub/gnu/make/make-3.82.tar.gz                          | 0x96b047156338b6d4 |
@@ -100,7 +107,6 @@ which the build environment lacks.
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    |
 | pdsh          | 2.29      | http://pdsh.googlecode.com/files/pdsh-2.29.tar.bz2                        |                    |
 | perl          | 5.22.0    | http://www.cpan.org/src/perl-5.22.0.tar.gz                                |                    |
-| pkg-config*   | 0.18      | http://pkgconfig.freedesktop.org/releases/pkg-config-0.18.tar.gz          |                    |
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    |
 | python        | 2.6.9     | http://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz                |                    |
 | python        | 3.4.3     |                                                                           |                    |
@@ -113,17 +119,12 @@ which the build environment lacks.
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    |
 | zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    |
-| libassuan     | 2.1.1     |                                                                           |                    |
-| libgpg-error* | 1.17      |                                                                           |                    |
-| libksba       | 1.3.0     |                                                                           |                    |
-| libevent      | 2.0.22    |                                                                           |                    |
-| libgcrypt     | 1.6.2     |                                                                           |                    |
 
 \* Package name or "application ID" in Chicory is never hyphenated.
 Packages with a dash in the name do not have (and do not need)
 a dash in the name to work with Chicory. Since the dash is required for
 separating the package name from the version, only one dash is allowed.
 
-this page "Chicory Packages" last updated 2018-Jun-26 (Tuesday) by RMT
+this page "Chicory Packages" last updated 2018-Jul-27 (Friday) by RMT
 
 
