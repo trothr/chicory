@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 2.8.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
@@ -27,7 +28,6 @@ most recent at the top. Time of latest update at the bottom.
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
-| libressl      | 2.7.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.3.tar.gz         | 0x663af51bd5e4d8d5 |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
@@ -125,6 +125,6 @@ Packages with a dash in the name do not have (and do not need)
 a dash in the name to work with Chicory. Since the dash is required for
 separating the package name from the version, only one dash is allowed.
 
-this page "Chicory Packages" last updated 2018-Jul-27 (Friday) by RMT
+this page "Chicory Packages" last updated 2018-Aug-13 (Monday) by RMT
 
 
