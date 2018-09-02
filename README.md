@@ -16,6 +16,9 @@ Chicory allows that packages can reside remotely or on removable media.
 It does not require that software packages be shrink-wrapped for delivery.
 It supports point-and-shoot.
 
+To date, more than 100 open source packages have been built with Chicory
+and deployed on more than a dozen different systems (OS+HW combinations).
+
 ## Features
 
 With Chicory, we can … 
@@ -28,6 +31,5 @@ With Chicory, we can …
 * Install mixed releases if needed
 * Recognize multi-platform storage savings (preemptive de-duplication)
 * (conditionally) Install without admin privileges
-
 
 
