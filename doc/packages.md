@@ -9,6 +9,10 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             |
+| libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
+| libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
+| libuuid       | 1.0.3     | SourceForge                                                               |                    |
 | libressl      | 2.8.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
@@ -25,13 +29,6 @@ most recent at the top. Time of latest update at the bottom.
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x263d6df2e163e1ea |
-| tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
-| openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
-| openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
-| screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
-| cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
-| openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
-| gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
 
 Notes:
 
@@ -39,6 +36,10 @@ Notes:
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
 | tcl           | 8.5.19    | cannot build static                                                                            |
+
+SourceForge does not facilitate automated downloads. In fact, it kinda
+hinders them. We'll put SourceForge URLs in this list when we can, but
+sometimes you just have to search for the source and download it manually.
 
 ## Chicory docs
 
@@ -64,12 +65,14 @@ which the build environment lacks.
 | bash          | 4.4       | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.tar.gz                           | 0xbb5869f064ea74ab |
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | coreutils     | 8.27      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.27.tar.xz                | 0xdf6fd971306037d9 |
+| cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | diffutils     | 3.6       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.6.tar.xz                 | 0x7fd9fccb000beeee |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
 | gawk          | 4.1.4     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.1.4.tar.gz                         | 0xdf597815937ec0d2 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
 | gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
+| gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
 | grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
@@ -102,6 +105,9 @@ which the build environment lacks.
 | nginx         | 1.2.5     | http://www.nginx.org/download/nginx-1.2.5.tar.gz                          |                    |
 | ntp           | 4.2.8p9   | http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p6.tar.gz  |                    |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
+| openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
+| openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
+| openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
 | openvpn       | 2.3.10    | https://swupdate.openvpn.org/community/releases/openvpn-2.3.10.tar.xz     |                    |
 | patch         | 2.7.5     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.5.tar.gz                       |                    |
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    |
@@ -112,9 +118,11 @@ which the build environment lacks.
 | python        | 3.4.3     |                                                                           |                    |
 | regina        | 3.4       | http://iweb.dl.sourceforge.net/sourceforge/regina-rexx/Regina-REXX-3.4.tar.gz |                |
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
+| screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | sed           | 4.4       | http://ftp.gnu.org/pub/gnu/sed/sed-4.4.tar.gz                             |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    |
 | subversion    | 1.9.2     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.2.tar.bz2       |                    |
+| tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | tcsh          | 6.18.01   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.18.01.tar.gz               |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    |
@@ -125,6 +133,6 @@ Packages with a dash in the name do not have (and do not need)
 a dash in the name to work with Chicory. Since the dash is required for
 separating the package name from the version, only one dash is allowed.
 
-this page "Chicory Packages" last updated 2018-Aug-13 (Monday) by RMT
+this page "Chicory Packages" last updated 2018-Sep-29 (Saturday) by RMT
 
 
