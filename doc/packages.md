@@ -34,8 +34,9 @@ Notes:
 
 | package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
-| wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
+| rsyslog       | 8.38.0    | cannot build static                                                                            |
 | tcl           | 8.5.19    | cannot build static                                                                            |
+| wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
 
 SourceForge does not facilitate automated downloads. In fact, it kinda
 hinders them. We'll put SourceForge URLs in this list when we can, but
