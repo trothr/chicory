@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
@@ -17,16 +18,14 @@ most recent at the top. Time of latest update at the bottom.
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
 | libuuid       | 1.0.3     | SourceForge                                                               |                    |
-| libressl      | 2.8.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.0.tar.gz         | 0x663af51bd5e4d8d5 |
-| gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
-| mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
-| mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
+| libressl      | 2.8.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.1.tar.gz         | 0x663af51bd5e4d8d5 |
 
 Notes:
 
 | package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
+| screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
 | tcl           | 8.5.19    | cannot build statically                                                                        |
 | wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
 
@@ -62,7 +61,10 @@ which the build environment lacks.
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
 | gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
+| gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
+| gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
 | gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
+| gnupg         | 2.2.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.3.tar.bz2                      | 0x2071b08a33bd3f06 |
 | grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
 | libassuan     | 2.4.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.4.5.tar.bz2              | 0x249b39d24f25e3b6 |
@@ -74,11 +76,14 @@ which the build environment lacks.
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
 | make          | 3.82      | http://ftp.gnu.org/pub/gnu/make/make-3.82.tar.gz                          | 0x96b047156338b6d4 |
+| mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
+| mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
 | nano          | 2.8.6     | http://ftp.gnu.org/pub/gnu/nano/nano-2.8.6.tar.gz                         | 0xbcb356df91009fa7 |
 | npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
 | openssh       | 7.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.6p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
+| pcre          | 8.41      | http://ftp.pcre.org/pub/pcre/pcre-8.41.tar.bz2                            | 0x9766e084fb0f43d8 |
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 |
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab |
 | rsync         | 3.1.2     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.2.tar.gz                   | 0x6c859fb14b96a8c5 |
@@ -107,8 +112,9 @@ which the build environment lacks.
 | groff         | 1.21      | http://ftp.gnu.org/pub/gnu/groff/groff-1.21.tar.gz                        |                    |
 | irssi         | 0.8.15    | http://www.irssi.org/files/irssi-0.8.15.tar.gz                            |                    |
 | less          | 444       | http://www.greenwoodsoftware.com/less/less-444.tar.gz                     |                    |
+| libffi        | 3.2.1     | ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz                       | sha512             |
 | lzip          | 1.15      | http://download.savannah.gnu.org/releases/lzip/lzip-1.15.tar.gz           |                    |
-| musl          | 1.1.12    | http://www.musl-libc.org/releases/musl-1.1.12.tar.gz                      |                    |
+| musl          | 1.1.18    | http://www.musl-libc.org/releases/musl-1.1.18.tar.gz                      |                    |
 | nginx         | 1.2.5     | http://www.nginx.org/download/nginx-1.2.5.tar.gz                          |                    |
 | ntp           | 4.2.8p9   | http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p6.tar.gz  |                    |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
@@ -130,8 +136,8 @@ which the build environment lacks.
 | zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    |
 
 \* Package name or "application ID" in Chicory is never hyphenated.
-Packages with a dash in the name do not have (and do not need)
-a dash in the name to work with Chicory. Since the dash is required for
+Packages with a dash in the name do not have (and do not need) a dash in
+the name to work with Chicory. Since the dash in Chicory is required for
 separating the package name from the version, only one dash is allowed.
 
 this page "Chicory Packages" last updated 2018-Oct-06 (Saturday) by RMT
