@@ -10,7 +10,7 @@ most recent at the top. Time of latest update at the bottom.
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      |                    |
-| musl          | 1.1.18    | http://www.musl-libc.org/releases/musl-1.1.20.tar.gz                      |                    |
+| musl          | 1.1.18    | http://www.musl-libc.org/releases/musl-1.1.20.tar.gz                      | 0x56bcdb593020450f |
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
