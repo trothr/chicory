@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      |                    |
+| musl          | 1.1.18    | http://www.musl-libc.org/releases/musl-1.1.20.tar.gz                      |                    |
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
@@ -18,7 +20,6 @@ most recent at the top. Time of latest update at the bottom.
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
 | libuuid       | 1.0.3     | SourceForge                                                               |                    |
-| libressl      | 2.8.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.1.tar.gz         | 0x663af51bd5e4d8d5 |
 
 Notes:
 
@@ -73,6 +74,7 @@ which the build environment lacks.
 | libgpg-error* | 1.27      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpgerror-1.27.tar.bz2          | 0x249b39d24f25e3b6 |
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
+| libressl      | 2.8.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
 | make          | 3.82      | http://ftp.gnu.org/pub/gnu/make/make-3.82.tar.gz                          | 0x96b047156338b6d4 |
@@ -101,7 +103,6 @@ which the build environment lacks.
 | binutils      | 2.24.51.0.3 | http://www.kernel.org/pub/linux/devel/binutils/binutils-2.24.51.0.3.tar.gz |                 |
 | bzip2         | 1.0.6     | http://sources.redhat.com/pub/bzip2/v106/bzip2-1.0.6.tar.gz               |                    |
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    |
-| cmake         | 3.5.1     | http://www.cmake.org/files/v3.5/cmake-3.5.1.tar.gz                        |                    |
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    |
 | dash          | 0.5.9.1   | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.9.1.tar.gz        |                    |
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    |
@@ -114,7 +115,6 @@ which the build environment lacks.
 | less          | 444       | http://www.greenwoodsoftware.com/less/less-444.tar.gz                     |                    |
 | libffi        | 3.2.1     | ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz                       | sha512             |
 | lzip          | 1.15      | http://download.savannah.gnu.org/releases/lzip/lzip-1.15.tar.gz           |                    |
-| musl          | 1.1.18    | http://www.musl-libc.org/releases/musl-1.1.18.tar.gz                      |                    |
 | nginx         | 1.2.5     | http://www.nginx.org/download/nginx-1.2.5.tar.gz                          |                    |
 | ntp           | 4.2.8p9   | http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p6.tar.gz  |                    |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
