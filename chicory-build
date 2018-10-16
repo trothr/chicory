@@ -19,15 +19,9 @@ if [ -r /etc/sysconfig/chicory ] ; then . /etc/sysconfig/chicory ; fi
 if [ -r $HOME/.chicoryrc ] ; then . $HOME/.chicoryrc ; fi
 . /tmp/$$.set ; rm /tmp/$$.set
 
-#
+# name of this script for reporting
 #Z=`basename $0`
 Z=chicory
-P=$1
-
-# be sure this package not already installed
-if [ -d $CHICORY_PREFIX/$P ] ; then
-  echo "$Z: package '$P' is already installed" 1>&2
-  exit 0 ; fi
 
 # confirm that prefix directory exists and is writable
 if [ ! -d $CHICORY_PREFIX/. ] ; then
