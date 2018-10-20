@@ -19,29 +19,7 @@ most recent at the top. Time of latest update at the bottom.
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             |
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
-| libuuid       | 1.0.3     | SourceForge                                                               |                    |
-
-Notes:
-
-| package       | release   | notes                                                                                          |
-| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
-| rsyslog       | 8.38.0    | cannot build statically                                                                        |
-| screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
-| tcl           | 8.5.19    | cannot build statically                                                                        |
-| wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
-
-SourceForge does not facilitate automated downloads. In fact, it kinda
-hinders them. We'll put SourceForge URLs in this list when we can, but
-sometimes you just have to search for the source and download it manually.
-
-## Chicory docs
-
-This file is part of the collection found on GitHub at ...
-
-    https://github.com/trothr/chicory/tree/master/doc/
-
-Packages which fail to build usually just have some requirement
-which the build environment lacks.
+| libuuid       | 1.0.3     | //SourceForge                                                             |                    |
 
 ## Packages Previously Built
 
@@ -91,6 +69,7 @@ which the build environment lacks.
 | rsync         | 3.1.2     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.2.tar.gz                   | 0x6c859fb14b96a8c5 |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | tar           | 1.22      | http://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.gz                            | 0x3602b07f55d0c732 |
+| tor           | 0.3.3.6   | https://dist.torproject.org/tor-0.3.3.6.tar.gz                            | 0xfe43009c4607b1fb |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x263d6df2e163e1ea |
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 |
 | xz            | 5.2.3     | http://www.tukaani.org/xz/xz-5.2.3.tar.gz                                 | 0x38ee757d69184620 |
@@ -125,7 +104,7 @@ which the build environment lacks.
 | perl          | 5.22.0    | http://www.cpan.org/src/perl-5.22.0.tar.gz                                |                    |
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    |
 | python        | 2.6.9     | http://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz                |                    |
-| python        | 3.4.3     |                                                                           |                    |
+| python        | 3.4.3     |      //                                                                   |                    |
 | regina        | 3.4       | http://iweb.dl.sourceforge.net/sourceforge/regina-rexx/Regina-REXX-3.4.tar.gz |                |
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    |
@@ -135,10 +114,30 @@ which the build environment lacks.
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    |
 | zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    |
 
+Notes:
+
+Packages which fail to build usually just have some requirement
+which the build environment lacks.
+
+| package       | release   | notes                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| rsyslog       | 8.38.0    | cannot build statically                                                                        |
+| screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
+| tcl           | 8.5.19    | cannot build statically                                                                        |
+| wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
+
+SourceForge does not facilitate automated downloads. In fact, it kinda
+hinders them. We'll put SourceForge URLs in this list when we can, but
+sometimes you just have to search for the source and download it manually.
+
 \* Package name or "application ID" in Chicory is never hyphenated.
 Packages with a dash in the name do not have (and do not need) a dash in
 the name to work with Chicory. Since the dash in Chicory is required for
 separating the package name from the version, only one dash is allowed.
+
+This file is part of the collection found on GitHub at ...
+
+    https://github.com/trothr/chicory/tree/master/doc/
 
 this page "Chicory Packages" last updated 2018-Oct-06 (Saturday) by RMT
 
