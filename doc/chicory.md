@@ -54,8 +54,8 @@ There is a master prefix under which installed Chicory packages are found.
 The prefix is a directory of symbolic links. Software packages are
 configured to refer back to their own content via this prefix.
 
-`/usr/opt/package ->` *package-version*
-`/usr/opt/package-version ->` */where/it/lives*
+    /usr/opt/package -> package-version
+    /usr/opt/package-version -> /where/it/lives
 
 The prefix directory doesn’t interfere with package managers.
 Chicory packages can be recorded with a package manager.
@@ -110,12 +110,15 @@ Not meaning to compete with Brew, suppose we’re on a Mac.
 If you installed GnuPG 1.4.21 via Chicory, you'd wind up with ...
 
 pull from:
+
     rsync://chic.casita.net/opt/gnupg-1.4.21/Darwin-x86_64
 
 install to:
+
     /local/opt/gnupg-1.4.21/Darwin-x86_64
 
 sym-link as:
+
     /usr/opt/gnupg-1.4.21 -> /local/opt/gnupg-4.1.21/Darwin-x86_64
     /usr/opt/gnupg -> gnupg-1.4.21
     /usr/local/bin/gpg -> /usr/opt/gnupg/bin/gpg
@@ -181,15 +184,15 @@ Chicory allows for any number of versions of a package. As an example,
 perhaps your current GCC is 4.8.5 but you have a particular need for 4.1.2.
 /usr/opt might have …
 
-gcc -> gcc-4.8.5
-gcc-4.8.5 -> /opt/CD2/gcc-4.8.5/Linux-i386
-gcc-4.1.2 -> /opt/CD2/gcc-4.1.2/Linux-i386
-gcc-3.4.6 -> /local/opt/gcc-3.4.6/Linux-i386
+    gcc -> gcc-4.8.5
+    gcc-4.8.5 -> /opt/CD2/gcc-4.8.5/Linux-i386
+    gcc-4.1.2 -> /opt/CD2/gcc-4.1.2/Linux-i386
+    gcc-3.4.6 -> /local/opt/gcc-3.4.6/Linux-i386
 
 To use the 4.1.2 version, simply put it ahead of others in command PATH
 search.
 
-PATH=/usr/opt/gcc-4.1.2/bin:$PATH ; export PATH
+    PATH=/usr/opt/gcc-4.1.2/bin:$PATH ; export PATH
 
 ## Multiple Coresident Platforms
 
@@ -219,7 +222,7 @@ Each platform directory contains …
 Building most packages for Chicory involves configuring the prefix.
 For packages with a Gnu Autoconf configuration script, this is …
 
-./configure --prefix=/usr/opt/package-version
+    ./configure --prefix=/usr/opt/package-version
 
 Then do normal ‘make’, but intercept the target directory before doing
 `make install`.
