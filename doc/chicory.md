@@ -21,7 +21,6 @@ the whole thing. The focal point is a package prefix directory designed
 to be used by admins or non-admins. I'm looking at cascading RC files
 for the supporting scripts. 
 
-
 ## Chicory Features
 
 With Chicory, we can … 
@@ -47,7 +46,6 @@ Compare the above points with most systems …
 * Cannot mix releases
 * Cannot install without explicit privileges
 * Different tools from one distro to the next
-
 
 ## How it Works
 
@@ -98,7 +96,6 @@ Some examples of delivery include:
 * Pre-loaded ROM (CD-ROM)
 * Removable Media
 
-
 ## Example: GnuPG 1.4.21
 
 Consider installing GnuPG 1.4.21 via Chicory with the defaults. 
@@ -118,7 +115,7 @@ pull from:
 install to: 
     /local/opt/gnupg-1.4.21/Darwin-x86_64
 
-link as: 
+sym-link as: 
     /usr/opt/gnupg-1.4.21 -> /local/opt/gnupg-4.1.21/Darwin-x86_64
     /usr/opt/gnupg -> gnupg-1.4.21
     /usr/local/bin/gpg -> /usr/opt/gnupg/bin/gpg
@@ -126,7 +123,6 @@ link as:
 Users would then find ‘gpg’ under /usr/local/bin (assuming PATH includes
 it) and the 1.4.21 install would not collide with the stock install in
 /usr/bin (if any). 
-
 
 ## Configuration
 
@@ -206,17 +202,17 @@ For Ohio LinuxFest 2016 PGP key signing, a CD-ROM was provided with
 several releases of GnuPG, OpenSSL, LibreSSL, and other utilities.
 The gnupg-1.4.21 directory contains … 
 
-    drwxr-xr-x  5 rmt rmt  4096 Nov  6 13:20 CYGWIN-x86_64
-    drwxr-xr-x  5 rmt rmt  4096 Oct  2 23:18 Linux-i386
-    drwxr-xr-x  5 rmt rmt  4096 Oct  2 23:18 Linux-ppc
-    drwxr-xr-x  5 rmt rmt  4096 Oct  2 23:18 Linux-s390
-    -rwxr-xr-x  1 rmt rmt  4862 Jul 16  2014 setup
+    drwxr-xr-x  5 user group  4096 Nov  6 13:20 CYGWIN-x86_64
+    drwxr-xr-x  5 user group  4096 Oct  2 23:18 Linux-i386
+    drwxr-xr-x  5 user group  4096 Oct  2 23:18 Linux-ppc
+    drwxr-xr-x  5 user group  4096 Oct  2 23:18 Linux-s390
+    -rwxr-xr-x  1 user group  4862 Jul 16  2014 setup
 
 Each platform directory contains … 
 
-    drwxr-xr-x  2 rmt rmt  4096 Oct  2 23:18 bin
-    drwxr-xr-x  3 rmt rmt  4096 Oct  2 23:17 libexec
-    drwxr-xr-x  6 rmt rmt  4096 Oct  2 23:17 share
+    drwxr-xr-x  2 user group  4096 Oct  2 23:18 bin
+    drwxr-xr-x  3 user group  4096 Oct  2 23:17 libexec
+    drwxr-xr-x  6 user group  4096 Oct  2 23:17 share
 
 ## Building with Chicory
 
@@ -263,11 +259,9 @@ Okay, okay, we’re desperate for a last line in the rhyme. Help me out.
 
 Remain calm. Add Chicory and brew on! 
 
-
 -- R; <><
 
-
-Link
+Link to Google Drive content:
 
     https://docs.google.com/document/d/1AXLqM6g-cGnW-YwUYzO1MLygSrWCypUVpYFpSym4EpI
 
