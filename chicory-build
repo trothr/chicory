@@ -10,7 +10,7 @@ printenv | grep -v ' ' | grep "^CHICORY_" > /tmp/$$.set
 # default settings
 CHICORY_PREFIX=/usr/opt
 CHICORY_LINKTO=/usr/local
-CHICORY_REPOS=rsync://rust.casita.net/opt
+CHICORY_REPOS=rsync://chic.casita.net/opt
 CHICORY_RESDIR=/local/opt
 
 # optional overrides
@@ -107,7 +107,11 @@ if [ ! -d $WD/$P1 ] ; then exit 1 ; fi
 
 # see if the package makefile is already in place
 if [ ! -f $WD/$P1/makefile ] ; then
-  wget -O $WD/$P1/makefile http://www.casita.net/pub/$P1N/$P1.mak
+  wget -O $WD/$P1/makefile \
+    https://raw.githubusercontent.com/trothr/chicory/master/arc/$P1N/$P1.mak
+  RC=$? ; if [ $RC -ne 0 ] ; then
+    wget -O $WD/$P1/makefile \
+    http://www.casita.net/pub/$P1N/$P1.mak ; fi
   RC=$? ; if [ $RC -ne 0 ] ; then
     echo "$Z: acquiring makefile for '$P1' failed" 1>&2
     rm -f $WD/$P1/makefile
