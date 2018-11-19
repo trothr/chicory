@@ -51,7 +51,7 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 		--with-libassuan-prefix=$(PREFIX)/libassuan \
 		--with-ksba-prefix=$(PREFIX)/libksba \
 		--with-npth-prefix=$(PREFIX)/npth \
-		--with-libiconv-prefix=/usr/opt/libiconv \
+		--with-libiconv-prefix=$(PREFIX)/libiconv \
 		--without-libintl-prefix \
 		LIBS=-lrt
 SC_BUILD	=	$(MAKE)
