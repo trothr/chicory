@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    |
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | ed            | 1.14.2    | http://ftp.gnu.org/pub/gnu/ed/ed-1.14.2.tar.lz                            | 0x8fe99503132d7742 |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |

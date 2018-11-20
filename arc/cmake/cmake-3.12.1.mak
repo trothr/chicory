@@ -54,7 +54,8 @@ SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/cmake bin/ccmake bin/cpack bin/ctest
+#SC_FIXUP	=	strip bin/cmake bin/ccmake bin/cpack bin/ctest
+SC_FIXUP	=	strip bin/cmake            bin/cpack bin/ctest
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #

@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#               make rules for Gnu ED with Chicory
-#	  Date: 2018-Nov-16 (Fri)
+#               make rules for XINETD with Chicory
+#	  Date: 2018-Oct-14 (Sun)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	ed
-SC_APV		=	1.14.2
+APPLID		=	xinetd
+SC_APV		=	2.3.15
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 #
@@ -23,34 +23,35 @@ SC_VRM		=	$(APPLID)-$(SC_APV)
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
-SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
 #SC_TAR		=	tar xJf
-SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
+#SC_TAR		=	tar --lzip -xf
 
 #
 # where to find the source on the internet
 SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+  ftp://mirror.ovh.net/gentoo-distfiles/distfiles/$(SC_SOURCE).$(SC_ARC)
+# http://http.debian.net/debian/pool/main/x/xinetd/xinetd_2.3.15.orig.tar.gz
+# https://packages.debian.org/stretch/xinetd
+# https://archlinux.pkgs.org/rolling/archlinux-core-x86_64/xinetd-2.3.15-5-x86_64.pkg.tar.xz.html
+# https://en.wikipedia.org/wiki/Xinetd
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0x8fe99503132d7742
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0xnnnnnnnnnnnnnnnn
+# Download MD5 sum: 77358478fd58efa6366accae99b8b04c
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#				--enable-static --disable-shared
-#--without-tcsetpgrp
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+				--enable-static --disable-shared
 
 # default build executable or command is 'make'
 SC_BUILDX	=		$(MAKE)
@@ -62,7 +63,7 @@ SC_INSTALL	=	$(MAKE) install
 
 #
 # default is blank
-SC_FIXUP	=	strip bin/ed
+SC_FIXUP	=	strip sbin/xinetd sbin/itox
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -74,6 +75,7 @@ SYSTEM		=		`./setup --system`
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
+#			libtirpc-0.2.3 required for XINETD
 
 
 ########################################################################
@@ -260,7 +262,7 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 
 #
 #
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+verify:
 		$(SC_SOURCE_VERIFY)
 
 #
