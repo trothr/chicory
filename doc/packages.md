@@ -123,6 +123,7 @@ which the build environment lacks.
 
 | package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| ntp           | 4.2.8p12  | cannot build statically                                                                        |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
 | stunnel       | 5.50      | cannot build statically                                                                        |
