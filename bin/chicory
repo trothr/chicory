@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+#         Name: chicory (shell script)
+#         Date: 2018-Dec-08 (Sat)
+#               This script gathers Chicory configuration and then drives
+#               other Chicory scripts, e.g., 'install', 'search', 'build'.
+#
+
+PATH=$PATH:$HOME/git/chicory/bin
+
+### retain settings from environment ###
+printenv | grep '^CHICORY_' | grep -v ' ' > /tmp/$$.set
+
+### apply defaults ###
+CHICORY_PREFIX=/usr/opt
+CHICORY_LINKTO=/usr/local
+CHICORY_REPOS=rsync://chic.casita.net/opt
+CHICORY_REPOS=rsync://rust.casita.net/opt
+CHICORY_RESDIR=/local/opt
+
+### detect the platform ###
+US=`uname -s`
+UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
+case "$US" in
+  Linux|FreeBSD)
+    :
+    ;;
+  CYGWIN*)
+    US="CYGWIN"
+    ;;
+  SunOS|AIX)
+    UM=`uname -p`
+    ;;
+  OS390)
+    UM="s390x" # guessing! since both "s390x" and "s390" are viable
+    ;;
+esac
+CHICORY_SYSTEM="$US-$UM"
+
+### apply local overrides ###
+if [ -r /etc/chicoryrc ] ;  then . /etc/chicoryrc ; fi
+if [ -r /etc/sysconfig/chicory ] ; then . /etc/sysconfig/chicory ; fi
+if [ -r /usr/local/etc/chicoryrc ] ;  then . /usr/local/etc/chicoryrc ; fi
+if [ -r /usr/local/etc/sysconfig/chicory ] ; then . /usr/local/etc/sysconfig/chicory ; fi
+if [ -r $HOME/.chicoryrc ] ; then . $HOME/.chicoryrc ; fi
+
+### reload environmentals to trump all ###
+. /tmp/$$.set
+rm /tmp/$$.set
+export CHICORY_PREFIX CHICORY_LINKTO CHICORY_REPOS CHICORY_RESDIR CHICORY_SYSTEM
+
+### hand-off to secondary script ###
+if [ -z "$1" ] ; then
+  printenv | grep '^CHICORY_' ; RC=$?
+else
+  CHIC_OP="chicory-$1" ; shift
+  $CHIC_OP $* ; RC=$?
+fi
+
+exit $RC
+
+

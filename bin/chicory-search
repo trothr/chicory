@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+#         Name: chicory-search (shell script)
+#         Date: 2018-Dec-09 (Sun) and prior
+#               This script searches Chicory repositories for the listed
+#               software package(s). This script does not run stand-alone
+#               but must be executed by 'chicory' and requires Chicory
+#               configuration set environment variables.
+#
+
+# check invocation environment
+if [ -z "$CHICORY_REPOS" ] ; then
+  echo "chicory-search: unset variables; this script does not run stand-alone"
+  exit 1
+fi
+
+# split repositories at comma or semi-colon
+CHICORY_REPOS=`echo "$CHICORY_REPOS" | sed "s#,# #g" | sed "s#;# #g"`
+
+# loop through all repositories
+for CR in $CHICORY_REPOS ; do
+  # loop through all packages (versions of)
+  for CP in ` rsync $CR | awk '{print $5}' | grep "^$1-" ` ; do
+    # find the platform of interest
+    rsync $CR/$CP/$CHICORY_SYSTEM 1> /dev/null 2> /dev/null ; RC=$?
+    if [ $RC -ne 0 ] ; then continue ; fi
+#   echo "$CP $CR/$CP/$CHICORY_SYSTEM"
+    echo "$CR/$CP/$CHICORY_SYSTEM"
+  done
+done
+
+
