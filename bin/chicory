@@ -6,8 +6,6 @@
 #               other Chicory scripts, e.g., 'install', 'search', 'build'.
 #
 
-PATH=$PATH:$HOME/git/chicory/bin
-
 ### retain settings from environment ###
 printenv | grep '^CHICORY_' | grep -v ' ' > /tmp/$$.set
 

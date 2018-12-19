@@ -9,6 +9,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 2.9.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.0.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
 | stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
 | ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    |
@@ -50,7 +53,6 @@ most recent at the top. Time of latest update at the bottom.
 | libgpg-error* | 1.27      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpgerror-1.27.tar.bz2          | 0x249b39d24f25e3b6 |
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
-| libressl      | 2.8.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
 | make          | 3.82      | http://ftp.gnu.org/pub/gnu/make/make-3.82.tar.gz                          | 0x96b047156338b6d4 |
@@ -143,6 +145,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2018-Oct-06 (Saturday) by RMT
+this page "Chicory Packages" last updated 2018-Dec-15 (Saturday) by RMT
 
 
