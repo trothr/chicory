@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
+| gnupg         | 2.2.12    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.12.tar.bz2                     | 0x249b39d24f25e3b6 |
 | libressl      | 2.9.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
@@ -43,8 +45,6 @@ most recent at the top. Time of latest update at the bottom.
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
-| gnupg         | 1.4.22    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.22.tar.gz                      | 0x249b39d24f25e3b6 |
-| gnupg         | 2.2.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.3.tar.bz2                      | 0x2071b08a33bd3f06 |
 | grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
 | libassuan     | 2.4.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.4.5.tar.bz2              | 0x249b39d24f25e3b6 |
