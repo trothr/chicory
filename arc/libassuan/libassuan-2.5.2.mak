@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for LibGPG-Error at La Casita with /usr/opt Chicory
-#	  Date: 2017-Dec-03 (Sun) for the Vegas party
+#		make rules for LIBASSUAN for La Casita with Chicory
+#	  Date: 2018-Dec-31 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,13 +14,12 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	libgpgerror
-SC_APV		=	1.27
+APPLID		=	libassuan
+SC_APV		=	2.5.2
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE	=	$(SC_VRM)
-SC_SOURCE	=	libgpg-error-$(SC_APV)
+SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
 #SC_ARC		=	tar.gz
@@ -35,23 +34,23 @@ SC_TAR		=	tar xjf
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-      ftp://ftp.gnupg.org/gcrypt/libgpg-error/$(SC_SOURCE).$(SC_ARC) \
-      ftp://ftp.gnupg.org/gcrypt/libgpg-error/$(SC_SOURCE).$(SC_ARC).sig
+	 ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+	 ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x249b39d24f25e3b6
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2071b08a33bd3f06
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--enable-static --disable-shared
+				--enable-static --disable-shared \
+			--with-libgpg-error-prefix=/usr/opt/libgpgerror
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/gpg-error
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -193,7 +192,7 @@ _ins:		_exe
 
 #
 #
-verify:
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_SOURCE_VERIFY)
 
 #

@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for LibGPG-Error at La Casita with /usr/opt Chicory
-#	  Date: 2017-Dec-03 (Sun) for the Vegas party
+#		make rules for GnuPG for La Casita with Chicory
+#	  Date: 2018-Dec-24 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -9,18 +9,19 @@
 #		and allows automatic coexistence of builds for
 #		different hardware and O/S combinations.
 #
+#     See also: http://www.gnupg.org/faq/why-not-idea.en.html
+#
 
 # standard stuff for all apps in this series
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	libgpgerror
-SC_APV		=	1.27
+APPLID		=	gnupg
+SC_APV		=	2.2.12
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE	=	$(SC_VRM)
-SC_SOURCE	=	libgpg-error-$(SC_APV)
+SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
 #SC_ARC		=	tar.gz
@@ -35,23 +36,39 @@ SC_TAR		=	tar xjf
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-      ftp://ftp.gnupg.org/gcrypt/libgpg-error/$(SC_SOURCE).$(SC_ARC) \
-      ftp://ftp.gnupg.org/gcrypt/libgpg-error/$(SC_SOURCE).$(SC_ARC).sig
+	     ftp://ftp.gnupg.org/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC) \
+	     ftp://ftp.gnupg.org/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x249b39d24f25e3b6
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2071b08a33bd3f06
 
 #
-# defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+				--no-check-certificate $(SC_URL)
+# using --no-check-certificate to ease HSTS trust burden
+
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--enable-static --disable-shared
+		--with-libgpg-error-prefix=$(PREFIX)/libgpgerror \
+		--with-libgcrypt-prefix=$(PREFIX)/libgcrypt \
+		--with-libassuan-prefix=$(PREFIX)/libassuan \
+		--with-ksba-prefix=$(PREFIX)/libksba \
+		--with-npth-prefix=$(PREFIX)/npth \
+		--with-libiconv-prefix=$(PREFIX)/libiconv \
+		--without-libintl-prefix \
+		LIBS=-lrt
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/gpg-error
+SC_FIXUP	=	strip bin/gpg \
+	bin/gpg-agent bin/gpg-connect-agent bin/gpgconf bin/gpgtar \
+	bin/gpgsm bin/gpgscm bin/gpgparsemail bin/gpgv \
+	bin/dirmngr bin/dirmngr-client bin/kbxutil bin/watchgnupg
+#				lib*/gnupg/gpgkeys_hkp \
+#				lib*/gnupg/gpgkeys_curl \
+#				lib*/gnupg/gpgkeys_finger
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -193,7 +210,7 @@ _ins:		_exe
 
 #
 #
-verify:
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_SOURCE_VERIFY)
 
 #
@@ -397,5 +414,14 @@ help:
 	@echo "                      + restore source from archive(s)"
 	@echo "                      + apply patches"
 	@echo " "
+
+
+# http://en.wikipedia.org/wiki/GNU_Privacy_Guard
+# http://tools.ietf.org/html/rfc4880
+
+arc/rfc4880.txt:
+	@mkdir -p arc
+	sh -c ' cd arc ; \
+	  exec wget http://tools.ietf.org/rfc/rfc4880.txt '
 
 
