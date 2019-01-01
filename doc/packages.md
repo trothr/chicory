@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
 | libassuan     | 2.5.2     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.2.tar.bz2              | 0x249b39d24f25e3b6 |
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
 | gnupg         | 2.2.12    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.12.tar.bz2                     | 0x249b39d24f25e3b6 |
@@ -16,13 +17,6 @@ most recent at the top. Time of latest update at the bottom.
 | libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
 | stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
-| ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
-| xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    |
-| tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
-| ed            | 1.14.2    | http://ftp.gnu.org/pub/gnu/ed/ed-1.14.2.tar.lz                            | 0x8fe99503132d7742 |
-| lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
-| cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
-| musl          | 1.1.20    | http://www.musl-libc.org/releases/musl-1.1.20.tar.gz                      | 0x56bcdb593020450f |
 
 ## Packages Previously Built
 
@@ -35,10 +29,12 @@ most recent at the top. Time of latest update at the bottom.
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | bison         | 3.0.5     | http://ftp.gnu.org/pub/gnu/bison/bison-3.0.5.tar.xz                       | 0x0ddcaa3278d5264e |
+| cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | coreutils     | 8.27      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.27.tar.xz                | 0xdf6fd971306037d9 |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
 | diffutils     | 3.6       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.6.tar.xz                 | 0x7fd9fccb000beeee |
+| ed            | 1.14.2    | http://ftp.gnu.org/pub/gnu/ed/ed-1.14.2.tar.lz                            | 0x8fe99503132d7742 |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
 | gawk          | 4.1.4     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.1.4.tar.gz                         | 0xdf597815937ec0d2 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
@@ -54,10 +50,12 @@ most recent at the top. Time of latest update at the bottom.
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
+| lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
 | make          | 3.82      | http://ftp.gnu.org/pub/gnu/make/make-3.82.tar.gz                          | 0x96b047156338b6d4 |
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
+| musl          | 1.1.20    | http://www.musl-libc.org/releases/musl-1.1.20.tar.gz                      | 0x56bcdb593020450f |
 | nano          | 2.8.6     | http://ftp.gnu.org/pub/gnu/nano/nano-2.8.6.tar.gz                         | 0xbcb356df91009fa7 |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
@@ -70,6 +68,7 @@ most recent at the top. Time of latest update at the bottom.
 | rsync         | 3.1.2     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.2.tar.gz                   | 0x6c859fb14b96a8c5 |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
+| tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 |
 | tor           | 0.3.3.6   | https://dist.torproject.org/tor-0.3.3.6.tar.gz                            | 0xfe43009c4607b1fb |
@@ -99,8 +98,8 @@ most recent at the top. Time of latest update at the bottom.
 | libffi        | 3.2.1     | ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz                       | sha512             |
 | libuuid       | 1.0.3     | //SourceForge                                                             |                    |
 | nginx         | 1.2.5     | http://www.nginx.org/download/nginx-1.2.5.tar.gz                          |                    |
+| ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
-| openvpn       | 2.3.10    | https://swupdate.openvpn.org/community/releases/openvpn-2.3.10.tar.xz     |                    |
 | patch         | 2.7.5     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.5.tar.gz                       |                    |
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    |
 | pdsh          | 2.29      | http://pdsh.googlecode.com/files/pdsh-2.29.tar.bz2                        |                    |
@@ -115,6 +114,7 @@ most recent at the top. Time of latest update at the bottom.
 | subversion    | 1.9.2     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.2.tar.bz2       |                    |
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
+| xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    |
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    |
 | zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    |
 
@@ -126,6 +126,7 @@ which the build environment lacks.
 | package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | ntp           | 4.2.8p12  | cannot build statically                                                                        |
+| openvpn       | 2.4.6     | sensitive to OpenSSL version                                                                   |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
 | stunnel       | 5.50      | cannot build statically                                                                        |
