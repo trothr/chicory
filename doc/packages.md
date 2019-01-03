@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
+| rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 |
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
 | libassuan     | 2.5.2     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.2.tar.bz2              | 0x249b39d24f25e3b6 |
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
@@ -65,7 +67,6 @@ most recent at the top. Time of latest update at the bottom.
 | pcre          | 8.42      | http://ftp.pcre.org/pub/pcre/pcre-8.42.tar.bz2                            | 0x9766e084fb0f43d8 |
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 |
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab |
-| rsync         | 3.1.2     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.2.tar.gz                   | 0x6c859fb14b96a8c5 |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
