@@ -34,9 +34,10 @@ With Chicory, we can …
 
 ## Scripts
 
-Historically, the only script was the 'setup' script which might acompany
-any single package. Individual makefile wrappers for Chicory packages
-have no particular dependencies or infrastructure requirements.
+Historically, the only script was the `setup` script which might accompany
+any single package. The script runs stand-alone without particular dependencies
+beyond the environment found on most Unix systems. Similarly, individual makefile 
+wrappers for Chicory packages have no particular dependencies or infrastructure requirements.
 
 One goal of this project is to deliver a set of scripts which facilitate
 simplified operation with Chicory: build, search, install, etc.
