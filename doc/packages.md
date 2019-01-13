@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| db            | 6.0.20    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    |
+| coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 |
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 |
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
@@ -32,7 +34,6 @@ most recent at the top. Time of latest update at the bottom.
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | bison         | 3.0.5     | http://ftp.gnu.org/pub/gnu/bison/bison-3.0.5.tar.xz                       | 0x0ddcaa3278d5264e |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
-| coreutils     | 8.27      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.27.tar.xz                | 0xdf6fd971306037d9 |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
 | diffutils     | 3.6       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.6.tar.xz                 | 0x7fd9fccb000beeee |
@@ -148,5 +149,6 @@ This file is part of the collection found on GitHub at ...
     https://github.com/trothr/chicory/tree/master/doc/
 
 this page "Chicory Packages" last updated 2018-Dec-15 (Saturday) by RMT
+
 
 
