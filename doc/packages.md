@@ -9,7 +9,11 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| db            | 6.0.20    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    |
+| diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee |
+| ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 |
+| file          | 5.35      | http://distfiles.macports.org/file/file-5.35.tar.gz                       |                    |
+| make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 |
+| db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 |
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 |
@@ -36,8 +40,6 @@ most recent at the top. Time of latest update at the bottom.
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
-| diffutils     | 3.6       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.6.tar.xz                 | 0x7fd9fccb000beeee |
-| ed            | 1.14.2    | http://ftp.gnu.org/pub/gnu/ed/ed-1.14.2.tar.lz                            | 0x8fe99503132d7742 |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
 | gawk          | 4.1.4     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.1.4.tar.gz                         | 0xdf597815937ec0d2 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
@@ -55,7 +57,6 @@ most recent at the top. Time of latest update at the bottom.
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
-| make          | 3.82      | http://ftp.gnu.org/pub/gnu/make/make-3.82.tar.gz                          | 0x96b047156338b6d4 |
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
 | musl          | 1.1.20    | http://www.musl-libc.org/releases/musl-1.1.20.tar.gz                      | 0x56bcdb593020450f |
@@ -89,7 +90,6 @@ most recent at the top. Time of latest update at the bottom.
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    |
 | dash          | 0.5.9.1   | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.9.1.tar.gz        |                    |
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    |
-| file          | 5.31      | http://distfiles.macports.org/file/file-5.31.tar.gz                       |                    |
 | flex          | 2.5.39    | http://prdownloads.sourceforge.net/flex/flex-2.5.39.tar.gz                |                    |
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    |
 | groff         | 1.21      | http://ftp.gnu.org/pub/gnu/groff/groff-1.21.tar.gz                        |                    |
@@ -123,21 +123,19 @@ most recent at the top. Time of latest update at the bottom.
 Notes:
 
 Packages which fail to build usually just have some requirement
-which the build environment lacks.
+which the build environment lacks. Manual intervention is often minor.
 
-| package       | release   | notes                                                                                          |
+The following packages have issues or previously had issues:
+
+| package*      | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| db            | 6.0.35    | download site enforces manual interaction                                                      |
 | ntp           | 4.2.8p12  | cannot build statically                                                                        |
 | openvpn       | 2.4.6     | sensitive to OpenSSL version                                                                   |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
 | stunnel       | 5.50      | cannot build statically                                                                        |
 | tcl           | 8.5.19    | cannot build statically                                                                        |
-| wget          | 1.19.5    | first package built with Chicory-ized Musl libc                                                |
-
-SourceForge does not facilitate automated downloads. In fact, it kinda
-hinders them. We'll put SourceForge URLs in this list when we can, but
-sometimes you just have to search for the source and download it manually.
 
 \* Package name or "application ID" in Chicory is never hyphenated.
 Packages with a dash in the name do not have (and do not need) a dash in
@@ -148,7 +146,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2018-Dec-15 (Saturday) by RMT
-
+this page "Chicory Packages" last updated 2019-Jan-13 (Sunday) by RMT
 
 

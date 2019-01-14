@@ -40,7 +40,7 @@ SC_URL		=	\
     http://pkgconfig.freedesktop.org/releases/$(SC_SOURCE).$(SC_ARC) \
     http://pkgconfig.freedesktop.org/releases/$(SC_SOURCE).$(SC_ARC).asc
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0x023a4420c7ec6914
 #gpg --keyserver wwwkeys.pgp.net --recv-keys 0x023a4420c7ec6914
 
