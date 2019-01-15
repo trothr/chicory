@@ -40,4 +40,23 @@ The following platforms are viable as of time of writing.
 * Solaris-i386
 * Solaris-sparc
 
+The following platforms might work if they have sufficient POSIX features.
+
+* NetBSD
+* GNU/Hurd
+* OpenVMS
+* Ultrix
+* UnixWare
+* Tru64
+* IRIX
+* QNX
+* OPENSTEP
+        
+Microsoft Windows works by way of CYGWIN or MKS / Unix Services for Windows
+but should also work by way of the Windows Subsystem for Linux.
+
+IBM z/OS has a POSIX subsystem called USS which works fine with Chicory
+though the environment is EBCDIC rather than ASCII. Scripts are not
+portable between z/OS USS and other POSIX systems without translation.
+
 
