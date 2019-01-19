@@ -12,9 +12,9 @@ Chicory works well for just a single package, not necessarily a whole
 system. Nothing technically prevents someone from using it for a whole
 system, but Chicory works best when blended with other methods.
 
-Chicory allows that packages can reside locally, remotely, or on removable media.
-It does not require that software packages be shrink-wrapped for delivery (e.g., RPM, MSI).
-It supports point-and-shoot.
+Chicory allows that packages can reside locally, remotely, or on removable
+media. It does not require that software packages be shrink-wrapped
+for delivery (e.g., RPM, MSI). It supports point-and-shoot.
 
 To date, more than 100 open source packages have been built with Chicory
 and deployed on more than a dozen different systems (OS+HW combinations).
@@ -35,10 +35,15 @@ With Chicory, we can …
 ## Scripts
 
 Historically, the only script was the `setup` script which might accompany
-any single package. The script runs stand-alone without particular dependencies
-beyond the environment found on most Unix systems. Similarly, individual makefile 
-wrappers for Chicory packages have no particular dependencies or infrastructure requirements.
+any single package. The script runs stand-alone without particular
+dependencies beyond the environment found on most Unix systems. Similarly,
+individual makefile wrappers for Chicory packages have no special
+requirements or infrastructure dependencies.
+
+Chicory's main goal is to require as little infrastructure as possible.
+For years, Chicory was used with only the master prefix and a `setup` script.
 
 One goal of this project is to deliver a set of scripts which facilitate
 simplified operation with Chicory: build, search, install, etc.
+
 
