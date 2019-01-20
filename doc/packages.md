@@ -20,13 +20,6 @@ most recent at the top. Time of latest update at the bottom.
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 |
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
-| libassuan     | 2.5.2     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.2.tar.bz2              | 0x249b39d24f25e3b6 |
-| gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
-| gnupg         | 2.2.12    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.12.tar.bz2                     | 0x249b39d24f25e3b6 |
-| libressl      | 2.9.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.0.tar.gz         | 0x663af51bd5e4d8d5 |
-| libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
-| libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
-| stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
 
 ## Packages Previously Built
 
@@ -49,13 +42,19 @@ most recent at the top. Time of latest update at the bottom.
 | git           | 1.9.5     | https://www.kernel.org/pub/software/scm/git/git-1.9.5.tar.xz              | 0xb0b5e88696afe6cb |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
+| gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
+| gnupg         | 2.2.12    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.12.tar.bz2                     | 0x249b39d24f25e3b6 |
 | grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
+| libassuan     | 2.5.2     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.2.tar.bz2              | 0x249b39d24f25e3b6 |
 | libevent      | 2.1.8     | https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz | 0xb86086848ef8686d |
 | libgcrypt     | 1.8.1     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.1.tar.bz2              | 0x249b39d24f25e3b6 |
 | libgpg-error* | 1.27      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpgerror-1.27.tar.bz2          | 0x249b39d24f25e3b6 |
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
+| libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.9.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
@@ -73,6 +72,7 @@ most recent at the top. Time of latest update at the bottom.
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
+| stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 |
@@ -130,6 +130,7 @@ The following packages have issues or previously had issues:
 | package*      | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | db            | 6.0.35    | download site enforces manual interaction                                                      |
+| groff         | 1.22.4    | mixed text and grapical/X11 so you might need X11 build environment                            |
 | ntp           | 4.2.8p12  | cannot build statically                                                                        |
 | openvpn       | 2.4.6     | sensitive to OpenSSL version                                                                   |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
