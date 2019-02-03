@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| swig          | 3.0.12    | http://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz                |                    |
+| python        | 2.7.15    | https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz             | 0x126eb563a74b06bf |
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 |
 | less          | 530       | http://www.greenwoodsoftware.com/less/less-530.tar.gz                     |                    |
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee |
@@ -107,8 +109,7 @@ most recent at the top. Time of latest update at the bottom.
 | pdsh          | 2.29      | http://pdsh.googlecode.com/files/pdsh-2.29.tar.bz2                        |                    |
 | perl          | 5.22.0    | http://www.cpan.org/src/perl-5.22.0.tar.gz                                |                    |
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    |
-| python        | 2.6.9     | http://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz                |                    |
-| python        | 3.4.3     |      //                                                                   |                    |
+| python        | 3.4.3     |       //                                                                  |                    |
 | regina        | 3.4       | http://iweb.dl.sourceforge.net/sourceforge/regina-rexx/Regina-REXX-3.4.tar.gz |                |
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             |
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
