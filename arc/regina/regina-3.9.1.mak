@@ -19,7 +19,7 @@ SC_APV		=	3.9.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+#SC_SOURCE	=	$(SC_VRM)
 SC_SOURCE	=	Regina-REXX-$(SC_APV)
 
 # improved fetch and extract logic, variable compression ...
@@ -74,7 +74,6 @@ SC_BUILDD	=		$(SC_SOURCE)
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-#			PCRE
 
 
 ########################################################################

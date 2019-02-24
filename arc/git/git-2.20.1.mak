@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Python at La Casita with Chicory
-#	  Date: 2019-Feb-06 (Wed) retro for CTYPES support and triage
+#		make rules for Git at La Casita with Chicory
+#	  Date: 2019-Feb-23 (Sat) because Craig Curtin proded me
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,13 +14,12 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	python
-SC_APV		=	2.6.9
+APPLID		=	git
+SC_APV		=	2.20.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE	=	$(SC_VRM)
-SC_SOURCE	=	Python-$(SC_APV)
+SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
 #SC_ARC		=	tar.gz
@@ -37,25 +36,30 @@ SC_TAR		=	tar xJf
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
- https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
- https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
+ https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz \
+ https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.sign \
+ https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.20.1.tar.xz \
+ https://mirrors.edge.kernel.org/pub/software/scm/git/git-htmldocs-2.20.1.tar.sign \
+ https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.20.1.tar.xz \
+ https://mirrors.edge.kernel.org/pub/software/scm/git/git-manpages-2.20.1.tar.sign
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sign
+SC_SOURCE_VERIFY = xz -d < arc/$(SC_SOURCE).$(SC_ARC) \
+			| gpg --verify arc/$(SC_SOURCE).tar.sign -
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xb0b5e88696afe6cb
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-# can't --disable-shared because CTYPES needs shared lib loading
-# have tried --with-system-ffi but it appears not needed nor helpful
-#configure: WARNING: unrecognized options: --enable-static
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/python2.6 ; ln -s python2.6 bin/python
+SC_FIXUP	=	strip bin/git bin/git-shell \
+	bin/git-receive-pack bin/git-upload-pack bin/git-upload-archive
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
