@@ -4,6 +4,9 @@ Chicory is a supplemental software package management scheme
 for Unix and Unix-like systems. It works alongside the primary
 package manager of the system without interfering.
 
+The first goal of Chicory is to require very little infrastructure.
+Many Chicory packages can with no additional support.
+
 ## Chicory
 
 Chicory is the key ingredient in a special blend, traditionally of coffee. 
