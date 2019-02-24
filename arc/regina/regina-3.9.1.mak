@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Python at La Casita with Chicory
-#	  Date: 2019-Feb-06 (Wed) retro for CTYPES support and triage
+#		make rules for Regina Rexx at La Casita with Chicory
+#	  Date: 2019-Feb-19 (Tue) because Craig Curtin proded me
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,33 +14,33 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	python
-SC_APV		=	2.6.9
+APPLID		=	regina
+SC_APV		=	3.9.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE	=	$(SC_VRM)
-SC_SOURCE	=	Python-$(SC_APV)
+SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE	=	Regina-REXX-$(SC_APV)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-SC_ARC		=	tar.xz
+#SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-SC_TAR		=	tar xJf
+#SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
 #SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
- https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
- https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
+ http://sourceforge.net/projects/regina-rexx/files/regina-rexx/$(SC_APV)/Regina-REXX-$(SC_APV).$(SC_ARC)
+#http://prdownloads.sourceforge.net/$(APPLID)/$(SC_SOURCE).$(SC_ARC)
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
 
 #
@@ -48,14 +48,12 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-# can't --disable-shared because CTYPES needs shared lib loading
-# have tried --with-system-ffi but it appears not needed nor helpful
-#configure: WARNING: unrecognized options: --enable-static
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/python2.6 ; ln -s python2.6 bin/python
+#SC_FIXUP	=	strip bin/rexx bin/rxqueue bin/rxstack
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #

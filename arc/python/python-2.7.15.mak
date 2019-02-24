@@ -47,14 +47,16 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-							--disable-shared
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+#	CFLAGS="-DHAVE_DYNAMIC_LOADING=1" LDFLAGS="-ldl"
+# can't --disable-shared because CTYPES needs shared lib loading
+# have tried --with-system-ffi but it appears not needed nor helpful
 #configure: WARNING: unrecognized options: --enable-static
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/python2.7 ; ln -s python2.7 bin/python
+SC_FIXUP	=	strip bin/python2.7
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #

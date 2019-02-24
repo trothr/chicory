@@ -37,7 +37,8 @@ SC_TAR		=	tar xzf
 # where to find the source on the internet
 SC_URL		=	\
 	     ftp://sourceware.org/pub/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	     ftp://sourceware.org/pub/libffi/sha512.sum
+	     ftp://sourceware.org/pub/$(APPLID)/sha512.sum \
+	     ftp://sourceware.org/pub/$(APPLID)/md5.sum
 
 #SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0xnnnnnnnnnnnnnnnn
@@ -60,7 +61,7 @@ SC_INSTALL	=	$(MAKE) install
 #
 # default is blank
 #SC_FIXUP	=	strip ...
-SC_FIXUP	=	\
+SC_FIXUP	=	ln -s lib/*/include . ; \
 	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #

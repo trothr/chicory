@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
 #		make rules for Python at La Casita with Chicory
-#	  Date: 2019-Feb-06 (Wed) retro for CTYPES support and triage
+#	  Date: 2019-Feb-05 (Tue)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -15,7 +15,7 @@ PREFIX		=	/usr/opt
 
 # no default for VRM string
 APPLID		=	python
-SC_APV		=	2.6.9
+SC_APV		=	3.7.2
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -51,11 +51,13 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 # can't --disable-shared because CTYPES needs shared lib loading
 # have tried --with-system-ffi but it appears not needed nor helpful
 #configure: WARNING: unrecognized options: --enable-static
-SC_BUILD	=	$(MAKE)
+#SC_BUILD	=	$(MAKE)
+SC_BUILD	=	$(MAKE) V=1
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/python2.6 ; ln -s python2.6 bin/python
+SC_FIXUP	=	strip bin/python3.7 bin/python3.7m
+#			ln -s python3.7 bin/python
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
