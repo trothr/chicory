@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bison         | 3.3.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.3.2.tar.xz                       | 0x0ddcaa3278d5264e |
+| grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee |
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
 | regina        | 3.9.1     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.1/Regina-REXX-3.9.1.tar.gz | |
 | swig          | 3.0.12    | http://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz                |                    |
@@ -34,7 +36,6 @@ most recent at the top. Time of latest update at the bottom.
 | bash          | 4.4       | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.tar.gz                           | 0xbb5869f064ea74ab |
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
-| bison         | 3.0.5     | http://ftp.gnu.org/pub/gnu/bison/bison-3.0.5.tar.xz                       | 0x0ddcaa3278d5264e |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
@@ -46,7 +47,6 @@ most recent at the top. Time of latest update at the bottom.
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
 | gnupg         | 2.2.12    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.12.tar.bz2                     | 0x249b39d24f25e3b6 |
-| grep          | 3.1       | http://ftp.gnu.org/pub/gnu/grep/grep-3.1.tar.xz                           | 0x7fd9fccb000beeee |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
 | libassuan     | 2.5.2     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.2.tar.bz2              | 0x249b39d24f25e3b6 |
 | libevent      | 2.1.8     | https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz | 0xb86086848ef8686d |
@@ -80,7 +80,7 @@ most recent at the top. Time of latest update at the bottom.
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 |
-| tor           | 0.3.3.6   | https://dist.torproject.org/tor-0.3.3.6.tar.gz                            | 0xfe43009c4607b1fb |
+| tor           | 0.3.5.8   | https://dist.torproject.org/tor-0.3.5.8.tar.gz                            | 0xfe43009c4607b1fb |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x263d6df2e163e1ea |
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 |
 | xz            | 5.2.3     | http://www.tukaani.org/xz/xz-5.2.3.tar.gz                                 | 0x38ee757d69184620 |
@@ -103,7 +103,7 @@ most recent at the top. Time of latest update at the bottom.
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
 | libffi        | 3.2.1     | ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz                       | sha512             |
 | libuuid       | 1.0.3     | http://sourceforge.net/projects/libuuid/files/libuuid/1.0.3/libuuid.1.0.3.tar.gz |             |
-| nginx         | 1.2.5     | http://www.nginx.org/download/nginx-1.2.5.tar.gz                          |                    |
+| nginx         | 1.12.1    | http://www.nginx.org/download/nginx-1.12.1.tar.gz                         |                    |
 | ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
 | patch         | 2.7.5     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.5.tar.gz                       |                    |
@@ -112,7 +112,6 @@ most recent at the top. Time of latest update at the bottom.
 | perl          | 5.22.0    | http://www.cpan.org/src/perl-5.22.0.tar.gz                                |                    |
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    |
 | python        | 2.6.9     | https://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz               | 0x126eb563a74b06bf |
-| regina        | 3.4       | http://iweb.dl.sourceforge.net/sourceforge/regina-rexx/Regina-REXX-3.4.tar.gz |                |
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             |
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    |
