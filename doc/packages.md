@@ -9,13 +9,16 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 |
+| gawk          | 4.2.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.2.1.tar.gz                         | 0xdf597815937ec0d2 |
+| patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xc4c927cd5d1b36d7 |
+| automake      | 1.16.1    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.1.tar.gz                | 0x60f906016e407573 |
+| bash          | 4.4.18    | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.18.tar.gz                        | 0xbb5869f064ea74ab |
 | bison         | 3.3.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.3.2.tar.xz                       | 0x0ddcaa3278d5264e |
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee |
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
 | regina        | 3.9.1     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.1/Regina-REXX-3.9.1.tar.gz | |
 | swig          | 3.0.12    | http://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz                |                    |
-| python        | 2.7.15    | https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz             | 0x04c367c218add4ff |
-| python        | 3.7.2     | https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz               | 0x2d347ea6aa65421d |
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 |
 | less          | 530       | http://www.greenwoodsoftware.com/less/less-530.tar.gz                     |                    |
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee |
@@ -24,7 +27,6 @@ most recent at the top. Time of latest update at the bottom.
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 |
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 |
-| tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 
 ## Packages Previously Built
 
@@ -32,15 +34,12 @@ most recent at the top. Time of latest update at the bottom.
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | apache        | 2.2.19    | http://archive.apache.org/dist/httpd/httpd-2.2.19.tar.gz                  | 0xa348b9847f7214a7 |
 | autoconf      | 2.69      | http://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.69.tar.gz                  | 0xa7a16b4a2527436a |
-| automake      | 1.15      | http://ftp.gnu.org/pub/gnu/automake/automake-1.15.tar.gz                  | 0x60f906016e407573 |
-| bash          | 4.4       | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.tar.gz                           | 0xbb5869f064ea74ab |
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
 | curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
-| gawk          | 4.1.4     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.1.4.tar.gz                         | 0xdf597815937ec0d2 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
 | gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
@@ -72,6 +71,9 @@ most recent at the top. Time of latest update at the bottom.
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
 | pcre          | 8.42      | http://ftp.pcre.org/pub/pcre/pcre-8.42.tar.bz2                            | 0x9766e084fb0f43d8 |
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 |
+| python        | 3.7.2     | https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz               | 0x2d347ea6aa65421d |
+| python        | 2.7.15    | https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz             | 0x04c367c218add4ff |
+| python        | 2.6.9     | https://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz               | 0x126eb563a74b06bf |
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab |
 | rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 |
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x2684f9aca750566f |
@@ -96,7 +98,6 @@ most recent at the top. Time of latest update at the bottom.
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    |
 | dash          | 0.5.9.1   | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.9.1.tar.gz        |                    |
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    |
-| flex          | 2.5.39    | http://prdownloads.sourceforge.net/flex/flex-2.5.39.tar.gz                |                    |
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    |
 | irssi         | 0.8.15    | http://www.irssi.org/files/irssi-0.8.15.tar.gz                            |                    |
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
@@ -106,18 +107,17 @@ most recent at the top. Time of latest update at the bottom.
 | nginx         | 1.12.1    | http://www.nginx.org/download/nginx-1.12.1.tar.gz                         |                    |
 | ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
-| patch         | 2.7.5     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.5.tar.gz                       |                    |
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    |
 | pdsh          | 2.29      | http://pdsh.googlecode.com/files/pdsh-2.29.tar.bz2                        |                    |
 | perl          | 5.22.0    | http://www.cpan.org/src/perl-5.22.0.tar.gz                                |                    |
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    |
-| python        | 2.6.9     | https://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz               | 0x126eb563a74b06bf |
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             |
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    |
 | subversion    | 1.9.2     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.2.tar.bz2       |                    |
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
+| tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    |
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    |
 | zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    |
