@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| curl          | 7.61.1    | http://curl.haxx.se/download/curl-7.61.1.tar.xz                           | 0x78e11c6b279d5c91 |
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 |
 | gawk          | 4.2.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.2.1.tar.gz                         | 0xdf597815937ec0d2 |
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xc4c927cd5d1b36d7 |
@@ -38,7 +39,6 @@ most recent at the top. Time of latest update at the bottom.
 | bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
-| curl          | 7.60.0    | http://curl.haxx.se/download/curl-7.60.0.tar.xz                           | 0x78e11c6b279d5c91 |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
 | gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
