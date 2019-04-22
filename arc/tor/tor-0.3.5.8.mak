@@ -36,9 +36,12 @@ SC_TAR		=	tar xzf
 #SC_URL		=	\
 #	https://www.torproject.org/dist/$(SC_SOURCE).$(SC_ARC) \
 #	https://www.torproject.org/dist/$(SC_SOURCE).$(SC_ARC).asc
+#SC_URL		=	\
+#	https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC) \
+#	https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).asc
 SC_URL		=	\
-	https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC) \
-	https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).asc
+	http://expyuzz4wqqyqhjn.onion/dist/$(SC_SOURCE).$(SC_ARC) \
+	http://expyuzz4wqqyqhjn.onion/dist/$(SC_SOURCE).$(SC_ARC).asc
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xfe43009c4607b1fb
