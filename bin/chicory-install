@@ -1,0 +1,144 @@
+#!/bin/sh
+#
+#         Name: chicory-install (shell script)
+#               Install packages which were built using Chicory.
+#
+
+# default settings
+CHICORY_PREFIX=/usr/opt
+CHICORY_LINKTO=/usr/local
+CHICORY_REPOS=rsync://rust.casita.net/opt
+CHICORY_RESDIR=/local/opt
+
+# optional overrides
+if [ -r /etc/chicoryrc ] ; then . /etc/chicoryrc ; fi
+if [ -r /etc/sysconfig/chicory ] ; then . /etc/sysconfig/chicory ; fi
+if [ -r $HOME/.chicoryrc ] ; then . $HOME/.chicoryrc ; fi
+
+# other variables used
+#  P for package (packagename-dash-packageversion)
+#  R for first repository found to have it
+#  S for local system (systemname-dash-architecture)
+#  Z for short name of this script
+
+#Z=`basename $0`
+Z=chicory
+P=$1
+
+# be sure this package not already installed
+if [ -d $CHICORY_PREFIX/$P ] ; then
+  echo "$Z: package '$P' is already installed" 1>&2
+  exit 0 ; fi
+
+# confirm that prefix directory exists and is writable
+if [ ! -d $CHICORY_PREFIX/. ] ; then
+  echo "$Z: missing prefix directory '$CHICORY_PREFIX'" 1>&2
+  exit 1 ; fi
+if [ ! -w $CHICORY_PREFIX/. ] ; then
+  echo "$Z: cannot write to prefix directory '$CHICORY_PREFIX'" 1>&2
+  exit 1 ; fi
+
+# confirm local residence directory exists and is writable
+if [ ! -d $CHICORY_RESDIR/. ] ; then
+  echo "$Z: missing residence directory '$CHICORY_RESDIR'" 1>&2
+  exit 1 ; fi
+if [ ! -w $CHICORY_RESDIR/. ] ; then
+  echo "$Z: cannot write to residence directory '$CHICORY_RESDIR'" 1>&2
+  exit 1 ; fi
+
+# figure out what platform we are running on
+S=Linux-i386
+
+US=`uname -s`
+case $US in
+  Linux)
+    UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
+    ;;
+  CYGWIN*)
+    US="CYGWIN"
+    UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
+    ;;
+  *)
+    UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
+    ;;
+esac
+S=$US-$UM
+SYSTEM="$S"
+
+# loop through all listed repos lookin for the requested package
+for R in $CHICORY_REPOS ; do
+  rsync $R/$P/$S/. 1> /dev/null 2> /dev/null
+  RC=$?
+  if [ $RC -eq 0 ] ; then break ; fi
+done
+if [ $RC -ne 0 ] ; then
+  echo "$Z: '$P' for '$S' not found in any repository" 1>&2
+  exit $RC ; fi
+
+echo "# package: $P"
+echo "#   repos: $R"
+echo "#  system: $S"
+echo "#  resdir: $CHICORY_RESDIR"
+
+
+if [ -d $CHICORY_RESDIR/$P ] ; then
+  echo "$Z: '$P' already resides locally" 1>&2
+  exit 1 ; fi
+echo "+ mkdir $CHICORY_RESDIR/$P"
+        mkdir $CHICORY_RESDIR/$P
+if [ ! -d $CHICORY_RESDIR/$P ] ; then
+  echo "$Z: failed to create directory '$CHICORY_RESDIR/$P'" 1>&2
+  exit 1 ; fi
+
+echo "+ mkdir $CHICORY_RESDIR/$P/$S"
+        mkdir $CHICORY_RESDIR/$P/$S
+if [ ! -d $CHICORY_RESDIR/$P/$S ] ; then
+  echo "$Z: failed to create directory '$CHICORY_RESDIR/$P/$S'"
+  exit 1 ; fi
+
+echo "+ rsync -l -p -t --no-dirs $CHICORY_REPOS/$P/* $CHICORY_RESDIR/$P/."
+	rsync -l -p -t --no-dirs $CHICORY_REPOS/$P/* $CHICORY_RESDIR/$P/. 1> /dev/null
+RC=$?
+if [ $RC -ne 0 ] ; then
+
+echo "# first"
+ls -la $CHICORY_RESDIR/$P/.
+
+  echo "+ rm -r $CHICORY_RESDIR/$P"
+          rm -r $CHICORY_RESDIR/$P
+  exit $RC ; fi
+
+
+echo "+ rsync -a -u -x -H -K -O -S $CHICORY_REPOS/$P/$S/. $CHICORY_RESDIR/$P/$S/."
+	rsync -a -u -x -H -K -O -S $CHICORY_REPOS/$P/$S/. $CHICORY_RESDIR/$P/$S/.
+RC=$?
+if [ $RC -ne 0 ] ; then
+
+echo "# second"
+ls -la $CHICORY_RESDIR/$P/.
+
+  echo "+ rm -r $CHICORY_RESDIR/$P"
+          rm -r $CHICORY_RESDIR/$P
+  exit $RC ; fi
+
+echo "+ $CHICORY_RESDIR/$P/setup"
+exec $CHICORY_RESDIR/$P/setup
+
+
+exit
+exit
+exit
+exit
+exit
+
+
+#rsync --list-only $CHICORY_REPOS/.
+
+
+#CHICORY_REPOS=rsync://athanasius/opt
+#CHICORY_REPOS=rust:/export/opt
+#CHICORY_REPOS=rsync://rust/opt
+#CHICORY_REPOS=rsync://192.168.29.37/opt
+#CHICORY_REPOS=$CHICORY_REPOS
+
+

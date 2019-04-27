@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+#         Name: chicory-list (shell script)
+#         Date: 2018-Dec-09 (Sun) and prior
+#               This script lists Chicory packages on the local system.
+#               This script does not run stand-alone but must be executed
+#               by 'chicory' and requires Chicory config environment vars.
+#
+
+# check invocation environment
+if [ -z "$CHICORY_PREFIX" ] ; then
+  echo "chicory-search: unset variables; this script does not run stand-alone"
+  exit 1
+fi
+
+# list all versions
+sh -c " cd $CHICORY_PREFIX ; exec ls -d */. " \
+  | sed 's#/\.$##' \
+  | grep '.-.' \
+  | grep "$1"
+
+exit
+
+# list production versions
+sh -c " cd $CHICORY_PREFIX ; exec ls -d */. " \
+  | sed 's#/\.$##' \
+  | grep -v '.-.' \
+  | grep "$1" \
+  | sh -c " cd $CHICORY_PREFIX ; xargs readlink "
+
+
