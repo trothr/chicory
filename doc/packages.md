@@ -9,14 +9,13 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz  | 0x860b7fbb32f8119d |
+| acl           | 2.2.53    | http://download.savannah.nongnu.org/releases/acl/acl-2.2.53.tar.gz        | 0x41633b9fe837f581 |
+| attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 |
 | libressl      | 2.9.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | openssh       | 7.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssh       | 8.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 |
-| dash          | 0.5.10.2  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.10.2.tar.gz       |                    |
-| musl          | 1.1.22    | http://www.musl-libc.org/releases/musl-1.1.22.tar.gz                      | 0x56bcdb593020450f |
-| glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    |
-| curl          | 7.61.1    | http://curl.haxx.se/download/curl-7.61.1.tar.xz                           | 0x78e11c6b279d5c91 |
 
 ## Packages Previously Built
 
@@ -32,6 +31,7 @@ most recent at the top. Time of latest update at the bottom.
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 |
 | cpio          | 2.12      | https://ftp.gnu.org/gnu/cpio/cpio-2.12.tar.bz2                            | 0x3602b07f55d0c732 |
+| curl          | 7.61.1    | http://curl.haxx.se/download/curl-7.61.1.tar.xz                           | 0x78e11c6b279d5c91 |
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee |
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 |
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 |
@@ -61,6 +61,7 @@ most recent at the top. Time of latest update at the bottom.
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 |
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
+| musl          | 1.1.22    | http://www.musl-libc.org/releases/musl-1.1.22.tar.gz                      | 0x56bcdb593020450f |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
 | openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
@@ -94,9 +95,11 @@ most recent at the top. Time of latest update at the bottom.
 | bzip2         | 1.0.6     | http://sources.redhat.com/pub/bzip2/v106/bzip2-1.0.6.tar.gz               |                    |
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    |
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    |
+| dash          | 0.5.10.2  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.10.2.tar.gz       |                    |
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    |
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    |
 | file          | 5.35      | http://distfiles.macports.org/file/file-5.35.tar.gz                       |                    |
+| glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    |
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    |
 | irssi         | 0.8.15    | http://www.irssi.org/files/irssi-0.8.15.tar.gz                            |                    |
 | less          | 530       | http://www.greenwoodsoftware.com/less/less-530.tar.gz                     |                    |
