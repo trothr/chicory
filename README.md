@@ -21,6 +21,8 @@ for delivery (e.g., RPM, MSI). It supports point-and-shoot.
 
 To date, more than 100 open source packages have been built with Chicory
 and deployed on more than a dozen different systems (OS+HW combinations).
+See the [current list of packages](doc/packages.md) for the latest
+successful builds.
 
 ## Features
 
