@@ -9,10 +9,16 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz  | 0x860b7fbb32f8119d |
+| ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    |
+| libressl      | 3.0.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.0.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
+| gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz                  | 0x4f494a942e4616c2 |
+| xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 |
+| lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    |
+| hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    |
+| oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
 | acl           | 2.2.53    | http://download.savannah.nongnu.org/releases/acl/acl-2.2.53.tar.gz        | 0x41633b9fe837f581 |
 | attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 |
-| libressl      | 2.9.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | openssh       | 7.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssh       | 8.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 |
@@ -38,7 +44,6 @@ most recent at the top. Time of latest update at the bottom.
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 |
 | gawk          | 4.2.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.2.1.tar.gz                         | 0xdf597815937ec0d2 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
-| gettext       | 0.19.8    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.gz                  | 0xd605848ed7e69871 |
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
@@ -55,6 +60,7 @@ most recent at the top. Time of latest update at the bottom.
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
 | libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.9.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
@@ -81,7 +87,7 @@ most recent at the top. Time of latest update at the bottom.
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 |
-| tor           | 0.3.5.8   | https://dist.torproject.org/tor-0.3.5.8.tar.gz                            | 0xfe43009c4607b1fb |
+| tor           | 0.4.0.5   | https://dist.torproject.org/tor-0.4.0.5.tar.gz                            | 0xfe43009c4607b1fb |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x263d6df2e163e1ea |
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 |
 | xz            | 5.2.3     | http://www.tukaani.org/xz/xz-5.2.3.tar.gz                                 | 0x38ee757d69184620 |

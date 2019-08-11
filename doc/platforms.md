@@ -15,15 +15,16 @@ name is required.)
 
 The following platforms are viable as of time of writing.
 
-* AIX-powerpc
+* AIX-powerpc (GCC, IBM XL C)
 * CYGWIN-i386
 * CYGWIN-x86_64
-* Darwin-i386
-* Darwin-x86_64
-* FreeBSD-amd64
-* FreeBSD-i386
-* HPUX-ia64
-* HPUX-parisc
+* Darwin-i386 (GCC)
+* Darwin-x86_64 (GCC)
+* FreeBSD-amd64 (GCC, LLVM/Clang, also DragonflyBSD)
+* FreeBSD-i386 (GCC, LLVM/Clang)
+* HPUX-ia64 (GCC, HP ANSI C)
+* HPUX-parisc (GCC, HP ANSI C)
+* Linux (GCC, LLVM/Clang, ICC, IBM XL C)
 * Linux-arm, any of Linux-armel Linux-armhf Linux-arm64
 * Linux-i386, any of Linux-i486 Linux-i586 Linux-i686
 * Linux-mips, aka Linux-mipsel
@@ -34,21 +35,21 @@ The following platforms are viable as of time of writing.
 * Linux-s390x
 * Linux-sparc
 * Linux-x86_64, aka Linux-amd64
-* Minix-i386
-* OpenBSD-amd64
-* OpenBSD-i386
-* Solaris-i386
-* Solaris-sparc
+* Minix-i386 (GCC)
+* OpenBSD-amd64 (GCC)
+* OpenBSD-i386 (GCC, and MirBSD)
+* Solaris-i386 (GCC)
+* Solaris-sparc (GCC)
 
 The following platforms might work if they have sufficient POSIX features.
 
-* NetBSD
-* GNU/Hurd
-* OpenVMS
+* NetBSD (GCC)
+* GNU/Hurd (GCC)
+* OpenVMS (HP C compiler)
 * Ultrix
 * UnixWare
-* Tru64
-* IRIX
+* Tru64 (GCC, Compaq C compiler)
+* IRIX (MIPSpro)
 * QNX
 * OPENSTEP
         
