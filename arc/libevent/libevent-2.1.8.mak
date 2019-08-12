@@ -48,6 +48,7 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 				--no-check-certificate $(SC_URL)
 # using --no-check-certificate to ease HSTS trust burden
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+				--disable-openssl \
 				--enable-static --disable-shared
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
