@@ -13,7 +13,6 @@ printenv | grep '^CHICORY_' | grep -v ' ' > /tmp/$$.set
 CHICORY_PREFIX=/usr/opt
 CHICORY_LINKTO=/usr/local
 CHICORY_REPOS=rsync://chic.casita.net/opt
-CHICORY_REPOS=rsync://rust.casita.net/opt
 CHICORY_RESDIR=/local/opt
 
 ### detect the platform ###

@@ -7,7 +7,7 @@
 # default settings
 CHICORY_PREFIX=/usr/opt
 CHICORY_LINKTO=/usr/local
-CHICORY_REPOS=rsync://rust.casita.net/opt
+CHICORY_REPOS=rsync://chic.casita.net/opt
 CHICORY_RESDIR=/local/opt
 
 # optional overrides
@@ -133,12 +133,5 @@ exit
 
 
 #rsync --list-only $CHICORY_REPOS/.
-
-
-#CHICORY_REPOS=rsync://athanasius/opt
-#CHICORY_REPOS=rust:/export/opt
-#CHICORY_REPOS=rsync://rust/opt
-#CHICORY_REPOS=rsync://192.168.29.37/opt
-#CHICORY_REPOS=$CHICORY_REPOS
 
 
