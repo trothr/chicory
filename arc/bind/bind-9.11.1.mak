@@ -46,7 +46,7 @@ SC_URL		=	\
 #http://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).pdf
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x6fa6ebc9911a4c02
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xf1b11bf05cf02e57
 
 #
 # defaults
@@ -80,7 +80,9 @@ SC_FIXUP	=	strip bin/dig bin/host bin/nslookup \
 	\
 	bin/delv \
 	sbin/dnssec-importkey \
-	sbin/dnssec-verify
+	sbin/dnssec-verify \
+	\
+	bin/arpaname bin/mdig bin/named-rrchecker
 #	sbin/arpaname sbin/named-rrchecker
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 

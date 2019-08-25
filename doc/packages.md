@@ -70,7 +70,7 @@ most recent at the top. Time of latest update at the bottom.
 | musl          | 1.1.22    | http://www.musl-libc.org/releases/musl-1.1.22.tar.gz                      | 0x56bcdb593020450f |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
-| openssl       | 1.0.2o    | https://www.openssl.org/source/openssl-1.0.2o.tar.gz                      | 0xd9c4d26d0e604491 |
+| openssl       | 1.0.2p    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xc4c927cd5d1b36d7 |
@@ -107,7 +107,7 @@ most recent at the top. Time of latest update at the bottom.
 | file          | 5.35      | http://distfiles.macports.org/file/file-5.35.tar.gz                       |                    |
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    |
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    |
-| irssi         | 0.8.15    | http://www.irssi.org/files/irssi-0.8.15.tar.gz                            |                    |
+| irssi         | 0.8.17    | http://www.irssi.org/files/irssi-0.8.17.tar.gz                            |                    |
 | less          | 530       | http://www.greenwoodsoftware.com/less/less-530.tar.gz                     |                    |
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
@@ -124,7 +124,7 @@ most recent at the top. Time of latest update at the bottom.
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             |
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    |
-| subversion    | 1.9.2     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.2.tar.bz2       |                    |
+| subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    |
 | swig          | 3.0.12    | http://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz                |                    |
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
