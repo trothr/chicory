@@ -42,7 +42,7 @@ if [ ! -w $CHICORY_RESDIR/. ] ; then
 # figure out what platform we are running on
 S=Linux-i386
 
-US=`uname -s`
+US=`uname -s | sed 's#/##g' | sed 's#-##g'`
 UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
 case $US in
   Linux|FreeBSD|OpenBSD)

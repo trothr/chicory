@@ -16,7 +16,7 @@ CHICORY_REPOS=rsync://chic.casita.net/opt
 CHICORY_RESDIR=/local/opt
 
 ### detect the platform ###
-US=`uname -s`
+US=`uname -s | sed 's#/##g' | sed 's#-##g'`
 UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
 case "$US" in
   Linux|FreeBSD)
