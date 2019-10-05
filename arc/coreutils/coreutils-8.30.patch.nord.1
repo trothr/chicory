@@ -1,0 +1,26 @@
+#!/bin/sh
+patch -p2 <<THISPATCH
+--- ../coreutils-8.30/configure	2017-03-09 00:00:50.000000000 -0500
++++ configure	2017-08-02 08:24:20.000000000 -0400
+@@ -2160,6 +2160,9 @@
+   -dvidir=* | --dvidir=* | --dvidi=* | --dvid=* | --dvi=* | --dv=*)
+     dvidir=\$ac_optarg ;;
+ 
++  -enable-mtab | --enable-mtab)
++    CFLAGS="\$CFLAGS -DUSE_MTAB" ;;
++
+   -enable-* | --enable-*)
+     ac_useropt=`expr "x\$ac_option" : 'x-*enable-\([^=]*\)'`
+     # Reject names that are not valid shell variable names.
+--- ../coreutils-8.30/lib/mountlist.c	2017-01-01 17:35:38.000000000 -0500
++++ lib/mountlist.c	2017-08-02 08:25:50.000000000 -0400
+@@ -471,7 +471,7 @@
+   {
+     FILE *fp;
+ 
+-#ifdef __linux__
++#if defined __linux__ && !defined USE_MTAB
+     /* Try parsing mountinfo first, as that make device IDs available.
+        Note we could use libmount routines to simplify this parsing a little
+        (and that code is in previous versions of this function), however
+THISPATCH

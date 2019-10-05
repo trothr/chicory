@@ -9,25 +9,23 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
+| libgpg-error* | 1.36      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2         | 0x249b39d24f25e3b6 |
+| libassuan     | 2.5.3     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.3.tar.bz2              | 0x249b39d24f25e3b6 |
+| libgcrypt     | 1.8.5     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.5.tar.bz2              | 0x249b39d24f25e3b6 |
+| gnupg         | 2.2.17    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.17.tar.bz2                     | 0x249b39d24f25e3b6 |
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    |
 | libressl      | 3.0.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz                  | 0x4f494a942e4616c2 |
-| xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 |
-| lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    |
-| hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    |
-| oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
-| acl           | 2.2.53    | http://download.savannah.nongnu.org/releases/acl/acl-2.2.53.tar.gz        | 0x41633b9fe837f581 |
-| attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 |
-| openssh       | 7.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz  | 0xd3e5f56b6d920d30 |
-| openssh       | 8.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz  | 0xd3e5f56b6d920d30 |
-| nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 |
 
 ## Packages Previously Built
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| acl           | 2.2.53    | http://download.savannah.nongnu.org/releases/acl/acl-2.2.53.tar.gz        | 0x41633b9fe837f581 |
 | apache        | 2.2.19    | http://archive.apache.org/dist/httpd/httpd-2.2.19.tar.gz                  | 0xa348b9847f7214a7 |
+| attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 |
 | autoconf      | 2.69      | http://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.69.tar.gz                  | 0xa7a16b4a2527436a |
 | automake      | 1.16.1    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.1.tar.gz                | 0x0adee10094604d37 |
 | bash          | 4.4.18    | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.18.tar.gz                        | 0xbb5869f064ea74ab |
@@ -68,8 +66,12 @@ most recent at the top. Time of latest update at the bottom.
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
 | musl          | 1.1.22    | http://www.musl-libc.org/releases/musl-1.1.22.tar.gz                      | 0x56bcdb593020450f |
+| nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
+| oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
+| openssh       | 7.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz  | 0xd3e5f56b6d920d30 |
+| openssh       | 8.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssl       | 1.0.2p    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
@@ -90,6 +92,7 @@ most recent at the top. Time of latest update at the bottom.
 | tor           | 0.4.0.5   | https://dist.torproject.org/tor-0.4.0.5.tar.gz                            | 0xfe43009c4607b1fb |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x08302db6a2670428 |
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 |
+| xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 |
 
 ## Packages Without Signatures
 
@@ -106,12 +109,14 @@ most recent at the top. Time of latest update at the bottom.
 | file          | 5.35      | http://distfiles.macports.org/file/file-5.35.tar.gz                       |                    |
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    |
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    |
+| hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    |
 | irssi         | 0.8.17    | http://www.irssi.org/files/irssi-0.8.17.tar.gz                            |                    |
 | less          | 530       | http://www.greenwoodsoftware.com/less/less-530.tar.gz                     |                    |
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             |
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             |
 | libffi        | 3.2.1     | ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz                       | sha512             |
 | libuuid       | 1.0.3     | http://sourceforge.net/projects/libuuid/files/libuuid/1.0.3/libuuid.1.0.3.tar.gz |             |
+| lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    |
 | nginx         | 1.12.1    | http://www.nginx.org/download/nginx-1.12.1.tar.gz                         |                    |
 | ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |

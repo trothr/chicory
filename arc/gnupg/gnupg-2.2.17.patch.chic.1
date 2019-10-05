@@ -1,0 +1,14 @@
+#!/bin/sh
+patch -p2 <<THISPATCH
+--- ../gnupg-2.2.17/common/sysutils.c	2018-10-22 13:26:18.000000000 -0400
++++ common/sysutils.c	2019-10-03 18:52:16.607253778 -0400
+@@ -1204,7 +1204,7 @@
+   if (p)
+     *p = 0;
+   if (inotify_add_watch (fd, fname,
+-                         (IN_DELETE|IN_DELETE_SELF|IN_EXCL_UNLINK)) == -1)
++                         (IN_DELETE|IN_DELETE_SELF)) == -1)
+     {
+       err = my_error_from_syserror ();
+       close (fd);
+THISPATCH
