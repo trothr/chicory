@@ -9,13 +9,16 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
+| musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f |
+| bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 |
+| sudo          | 1.8.28    | https://www.sudo.ws/dist/sudo-1.8.28.tar.gz                               | 0xa9f4c021cea470fb |
 | libgpg-error* | 1.36      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2         | 0x249b39d24f25e3b6 |
 | libassuan     | 2.5.3     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.3.tar.bz2              | 0x249b39d24f25e3b6 |
+| npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
 | libgcrypt     | 1.8.5     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.5.tar.bz2              | 0x249b39d24f25e3b6 |
 | gnupg         | 2.2.17    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.17.tar.bz2                     | 0x249b39d24f25e3b6 |
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    |
-| libressl      | 3.0.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.0.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 3.0.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz                  | 0x4f494a942e4616c2 |
 
@@ -30,7 +33,6 @@ most recent at the top. Time of latest update at the bottom.
 | automake      | 1.16.1    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.1.tar.gz                | 0x0adee10094604d37 |
 | bash          | 4.4.18    | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.18.tar.gz                        | 0xbb5869f064ea74ab |
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
-| bind          | 9.11.1    | http://ftp.isc.org/isc/bind9/9.10.4b3/bind-9.10.4b3.tar.gz                | 0x6fa6ebc9911a4c02 |
 | bison         | 3.3.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.3.2.tar.xz                       | 0x0ddcaa3278d5264e |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 |
@@ -46,29 +48,22 @@ most recent at the top. Time of latest update at the bottom.
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
-| gnupg         | 2.2.12    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.12.tar.bz2                     | 0x249b39d24f25e3b6 |
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee |
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
-| libassuan     | 2.5.2     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.2.tar.bz2              | 0x249b39d24f25e3b6 |
 | libevent      | 2.1.8     | https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz | 0xb86086848ef8686d |
-| libgcrypt     | 1.8.1     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.1.tar.bz2              | 0x249b39d24f25e3b6 |
-| libgpg-error* | 1.27      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpgerror-1.27.tar.bz2          | 0x249b39d24f25e3b6 |
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
 | libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
-| libressl      | 2.9.1     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.1.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 |
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
-| musl          | 1.1.22    | http://www.musl-libc.org/releases/musl-1.1.22.tar.gz                      | 0x56bcdb593020450f |
 | nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
-| npth          | 1.5       | ftp://ftp.gnu.org/gnu/npth/npth-1.5.tar.bz2                               | 0x249b39d24f25e3b6 |
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
 | openssh       | 7.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssh       | 8.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz  | 0xd3e5f56b6d920d30 |
