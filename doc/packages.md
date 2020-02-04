@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               |
 | musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f |
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 |
 | sudo          | 1.8.28    | https://www.sudo.ws/dist/sudo-1.8.28.tar.gz                               | 0xa9f4c021cea470fb |
