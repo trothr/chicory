@@ -70,7 +70,8 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--enable-static-libevent \
 			--with-zlib-dir=/usr/opt/zlib \
 				--enable-static-zlib \
-			--disable-lzma
+			--disable-lzma \
+			--disable-gcc-hardening
 
 #SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install

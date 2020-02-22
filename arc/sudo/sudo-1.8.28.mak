@@ -2,6 +2,8 @@
 #	  Name: makefile ('make' rules file)
 #		make rules for SUDO for La Casita with Chicory
 #	  Date: 2019-Oct-14 (Tue)
+#	  Note: SUDO is not a good candidate for Chicory
+#		(see NORD), but we build it here for reference
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -46,6 +48,7 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 					--enable-static --disable-shared
+#					--sysconfdir=/etc
 
 SC_INSTALL	=	$(MAKE) install
 
@@ -397,14 +400,5 @@ help:
 	@echo "                      + restore source from archive(s)"
 	@echo "                      + apply patches"
 	@echo " "
-
-
-# http://en.wikipedia.org/wiki/GNU_Privacy_Guard
-# http://tools.ietf.org/html/rfc4880
-
-arc/rfc4880.txt:
-	@mkdir -p arc
-	sh -c ' cd arc ; \
-	  exec wget http://tools.ietf.org/rfc/rfc4880.txt '
 
 

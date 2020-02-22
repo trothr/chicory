@@ -9,19 +9,19 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    |
+| libgpg-error* | 1.37      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.37.tar.bz2         | 0x249b39d24f25e3b6 |
+| gnupg         | 2.2.19    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.19.tar.bz2                     | 0x249b39d24f25e3b6 |
+| squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 |
+| libevent      | 2.1.11    | https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | 0xb86086848ef8686d |
 | lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               |
 | musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f |
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 |
 | sudo          | 1.8.28    | https://www.sudo.ws/dist/sudo-1.8.28.tar.gz                               | 0xa9f4c021cea470fb |
-| libgpg-error* | 1.36      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.36.tar.bz2         | 0x249b39d24f25e3b6 |
+| libgcrypt     | 1.8.5     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.5.tar.bz2              | 0x249b39d24f25e3b6 |
 | libassuan     | 2.5.3     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.3.tar.bz2              | 0x249b39d24f25e3b6 |
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
-| libgcrypt     | 1.8.5     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.5.tar.bz2              | 0x249b39d24f25e3b6 |
-| gnupg         | 2.2.17    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.17.tar.bz2                     | 0x249b39d24f25e3b6 |
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    |
-| libressl      | 3.0.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.2.tar.gz         | 0x663af51bd5e4d8d5 |
-| libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
-| gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz                  | 0x4f494a942e4616c2 |
 
 ## Packages Previously Built
 
@@ -45,6 +45,7 @@ most recent at the top. Time of latest update at the bottom.
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 |
 | gawk          | 4.2.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.2.1.tar.gz                         | 0xdf597815937ec0d2 |
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
+| gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz                  | 0x4f494a942e4616c2 |
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
@@ -52,11 +53,12 @@ most recent at the top. Time of latest update at the bottom.
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee |
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
-| libevent      | 2.1.8     | https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz | 0xb86086848ef8686d |
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
 | libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 3.0.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 |
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 |
@@ -85,7 +87,7 @@ most recent at the top. Time of latest update at the bottom.
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 |
-| tor           | 0.4.0.5   | https://dist.torproject.org/tor-0.4.0.5.tar.gz                            | 0xfe43009c4607b1fb |
+| tor           | 0.4.2.6   | https://dist.torproject.org/tor-0.4.2.6.tar.gz                            | 0xfe43009c4607b1fb |
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x08302db6a2670428 |
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 |
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 |
@@ -149,6 +151,7 @@ The following packages have issues or previously had issues:
 | regina        | 3.9.1     | forced build on some systems (required some manual intervention)                               |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        | 4.6.2     | does not build with Musl-ified GCC                                                             |
+| squid         | 3.5.25    | cannot build statically                                                                        |
 | stunnel       | 5.50      | cannot build statically                                                                        |
 | tcl           | 8.5.19    | cannot build statically                                                                        |
 
