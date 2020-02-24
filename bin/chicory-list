@@ -13,19 +13,20 @@ if [ -z "$CHICORY_PREFIX" ] ; then
   exit 1
 fi
 
-# list all versions
-sh -c " cd $CHICORY_PREFIX ; exec ls -d */. " \
-  | sed 's#/\.$##' \
-  | grep '.-.' \
-  | grep "$1"
+# list all packages
+for P in ` sh -c " cd $CHICORY_PREFIX ; exec ls -d *-*/. " \
+    | sed 's#/\.$##' \
+    | grep "$1" | awk -F- '{print $1}' | uniq | sort | uniq ` ; do
+  # note the current version of this package
+  PQ=`readlink $CHICORY_PREFIX/$P`
+  # list all versions of this package
+  for PV in ` sh -c " cd $CHICORY_PREFIX ; exec ls -d $P-*/. " \
+      | sed 's#/\.$##' | grep "$1" ` ; do
+    if [ "$PV" = "$PQ" ] ; then echo "[current] $PV"
+                           else echo ".         $PV" ; fi
+  done
+done
 
 exit
-
-# list production versions
-sh -c " cd $CHICORY_PREFIX ; exec ls -d */. " \
-  | sed 's#/\.$##' \
-  | grep -v '.-.' \
-  | grep "$1" \
-  | sh -c " cd $CHICORY_PREFIX ; xargs readlink "
 
 

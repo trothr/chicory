@@ -41,7 +41,7 @@ SC_TAR		=	tar xjf
 SC_URL		=	\
  http://ftp.nluug.nl/$(APPLID)/unix/$(SC_VRM).$(SC_ARC)
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
 
 #
@@ -197,7 +197,7 @@ _ins:		_exe
 
 #
 #
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+verify: 	arc/$(SC_VRM).$(SC_ARC)
 		$(SC_SOURCE_VERIFY)
 
 #
@@ -243,12 +243,12 @@ veryclean:	distclean
 
 #
 #
-$(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
+$(SC_SOURCE):	makefile arc/$(SC_VRM).$(SC_ARC)
 		rm -f src _src ; rm -rf $(SC_SOURCE)
-		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		@sh -c ' ls arc/$(SC_VRM).patch* 2> /dev/null ; : ' \
 		  | awk '{print "sh ../" $$0}' \
 		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
@@ -273,23 +273,22 @@ patched:
 
 #
 #
-archive:	arc/$(SC_SOURCE).$(SC_ARC)
+archive:	arc/$(SC_VRM).$(SC_ARC)
 
 #
 # retrieve source from Internet
-arc/$(SC_SOURCE).$(SC_ARC):
+arc/$(SC_VRM).$(SC_ARC):
 #		@test ! -z "$(APPLID)"
 #		@echo "$(MAKE): need source for '$(APPLID)' ..."
 		@test ! -z "$(SC_VRM)"
 		@echo "$(MAKE): downloading '$(SC_VRM)' source ..."
 		@test ! -z "$(SC_SOURCE)"
 		@test ! -z "$(SC_URL)"
-		@rm -f arc/$(SC_SOURCE).$(SC_ARC)
+		@rm -f arc/$(SC_VRM).$(SC_ARC)
 		@mkdir -p arc
 		@test -d arc
 		sh -c ' cd arc ; $(SC_FETCH) '
-		@test -s arc/$(SC_SOURCE).$(SC_ARC)
-#		@test -s arc/$(SC_VRM).$(SC_ARC)
+		@test -s arc/$(SC_VRM).$(SC_ARC)
 
 sys:		_ins
 		rm -f sys
