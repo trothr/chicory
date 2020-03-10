@@ -9,19 +9,14 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 |
+| python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff |
+| libffi        | 3.3       | ftp://sourceware.org/pub/libffi/libffi-3.3.tar.gz                         | sha512             |
 | vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    |
-| libgpg-error* | 1.37      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.37.tar.bz2         | 0x249b39d24f25e3b6 |
-| gnupg         | 2.2.19    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.19.tar.bz2                     | 0x249b39d24f25e3b6 |
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 |
 | libevent      | 2.1.11    | https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | 0xb86086848ef8686d |
 | lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               |
 | musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f |
-| bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 |
-| sudo          | 1.8.28    | https://www.sudo.ws/dist/sudo-1.8.28.tar.gz                               | 0xa9f4c021cea470fb |
-| libgcrypt     | 1.8.5     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.5.tar.bz2              | 0x249b39d24f25e3b6 |
-| libassuan     | 2.5.3     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.3.tar.bz2              | 0x249b39d24f25e3b6 |
-| npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
-| ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    |
 
 ## Packages Previously Built
 
@@ -34,6 +29,7 @@ most recent at the top. Time of latest update at the bottom.
 | automake      | 1.16.1    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.1.tar.gz                | 0x0adee10094604d37 |
 | bash          | 4.4.18    | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.18.tar.gz                        | 0xbb5869f064ea74ab |
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b |
+| bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 |
 | bison         | 3.3.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.3.2.tar.xz                       | 0x0ddcaa3278d5264e |
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 |
@@ -50,9 +46,13 @@ most recent at the top. Time of latest update at the bottom.
 | gmp           | 6.1.2     | http://ftp.gnu.org/pub/gnu/gmp/gmp-6.1.2.tar.bz2                          | 0xf3599ff828c67298 |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
+| gnupg         | 2.2.19    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.19.tar.bz2                     | 0x249b39d24f25e3b6 |
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee |
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 |
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee |
+| libassuan     | 2.5.3     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.3.tar.bz2              | 0x249b39d24f25e3b6 |
+| libgcrypt     | 1.8.5     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.5.tar.bz2              | 0x249b39d24f25e3b6 |
+| libgpg-error* | 1.37      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.37.tar.bz2         | 0x249b39d24f25e3b6 |
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.3.5     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.3.5.tar.bz2                  | 0x249b39d24f25e3b6 |
 | libressl      | 2.7.5     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.7.5.tar.gz         | 0x663af51bd5e4d8d5 |
@@ -65,6 +65,7 @@ most recent at the top. Time of latest update at the bottom.
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 |
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 |
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
+| npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
 | nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb |
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
@@ -84,6 +85,7 @@ most recent at the top. Time of latest update at the bottom.
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x7fd9fccb000beeee |
 | screen        | 4.6.2     | https://ftp.gnu.org/pub/gnu/screen/screen-4.6.2.tar.gz                    | 0xb708a383c53ef3a4 |
 | stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
+| sudo          | 1.8.28    | https://www.sudo.ws/dist/sudo-1.8.28.tar.gz                               | 0xa9f4c021cea470fb |
 | tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 |
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a |
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 |
@@ -117,6 +119,7 @@ most recent at the top. Time of latest update at the bottom.
 | lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    |
 | nginx         | 1.12.1    | http://www.nginx.org/download/nginx-1.12.1.tar.gz                         |                    |
 | ntp           | 4.2.8p12  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz |                   |
+| ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    |
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         |
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    |
 | pdsh          | 2.29      | http://pdsh.googlecode.com/files/pdsh-2.29.tar.bz2                        |                    |
@@ -164,6 +167,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2019-Apr-26 (Friday) by RMT
+this page "Chicory Packages" last updated 2020-Mar-8 (Sunday) by RMT
 
 
