@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
 #		make rules for BINUTILS at La Casita with Chicory
-#	  Date: 2016-Dec-14 (Wed) in support of AMD64 static
+#	  Date: 2020-Mar-23 (Mon) in response to GNeale's gneeds
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -15,7 +15,7 @@ PREFIX		=	/usr/opt
 
 # no default for VRM string
 APPLID		=	binutils
-SC_APV		=	2.24.51.0.3
+SC_APV		=	2.34
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -36,14 +36,16 @@ SC_TAR		=	tar xJf
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
- http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
- http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).tar.sign
+	    https://ftp.gnu.org/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+	    https://ftp.gnu.org/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+# http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).$(SC_ARC)
+# http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).tar.sign
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sign
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #SC_SOURCE_VERIFY = gzip -d < arc/$(SC_SOURCE).$(SC_ARC) ...
-SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
-	      | gpg --verify arc/$(SC_SOURCE).tar.sign -
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xad2744ee58025396
+#SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
+#	      | gpg --verify arc/$(SC_SOURCE).tar.sig -
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x13fcef89dd9e3c4f
 
 #
 # defaults

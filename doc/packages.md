@@ -9,7 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| zsh           | 5.7.1     | http://www.zsh.org/pub/old/zsh-5.7.1.tar.xz                               |                    | CD0
+| zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0

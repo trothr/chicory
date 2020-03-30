@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for BINUTILS at La Casita with Chicory
-#	  Date: 2016-Dec-14 (Wed) in support of AMD64 static
+#               make rules for ZSH with Chicory
+#	  Date: 2020-Mar-28 (Sat) during Coronavirus lock-down
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,10 +14,11 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	binutils
-SC_APV		=	2.24.51.0.3
+APPLID		=	zsh
+SC_APV		=	5.8
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
+#
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
@@ -34,36 +35,39 @@ SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
 #SC_TAR		=	(lzip -d | tar -xf -) <
 
-# where to find the source on the internet (no default)
+#
+# where to find the source on the internet
 SC_URL		=	\
- http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
- http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).tar.sign
+		    http://www.zsh.org/pub/$(SC_VRM).$(SC_ARC) \
+		    http://www.zsh.org/pub/$(SC_VRM).$(SC_ARC).asc \
+		    http://www.zsh.org/pub/$(SC_VRM)-doc.$(SC_ARC) \
+		    http://www.zsh.org/pub/$(SC_VRM)-doc.$(SC_ARC).asc \
+		    http://www.zsh.org/pub/pubring.pgp
+#		      http://www.zsh.org/pub/old/$(SC_VRM).$(SC_ARC) \
+#		      http://www.zsh.org/pub/old/$(SC_VRM)-doc.$(SC_ARC)
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sign
-#SC_SOURCE_VERIFY = gzip -d < arc/$(SC_SOURCE).$(SC_ARC) ...
-SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
-	      | gpg --verify arc/$(SC_SOURCE).tar.sign -
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xad2744ee58025396
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0x6dea2ba30bc39eb6
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-# Using "--no-check-certificate" so the fetch works on systems with
-# minimal or empty trust store. The hosting site has bought into HSTS
-# which would be a good thing *except* that it forces legit plain HTTP
-# into HTTPS without any recourse. This build wrapper doesn't really
-# need HTTPS because we check the PGP signature of the source archive.
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+#--without-tcsetpgrp
 
-SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--enable-static --disable-shared
+# default build executable or command is 'make'
+SC_BUILDX	=		$(MAKE)
+
+# default build directory matches source directory
+SC_BUILDD	=		$(SC_SOURCE)
+
 SC_INSTALL	=	$(MAKE) install
-#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
-# default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/addr2line bin/ar bin/as bin/c++filt \
-	bin/elfedit bin/gprof bin/ld bin/ld.bfd bin/nm bin/objcopy \
-	bin/objdump bin/ranlib bin/readelf bin/size bin/strings bin/strip
+#
+# default is blank
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -71,15 +75,6 @@ SC_FIXUP	=	strip bin/addr2line bin/ar bin/as bin/c++filt \
 #SYSTEM		=		`uname`
 #SYSTEM		=		`uname -s`
 SYSTEM		=		`./setup --system`
-
-#
-# default build executable or command is 'make'
-SC_BUILDX	=		$(MAKE)
-
-#
-# default build directory matches source directory
-SC_BUILDD	=		$(SC_SOURCE)
-
 
 # historical
 SHARED		=	man
@@ -205,11 +200,6 @@ _ins:		_exe
 
 #
 #
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
-		$(SC_SOURCE_VERIFY)
-
-#
-#
 clean:
 #		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
@@ -272,6 +262,11 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 			| grep -v ' ' | xargs chmod u+w
 		find $(SC_SOURCE) -type d -print \
 			| grep -v ' ' | xargs chmod u+wx
+
+#
+#
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_SOURCE_VERIFY)
 
 #
 #
