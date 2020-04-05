@@ -9,6 +9,14 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 |
+| automake      | 1.16.2    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.2.tar.gz                | 0x0adee10094604d37 | CD0
+| bison         | 3.5.3     | http://ftp.gnu.org/pub/gnu/bison/bison-3.5.3.tar.xz                       | 0x0ddcaa3278d5264e | CD0
+| cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0
+| less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0
+| screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0
+| sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0
+| e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0
 | zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0
@@ -95,7 +103,6 @@ most recent at the top. Time of latest update at the bottom.
 | tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a | CD0
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 | CD0
 | tor           | 0.4.2.6   | https://dist.torproject.org/tor-0.4.2.6.tar.gz                            | 0xfe43009c4607b1fb |
-| vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    | CD0
 | wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x08302db6a2670428 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0
@@ -140,6 +147,7 @@ most recent at the top. Time of latest update at the bottom.
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
+| vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    | CD0
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD0
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    | CD0
 | zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    | CD0
@@ -154,6 +162,7 @@ The following packages have issues or previously had issues:
 | package*      | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | db            | 6.0.35    | download site enforces manual interaction                                                      |
+| e2fsprogs     | 1.45.6    | does not build on some older 32-bit Linux X86 systems                                          |
 | groff         | 1.22.4    | mixed text and grapical/X11 so you might need X11 build environment                            |
 | ntp           | 4.2.8p12  | cannot build statically                                                                        |
 | openvpn       | 2.4.6     | sensitive to OpenSSL version                                                                   |
