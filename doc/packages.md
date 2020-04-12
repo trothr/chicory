@@ -9,6 +9,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| openssh       | 8.2p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.2p1.tar.gz  | 0xd3e5f56b6d920d30 |
+| libressl      | 3.1.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.0.tar.gz         | 0x663af51bd5e4d8d5 |
+| nano          | 4.9.2     | https://www.nano-editor.org/dist/v4/nano-4.9.2.tar.xz .asc                | 0x0d28d4d2a0ace884 | CD0
 | gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 |
 | automake      | 1.16.2    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.2.tar.gz                | 0x0adee10094604d37 | CD0
 | bison         | 3.5.3     | http://ftp.gnu.org/pub/gnu/bison/bison-3.5.3.tar.xz                       | 0x0ddcaa3278d5264e | CD0
@@ -17,14 +20,7 @@ most recent at the top. Time of latest update at the bottom.
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0
-| zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0
-| wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0
-| tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0
-| tar           | 1.32      | https://ftp.gnu.org/pub/gnu/tar/tar-1.32.tar.xz                           | 0x3602b07f55d0c732 | CD0
-| binutils      | 2.34      | https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.xz                     | 0x13fcef89dd9e3c4f |
-| python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 |
-| python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff |
 
 ## Packages Previously Built
 
@@ -38,6 +34,7 @@ most recent at the top. Time of latest update at the bottom.
 | bash          | 4.4.18    | http://ftp.gnu.org/pub/gnu/bash/bash-4.4.18.tar.gz                        | 0xbb5869f064ea74ab | CD0
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b | CD0
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 |
+| binutils      | 2.34      | https://ftp.gnu.org/gnu/binutils/binutils-2.34.tar.xz                     | 0x13fcef89dd9e3c4f |
 | bison         | 3.3.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.3.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 | CD0
@@ -89,9 +86,8 @@ most recent at the top. Time of latest update at the bottom.
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0
 | pcre          | 8.42      | http://ftp.pcre.org/pub/pcre/pcre-8.42.tar.bz2                            | 0x9766e084fb0f43d8 |
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
-| python        | 3.7.2     | https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tar.xz               | 0x2d347ea6aa65421d |
-| python        | 2.7.15    | https://www.python.org/ftp/python/2.7.15/Python-2.7.15.tar.xz             | 0x04c367c218add4ff |
-| python        | 2.6.9     | https://www.python.org/ftp/python/2.6.9/Python-2.6.9.tar.xz               | 0x126eb563a74b06bf |
+| python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 |
+| python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff |
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab | CD0
 | rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
 | sed           | 4.5       | http://ftp.gnu.org/pub/gnu/sed/sed-4.5.tar.xz                             | 0x7fd9fccb000beeee | CD0
@@ -99,11 +95,11 @@ most recent at the top. Time of latest update at the bottom.
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 |
 | stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
 | sudo          | 1.8.29    | https://www.sudo.ws/dist/sudo-1.8.29.tar.gz                               | 0xa9f4c021cea470fb | CD0
-| tar           | 1.30      | http://ftp.gnu.org/pub/gnu/tar/tar-1.30.tar.gz                            | 0x3602b07f55d0c732 | CD0
-| tcsh          | 6.20.00   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.20.00.tar.gz               | 0x71112ab16cb33b3a | CD0
+| tar           | 1.32      | https://ftp.gnu.org/pub/gnu/tar/tar-1.32.tar.xz                           | 0x3602b07f55d0c732 | CD0
+| tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0
 | texinfo       | 6.5       | http://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.5.tar.xz                     | 0xddbc579dab37fba9 | CD0
 | tor           | 0.4.2.6   | https://dist.torproject.org/tor-0.4.2.6.tar.gz                            | 0xfe43009c4607b1fb |
-| wget          | 1.19.5    | http://ftp.gnu.org/pub/gnu/wget/wget-1.19.5.tar.gz                        | 0x08302db6a2670428 | CD0
+| wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0
 
@@ -112,7 +108,6 @@ most recent at the top. Time of latest update at the bottom.
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | bin86         | 0.16.18   | http://distro.ibiblio.org/slitaz/sources/packages-stable/b/bin86-0.16.18.tar.gz |              |
-| binutils      | 2.24.51.0.3 | http://www.kernel.org/pub/linux/devel/binutils/binutils-2.24.51.0.3.tar.gz |                 |
 | bzip2         | 1.0.6     | http://sources.redhat.com/pub/bzip2/v106/bzip2-1.0.6.tar.gz               |                    | CD0
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    |
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    |
@@ -150,7 +145,7 @@ most recent at the top. Time of latest update at the bottom.
 | vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    | CD0
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD0
 | zlib          | 1.2.11    | http://www.zlib.net/zlib-1.2.11.tar.gz                                    |                    | CD0
-| zsh           | 4.3.16    | http://www.zsh.org/pub/old/zsh-4.3.16.tar.gz                              |                    | CD0
+| zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0
 
 ## Notes
 

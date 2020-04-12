@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for OpenSSH for La Casita with Chicory
-#	  Date: 2019-Apr-22 (Mon)
+#               make rules for NANO with Chicory
+#	  Date: 2020-Apr-09 (Thu) during Coronavirus lock-down
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,58 +14,58 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	openssh
-SC_APV		=	8.0p1
+APPLID		=	nano
+SC_APV		=	4.9.2
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
+#
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
+#SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
+SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-SC_TAR		=	tar xzf
+#SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-#SC_TAR		=	tar xJf
+SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
 #SC_TAR		=	(lzip -d | tar -xf -) <
 
+#
 # where to find the source on the internet (no default)
 SC_URL		=	\
- http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC) \
- http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC).asc \
- https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
-#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub \
-#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub.asc
-# list-o-mirrors http://www.openssh.com/portable.html
-# some alternates ...
-#  http://mirror.esc7.net/pub/OpenBSD/OpenSSH/portable/
-#  ftp://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/
-#  rsync://ftp3.usa.openbsd.org/ftp/OpenSSH/portable/
+	http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_VRM).$(SC_ARC) \
+	http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_VRM).$(SC_ARC).sig
+#               https://www.nano-editor.org/
+#               https://ftpmirror.gnu.org/nano/
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd3e5f56b6d920d30
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x0d28d4d2a0ace884
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--sysconfdir=/etc/ssh \
-				--with-ssl-dir=/usr/opt/openssl \
-				--without-hardening
-#				--with-pid-dir=/var/run
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 #configure: WARNING: unrecognized options: --enable-static, --disable-shared
+#configure: WARNING: unrecognized options: --with-ncurses
+
+# default build executable or command is 'make'
+SC_BUILDX	=		$(MAKE)
+
+# default build directory matches source directory
+SC_BUILDD	=		$(SC_SOURCE)
 
 SC_INSTALL	=	$(MAKE) install
 #SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
-# default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+#
+# default is blank
+SC_FIXUP	=	strip bin/nano
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -73,15 +73,6 @@ SC_INSTALL	=	$(MAKE) install
 #SYSTEM		=		`uname`
 #SYSTEM		=		`uname -s`
 SYSTEM		=		`./setup --system`
-
-#
-# default build executable or command is 'make'
-SC_BUILDX	=		$(MAKE)
-
-#
-# default build directory matches source directory
-SC_BUILDD	=		$(SC_SOURCE)
-
 
 # historical
 SHARED		=	man
@@ -207,11 +198,6 @@ _ins:		_exe
 
 #
 #
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
-		$(SC_SOURCE_VERIFY)
-
-#
-#
 clean:
 #		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
@@ -274,6 +260,11 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 			| grep -v ' ' | xargs chmod u+w
 		find $(SC_SOURCE) -type d -print \
 			| grep -v ' ' | xargs chmod u+wx
+
+#
+#
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_SOURCE_VERIFY)
 
 #
 #

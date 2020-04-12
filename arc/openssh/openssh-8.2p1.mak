@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
 #		make rules for OpenSSH for La Casita with Chicory
-#	  Date: 2019-Apr-22 (Mon)
+#	  Date: 2020-Apr-09 (Thu) during Coronavirus lock-down
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -15,7 +15,7 @@ PREFIX		=	/usr/opt
 
 # no default for VRM string
 APPLID		=	openssh
-SC_APV		=	8.0p1
+SC_APV		=	8.2p1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -57,7 +57,7 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--sysconfdir=/etc/ssh \
 				--with-ssl-dir=/usr/opt/openssl \
-				--without-hardening
+				--without-hardening LIBS=-lpthread
 #				--with-pid-dir=/var/run
 #configure: WARNING: unrecognized options: --enable-static, --disable-shared
 
