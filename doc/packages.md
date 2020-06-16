@@ -9,8 +9,11 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 3.2.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.0.tar.gz         | 0x663af51bd5e4d8d5 |
+| curl          | 7.70.0    | http://curl.haxx.se/download/curl-7.70.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0
+| pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 |
+| swig          | 4.0.1     | http://prdownloads.sourceforge.net/swig/swig-4.0.1.tar.gz                 |                    |
 | openssh       | 8.2p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.2p1.tar.gz  | 0xd3e5f56b6d920d30 |
-| libressl      | 3.1.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | nano          | 4.9.2     | https://www.nano-editor.org/dist/v4/nano-4.9.2.tar.xz .asc                | 0x0d28d4d2a0ace884 | CD0
 | gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 |
 | automake      | 1.16.2    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.2.tar.gz                | 0x0adee10094604d37 | CD0
@@ -66,6 +69,7 @@ most recent at the top. Time of latest update at the bottom.
 | libressl      | 2.8.3     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 3.0.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.2.tar.gz         | 0x663af51bd5e4d8d5 |
+| libressl      | 3.1.0     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.0.tar.gz         | 0x663af51bd5e4d8d5 |
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0
 | lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               |
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 | CD0
