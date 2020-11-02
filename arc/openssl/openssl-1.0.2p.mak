@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
 #		make rules for OpenSSL for La Casita with Chicory
-#         Date: 2018-Nov-14 (Wed) for Voltage Engineering
+#         Date: 2020-Oct-10 (Fri) for Voltage Engineering
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -25,12 +25,14 @@ SC_SOURCE	=	$(SC_VRM)
 SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
+#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
 #SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
+#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
@@ -52,7 +54,6 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 						no-shared no-dso ; \
 						make depend
 
-SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
@@ -188,7 +189,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_SOURCE) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -250,8 +251,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi

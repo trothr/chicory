@@ -38,10 +38,14 @@ SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--with-rexx=regina \
 			--with-rexxincdir=/usr/opt/regina/include \
-			--with-rexxlibdir=/usr/opt/regina/lib
+			--with-rexxlibdir=/usr/opt/regina/lib \
+				--with-ncurses \
+			--with-ncursesincdir=/usr/opt/ncurses/include \
+			--with-ncurseslibdir=/usr/opt/ncurses/lib
 
-# default 
-SC_BUILD	=	$(MAKE) 
+# default
+#SC_BUILD	=	$(MAKE)
+SC_BUILD	=	$(MAKE) the
 
 # default is blank 
 SC_FIXUP	=	strip bin/the

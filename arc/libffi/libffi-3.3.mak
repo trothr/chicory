@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
 #		make rules for LIBFFI at La Casita with Chicory
-#	  Date: 2020-Mon-24 (Mon)
+#	  Date: 2020-Feb-24 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified

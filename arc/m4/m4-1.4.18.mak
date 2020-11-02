@@ -31,7 +31,8 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).tar.gz.sig
 # gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 0x151308092983d606
 
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+					--no-check-certificate $(SC_URL)
 
 # first is default
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)

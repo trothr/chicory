@@ -49,7 +49,9 @@ SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-			 --with-crond-dir=$(PREFIX)/$(SC_VRM)/etc/cron.d
+	--with-crond-dir=$(PREFIX)/$(SC_VRM)/etc/cron.d \
+	--with-udev-rules-dir=$(PREFIX)/$(SC_VRM)/lib/udev/rules.d \
+	--with-systemd-unit-dir=$(PREFIX)/$(SC_VRM)/lib/systemd/system
 #configure: WARNING: unrecognized options: --enable-static, --disable-shared
 SC_INSTALL	=	$(MAKE) install
 

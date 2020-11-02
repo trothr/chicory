@@ -51,8 +51,8 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip bin/info bin/install-info
-SC_FIXUP	=	strip bin/install-info
+SC_FIXUP	=	strip bin/info bin/install-info
+#SC_FIXUP	=	strip bin/install-info
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
