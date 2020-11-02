@@ -174,10 +174,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2020-Mar-28 (Saturday) by RMT
-
-
-
-
+this page "Chicory Packages" last updated 2020-Nov-02 (Monday) by RMT
 
 
