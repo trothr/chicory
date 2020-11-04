@@ -10,9 +10,9 @@ most recent at the top. Time of latest update at the bottom.
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | bash          | 5.0       | http://ftp.gnu.org/pub/gnu/bash/bash-5.0.tar.gz                           | 0xbb5869f064ea74ab | CD0+
-| bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   | 67e051268d0c475ea773822f7500d0e5 | CD0+
+| bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   |                    | CD0+
 |               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
-| file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       | 80c29aca745466c6c24d11f059329075 | CD0+
+| file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       |                    | CD0+
 |               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
