@@ -9,12 +9,15 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| libressl      | 3.2.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.2.tar.gz         | 0x663af51bd5e4d8d5 | CD5
-| curl          | 7.70.0    | http://curl.haxx.se/download/curl-7.70.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
-| pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 |
-| swig          | 4.0.1     | http://prdownloads.sourceforge.net/swig/swig-4.0.1.tar.gz                 |                    |
-| openssh       | 8.2p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.2p1.tar.gz  | 0xd3e5f56b6d920d30 |
-| nano          | 4.9.2     | https://www.nano-editor.org/dist/v4/nano-4.9.2.tar.xz .asc                | 0x0d28d4d2a0ace884 | CD0+
+| bash          | 5.0       | http://ftp.gnu.org/pub/gnu/bash/bash-5.0.tar.gz                           | 0xbb5869f064ea74ab | CD0+
+| bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   | 67e051268d0c475ea773822f7500d0e5 | CD0+
+|               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
+| mpfr          | 4.0.2     | http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.xz                          | 0x980c197698c3739d |
+| file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       | 80c29aca745466c6c24d11f059329075 | CD0+
+|               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
+
+\*Package name or "application ID" is never hyphenated in Chicory.
+`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
 
 ## Packages Previously Built
 
@@ -33,7 +36,7 @@ most recent at the top. Time of latest update at the bottom.
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda |
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
-| curl          | 7.61.1    | http://curl.haxx.se/download/curl-7.61.1.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| curl          | 7.70.0    | http://curl.haxx.se/download/curl-7.70.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
@@ -62,6 +65,7 @@ most recent at the top. Time of latest update at the bottom.
 | libressl      | 2.9.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.9.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 3.0.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.0.2.tar.gz         | 0x663af51bd5e4d8d5 |
 | libressl      | 3.1.4     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.4.tar.gz         | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.2.2     | http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.2.tar.gz         | 0x663af51bd5e4d8d5 | CD5
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 | CD0+
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 | CD0+
@@ -70,16 +74,16 @@ most recent at the top. Time of latest update at the bottom.
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
 | musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f | CD0+
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
-| nano          | 3.2       | http://ftp.gnu.org/pub/gnu/nano/nano-3.2.tar.xz                           | 0x0d28d4d2a0ace884 | CD0+
+| nano          | 4.9.2     | https://www.nano-editor.org/dist/v4/nano-4.9.2.tar.xz .asc                | 0x0d28d4d2a0ace884 | CD0+
+|               |           | https://ftp.gnu.org/pub/gnu/nano/nano-4.9.2.tar.xz                        |                    |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
-| openssh       | 7.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz  | 0xd3e5f56b6d920d30 |
-| openssh       | 8.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz  | 0xd3e5f56b6d920d30 |
+| openssh       | 8.2p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.2p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssl       | 1.0.2p    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 |
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 |
 | openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
-| pcre          | 8.42      | http://ftp.pcre.org/pub/pcre/pcre-8.42.tar.bz2                            | 0x9766e084fb0f43d8 |
+| pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 |
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
 | python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 |
 | python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff |
@@ -133,7 +137,7 @@ most recent at the top. Time of latest update at the bottom.
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    |
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    | CD0+
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    |
-| swig          | 3.0.12    | http://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz                |                    |
+| swig          | 4.0.1     | http://prdownloads.sourceforge.net/swig/swig-4.0.1.tar.gz                 |                    |
 | tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    |
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
@@ -169,6 +173,8 @@ the name to work with Chicory. Since the dash in Chicory is required for
 separating the package name from the version, only one dash is allowed.
 
 The fileutils package was absorbed into the coreutils package.
+
+Packages wanted: parted, btrfs-tools, lvm2
 
 This file is part of the collection found on GitHub at ...
 
