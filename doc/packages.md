@@ -18,8 +18,6 @@ most recent at the top. Time of latest update at the bottom.
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
 | mpfr          | 4.0.2     | http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.xz                          | 0x980c197698c3739d |
 
-\*Package name or "application ID" is never hyphenated in Chicory.
-`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
 
 ## Packages Previously Built
 
