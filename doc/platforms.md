@@ -5,7 +5,7 @@ and hardware architecture. The two are usually sufficient
 to describe a unique execution environment.
 
 Chicory uses `uname` to identify the host platform
-because it is included with all current major POSIX implementations.
+because `uname` is included with all current major POSIX implementations.
 The OS name is usually taken as-is from `uname -s`. (One exception
 is true SCO for which `uname -s` is the hostname.) The hardware is
 often taken from `uname -m` but sometimes from `uname -p` and
@@ -15,7 +15,7 @@ name is required.)
 
 The following platforms are viable as of time of writing.
 
-* AIX-powerpc (GCC, IBM XL C)
+* AIX-powerpc (GCC, IBM XL C), bimodal
 * CYGWIN-i386
 * CYGWIN-x86_64
 * Darwin-i386 (GCC)
@@ -34,16 +34,20 @@ The following platforms are viable as of time of writing.
 * Linux-s390
 * Linux-s390x
 * Linux-sparc
+* Linux-sparc64
 * Linux-x86_64, aka Linux-amd64
+* Linux-alpha
 * Minix-i386 (GCC)
 * OpenBSD-amd64 (GCC)
 * OpenBSD-i386 (GCC, and MirBSD)
 * Solaris-i386 (GCC)
-* Solaris-sparc (GCC)
+* Solaris-sparc (GCC), aka SunOS-sparc
+* SunOS-sparc64
 
 The following platforms might work if they have sufficient POSIX features.
 
 * NetBSD (GCC)
+* PCBSD
 * GNU/Hurd (GCC)
 * OpenVMS (HP C compiler)
 * Ultrix
@@ -55,9 +59,14 @@ The following platforms might work if they have sufficient POSIX features.
         
 Microsoft Windows works by way of CYGWIN or MKS / Unix Services for Windows
 but should also work by way of the Windows Subsystem for Linux.
+* MinGW-i386
+* Windows-i386
 
-IBM z/OS has a POSIX subsystem called USS which works fine with Chicory
+IBM z/OS has a POSIX subsystem called USS which works fine with Chicory,
 though the environment is EBCDIC rather than ASCII. Scripts are not
 portable between z/OS USS and other POSIX systems without translation.
+
+* OS390-s390
+* OS390-s390x
 
 

@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for BZIP(2) at La Casita
-#	  Date: 2020-Nov-04 (Wed)
+#		make rules for Python 3 at La Casita with Chicory
+#	  Date: 2020-Nov-02 (Mon) for Physix Project
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,51 +14,48 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	bzip2
-SC_APV		=	1.0.8
+APPLID		=	python
+SC_APV		=	3.7.4
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+#SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE	=	Python-$(SC_APV)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
+#SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
+SC_ARC		=	tar.xz
+#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-SC_TAR		=	tar xzf
+#SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-#SC_TAR		=	tar xJf
+SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
+#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
-#SC_URL		=	http://www.bzip.org/$(APPLID)/$(SC_VRM).$(SC_ARC)
-#https://downloads.sourceforge.net/project/bzip2/bzip2-1.0.6.tar.gz
-#https://sourceforge.net/projects/bzip2/files/latest/download
-#SC_URL = http://kent.dl.sourceforge.net/sourceforge/$(APPLID)/$(SC_VRM).$(SC_ARC)
-SC_URL  =   https://www.sourceware.org/pub/$(APPLID)/$(SC_VRM).$(SC_ARC)
+SC_URL		=	\
+ https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
+ https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
-# fingerprint 67e051268d0c475ea773822f7500d0e5
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2d347ea6aa65421d
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-#				--enable-static --disable-shared
-SC_CONFIG	=	true
-SC_BUILD	=	$(MAKE)
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	$(MAKE) install PREFIX=$(PREFIX)/$(SC_VRM)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+					--no-check-certificate $(SC_URL)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+# can't --disable-shared because CTYPES needs shared lib loading
+# have tried --with-system-ffi but it appears not needed nor helpful
+#configure: WARNING: unrecognized options: --enable-static
+SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/bzip2 bin/bunzip2 bin/bzcat bin/bzip2recover ; \
-			ln -sf bzdiff bin/bzcmp ; \
-			ln -sf bzmore bin/bzless ; \
-			ln -sf bzgrep bin/bzegrep ; \
-			ln -sf bzgrep bin/bzfgrep
+SC_FIXUP	=	strip bin/python3.8 ; ln -s python3.8 bin/python
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -251,8 +248,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi

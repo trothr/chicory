@@ -37,6 +37,7 @@ SC_URL = http://distfiles.macports.org/$(APPLID)/$(SC_SOURCE).$(SC_ARC)
 
 #SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+# fingerprint 80c29aca745466c6c24d11f059329075
 
 #
 # defaults

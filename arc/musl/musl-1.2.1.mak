@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for BZIP(2) at La Casita
-#	  Date: 2020-Nov-04 (Wed)
+#               make rules for Musl Libc at La Casita brewed with Chicory
+#	  Date: 2020-Nov-08 (Sun)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	bzip2
-SC_APV		=	1.0.8
+APPLID		=	musl
+SC_APV		=	1.2.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -33,32 +33,25 @@ SC_TAR		=	tar xzf
 #SC_TAR		=	tar --lzip -xf
 
 # where to find the source on the internet (no default)
-#SC_URL		=	http://www.bzip.org/$(APPLID)/$(SC_VRM).$(SC_ARC)
-#https://downloads.sourceforge.net/project/bzip2/bzip2-1.0.6.tar.gz
-#https://sourceforge.net/projects/bzip2/files/latest/download
-#SC_URL = http://kent.dl.sourceforge.net/sourceforge/$(APPLID)/$(SC_VRM).$(SC_ARC)
-SC_URL  =   https://www.sourceware.org/pub/$(APPLID)/$(SC_VRM).$(SC_ARC)
+SC_URL          =       \
+	       http://www.musl-libc.org/releases/$(SC_VRM).$(SC_ARC) \
+	       http://www.musl-libc.org/releases/$(SC_VRM).$(SC_ARC).asc
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
-# fingerprint 67e051268d0c475ea773822f7500d0e5
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x56bcdb593020450f
+#gpg --keyid-format long --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 
 #
-# defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-#				--enable-static --disable-shared
-SC_CONFIG	=	true
-SC_BUILD	=	$(MAKE)
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	$(MAKE) install PREFIX=$(PREFIX)/$(SC_VRM)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+					--no-check-certificate $(SC_URL)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+					--enable-static --disable-shared
+# MUSL is *tiny* so we're trying static linkage for the time being
+SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/bzip2 bin/bunzip2 bin/bzcat bin/bzip2recover ; \
-			ln -sf bzdiff bin/bzcmp ; \
-			ln -sf bzmore bin/bzless ; \
-			ln -sf bzgrep bin/bzegrep ; \
-			ln -sf bzgrep bin/bzfgrep
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -75,11 +68,9 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
-
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-
 
 ########################################################################
 
@@ -189,7 +180,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -251,8 +242,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi

@@ -11,13 +11,21 @@ most recent at the top. Time of latest update at the bottom.
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | bash          | 5.0       | http://ftp.gnu.org/pub/gnu/bash/bash-5.0.tar.gz                           | 0xbb5869f064ea74ab | CD0+
 | bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   |                    | CD0+
-|               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
 | file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       |                    | CD0+
 |               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
-| mpfr          | 4.0.2     | http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.xz                          | 0x980c197698c3739d |
+| mpfr          | 4.0.2     | http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.xz                          | 0x980c197698c3739d | CD2
+| python        | 3.7.4     | https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz               | 0xb26995e310250568 | CD1
+| tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
+|               |           | https://www.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz |            |
+| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
+| jansson       | 2.13.1    | http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2              | 0xd3657d24d058434c | CD4
+| musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
+| curl          | 7.72.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
 
+\*Package name or "application ID" is never hyphenated in Chicory.
+`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
 
 ## Packages Previously Built
 
@@ -46,7 +54,8 @@ most recent at the top. Time of latest update at the bottom.
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 |
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.tar.xz                  | 0x4f494a942e4616c2 | CD0+
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
-| gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 |
+| gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 | CD2
+|               |           | http://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz                               |                    |
 | gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 |
 | gnupg         | 2.2.19    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.19.tar.bz2                     | 0x249b39d24f25e3b6 |
@@ -74,7 +83,7 @@ most recent at the top. Time of latest update at the bottom.
 | mpfr          | 4.0.1     | http://www.mpfr.org/mpfr-4.0.1/mpfr-4.0.1.tar.xz                          | 0x980c197698c3739d |
 | musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f | CD0+
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 |
-| nano          | 4.9.2     | https://www.nano-editor.org/dist/v4/nano-4.9.2.tar.xz .asc                | 0x0d28d4d2a0ace884 | CD0+
+| nano          | 4.9.2     | https://www.nano-editor.org/dist/v4/nano-4.9.2.tar.xz                     | 0x0d28d4d2a0ace884 | CD0+
 |               |           | https://ftp.gnu.org/pub/gnu/nano/nano-4.9.2.tar.xz                        |                    |
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d |
@@ -101,6 +110,7 @@ most recent at the top. Time of latest update at the bottom.
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0+
+|               |           | https://pilotfiber.dl.sourceforge.net/project/lzmautils/xz-5.2.4.tar.xz   |                    |
 
 ## Packages Without Signatures
 
@@ -108,6 +118,7 @@ most recent at the top. Time of latest update at the bottom.
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | bin86         | 0.16.18   | http://distro.ibiblio.org/slitaz/sources/packages-stable/b/bin86-0.16.18.tar.gz |              |
 | bzip2         | 1.0.6     | http://sources.redhat.com/pub/bzip2/v106/bzip2-1.0.6.tar.gz               |                    | CD0+
+|               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    |
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    |
 | dash          | 0.5.10.2  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.10.2.tar.gz       |                    | CD0+
