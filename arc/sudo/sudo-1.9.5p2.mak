@@ -1,7 +1,9 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for GNu BASH at La Casita with Chicory
-#	  Date: 2020-Nov-04 (Wed)
+#		make rules for SUDO for La Casita with Chicory
+#	  Date: 2021-Jan-27 (Wed)
+#	  Note: SUDO is not a good candidate for Chicory
+#		(see NORD), but we build it here for reference
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +16,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	bash
-SC_APV		=	5.0
+APPLID		=	sudo
+SC_APV		=	1.9.5p2
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -25,35 +27,34 @@ SC_SOURCE	=	$(SC_VRM)
 SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
-#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
 #SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+SC_URL		=    https://www.sudo.ws/dist/$(SC_SOURCE).$(SC_ARC) \
+		     https://www.sudo.ws/dist/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xbb5869f064ea74ab
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xa9f4c021cea470fb
 
 #
-# defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
+				--no-check-certificate $(SC_URL)
+# using --no-check-certificate to ease HSTS trust burden
+
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-						--without-bash-malloc
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
-SC_BUILD	=	$(MAKE)
+					--enable-static --disable-shared
+#					--sysconfdir=/etc
+
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/bash
+SC_FIXUP	=	strip bin/sudo bin/sudoreplay bin/cvtsudoers \
+			sbin/sudo_logsrvd sbin/sudo_sendlog sbin/visudo
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -70,9 +71,11 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
+
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
+
 
 ########################################################################
 
@@ -155,7 +158,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -182,7 +185,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"

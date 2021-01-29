@@ -45,7 +45,9 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 				--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+					--enable-static --disable-shared
+
 #SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 #SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install

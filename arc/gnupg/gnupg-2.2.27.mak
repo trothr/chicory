@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for GNu BASH at La Casita with Chicory
-#	  Date: 2020-Nov-04 (Wed)
+#		make rules for GnuPG for La Casita with Chicory
+#	  Date: 2021-Jan-15 (Fri) first build from Wildflower Place
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -9,51 +9,71 @@
 #		and allows automatic coexistence of builds for
 #		different hardware and O/S combinations.
 #
+#     See also: http://www.gnupg.org/faq/why-not-idea.en.html
+#
 
 # standard stuff for all apps in this series
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	bash
-SC_APV		=	5.0
+APPLID		=	gnupg
+SC_APV		=	2.2.27
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
-#SC_ARC		=	tar.bz2
+#SC_ARC		=	tar.gz
+SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
-#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-SC_TAR		=	tar xzf
-#SC_TAR		=	tar xjf
+#SC_TAR		=	tar xzf
+SC_TAR		=	tar xjf
 #SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+	     ftp://ftp.gnupg.org/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC) \
+	     ftp://ftp.gnupg.org/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xbb5869f064ea74ab
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x249b39d24f25e3b6
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x528897b826403ada <<<
 
 #
-# defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
+				--no-check-certificate $(SC_URL)
+# using --no-check-certificate to ease HSTS trust burden
+
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-						--without-bash-malloc
+		--with-libgpg-error-prefix=$(PREFIX)/libgpgerror \
+		--with-libgcrypt-prefix=$(PREFIX)/libgcrypt \
+		--with-libassuan-prefix=$(PREFIX)/libassuan \
+		--with-ksba-prefix=$(PREFIX)/libksba \
+		--with-npth-prefix=$(PREFIX)/npth \
+		--with-libiconv-prefix=$(PREFIX)/libiconv \
+		--without-libintl-prefix \
+		LIBS=-lrt
 #configure: WARNING: unrecognized options: --enable-static, --disable-shared
-SC_BUILD	=	$(MAKE)
+
+#SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/bash
+SC_FIXUP	=	strip bin/gpg \
+	bin/gpg-agent bin/gpg-connect-agent bin/gpgconf bin/gpgtar \
+	bin/gpgsm bin/gpgscm bin/gpgparsemail bin/gpgv \
+	bin/dirmngr bin/dirmngr-client bin/kbxutil bin/watchgnupg \
+	bin/gpg-wks-server bin/gpgsplit \
+	\
+	libexec/gpg-check-pattern libexec/gpg-preset-passphrase \
+	libexec/gpg-protect-tool libexec/gpg-wks-client libexec/scdaemon
+#				lib*/gnupg/gpgkeys_hkp \
+#				lib*/gnupg/gpgkeys_curl \
+#				lib*/gnupg/gpgkeys_finger
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -70,9 +90,15 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
+
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
+#			libgpgerror-1.24    libgpgerror-1.37
+#			libgcrypt-1.7.0     libgcrypt-1.8.5
+#			                    libksba-1.3.5
+#			libassuan-2.5.0     libassuan-2.5.3
+#			npth-1.2            npth-1.6
 
 ########################################################################
 
@@ -155,7 +181,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; exec $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -182,7 +208,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -398,5 +424,14 @@ help:
 	@echo "                      + restore source from archive(s)"
 	@echo "                      + apply patches"
 	@echo " "
+
+
+# http://en.wikipedia.org/wiki/GNU_Privacy_Guard
+# http://tools.ietf.org/html/rfc4880
+
+arc/rfc4880.txt:
+	@mkdir -p arc
+	sh -c ' cd arc ; \
+	  exec wget http://tools.ietf.org/rfc/rfc4880.txt '
 
 

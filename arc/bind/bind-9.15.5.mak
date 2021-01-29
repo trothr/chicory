@@ -55,7 +55,8 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--with-openssl=/usr/opt/openssl \
 				--disable-linux-caps \
 				LIBS=-lrt \
-				--without-python
+				--without-python \
+				--without-gssapi
 #				--enable-rrl
 
 SC_INSTALL	=	$(MAKE) install

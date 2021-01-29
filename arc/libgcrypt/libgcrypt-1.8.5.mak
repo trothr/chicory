@@ -153,7 +153,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -180,7 +180,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -242,8 +242,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi
