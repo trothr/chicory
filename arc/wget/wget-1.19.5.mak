@@ -48,9 +48,7 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-		   --with-ssl=openssl --with-openssl=/usr/opt/openssl \
-				--with-libssl-prefix=/usr/opt/openssl
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) --with-ssl=openssl
 
 # default for this is blank, varies widely per package
 SC_FIXUP	=	strip bin/wget

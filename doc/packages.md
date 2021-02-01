@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 | gnupg         | 2.2.27    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.27.tar.bz2                     | 0x528897b826403ada | CD5
 | libgpg-error* | 1.41      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.41.tar.bz2         | 0x528897b826403ada | CD4
 | libgcrypt     | 1.8.7     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.7.tar.bz2              | 0x528897b826403ada | CD5
