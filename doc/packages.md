@@ -9,6 +9,17 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
+| gnupg         | 2.2.27    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.27.tar.bz2                     | 0x528897b826403ada | CD5
+| libgpg-error* | 1.41      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.41.tar.bz2         | 0x528897b826403ada | CD4
+| libgcrypt     | 1.8.7     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.7.tar.bz2              | 0x528897b826403ada | CD5
+| libksba       | 1.5.0     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.5.0.tar.bz2                  | 0x528897b826403ada | CD4
+| libassuan     | 2.5.4     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.4.tar.bz2              | 0x528897b826403ada | CD4
+| ntbtls        | 0.2.0     | https://www.gnupg.org/ftp/gcrypt/ntbtls/ntbtls.0.2.0.tar.bz2              | 0x528897b826403ada | CD5
+| sudo          | 1.9.5p2   | https://www.sudo.ws/dist/sudo-1.9.5p2.tar.gz                              | 0xa9f4c021cea470fb | OS
+| libressl      | 3.3.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.2.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.1.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | bash          | 5.0       | http://ftp.gnu.org/pub/gnu/bash/bash-5.0.tar.gz                           | 0xbb5869f064ea74ab | CD0+
 | bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   |                    | CD0+
 | file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       |                    | CD0+
@@ -19,7 +30,7 @@ most recent at the top. Time of latest update at the bottom.
 | python        | 3.7.4     | https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz               | 0xb26995e310250568 | CD1
 | tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
 |               |           | https://www.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz |            |
-| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
+| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | OS
 | jansson       | 2.13.1    | http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2              | 0xd3657d24d058434c | CD4
 | musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
 | curl          | 7.72.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
@@ -193,6 +204,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2020-Nov-02 (Monday) by RMT
+this page "Chicory Packages" last updated 2021-Jan-22 (Friday) by RMT
 
 
