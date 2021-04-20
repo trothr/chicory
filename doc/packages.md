@@ -23,9 +23,11 @@ most recent at the top. Time of latest update at the bottom.
 | jansson       | 2.13.1    | http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2              | 0xd3657d24d058434c | CD4
 | musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
 | curl          | 7.72.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 
 \*Package name or "application ID" is never hyphenated in Chicory.
 `util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
+`gnu-cobol` is also hyphenated above, but is just `gnucobol` in Chicory packaging speak.
 
 ## Packages Previously Built
 
