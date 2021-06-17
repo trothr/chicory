@@ -70,7 +70,7 @@ SC_BUILDD	=		$(SC_SOURCE)
 
 # historical
 SHARED		=	man
-REQ		=	package-v.r.m
+REQ		=	autoconf-2.65 or better
 
 
 ########################################################################

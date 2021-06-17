@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for ACL utilities for La Casita with Chicory
-#	  Date: 2019-May-08 (Wed)
+#		make rules for unixODBC at La Casita with Chicory
+#	  Date: 2020-May-18 (MTue) from the Lakeland office
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,12 +14,13 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	acl
-SC_APV		=	2.2.53
+APPLID		=	unixodbc
+SC_APV		=	2.3.9
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+#SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE	=	unixODBC-$(SC_APV)
 
 # improved fetch and extract logic, variable compression ...
 SC_ARC		=	tar.gz
@@ -33,12 +34,11 @@ SC_TAR		=	tar xzf
 #SC_TAR		=	tar --lzip -xf
 
 # where to find the source on the internet (no default)
-SC_URL		=	\
- http://download.savannah.nongnu.org/releases/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
- http://download.savannah.nongnu.org/releases/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+SC_URL		=	http://www.unixodbc.org/$(SC_SOURCE).$(SC_ARC) \
+			http://www.unixodbc.org/$(SC_SOURCE).$(SC_ARC).md5
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x41633b9fe837f581
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x702353e0f7e48edb
 
 #
 # defaults
@@ -46,13 +46,12 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
 					--enable-static --disable-shared
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
-
-SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/chacl bin/getfacl bin/setfacl ; \
+SC_FIXUP	=	strip bin/dltest bin/isql bin/iusql \
+			bin/odbc_config bin/odbcinst bin/slencheck ; \
 	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -72,7 +71,7 @@ SC_BUILDD	=		$(SC_SOURCE)
 
 # historical
 SHARED		=	man
-REQ		=	ATTR
+REQ		=	package-v.r.m
 
 
 ########################################################################
@@ -110,7 +109,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -156,7 +155,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -183,7 +182,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_SOURCE) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -245,8 +244,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi

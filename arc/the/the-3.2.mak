@@ -48,7 +48,7 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 SC_BUILD	=	$(MAKE) the
 
 # default is blank 
-SC_FIXUP	=	strip bin/the
+#SC_FIXUP	=	strip bin/the
 
 # default 
 SC_INSTALL	=	$(MAKE) install 
