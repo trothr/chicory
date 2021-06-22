@@ -15,17 +15,12 @@ most recent at the top. Time of latest update at the bottom.
 | gcc           | 9.2.0     | http://ftp.gnu.org/pub/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.bz2                | 0x3ab00996fc26a641 | CD2
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
 | glibc         | 2.30      | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.30.tar.gz                        |                    | CD0+
-| irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
-| lzo           | 2.09      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz          |                    | CD4
 | mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
 | nginx         | 1.15.9    | http://www.nginx.org/download/nginx-1.15.9.tar.gz                         |                    | CD3
 | nmap          | 7.80      | https://nmap.org/dist/nmap-7.80.tar.gz                                    |                    | CD3
 | ntp           | 4.2.8p15  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz |                   | CD3
 | openssh       | 8.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.6p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
-| openvpn       | 2.5.0     | https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz      | 0xf132b1cbaf131cae | CD5
-| pdsh          | 2.31      | http://pdsh.googlecode.com/files/pdsh-2.31.tar.bz2                        |                    | CD3
 | perl          | 5.30.0    | http://www.cpan.org/src/perl-5.30.0.tar.gz                                |                    | CD1
-| python        | 3.7.6     | https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz               | 0xb26995e310250568 | CD1
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
@@ -34,7 +29,6 @@ most recent at the top. Time of latest update at the bottom.
 | util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | OS,CD0
 | jansson       | 2.13.1    | http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2              | 0xd3657d24d058434c | CD4
 | musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
-| curl          | 7.72.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
 | gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 
 \*Package name or "application ID" is never hyphenated in Chicory.
@@ -58,7 +52,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | cmake         | 3.12.1    | http://www.cmake.org/files/v3.12/cmake-3.12.1.tar.gz                      | 0xec8fef3a7bfb4eda | CD2
 | coreutils     | 8.30      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.30.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
-| curl          | 7.70.0    | http://curl.haxx.se/download/curl-7.70.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| curl          | 7.72.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
@@ -87,6 +81,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | libressl      | 3.3.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 | CD0+
+| lzo           | 2.09      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz          |                    | CD4
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 | CD0+
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 | CD0+
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
@@ -101,12 +96,13 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | openssh       | 8.2p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.2p1.tar.gz  | 0xd3e5f56b6d920d30 |
 | openssl       | 1.0.2p    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| openvpn       | 2.4.6     | https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz      | 0xf132b1cbaf131cae |
+| openvpn       | 2.5.0     | https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz      | 0xf132b1cbaf131cae | CD5
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
-| python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 |
-| python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff |
+| python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 | CD1
+| python        | 3.7.6     | https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz               | 0xb26995e310250568 | CD1
+| python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff | CD1
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab | CD0+
 | rsync         | 3.1.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.1.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0+
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
@@ -140,7 +136,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    | CD4
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    | CD0+
 | hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    | CD5
-| irssi         | 0.8.17    | http://www.irssi.org/files/irssi-0.8.17.tar.gz                            |                    |
+| irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             | CD4
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             | CD4
 | libffi        | 3.3       | ftp://sourceware.org/pub/libffi/libffi-3.3.tar.gz                         | sha512             | CD4
@@ -152,7 +148,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    | CD1
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         | CD1
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    | CD0+
-| pdsh          | 2.29      | http://pdsh.googlecode.com/files/pdsh-2.29.tar.bz2                        |                    |
+| pdsh          | 2.31      | http://pdsh.googlecode.com/files/pdsh-2.31.tar.bz2                        |                    | CD3
 | perl          | 5.22.0    | http://www.cpan.org/src/perl-5.22.0.tar.gz                                |                    |
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    | CD2,CD4
 | regina        | 3.9.1     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.1/Regina-REXX-3.9.1.tar.gz | | CD1
@@ -182,7 +178,7 @@ The following packages have issues or previously had issues:
 | e2fsprogs     | 1.45.6    | does not build on some older 32-bit Linux X86 systems                                          |
 | groff         | 1.22.4    | mixed text and grapical/X11 so you might need X11 build environment                            |
 | ntp           | 4.2.8p12  | cannot build statically                                                                        |
-| openvpn       | 2.4.6     | sensitive to OpenSSL version                                                                   | CD5
+| openvpn       | 2.5.0     | sensitive to OpenSSL version                                                                   | CD5
 | regina        | 3.9.1     | forced the build on some systems (required some manual intervention)                           |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        |           | does not build with Musl-ified GCC                                                             |
