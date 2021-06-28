@@ -7,7 +7,7 @@ most recent at the top. Time of latest update at the bottom.
 
 ## Packages Recently Built
 
-| package       | release   | source URL                                                                | source signing key |
+| package*      | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | apache        | 2.4.27    | http://archive.apache.org/dist/httpd/httpd-2.4.27.tar.gz                  | 0xa348b9847f7214a7 | CD3
 | binutils      | 2.35      | https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
@@ -37,7 +37,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 
 ## Packages Previously Built
 
-| package       | release   | source URL                                                                | source signing key |
+| package*      | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | acl           | 2.2.53    | http://download.savannah.nongnu.org/releases/acl/acl-2.2.53.tar.gz        | 0x41633b9fe837f581 | CD0+
 | apache        | 2.2.19    | http://archive.apache.org/dist/httpd/httpd-2.2.19.tar.gz                  | 0xa348b9847f7214a7 |
@@ -119,6 +119,8 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0+
 |               |           | https://pilotfiber.dl.sourceforge.net/project/lzmautils/xz-5.2.4.tar.xz   |                    |
 
+\*Package name or "application ID" in Chicory is never hyphenated.
+
 ## Packages Without Signatures
 
 | package       | release   | source URL                                                                | source signing key |
@@ -172,7 +174,7 @@ which the build environment lacks. Manual intervention is often minor.
 
 The following packages have issues or previously had issues:
 
-| package*      | release   | notes                                                                                          |
+| package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | db            | 6.0.35    | download site enforces manual interaction                                                      |
 | e2fsprogs     | 1.45.6    | does not build on some older 32-bit Linux X86 systems                                          |
@@ -186,34 +188,56 @@ The following packages have issues or previously had issues:
 | stunnel       | 5.50      | cannot build statically                                                                        |
 | tcl           | 8.5.19    | cannot build statically                                                                        |
 
-\*Package name or "application ID" in Chicory is never hyphenated.
+Package name or "application ID" in Chicory is never hyphenated.
 Packages with a dash in the name do not have (and do not need) a dash in
 the name to work with Chicory. Since the dash in Chicory is required for
 separating the package name from the version, only one dash is allowed.
 
-The fileutils package was absorbed into the coreutils package.
+## More Notes
 
-Packages wanted: parted, btrfs-tools, lvm2
+Taken from the Wikepedia page, 
+in September 2002, the GNU `coreutils` package was created by merging
+ the earlier
+packages `textutils`, `shellutils`, and `fileutils`, along with some other
+miscellaneous utilities.
+`https://en.wikipedia.org/wiki/GNU_Core_Utilities`
 
-This file is part of the collection found on GitHub at ...
+| package       | release   | notes                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| fileutils     |           | absorbed into the coreutils package                                                            |
+| textutils     |           | absorbed into the coreutils package                                                            |
+| shellutils    |           | absorbed into the coreutils package                                                            |
 
-    https://github.com/trothr/chicory/tree/master/doc/
+## Packages We'd Like To See
 
-this page "Chicory Packages" last updated 2021-Jan-22 (Friday) by RMT
-
-
-future:
-# dejagnu       | 1.6.2     |                                                                           |                    | CD3
-# expect        | 5.45.4    |                                                                           |                    | CD3
-# gnutls        | 3.5.9     |                                                                           |                    | CD5
-# inetutils     | 1.8       |                                                                           |                    | CD3
-# lz4           | 1.9.2     |                                                                           |                    | CD4
-# ppp           | 2.4.5     |                                                                           |                    | CD3
-# qclib         | 2.2.0     |                                                                           |                    | CD4
-# unison        | 2.51.2    |                                                                           |                    | CD3
+| package*      | release   | notes                                                                                          |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| dejagnu       | 1.6.2     |                                                                           |                    | CD3
+| expect        | 5.45.4    |                                                                           |                    | CD3
+| gnutls        | 3.5.9     |                                                                           |                    | CD5
+| inetutils     | 1.8       |                                                                           |                    | CD3
+| lz4           | 1.9.2     |                                                                           |                    | CD4
+| ppp           | 2.4.5     |                                                                           |                    | CD3
+| qclib         | 2.2.0     |                                                                           |                    | CD4
+| unison        | 2.51.2    |                                                                           |                    | CD3
 | cdrtools      | 2.01      |                                                                           |                    | CD3
 | cups          | 2.3.1     |                                                                           |                    | CD3
 | emacs         | 23.3b     |                                                                           |                    | CD3
 | libtasn1      | 3.3       |                                                                           |                    | CD4
 | libunistring  | 0.9.7     |                                                                           |                    | CD4
 | netcat        | 0.7.1     |                                                                           |                    | CD3
+| parted        |           |                                                                           |                    | CD3
+| btrfs-tools   |           |                                                                           |                    | CD3
+| lvm2          |           |                                                                           |                    | CD3
+
+\*Package name or "application ID" is never hyphenated in Chicory.
+`btrfs-tools` is hyphenated above for clarity, but is named `btrfstools` in Chicory repostories.
+
+
+This file is part of the collection found on GitHub at ...
+
+    https://github.com/trothr/chicory/tree/master/doc/
+
+this page "Chicory Packages" last updated 2021-Jun-28 (Monday) by RMT
+
+
