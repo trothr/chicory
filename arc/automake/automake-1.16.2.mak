@@ -47,6 +47,7 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM)
+#  ./configure PERL=/path/to/perl
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
@@ -181,7 +182,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"

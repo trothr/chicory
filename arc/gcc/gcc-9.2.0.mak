@@ -80,8 +80,7 @@ SC_BUILDD	=		$(SC_SOURCE)
 
 # historical
 SHARED		=	man
-REQ		=	ATTR
-
+REQ		=	package-v.r.m
 
 ########################################################################
 
