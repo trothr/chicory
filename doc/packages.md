@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package*      | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | apache        | 2.4.27    | http://archive.apache.org/dist/httpd/httpd-2.4.27.tar.gz                  | 0xa348b9847f7214a7 | CD3
 | binutils      | 2.35      | https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
