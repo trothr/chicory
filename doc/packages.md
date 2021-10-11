@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package*      | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | apache        | 2.4.27    | http://archive.apache.org/dist/httpd/httpd-2.4.27.tar.gz                  | 0xa348b9847f7214a7 | CD3
@@ -26,16 +27,8 @@ most recent at the top. Time of latest update at the bottom.
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
-| tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
-|               |           | https://www.mirrorservice.org/sites/ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz |            |
-| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | OS,CD0
-| jansson       | 2.13.1    | http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2              | 0xd3657d24d058434c | CD4
-| musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
-| gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 
 \*Package name or "application ID" is never hyphenated in Chicory.
-`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
-Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory packaging speak.
 
 ## Packages Previously Built
 
@@ -65,12 +58,13 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
 | gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 | CD2
 |               |           | http://ftp.gnu.org/gnu/gmp/gmp-6.2.0.tar.xz                               |                    |
-| gnu-cobol*    | 1.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-1.1.tar.gz                     | 0x71776baedd20ad42 |
+| gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5
 | gnupg         | 2.2.27    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.27.tar.bz2                     | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
 | gzip          | 1.9       | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.9.tar.xz                           | 0x7fd9fccb000beeee | CD0+
+| jansson       | 2.13.1    | http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2              | 0xd3657d24d058434c | CD4
 | less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0+
 | libassuan     | 2.5.4     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.4.tar.bz2              | 0x528897b826403ada | CD4
 | libevent      | 2.1.11    | https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | 0xb86086848ef8686d | CD4
@@ -88,7 +82,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 | CD0+
 | mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | mpfr          | 4.0.2     | http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.xz                          | 0x980c197698c3739d | CD2
-| musl          | 1.1.24    | http://www.musl-libc.org/releases/musl-1.1.24.tar.gz                      | 0x56bcdb593020450f | CD0+
+| musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 |               |           | https://ftp.gnu.org/pub/gnu/nano/nano-4.9.2.tar.xz                        |                    |
@@ -116,12 +110,15 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
 | tor           | 0.4.5.8   | https://dist.torproject.org/tor-0.4.5.8.tar.gz                            | 0xfe43009c4607b1fb | CD5
+| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | OS,CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0+
 |               |           | https://pilotfiber.dl.sourceforge.net/project/lzmautils/xz-5.2.4.tar.xz   |                    |
 
 \*Package name or "application ID" in Chicory is never hyphenated.
+`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
+Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory packaging speak.
 
 ## Packages Without Signatures
 
@@ -161,7 +158,7 @@ Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory pa
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    | CD0+
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    | CD3
 | swig          | 4.0.1     | http://prdownloads.sourceforge.net/swig/swig-4.0.1.tar.gz                 |                    |
-| tcl           | 8.5.19    | ftp://ftp.tcl.tk/pub/tcl/tcl8_5/$tcl8.5.19-src..tar.gz                    |                    |
+| tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    | CD1
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    | CD0+
@@ -188,7 +185,7 @@ The following packages have issues or previously had issues:
 | screen        |           | does not build with Musl-ified GCC                                                             |
 | squid         | 3.5.25    | cannot build statically                                                                        |
 | stunnel       | 5.50      | cannot build statically                                                                        |
-| tcl           | 8.5.19    | cannot build statically                                                                        |
+| tcl           | 8.6.9     | cannot build statically                                                                        |
 
 Package name or "application ID" in Chicory is never hyphenated.
 Packages with a dash in the name do not have (and do not need) a dash in
