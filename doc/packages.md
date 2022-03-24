@@ -7,11 +7,22 @@ most recent at the top. Time of latest update at the bottom.
 
 ## Packages Recently Built
 
-| package*      | release   | source URL                                                                | source signing key |
+| package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
+| tar           | 1.22      | https://ftp.gnu.org/pub/gnu/tar/tar-1.32.tar.xz                           | 0x3602b07f55d0c732 | CD0+
+| tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.32.tar.xz                           | 0x3602b07f55d0c732 | CD0+
+| gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 | CD2
+| openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| tinyxml       | 2.6.2     | sourceforge                                                               |                    | CD4
+| regina        | 3.9.4     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.1/Regina-REXX-3.9.1.tar.gz | | CD1
+| musl          | 1.2.2     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
+| libressl      | 3.4.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
+| bash          | 5.1.8     | http://ftp.gnu.org/pub/gnu/bash/bash-5.1.8.tar.gz                         | 0xbb5869f064ea74ab | CD0+
+| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
 | apache        | 2.4.27    | http://archive.apache.org/dist/httpd/httpd-2.4.27.tar.gz                  | 0xa348b9847f7214a7 | CD3
 | binutils      | 2.35      | https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
@@ -25,7 +36,6 @@ most recent at the top. Time of latest update at the bottom.
 | openssh       | 8.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.6p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
 | perl          | 5.30.0    | http://www.cpan.org/src/perl-5.30.0.tar.gz                                |                    | CD1
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
-| gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 
 \*Package name or "application ID" is never hyphenated in Chicory.
 
@@ -52,7 +62,7 @@ most recent at the top. Time of latest update at the bottom.
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 | CD0+
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 | CD0+
-| gawk          | 4.2.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-4.2.1.tar.gz                         | 0xdf597815937ec0d2 | CD0+
+| gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.20.1.tar.xz                  | 0x4f494a942e4616c2 | CD0+
 | git           | 2.20.1    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.20.1.tar.xz    | 0xb0b5e88696afe6cb |
 | gmp           | 6.2.0     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 | CD2
@@ -108,7 +118,7 @@ most recent at the top. Time of latest update at the bottom.
 | tar           | 1.32      | https://ftp.gnu.org/pub/gnu/tar/tar-1.32.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
-| tor           | 0.4.5.8   | https://dist.torproject.org/tor-0.4.5.8.tar.gz                            | 0xfe43009c4607b1fb | CD5
+| tor           | 0.4.6.6   | https://dist.torproject.org/tor-0.4.6.6.tar.gz                            | 0xfe43009c4607b1fb | CD5
 | util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | OS,CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
@@ -236,6 +246,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2021-Jun-28 (Monday) by RMT
+this page "Chicory Packages" last updated 2022-Mar-24 (Thursday) by RMT
 
 

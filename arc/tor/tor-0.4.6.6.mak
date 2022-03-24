@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Gnu COBOL at La Casita with Chicory
-#	  Date: 2020-Nov-18 (Wed)
+#               make rules for Tor at La Casita brewed with Chicory
+#	  Date: 2021-Jul-16 (Fri)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,47 +14,77 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	gnucobol
-SC_APV		=	3.1
+APPLID		=	tor
+SC_APV		=	0.4.6.6
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-SC_ARC		=	tar.xz
+#SC_ARC		=	tar.xz
+#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-SC_TAR		=	tar xJf
+#SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
+#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
+#SC_URL		=	\
+#	https://www.torproject.org/dist/$(SC_SOURCE).$(SC_ARC) \
+#	https://www.torproject.org/dist/$(SC_SOURCE).$(SC_ARC).asc
 SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+	https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC) \
+	https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).asc
+#SC_URL		=	\
+#	http://expyuzz4wqqyqhjn.onion/dist/$(SC_SOURCE).$(SC_ARC) \
+#	http://expyuzz4wqqyqhjn.onion/dist/$(SC_SOURCE).$(SC_ARC).asc
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x13e96b53c005604e
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xfe43009c4607b1fb
+
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x28988BF5, 0x19F78451, 0x165733EA, 0x8D29319A
+# Roger Dingledine (0x28988BF5 and 0x19F78451) or Nick Mathewson
+# (0x165733EA, or subkey 0x8D29319A) sign the Tor source code tarballs.
+# Erinn Clark (0x63FEE659) signs the Tor Browser Bundles,
+# Vidalia bundles, and many other packages. She signs RPMs with her
+# other key (0xF1F5C9B5). Andrew Lewman (0x31B0974B, 0x6B4D6475)
+# used to sign packages for RPMs, Windows, and OS X.
+
+# use the Tor network to get the latest Tor source
+# this is not strictly required but might sometimes be best practice
+SC_FETCH	=	echo $(SC_URL) | xargs -n 1 \
+			curl --remote-time --ftp-pasv --remote-name \
+				--insecure --socks4a 127.0.0.1:9050
 
 #
-# defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
+# override default SC_CONFIG
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-						--with-math=gmp \
-							--without-db \
-					--enable-static --disable-shared
-# --with-math=gmp or --with-math=mpir
+			--with-openssl-dir=/usr/opt/openssl \
+				--enable-static-openssl \
+			--with-libevent-dir=/usr/opt/libevent \
+				--enable-static-libevent \
+			--with-zlib-dir=/usr/opt/zlib \
+				--enable-static-zlib \
+			--disable-lzma \
+			--disable-gcc-hardening \
+			--enable-static-tor \
+			--disable-asciidoc
+# we really *do* want man pages, so need to find out what's missing
+# and then remove the --disable-asciidoc flag from configure
 
-SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip bin/tor bin/tor-gencert bin/tor-resolve \
+				bin/tor-print-ed-signing-cert
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -185,7 +215,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -231,8 +261,7 @@ distclean:
 			$(SC_VRM).exe _exe \
 			$(SC_VRM).ins _ins
 #		# do not remove .mk or .inv
-		rm -rf $(SC_BUILDD)
-		rm -rf $(SC_SOURCE)
+		rm -rf $(SC_BUILDD) $(SC_SOURCE) $(SC_VRM)
 		rm -f "$(PREFIX)/$(SC_VRM)"
 #		find . -type f -print | grep ':' | xargs -f rm
 #		find . -type f -print | grep ';' | xargs -f rm

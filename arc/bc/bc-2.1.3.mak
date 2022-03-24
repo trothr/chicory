@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Gnu COBOL at La Casita with Chicory
-#	  Date: 2020-Nov-18 (Wed)
+#		make rules for Gnu BC at La Casita with Chicory
+#	  Date: 2018-Oct-07 (Sun)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,22 +14,22 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	gnucobol
-SC_APV		=	3.1
+APPLID		=	bc
+SC_APV		=	2.1.3
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-SC_ARC		=	tar.xz
+#SC_ARC		=	tar.xz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-SC_TAR		=	tar xJf
+#SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
 
 # where to find the source on the internet (no default)
@@ -38,23 +38,18 @@ SC_URL		=	\
 	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x13e96b53c005604e
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x81c24ff12fb7b14b
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-						--with-math=gmp \
-							--without-db \
-					--enable-static --disable-shared
-# --with-math=gmp or --with-math=mpir
-
-SC_BUILD	=	$(MAKE)
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM)
+#					--enable-static --disable-shared
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip bin/bc bin/dc
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -231,8 +226,7 @@ distclean:
 			$(SC_VRM).exe _exe \
 			$(SC_VRM).ins _ins
 #		# do not remove .mk or .inv
-		rm -rf $(SC_BUILDD)
-		rm -rf $(SC_SOURCE)
+		rm -rf $(SC_BUILDD) $(SC_SOURCE) $(SC_VRM)
 		rm -f "$(PREFIX)/$(SC_VRM)"
 #		find . -type f -print | grep ':' | xargs -f rm
 #		find . -type f -print | grep ';' | xargs -f rm

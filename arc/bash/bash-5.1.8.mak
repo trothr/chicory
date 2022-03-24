@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Gnu COBOL at La Casita with Chicory
-#	  Date: 2020-Nov-18 (Wed)
+#		make rules for GNu BASH at La Casita with Chicory
+#	  Date: 2021-Aug-26 (Thu)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,23 +14,26 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	gnucobol
-SC_APV		=	3.1
+APPLID		=	bash
+SC_APV		=	5.1.8
+
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-SC_ARC		=	tar.xz
+#SC_ARC		=	tar.xz
+#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-SC_TAR		=	tar xJf
+#SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
+#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
@@ -38,23 +41,20 @@ SC_URL		=	\
 	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x13e96b53c005604e
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xbb5869f064ea74ab
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-						--with-math=gmp \
-							--without-db \
-					--enable-static --disable-shared
-# --with-math=gmp or --with-math=mpir
-
+						--without-bash-malloc
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip bin/bash
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -71,11 +71,9 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
-
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-
 
 ########################################################################
 
@@ -185,7 +183,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -231,8 +229,7 @@ distclean:
 			$(SC_VRM).exe _exe \
 			$(SC_VRM).ins _ins
 #		# do not remove .mk or .inv
-		rm -rf $(SC_BUILDD)
-		rm -rf $(SC_SOURCE)
+		rm -rf $(SC_BUILDD) $(SC_SOURCE) $(SC_VRM)
 		rm -f "$(PREFIX)/$(SC_VRM)"
 #		find . -type f -print | grep ':' | xargs -f rm
 #		find . -type f -print | grep ';' | xargs -f rm

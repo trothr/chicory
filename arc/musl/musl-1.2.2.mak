@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Gnu COBOL at La Casita with Chicory
-#	  Date: 2020-Nov-18 (Wed)
+#               make rules for Musl Libc at La Casita brewed with Chicory
+#	  Date: 2021-Nov-04 (Thu)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,44 +14,41 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	gnucobol
-SC_APV		=	3.1
+APPLID		=	musl
+SC_APV		=	1.2.2
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-SC_ARC		=	tar.xz
+#SC_ARC		=	tar.xz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-SC_TAR		=	tar xJf
+#SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
 
 # where to find the source on the internet (no default)
-SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+SC_URL          =       \
+	       http://www.musl-libc.org/releases/$(SC_VRM).$(SC_ARC) \
+	       http://www.musl-libc.org/releases/$(SC_VRM).$(SC_ARC).asc
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x13e96b53c005604e
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x56bcdb593020450f
+#gpg --keyid-format long --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 
 #
-# defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-						--with-math=gmp \
-							--without-db \
 					--enable-static --disable-shared
-# --with-math=gmp or --with-math=mpir
-
-SC_BUILD	=	$(MAKE)
+# MUSL is *tiny* so we're trying static linkage for the time being
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
 #SC_FIXUP	=	strip ...
@@ -71,11 +68,9 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
-
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-
 
 ########################################################################
 
@@ -231,8 +226,7 @@ distclean:
 			$(SC_VRM).exe _exe \
 			$(SC_VRM).ins _ins
 #		# do not remove .mk or .inv
-		rm -rf $(SC_BUILDD)
-		rm -rf $(SC_SOURCE)
+		rm -rf $(SC_BUILDD) $(SC_SOURCE) $(SC_VRM)
 		rm -f "$(PREFIX)/$(SC_VRM)"
 #		find . -type f -print | grep ':' | xargs -f rm
 #		find . -type f -print | grep ';' | xargs -f rm
