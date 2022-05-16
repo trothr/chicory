@@ -16,6 +16,14 @@ Two versions of Gnu TAR because some environments require the older one.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.17.tar.xz             | 0x04c367c218add4ff | CD1,HQ
+| libressl      | 3.5.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0,HQ
+| sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | OS,CD0
+| curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0,HQ
+| cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2,HQ
+| openssh       | 8.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
+| jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
 | gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 | CD2
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
