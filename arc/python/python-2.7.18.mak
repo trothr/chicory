@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for GNU SHARutils at La Casita with Chicory
-#	  Date: 2019-Jan-13 (Sun) Project Omaha and NORD
+#		make rules for Python at La Casita with Chicory
+#	  Date: 2022-Apr-28 (Thu) for Voltage AIX
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,12 +14,13 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	sharutils
-SC_APV		=	4.15.2
+APPLID		=	python
+SC_APV		=	2.7.18
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+#SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE	=	Python-$(SC_APV)
 
 # improved fetch and extract logic, variable compression ...
 #SC_ARC		=	tar.gz
@@ -39,22 +40,26 @@ SC_TAR		=	(xzcat - | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+ https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
+ https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd9204cb5bfbf0221
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2d347ea6aa65421d
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#					--enable-static --disable-shared
+#	CFLAGS="-DHAVE_DYNAMIC_LOADING=1" LDFLAGS="-ldl"
+# can't --disable-shared because CTYPES needs shared lib loading
+# have tried --with-system-ffi but it appears not needed nor helpful
+#configure: WARNING: unrecognized options: --enable-static
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/shar bin/unshar bin/uuencode bin/uudecode
+SC_FIXUP	=	strip bin/python2.7
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #

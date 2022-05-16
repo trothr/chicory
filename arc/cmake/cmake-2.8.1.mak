@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for GNU SHARutils at La Casita with Chicory
-#	  Date: 2019-Jan-13 (Sun) Project Omaha and NORD
+#		make rules for CMake (old) at La Casita with Chicory
+#	  Date: 2019-Jun-29 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,47 +14,44 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	sharutils
-SC_APV		=	4.15.2
+APPLID		=	cmake
+SC_APV		=	2.8.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
+SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-SC_ARC		=	tar.xz
-#SC_ARC		=	tar.lz
+#SC_ARC		=	tar.xz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
-#SC_TAR		=	(gunzip -f | tar xf -) <
+SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
-#SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
-SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+SC_URL		=    https://cmake.org/files/v2.8/$(SC_SOURCE).$(SC_ARC)
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd9204cb5bfbf0221
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyid-format long --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#					--enable-static --disable-shared
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+					--enable-static --enable-shared
+
+#SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/shar bin/unshar bin/uuencode bin/uudecode
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -112,7 +109,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -123,7 +120,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -sf $(SC_SOURCE) src
+		ln -s $(SC_SOURCE) src
 		touch _src
 
 #
@@ -158,7 +155,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
+		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -185,7 +182,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -247,9 +244,8 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
-		  | awk '{print "sh ../" $$0}' \
-		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
+#		@test -x repatch.sh
+#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi
