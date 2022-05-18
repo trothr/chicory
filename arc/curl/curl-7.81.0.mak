@@ -50,7 +50,8 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--enable-static --disable-shared \
 				--with-ssl=/usr/opt/openssl \
-			--disable-pthreads --disable-threaded-resolver
+			--disable-pthreads --disable-threaded-resolver \
+							--without-brotli
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 

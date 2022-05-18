@@ -16,24 +16,23 @@ Two versions of Gnu TAR because some environments require the older one.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.17.tar.xz             | 0x04c367c218add4ff | CD1,HQ
+| musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0+
+| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,HQ
 | libressl      | 3.5.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0,HQ
-| sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | OS,CD0
+| sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
 | curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0,HQ
 | cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2,HQ
 | openssh       | 8.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
 | jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
-| gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.0.tar.lz                          | 0xf3599ff828c67298 | CD2
-| openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2p.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
-| regina        | 3.9.4     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.1/Regina-REXX-3.9.1.tar.gz | | CD1
-| musl          | 1.2.2     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
+| gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2
+| openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.81.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| regina        | 3.9.4     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.4/Regina-REXX-3.9.4.tar.gz | | CD1
 | libressl      | 3.4.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
-| bash          | 5.1.8     | http://ftp.gnu.org/pub/gnu/bash/bash-5.1.8.tar.gz                         | 0xbb5869f064ea74ab | CD0+
 
 \*Package name or "application ID" is never hyphenated in Chicory.
 
@@ -46,7 +45,7 @@ Two versions of Gnu TAR because some environments require the older one.
 | attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 | CD0+
 | autoconf      | 2.69      | http://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.69.tar.gz                  | 0xa7a16b4a2527436a | CD0+
 | automake      | 1.16.2    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.2.tar.gz                | 0x0adee10094604d37 | CD0+
-| bash          | 5.0       | http://ftp.gnu.org/pub/gnu/bash/bash-5.0.tar.gz                           | 0xbb5869f064ea74ab | CD0+
+| bash          | 5.1.8     | http://ftp.gnu.org/pub/gnu/bash/bash-5.1.8.tar.gz                         | 0xbb5869f064ea74ab | CD0+
 | bc            | 1.07.1    | http://ftp.gnu.org/pub/gnu/bc/bc-1.07.1.tar.gz                            | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
 | binutils      | 2.35      | https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
@@ -108,17 +107,17 @@ Two versions of Gnu TAR because some environments require the older one.
 | python        | 3.7.6     | https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz               | 0xb26995e310250568 | CD1
 | python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff | CD1
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
-| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
+| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0+
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0+
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 | CD3
 | stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
-| sudo          | 1.9.5p2   | https://www.sudo.ws/dist/sudo-1.9.5p2.tar.gz                              | 0xa9f4c021cea470fb | OS,CD0
+| sudo          | 1.9.5p2   | https://www.sudo.ws/dist/sudo-1.9.5p2.tar.gz                              | 0xa9f4c021cea470fb | CD0
 | tar           | 1.32      | https://ftp.gnu.org/pub/gnu/tar/tar-1.32.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
 | tor           | 0.4.6.6   | https://dist.torproject.org/tor-0.4.6.6.tar.gz                            | 0xfe43009c4607b1fb | CD5
-| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | OS,CD0
+| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0+
@@ -127,6 +126,7 @@ Two versions of Gnu TAR because some environments require the older one.
 \*Package name or "application ID" in Chicory is never hyphenated.
 `util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
 Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory packaging speak.
+Same goes for `pkg-config` and `libgpg-error`.
 
 ## Packages Without Signatures
 
@@ -191,7 +191,7 @@ The following packages have issues or previously had issues:
 | e2fsprogs     | 1.45.6    | does not build on some older 32-bit Linux X86 systems                                          |
 | groff         | 1.22.4    | mixed text and grapical/X11 so you might need X11 build environment                            |
 | ntp           | 4.2.8p15  | cannot build statically                                                                        |
-| openvpn       | 2.5.0     | sensitive to OpenSSL version                                                                   | CD5
+| openvpn       | 2.5.0     | sensitive to OpenSSL version                                                                   |
 | regina        | 3.9.1     | forced the build on some systems (required some manual intervention)                           |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        |           | does not build with Musl-ified GCC                                                             |
@@ -249,6 +249,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2022-Mar-24 (Thursday) by RMT
+this page "Chicory Packages" last updated 2022-May-18 (Wednesday) by RMT
 
 
