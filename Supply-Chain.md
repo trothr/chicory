@@ -33,4 +33,28 @@ which can be reliably built via Chicory and even deployed by Chicory
 but which are considered "core" in some cases. In NORD, such packages
 are pre-installed apart from Chicory and not inventoried via Chicory.
 
+https://www.github.com/trothr/nord/
+
+NORD is a complete system (self hosting) and used in limited context
+as a production server. It is inspired by Linux From Scratch (LFS)
+and similar projects. NORD relies heavily on Chicory, providing
+very little on its own. But Chicory is essentially open-ended.
+
+## Unix (POSIX)
+
+Chicory supports a Unix model and requires some aspects of a POSIX
+environment, specifically symbolic links. While most of the development
+is done on Linux, Chicory explicitly does not favor Linux.
+
+Darwin / Mac OS X locks down the `/usr` directory in such a way that
+the administrator cannot create the standard `/usr/opt` prefix directory.
+It is acceptable (and for Mac recommended) that `/usr/opt` be a sym-link
+to `/var/opt`, but the link has to be created in maintenance mode.
+
+What Darwin does is an option for the administrator in other environments.
+To be clear, an administrator can use Chicory and lock-down the content
+of the `/usr/opt` directory. Apple takes away that ability from the admin
+by locking down `/usr` beyond admin control. Otherwise, the Darwin hack
+would be a valuable feature.
+
 
