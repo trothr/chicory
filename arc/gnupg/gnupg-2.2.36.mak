@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
 #		make rules for GnuPG for La Casita with Chicory
-#	  Date: 2018-Dec-24 (Mon)
+#	  Date: 2018-07-07 (Thu)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -9,13 +9,15 @@
 #		and allows automatic coexistence of builds for
 #		different hardware and O/S combinations.
 #
+#     See also: http://www.gnupg.org/faq/why-not-idea.en.html
+#
 
 # standard stuff for all apps in this series
 PREFIX		=	/usr/opt
 
 # no default for VRM string
 APPLID		=	gnupg
-SC_APV		=	1.4.23
+SC_APV		=	2.2.36
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -52,16 +54,28 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
+# using --no-check-certificate to ease HSTS trust burden
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--enable-static --disable-shared
-SC_BUILD	=	$(MAKE)
+		--with-libgpg-error-prefix=$(PREFIX)/libgpgerror \
+		--with-libgcrypt-prefix=$(PREFIX)/libgcrypt \
+		--with-libassuan-prefix=$(PREFIX)/libassuan \
+		--with-ksba-prefix=$(PREFIX)/libksba \
+		--with-npth-prefix=$(PREFIX)/npth \
+		--without-libintl-prefix \
+		LIBS=-lrt
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+#		--with-libiconv-prefix=$(PREFIX)/libiconv
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/gpg bin/gpgv bin/gpgsplit \
-				lib*/gnupg/gpgkeys_hkp \
-				lib*/gnupg/gpgkeys_curl \
-				lib*/gnupg/gpgkeys_finger
+SC_FIXUP	=	strip bin/gpg \
+	bin/gpg-agent bin/gpg-connect-agent bin/gpgconf bin/gpgtar \
+	bin/gpgsm bin/gpgscm bin/gpgparsemail bin/gpgv \
+	bin/dirmngr bin/dirmngr-client bin/kbxutil bin/watchgnupg \
+	bin/gpg-wks-server bin/gpgsplit \
+	\
+	libexec/gpg-check-pattern libexec/gpg-preset-passphrase \
+	libexec/gpg-protect-tool libexec/gpg-wks-client libexec/scdaemon
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -78,11 +92,17 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
-
 # historical
-SHARED		=	man
-REQ		=	package-v.r.m
-
+SHARED          =       man
+REQ             =       package-v.r.m
+#                       libgpgerror-1.27
+#                       libgcrypt-1.8.5
+#                       libksba-1.3.5
+#                       libassuan-2.5.3
+#                       npth-1.6
+#
+#                       automake-1.14
+#                       autoconf
 
 ########################################################################
 
@@ -165,7 +185,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -192,7 +212,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -254,8 +274,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi

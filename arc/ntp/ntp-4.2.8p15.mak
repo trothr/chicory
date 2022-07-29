@@ -48,7 +48,8 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--enable-static --disable-shared \
 		--with-openssl-libdir=/usr/opt/openssl/lib \
 		--with-openssl-incdir=/usr/opt/openssl/include \
-		--without-sntp
+		--with-ntpsnmpd
+#		--without-sntp
 
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install

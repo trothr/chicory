@@ -46,6 +46,7 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
 					--enable-static --disable-shared
+#					--sysconfdir=/etc
 SC_INSTALL	=	$(MAKE) install
 #SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 

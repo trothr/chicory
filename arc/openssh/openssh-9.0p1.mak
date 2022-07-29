@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for GnuPG for La Casita with Chicory
-#	  Date: 2018-Dec-24 (Mon)
+#		make rules for OpenSSH for La Casita with Chicory
+#	  Date: 2022-07-20 (Wed)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,54 +14,62 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	gnupg
-SC_APV		=	1.4.23
+APPLID		=	openssh
+SC_APV		=	9.0p1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
-SC_ARC		=	tar.bz2
+SC_ARC		=	tar.gz
+#SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR		=	tar xzf
-#SC_TAR		=	(gunzip -f | tar xf -) <
+SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
-SC_TAR		=	(bzcat - | tar xf -) <
+#SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
 #SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
 #SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-#SC_URL		=	\
-#	     ftp://ftp.gnupg.org/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC) \
-#	     ftp://ftp.gnupg.org/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC).sig
 SC_URL		=	\
-       https://www.gnupg.org/ftp/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC) \
-       https://www.gnupg.org/ftp/gcrypt/gnupg/$(SC_SOURCE).$(SC_ARC).sig
+ http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC) \
+ http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC).asc \
+ https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
+#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub \
+#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub.asc
+# list-o-mirrors http://www.openssh.com/portable.html
+# some alternates ...
+#  http://mirror.esc7.net/pub/OpenBSD/OpenSSH/portable/
+#  ftp://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/
+#  rsync://ftp3.usa.openbsd.org/ftp/OpenSSH/portable/
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x249b39d24f25e3b6
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd3e5f56b6d920d30
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--enable-static --disable-shared
-SC_BUILD	=	$(MAKE)
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+				--sysconfdir=/etc/ssh \
+				--with-ssl-dir=/usr/opt/openssl \
+				--without-hardening LIBS=-lpthread \
+				--with-zlib=/usr/opt/zlib
+#				--with-pid-dir=/var/run
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/gpg bin/gpgv bin/gpgsplit \
-				lib*/gnupg/gpgkeys_hkp \
-				lib*/gnupg/gpgkeys_curl \
-				lib*/gnupg/gpgkeys_finger
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -78,11 +86,11 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
-
 # historical
-SHARED		=	man
-REQ		=	package-v.r.m
-
+SHARED          =       man
+REQ             =       package-v.r.m
+#                       /usr/opt/openssl
+#                       /usr/opt/zlib
 
 ########################################################################
 
@@ -119,7 +127,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -165,7 +173,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -192,14 +200,13 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
 		if [ ! -z "$(SC_FIXUP)" ] ; then \
 			sh -c " cd $(SYSTEM) ; $(SC_FIXUP) " ; fi
 		mv install.log $(SYSTEM)/.
-
 
 #
 #
@@ -223,7 +230,6 @@ clean:
 			sh -c ' cd $(SC_BUILDD) ; \
 				exec $(MAKE) clean ' ; fi
 #		rm -f "$(PREFIX)/$(SC_VRM)"
-
 
 #
 # restore sources as from distribution
@@ -254,8 +260,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi
@@ -407,14 +414,5 @@ help:
 	@echo "                      + restore source from archive(s)"
 	@echo "                      + apply patches"
 	@echo " "
-
-
-# http://en.wikipedia.org/wiki/GNU_Privacy_Guard
-# http://tools.ietf.org/html/rfc4880
-
-arc/rfc4880.txt:
-	@mkdir -p arc
-	sh -c ' cd arc ; \
-	  exec wget http://tools.ietf.org/rfc/rfc4880.txt '
 
 

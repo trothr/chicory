@@ -25,12 +25,17 @@ SC_SOURCE	=	$(SC_VRM)
 #SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
 SC_ARC		=	tar.xz
+#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR		=	tar xzf
+#SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
-SC_TAR		=	tar xJf
+#SC_TAR		=	(bzcat - | tar xf -) <
+#SC_TAR		=	tar xJf
+SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
+#SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=   https://tukaani.org/$(APPLID)/$(SC_SOURCE).$(SC_ARC)
