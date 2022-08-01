@@ -29,11 +29,14 @@ SC_ARC		=	tar.gz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-SC_TAR		=	tar xzf
+#SC_TAR		=	tar xzf
+SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
+#SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
+#SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
+#SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
@@ -121,7 +124,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #

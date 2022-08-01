@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for ZLib at La Casita with Chicory
-#	  Date: 2022-07-28 (Thu)
+#		make rules for GZip at La Casita with Chicory
+#	  Date: 2022-08-01 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	zlib
-SC_APV		=	1.2.12
+APPLID		=	gzip
+SC_APV		=	1.12
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -38,25 +38,23 @@ SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL		=	http://www.zlib.net/$(SC_SOURCE).$(SC_ARC) \
-			http://www.zlib.net/$(SC_SOURCE).$(SC_ARC).asc
+SC_URL		=	\
+	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-# gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 0x783fcd8e58bcafba
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+# gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 0x7fd9fccb000beeee
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+					--no-check-certificate $(SC_URL)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-							--static
-
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
-#SC_FIXUP	=	\
+SC_FIXUP	=	strip bin/gzip
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
