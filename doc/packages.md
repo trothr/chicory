@@ -9,6 +9,11 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
+| binutils      | 2.38      | https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
+| make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
+| file          | 5.42      | http://distfiles.macports.org/file/file-5.42.tar.gz                       |                    | CD0+
+| vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
 | gzip          | 1.12      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.12.tar.xz                          | 0x7fd9fccb000beeee | CD0+
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | zlib          | 1.2.12    | http://www.zlib.net/zlib-1.2.12.tar.gz                                    | 0x783fcd8e58bcafba | CD4,CD0
@@ -56,7 +61,6 @@ most recent at the top. Time of latest update at the bottom.
 | gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2
 | gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5
-| gnupg         | 2.2.27    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.27.tar.bz2                     | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
@@ -86,7 +90,6 @@ most recent at the top. Time of latest update at the bottom.
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | ntbtls        | 0.2.0     | https://www.gnupg.org/ftp/gcrypt/ntbtls/ntbtls.0.2.0.tar.bz2              | 0x528897b826403ada | CD5
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d | CD5
-| openssh       | 8.6p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.6p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
 | openssh       | 8.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
@@ -135,8 +138,10 @@ Same goes for `pkg-config` and `libgpg-error`.
 | file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       |                    | CD0+
 |               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    | CD4
+| glib          | 2.57.1    | http://ftp.gnome.org/pub/gnome/sources/glib/2.57/glib-2.57.1.tar.bz2      |                    | CD4
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    | CD0+
 | glibc         | 2.30      | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.30.tar.gz                        |                    | CD0+
+| glibc         | 2.32      | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.32.tar.gz                        |                    | CD0+
 | hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    | CD5
 | irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             | CD4
