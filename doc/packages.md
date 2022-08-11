@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
+| util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | binutils      | 2.38      | https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
@@ -29,6 +31,9 @@ most recent at the top. Time of latest update at the bottom.
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0,HQ
 | curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.81.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
 | curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0,HQ
+
+\*Package name or "application ID" in Chicory is never hyphenated.
+`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
 
 ## Packages Previously Built
 
@@ -111,7 +116,7 @@ most recent at the top. Time of latest update at the bottom.
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
-| tor           | 0.4.6.6   | https://dist.torproject.org/tor-0.4.6.6.tar.gz                            | 0xfe43009c4607b1fb | CD5
+| tor           | 0.4.7.8   | https://dist.torproject.org/tor-0.4.7.8.tar.gz                            | 0xfe43009c4607b1fb | CD5
 | util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
