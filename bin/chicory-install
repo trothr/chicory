@@ -97,7 +97,7 @@ if [ ! -d $CHICORY_RESDIR/$P/$S ] ; then
   exit 1 ; fi
 
 echo "+ rsync -l -p -t --no-dirs $CHICORY_REPOS/$P/* $CHICORY_RESDIR/$P/."
-	rsync -l -p -t --no-dirs $CHICORY_REPOS/$P/* $CHICORY_RESDIR/$P/. 1> /dev/null
+        rsync -l -p -t --no-dirs $CHICORY_REPOS/$P/* $CHICORY_RESDIR/$P/. 1> /dev/null
 RC=$?
 if [ $RC -ne 0 ] ; then
 
@@ -109,8 +109,8 @@ ls -la $CHICORY_RESDIR/$P/.
   exit $RC ; fi
 
 
-echo "+ rsync -a -u -x -H -K -O -S $CHICORY_REPOS/$P/$S/. $CHICORY_RESDIR/$P/$S/."
-	rsync -a -u -x -H -K -O -S $CHICORY_REPOS/$P/$S/. $CHICORY_RESDIR/$P/$S/.
+echo "+ rsync -a -u -x -H -O -S $CHICORY_REPOS/$P/$S/. $CHICORY_RESDIR/$P/$S/."
+        rsync -a -u -x -H -O -S $CHICORY_REPOS/$P/$S/. $CHICORY_RESDIR/$P/$S/.
 RC=$?
 if [ $RC -ne 0 ] ; then
 
