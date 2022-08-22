@@ -230,7 +230,7 @@ clean:
 			sh -c ' cd $(SC_BUILDD) ; \
 				exec $(MAKE) clean ' ; fi
 #		rm -f "$(PREFIX)/$(SC_VRM)"
-
+		find src/. -type f -iname config.cache | xargs -r rm
 
 #
 # restore sources as from distribution

@@ -55,12 +55,8 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--enable-languages=c,c++ \
 				--disable-nls \
 				--enable-static --disable-shared
-
-#                                --enable-languages=c,c++ \
-#The following languages will be built: c,c++,fortran,java,lto,objc
-#                                --with-ppl=$(PREFIX)/ppl \
-#                                --with-cloog=$(PREFIX)/cloogppl
-
+#The following languages will be built: c,c++
+#but others include fortran,java,lto,objc
 
 # default for this is blank, varies widely per package
 #SC_FIXUP	=	strip bin/... ; \

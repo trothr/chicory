@@ -38,7 +38,8 @@ SC_TAR		=	tar xJf
 # where to find the source on the internet (no default)
 SC_URL		=	\
  https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
- https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
+ https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc \
+ https://bootstrap.pypa.io/get-pip.py
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2d347ea6aa65421d

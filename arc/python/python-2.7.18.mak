@@ -41,7 +41,8 @@ SC_TAR		=	(xzcat - | tar xf -) <
 # where to find the source on the internet (no default)
 SC_URL		=	\
  https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
- https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
+ https://www.python.org/ftp/$(APPLID)/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc \
+ https://bootstrap.pypa.io/pip/2.7/get-pip.py
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2d347ea6aa65421d
@@ -50,7 +51,10 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+SC_CONFIG	=	\
+	CFLAGS="-I$(PREFIX)/zlib/include -I$(PREFIX)/openssl/include" \
+	LDFLAGS="-L$(PREFIX)/zlib/lib -L$(PREFIX)/openssl/lib" \
+				./configure --prefix=$(PREFIX)/$(SC_VRM)
 #	CFLAGS="-DHAVE_DYNAMIC_LOADING=1" LDFLAGS="-ldl"
 # can't --disable-shared because CTYPES needs shared lib loading
 # have tried --with-system-ffi but it appears not needed nor helpful

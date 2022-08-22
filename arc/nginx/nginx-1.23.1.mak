@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for OpenSSH for La Casita with Chicory
-#	  Date: 2022-07-20 (Wed)
+#		make rules for NGINX (EngineX) with Chicory
+#	  Date: 2022-08-22 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	openssh
-SC_APV		=	9.0p1
+APPLID		=	nginx
+SC_APV		=	1.23.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -39,37 +39,21 @@ SC_TAR		=	(gunzip -f | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
- http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC) \
- http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC).asc \
- https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
-#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub \
-#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub.asc
-# list-o-mirrors http://www.openssh.com/portable.html
-# some alternates ...
-#  http://mirror.esc7.net/pub/OpenBSD/OpenSSH/portable/
-#  ftp://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/
-#  rsync://ftp3.usa.openbsd.org/ftp/OpenSSH/portable/
+		http://www.nginx.org/download/$(SC_SOURCE).$(SC_ARC) \
+		http://www.nginx.org/download/$(SC_SOURCE).$(SC_ARC).asc
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd3e5f56b6d920d30
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x520a9993a1c052f8
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
-SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--sysconfdir=/etc/ssh \
-				--with-ssl-dir=$(PREFIX)/openssl \
-				--without-hardening LIBS=-lpthread \
-				--with-zlib=$(PREFIX)/zlib
-#				--with-pid-dir=/var/run
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
-
+SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+					--without-http_rewrite_module
 SC_INSTALL	=	$(MAKE) install
-#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip sbin/nginx
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -86,11 +70,11 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
+
 # historical
-SHARED          =       man
-REQ             =       package-v.r.m
-#                       /usr/opt/openssl
-#                       /usr/opt/zlib
+SHARED		=	man
+REQ		=	package-v.r.m
+
 
 ########################################################################
 
@@ -208,6 +192,7 @@ _ins:		_exe
 			sh -c " cd $(SYSTEM) ; $(SC_FIXUP) " ; fi
 		mv install.log $(SYSTEM)/.
 
+
 #
 #
 verify: 	arc/$(SC_SOURCE).$(SC_ARC)
@@ -230,6 +215,7 @@ clean:
 			sh -c ' cd $(SC_BUILDD) ; \
 				exec $(MAKE) clean ' ; fi
 #		rm -f "$(PREFIX)/$(SC_VRM)"
+
 
 #
 # restore sources as from distribution
@@ -301,7 +287,6 @@ arc/$(SC_SOURCE).$(SC_ARC):
 		@test -d arc
 		sh -c ' cd arc ; $(SC_FETCH) '
 		@test -s arc/$(SC_SOURCE).$(SC_ARC)
-#		@test -s arc/$(SC_VRM).$(SC_ARC)
 
 sys:		_ins
 		rm -f sys
@@ -345,14 +330,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src

@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for OpenSSH for La Casita with Chicory
-#	  Date: 2022-07-20 (Wed)
+#		make rules for Util-Linux at La Casita with Chicory
+#	  Date: 2022-08-08 (Mon)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,56 +14,50 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	openssh
-SC_APV		=	9.0p1
+APPLID		=	utillinux
+SC_APV		=	2.38.1
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+#SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE	=	util-linux-$(SC_APV)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
+#SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
+SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR		=	tar xzf
-SC_TAR		=	(gunzip -f | tar xf -) <
+#SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
 #SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
-#SC_TAR		=	(xzcat - | tar xf -) <
+SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
 #SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
+#SC_URL		=	\
+# https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
+# https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v$(SC_APV)/$(SC_SOURCE).tar.sign
 SC_URL		=	\
- http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC) \
- http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC).asc \
- https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
-#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub \
-#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub.asc
-# list-o-mirrors http://www.openssh.com/portable.html
-# some alternates ...
-#  http://mirror.esc7.net/pub/OpenBSD/OpenSSH/portable/
-#  ftp://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/
-#  rsync://ftp3.usa.openbsd.org/ftp/OpenSSH/portable/
+ https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/$(SC_SOURCE).$(SC_ARC) \
+ https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.38/$(SC_SOURCE).tar.sign
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd3e5f56b6d920d30
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#SC_SOURCE_VERIFY = gzip -d < arc/$(SC_SOURCE).$(SC_ARC) ...
+SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
+			      | gpg --verify arc/$(SC_SOURCE).tar.sign -
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xe4b71d5eec39c284
 
 #
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--sysconfdir=/etc/ssh \
-				--with-ssl-dir=$(PREFIX)/openssl \
-				--without-hardening LIBS=-lpthread \
-				--with-zlib=$(PREFIX)/zlib
-#				--with-pid-dir=/var/run
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+					--enable-static --disable-shared
 
 SC_INSTALL	=	$(MAKE) install
 #SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
@@ -89,8 +83,6 @@ SC_BUILDD	=		$(SC_SOURCE)
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-#                       /usr/opt/openssl
-#                       /usr/opt/zlib
 
 ########################################################################
 

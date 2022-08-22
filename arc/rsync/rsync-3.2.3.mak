@@ -46,7 +46,7 @@ SC_FETCH	=	wget --passive-ftp --no-clobber \
 					--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 	  --disable-xxhash  --disable-zstd --disable-lz4 --disable-md2man
-#				--enable-static --disable-shared
+#configure.sh: WARNING: unrecognized options: --enable-static, --disable-shared
 SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
