@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1
 | zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
@@ -174,7 +175,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    | CD3
 | swig          | 4.0.1     | http://prdownloads.sourceforge.net/swig/swig-4.0.1.tar.gz                 |                    |
 | tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
-| the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2..tar.gz              |                    | CD1
+| the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2.tar.gz               |                    | CD1
 | tinyxml       | 2.6.2     | sourceforge                                                               |                    | CD4
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
