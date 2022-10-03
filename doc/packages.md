@@ -15,7 +15,6 @@ most recent at the top. Time of latest update at the bottom.
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
-| mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | binutils      | 2.38      | https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
 | file          | 5.42      | http://distfiles.macports.org/file/file-5.42.tar.gz                       |                    | CD0+
@@ -31,10 +30,6 @@ most recent at the top. Time of latest update at the bottom.
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
 | musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0+
 | python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,HQ
-| libressl      | 3.5.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0,HQ
-| curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.81.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
-| curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0,HQ
 
 \*Package name or "application ID" in Chicory is never hyphenated.
 `util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
@@ -56,7 +51,8 @@ most recent at the top. Time of latest update at the bottom.
 | cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2,HQ
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
-| curl          | 7.72.0    | http://curl.haxx.se/download/curl-7.72.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.81.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
+| curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0,HQ
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
@@ -67,7 +63,7 @@ most recent at the top. Time of latest update at the bottom.
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 | CD2
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.20.1.tar.xz                  | 0x4f494a942e4616c2 | CD0+
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
-| gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2
+| gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
 | gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
@@ -85,12 +81,13 @@ most recent at the top. Time of latest update at the bottom.
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.4.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.5.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.20      | http://download.savannah.gnu.org/releases/lzip/lzip-1.20.tar.gz           | 0x8fe99503132d7742 | CD0+
 | lzo           | 2.09      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz          |                    | CD4
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 | CD0+
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 | CD0+
-| mpc           | 1.1.0     | https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
+| mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
 | musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
@@ -124,7 +121,7 @@ most recent at the top. Time of latest update at the bottom.
 | util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
-| xz            | 5.2.4     | http://www.tukaani.org/xz/xz-5.2.4.tar.gz                                 | 0x38ee757d69184620 | CD0+
+| xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0,HQ
 |               |           | https://pilotfiber.dl.sourceforge.net/project/lzmautils/xz-5.2.4.tar.xz   |                    |
 
 \*Package name or "application ID" in Chicory is never hyphenated.
