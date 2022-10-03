@@ -23,13 +23,6 @@ most recent at the top. Time of latest update at the bottom.
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | zlib          | 1.2.12    | http://www.zlib.net/zlib-1.2.12.tar.gz                                    | 0x783fcd8e58bcafba | CD4,CD0
 | openssh       | 9.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
-| gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
-| libassuan     | 2.5.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.5.tar.bz2              | 0x528897b826403ada | CD4
-| openssl       | 1.1.1q    | https://www.openssl.org/source/openssl-1.1.1q.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| openssl       | 3.0.5     | https://www.openssl.org/source/openssl-3.0.5.tar.gz                       | 0xd9c4d26d0e604491 | CD5
-| libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
-| musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0+
-| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,HQ
 
 \*Package name or "application ID" in Chicory is never hyphenated.
 `util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
@@ -66,12 +59,14 @@ most recent at the top. Time of latest update at the bottom.
 | gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
 | gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5
+| gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
 | gzip          | 1.10      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.10.tar.xz                          | 0x7fd9fccb000beeee | CD0+
 | jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
 | less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0+
-| libassuan     | 2.5.4     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.4.tar.bz2              | 0x528897b826403ada | CD4
+| libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
+| libassuan     | 2.5.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.5.tar.bz2              | 0x528897b826403ada | CD4
 | libevent      | 2.1.11    | https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | 0xb86086848ef8686d | CD4
 | libgcrypt     | 1.8.7     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.7.tar.bz2              | 0x528897b826403ada | CD5
 | libgpg-error* | 1.41      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.41.tar.bz2         | 0x528897b826403ada | CD4
@@ -89,7 +84,7 @@ most recent at the top. Time of latest update at the bottom.
 | make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 | CD0+
 | mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
-| musl          | 1.2.1     | http://www.musl-libc.org/releases/musl-1.2.1.tar.gz                       | 0x56bcdb593020450f | CD0+
+| musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0+
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 |               |           | https://ftp.gnu.org/pub/gnu/nano/nano-4.9.2.tar.xz                        |                    |
@@ -99,13 +94,15 @@ most recent at the top. Time of latest update at the bottom.
 | openssh       | 8.9p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| openssl       | 1.1.1q    | https://www.openssl.org/source/openssl-1.1.1q.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| openssl       | 3.0.5     | https://www.openssl.org/source/openssl-3.0.5.tar.gz                       | 0xd9c4d26d0e604491 | CD5
 | openvpn       | 2.5.0     | https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz      | 0xf132b1cbaf131cae | CD5
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
 | python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 | CD1
 | python        | 3.7.6     | https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz               | 0xb26995e310250568 | CD1
-| python        | 2.7.17    | https://www.python.org/ftp/python/2.7.17/Python-2.7.17.tar.xz             | 0x04c367c218add4ff | CD1
+| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,HQ
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
 | rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0+
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
