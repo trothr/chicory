@@ -66,6 +66,13 @@ of vetting, but again, *vetting is your responsibility*. The team
 cannot be held responsible for rogue keys or other malware, as hard
 as we try to keep things secure.
 
+Vetting of keys is *your* responsibility. If the maintainers of Chicory
+collections vetted the keys, that would introduce a hierarchy. But also,
+you would have to delegate trust, distancing yourself from trust anchors.
+For more information see the Code Signing markdown page.
+
+
+
 Package artifacts from Chicory are usually delivered as hierarchies,
 not as ZIP or TAR archives. The hierarchies are not signed.
 
