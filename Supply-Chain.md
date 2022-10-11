@@ -4,6 +4,10 @@ Chicory facilitates the open source software supply chain by wrapping
 various open source software packages in simpler logic *and keeping
 original sources* even when other repositories go 404.
 
+The "wrapper" makefile for any Chicory package automatically retrieves
+the source for the package but never discards it. Neither `make clean`
+nor `make distclean` remove the source.
+
 ## Chicory
 
 The effect of a Chicory supply chain is ready-to-run artifacts for
@@ -62,25 +66,23 @@ signature is available, it is downloaded alongside the source archive.
 
 A number of keys are held in the GitHub project for Chicory.
 Keys included with the Chicory project have been through some amount
-of vetting, but again, *vetting is your responsibility*. The team
-cannot be held responsible for rogue keys or other malware, as hard
-as we try to keep things secure.
+of vetting, but again, *vetting is your responsibility*. The Chicory
+development team cannot be held responsible for rogue keys or other
+malware, as hard as we try to keep things secure.
 
 Vetting of keys is *your* responsibility. If the maintainers of Chicory
 collections vetted the keys, that would introduce a hierarchy. But also,
 you would have to delegate trust, distancing yourself from trust anchors.
 For more information see the Code Signing markdown page.
 
-
-
 Package artifacts from Chicory are usually delivered as hierarchies,
-not as ZIP or TAR archives. The hierarchies are not signed.
+not as ZIP or TAR archives. The resulting hierarchies are not signed.
+Cryptographic trust is at the source level.
 
 ## NORD
 
-The NORD system uses Chicory for all packages outside of its
-core OS components. The distinction is intentionally vague.
-What is "the core"?
+The NORD system uses Chicory for all packages outside of its core OS
+components. The distinction is intentionally vague: What is "the core"?
 
 When you see references to "CD0" in NORD space, those are packages
 which can be reliably built via Chicory, and even deployed by Chicory,
@@ -100,10 +102,10 @@ Chicory does not require NORD.
 
 Chicory supports a Unix model and requires some aspects of a POSIX
 environment, specifically symbolic links. While most of the development
-is done on Linux, Chicory explicitly does not favor Linux over other systems.
+is done on Linux, Chicory does not favor Linux over other systems.
 
-All of the current (as of writing) computer system environments
-offer a POSIX interface.
+All contemporary (as of this writing) computer operating systems have a
+POSIX interface.
 
 ## A word about Darwin
 
