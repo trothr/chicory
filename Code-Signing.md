@@ -6,7 +6,6 @@ The problem is this: when you acquire a package, can you trust that
 it is from the author? Can you be sure it has not been replaced by,
 or injected with, malware?
 
-
 ## PGP Signatures
 
 The majority of packages used in supporting the core system
@@ -25,7 +24,6 @@ All of that signing is via PGP. NOT all of the keys used in signing
 are found in the Chicory project on GitHub because vetting is a manual
 process. (And is ultimately *your* responsibility, not automated.)
 
-
 ## Key Servers
 
 You can find PGP keys used in signing from any of several PGP key servers.
@@ -40,6 +38,25 @@ Or perhaps most of the traditional key servers have gotten restrictive.
 The Chicory project maintains a collection of PGP keys which have been
 vetted locally. You'll want to vet those keys yourself, but they are at
 less risk of poisoning because these copies are static.
+
+
+https://pgp.surf.nl
+
+https://keys.openpgp.org
+
+https://keyring.debian.org
+
+https://pgp.mit.edu
+
+https://keys.gnupg.net
+
+https://subkeys.pgp.net
+
+https://keyserver.ubuntu.com
+
+https://attester.flowcrypt.com
+
+https://zimmermann.mayfirst.org
 
 
 ## Trust Paths
@@ -112,6 +129,37 @@ https://dev.gnupg.org/T4393#133689
 
 The Debian project maintains a strong list of keys and signatures.
 
-https://keyring.debian.org/
+
+
+
+
+
+
+
+
+
+
+https://bcn.boulder.co.us/~neal/pgpstat/
+
+https://www.zdnet.com/article/openpgp-flooded-with-spam-by-unknown-hackers/
+
+https://www.securityweek.com/threat-actor-poisons-openpgp-certificates
+
+https://securityaffairs.co/wordpress/88071/hacking/poisoning-pgp-sks-key-network.html
+
+https://keys.openpgp.org/about/faq
+https://keys.openpgp.org/search?q=0x81e4ea2778e3fa1b
+
+https://the.earth.li/~noodles/pathfind.html
+
+http://pgp.key-server.io/
+
+
+https://pgp-servers.net/
+
+
+
+
+
 
 

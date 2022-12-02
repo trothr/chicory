@@ -5,23 +5,30 @@ This is the Chicory Packages list as a markdown file.
 This file lists the latest Chicory-built packages,
 most recent at the top. Time of latest update at the bottom.
 
+## Packages in Sir Santa's bag for 2022
+
+| package       | release   | platforms                                                                                      |
+| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
+| python        | 2.7.18    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
+| rsync         | 3.2.3     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
+| gnupg         | 1.4.23    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
+| regina        | 3.9.5     | Linux-i386, Linux-x86_64,                                     FreeBSD-amd64                    |
+| the           | 3.3       | Linux-i386, Linux-x86_64,                                     FreeBSD-amd64                    |
+| oorexx        | 4.2.0     |             Linux-x86_64                                                                       |
+| gnucobol      | 3.1.2     | Linux-i386                                                                                     |
+| musl          | 1.2.3     | Linux-i386, Linux-x86_64,                          Linux-arm                                   |
+| openssh       | 9.1p1     |                                                                                                |
+
 ## Packages Recently Built
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1
-| zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
+| openssh       | 9.1p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz | 0xd3e5f56b6d920d30 | CD5,SSB2022
+| gnucobol      | 3.1.2     | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.1.2.tar.lz                | 0x71776baedd20ad42 | CD2,SSB2022
+| regina  | 3.9.5 | https://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.5/regina-rexx-3.9.5.tar.gz |          | CD1,SSB2022
+| the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1,SSB2022
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
-| libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
-| util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
-| binutils      | 2.38      | https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
-| make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
-| file          | 5.42      | http://distfiles.macports.org/file/file-5.42.tar.gz                       |                    | CD0+
-| vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
-
-\*Package name or "application ID" in Chicory is never hyphenated.
-`util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
 
 ## Packages Previously Built
 
@@ -35,13 +42,13 @@ most recent at the top. Time of latest update at the bottom.
 | bash          | 5.1.8     | http://ftp.gnu.org/pub/gnu/bash/bash-5.1.8.tar.gz                         | 0xbb5869f064ea74ab | CD0+
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
-| binutils      | 2.35      | https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
+| binutils      | 2.38      | https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | bison         | 3.5.3     | http://ftp.gnu.org/pub/gnu/bison/bison-3.5.3.tar.xz                       | 0x0ddcaa3278d5264e | CD0+
-| cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2,HQ
+| cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
 | curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.81.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
-| curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0,HQ
+| curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
@@ -54,7 +61,7 @@ most recent at the top. Time of latest update at the bottom.
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
 | gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
 | gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
-| gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5
+| gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5,SSB2022
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
@@ -63,7 +70,7 @@ most recent at the top. Time of latest update at the bottom.
 | less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0+
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
 | libassuan     | 2.5.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.5.tar.bz2              | 0x528897b826403ada | CD4
-| libevent      | 2.1.11    | https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz | 0xb86086848ef8686d | CD4
+| libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
 | libgcrypt     | 1.8.7     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.7.tar.bz2              | 0x528897b826403ada | CD5
 | libgpg-error* | 1.41      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.41.tar.bz2         | 0x528897b826403ada | CD4
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
@@ -76,10 +83,10 @@ most recent at the top. Time of latest update at the bottom.
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 | CD0+
-| make          | 4.2.1     | http://ftp.gnu.org/pub/gnu/make/make-4.2.1.tar.gz                         | 0x96b047156338b6d4 | CD0+
+| make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
 | mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
-| musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0+
+| musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
@@ -96,9 +103,9 @@ most recent at the top. Time of latest update at the bottom.
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
 | python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 | CD1
 | python        | 3.7.6     | https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz               | 0xb26995e310250568 | CD1
-| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,HQ
+| python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,SSB2022
 | readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
-| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0+
+| rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0,SSB2022
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0+
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 | CD3
@@ -109,10 +116,10 @@ most recent at the top. Time of latest update at the bottom.
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
 | tor           | 0.4.7.8   | https://dist.torproject.org/tor-0.4.7.8.tar.gz                            | 0xfe43009c4607b1fb | CD5
-| util-linux*   | 2.34      | https://www.kernel.org/pub/linux/utils/util-linux/v2.34/util-linux-2.34.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
+| util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
-| xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0,HQ
+| xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
 | zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
 
 \*Package name or "application ID" in Chicory is never hyphenated.
@@ -132,7 +139,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | dash          | 0.5.10.2  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.10.2.tar.gz       |                    | CD0+
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    | CD0+
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    | CD3
-| file          | 5.37      | http://distfiles.macports.org/file/file-5.37.tar.gz                       |                    | CD0+
+| file          | 5.42      | http://distfiles.macports.org/file/file-5.42.tar.gz                       |                    | CD0+
 |               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    | CD4
 | glib          | 2.57.1    | http://ftp.gnome.org/pub/gnome/sources/glib/2.57/glib-2.57.1.tar.bz2      |                    | CD4
@@ -153,7 +160,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | nmap          | 7.80      | https://nmap.org/dist/nmap-7.80.tar.gz                                    |                    | CD3
 | ntp           | 4.2.8p15  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz |                   | CD3
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    | CD1
-| oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         | CD1
+| oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         | CD1,SSB2022
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    | CD0+
 | pdsh          | 2.31      | http://pdsh.googlecode.com/files/pdsh-2.31.tar.bz2                        |                    | CD3
 | perl          | 5.30.0    | http://www.cpan.org/src/perl-5.30.0.tar.gz                                |                    | CD1
@@ -169,7 +176,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | tinyxml       | 2.6.2     | sourceforge                                                               |                    | CD4
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
-| vim           | 8.2       | http://ftp.nluug.nl/vim/unix/vim-8.2.tar.bz2                              |                    | CD0+
+| vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD3
 | zlib          | 1.2.12    | http://www.zlib.net/zlib-1.2.12.tar.gz                                    | 0x783fcd8e58bcafba | CD4,CD0
 | zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0+
