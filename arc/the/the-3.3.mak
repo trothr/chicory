@@ -13,8 +13,7 @@ PREFIX		=	/usr/opt
 SC_VRM		=	the-3.3
 APPLID		=	the
 
-#SC_SOURCE	=	$(SC_VRM)
-SC_SOURCE	=	THE-3.3
+SC_SOURCE	=	$(SC_VRM)
 
 SC_ARC		=	.tar.gz
 
@@ -37,11 +36,11 @@ SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
 #SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--with-rexx=regina \
-			--with-rexxincdir=/usr/opt/regina/include \
-			--with-rexxlibdir=/usr/opt/regina/lib \
-				--with-ncurses \
-			--with-ncursesincdir=/usr/opt/ncurses/include \
-			--with-ncurseslibdir=/usr/opt/ncurses/lib
+			--with-rexxincdir=$(PREFIX)/regina/include \
+			--with-rexxlibdir=$(PREFIX)/regina/lib \
+				--with-curses=ncurses \
+			--with-cursesincdir=$(PREFIX)/ncurses/include \
+			--with-curseslibdir=$(PREFIX)/ncurses/lib
 
 # default
 #SC_BUILD	=	$(MAKE)
