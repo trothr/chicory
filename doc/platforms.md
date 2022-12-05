@@ -1,7 +1,7 @@
 # Chicory Platforms
 
 Chicory identifies platforms by operating system name
-and hardware architecture. The two are usually sufficient
+and hardware architecture. Those two indicators are usually sufficient
 to describe a unique execution environment.
 
 Chicory uses `uname` to identify the host platform
@@ -15,18 +15,21 @@ name is required.)
 
 The following platforms are viable as of time of writing.
 
-* AIX-powerpc (GCC, IBM XL C), bimodal
+* AIX-powerpc (GCC, IBM XL C)
+* AIX-powerpc64, bimodal
 * CYGWIN-i386
 * CYGWIN-x86_64
 * Darwin-i386 (GCC)
 * Darwin-x86_64 (GCC)
-* FreeBSD-amd64 (GCC, LLVM/Clang, also DragonflyBSD)
+* Darwin-arm64
 * FreeBSD-i386 (GCC, LLVM/Clang)
+* FreeBSD-amd64 (GCC, LLVM/Clang, also DragonflyBSD)
 * HPUX-ia64 (GCC, HP ANSI C)
 * HPUX-parisc (GCC, HP ANSI C)
-* Linux (GCC, LLVM/Clang, ICC, IBM XL C)
-* Linux-arm, any of Linux-armel Linux-armhf Linux-arm64
+* Linux-arm, any of Linux-armel Linux-armhf
+* Linux-aarch64 (for 64-bit ARM)
 * Linux-i386, any of Linux-i486 Linux-i586 Linux-i686
+* Linux-x86_64 (for AMD64 or Intel equivalent)
 * Linux-mips, aka Linux-mipsel
 * Linux-mips64, or Linux-mips64el
 * Linux-ppc
@@ -35,18 +38,18 @@ The following platforms are viable as of time of writing.
 * Linux-s390x
 * Linux-sparc
 * Linux-sparc64
-* Linux-x86_64, aka Linux-amd64
 * Linux-alpha
 * Minix-i386 (GCC)
-* OpenBSD-amd64 (GCC)
+* NetBSD-i386
+* NetBSD-amd64
 * OpenBSD-i386 (GCC, and MirBSD)
-* Solaris-i386 (GCC)
-* Solaris-sparc (GCC), aka SunOS-sparc
-* SunOS-sparc64
+* OpenBSD-amd64 (GCC)
+* SunOS-i386 (GCC), aka Solaris-i386
+* SunOS-sparc (GCC), aka Solaris-sparc
+* SunOS-sparc64, aka Solaris-sparc64, bimodal
 
 The following platforms might work if they have sufficient POSIX features.
 
-* NetBSD (GCC)
 * PCBSD
 * GNU/Hurd (GCC)
 * OpenVMS (HP C compiler)
@@ -57,14 +60,21 @@ The following platforms might work if they have sufficient POSIX features.
 * QNX
 * OPENSTEP
         
-Microsoft Windows works by way of CYGWIN or MKS / Unix Services for Windows
-but should also work by way of the Windows Subsystem for Linux.
+Chicory on Microsoft Windows works by way of CYGWIN or MKS
+(Unix Services for Windows). Chicory works perfectly under
+Windows Subsystem for Linux where full POSIX capabilities exist,
+but that does not always translate back to the traditional side.
+
+* Windows-x86, aka Windows-i386
+* Windows-amd64
 * MinGW-i386
-* Windows-i386
+
 
 IBM z/OS has a POSIX subsystem called USS which works fine with Chicory,
 though the environment is EBCDIC rather than ASCII. Scripts are not
 portable between z/OS USS and other POSIX systems without translation.
+IBM z/VM (CMS) provides the same POSIX subsystem but with limits on
+`fork()` in the nucleus.
 
 * OS390-s390
 * OS390-s390x
