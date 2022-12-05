@@ -262,7 +262,7 @@ Okay, okay, we're desperate for a last line in the rhyme. Help me out.
 
 Remain calm. Add Chicory and brew on!
 
--- R; <><
+-- R; &lt;&gt;&lt;
 
 <!--
 Link to Google Drive content:
@@ -270,6 +270,6 @@ Link to Google Drive content:
     https://docs.google.com/document/d/1AXLqM6g-cGnW-YwUYzO1MLygSrWCypUVpYFpSym4EpI
   -->
 
-this page "Chicory.md" last updated 2018-Oct-21 (Sunday) by RMT
+this page `chicory.md` last updated 2022-12-05 (Monday) by RMT
 
 
