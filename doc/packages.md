@@ -12,12 +12,12 @@ most recent at the top. Time of latest update at the bottom.
 | python        | 2.7.18    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
 | rsync         | 3.2.3     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
 | gnupg*        | 1.4.23    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
-| regina        | 3.9.5     | Linux-i386, Linux-x86_64,                                     FreeBSD-amd64                    |
-| the           | 3.3       | Linux-i386, Linux-x86_64,                                     FreeBSD-amd64                    |
-| oorexx        | 4.2.0     |             Linux-x86_64                                                                       |
-| gnucobol      | 3.1.2     | Linux-i386                                                                                     |
-| musl          | 1.2.3     | Linux-i386, Linux-x86_64,                          Linux-arm                                   |
-| openssh*      | 9.1p1     |                                                                                                |
+| regina        | 3.9.5     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x,            FreeBSD-amd64                    |
+| the           | 3.3       | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm  FreeBSD-amd64                    |
+| oorexx        | 4.2.0     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x                                              |
+| gnucobol      | 3.1.2     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x                                              |
+| musl          | 1.2.3     | Linux-i386, Linux-x86_64,             Linux-s390x, Linux-arm                                   |
+| openssh*      | 9.1p1     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
 
 Most of the above are available at ...
 
