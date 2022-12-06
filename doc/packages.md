@@ -13,7 +13,7 @@ most recent at the top. Time of latest update at the bottom.
 | rsync         | 3.2.3     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
 | gnupg*        | 1.4.23    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
 | regina        | 3.9.5     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x,            FreeBSD-amd64                    |
-| the           | 3.3       | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm  FreeBSD-amd64                    |
+| the           | 3.3       | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
 | oorexx        | 4.2.0     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x                                              |
 | gnucobol      | 3.1.2     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x                                              |
 | musl          | 1.2.3     | Linux-i386, Linux-x86_64,             Linux-s390x, Linux-arm                                   |
@@ -259,6 +259,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2022-May-18 (Wednesday) by RMT
+this page "Chicory Packages" last updated 2022-12-06 (Tuesday) by RMT
 
 
