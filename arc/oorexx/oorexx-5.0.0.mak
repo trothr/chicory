@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for GMP at La Casita with /usr/opt Chicory
-#         Date: 2022-Mar-15 (Tue) for Voltage
+#		make rules for Open Object Rexx at La Casita with Chicory
+#	  Date: 2022-12-08 (Thu) addition to Sir Santa's bag 2022
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,45 +14,50 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	gmp
-SC_APV		=	6.2.1
+APPLID		=	oorexx
+SC_APV		=	5.0.0
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC		=	tar.gz
-SC_ARC		=	tar.bz2
+SC_ARC		=	tar.gz
+#SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR		=	tar xzf
-SC_TAR		=	tar xjf
+SC_TAR		=	(gunzip -f | tar xf -) <
+#SC_TAR		=	tar xjf
+#SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
+#SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
+#SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-	https://gmplib.org/download/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	https://gmplib.org/download/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+ http://downloads.sourceforge.net/project/$(APPLID)/$(APPLID)/$(SC_APV)/$(SC_SOURCE)-source.$(SC_ARC)
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xf3599ff828c67298
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
-SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+
+#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--enable-static --disable-shared
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	$(MAKE) check ; $(MAKE) install
+
+SC_BUILD	=	$(MAKE)
+
+SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	\
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -69,10 +74,10 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
-
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
+#			ncurses
 
 
 ########################################################################
@@ -183,7 +188,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"

@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for SWIG at La Casita with Chicory
-#	  Date: 20202-May-27 (Wed) because RPHiii proded me
+#		make rules for LZO at La Casita with /usr/opt
+#	  Date: 2022-10-20 (Thu)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	swig
-SC_APV		=	4.0.1
+APPLID		=	lzo
+SC_APV		=	2.10
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -25,35 +25,35 @@ SC_SOURCE	=	$(SC_VRM)
 SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
 #SC_ARC		=	tar.xz
-#SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 SC_TAR		=	tar xzf
 #SC_TAR		=	tar xjf
 #SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-     http://prdownloads.sourceforge.net/$(APPLID)/$(SC_SOURCE).$(SC_ARC)
+ http://www.oberhumer.com/opensource/lzo/download/$(SC_SOURCE).$(SC_ARC)
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = sha1sum arc/$(SC_SOURCE).$(SC_ARC) \
+		| grep e2a60aca818836181e7e6f8c4f2c323aca6ac057
+# not cryptographic but better than no verification at all
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-					--enable-static --disable-shared
-#					--with-pcre-prefix=/usr/opt/pcre
-# sometimes easier just to let PCRE be found under the /usr hierarchy
-
+SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+SC_BUILD	=	$(MAKE)
 SC_INSTALL	=	$(MAKE) install
 
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+				--enable-static --disable-shared
+
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/swig bin/ccache-swig
+#SC_FIXUP	=	strip ...
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -74,7 +74,6 @@ SC_BUILDD	=		$(SC_SOURCE)
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-#			PCRE
 
 
 ########################################################################
@@ -185,7 +184,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -196,7 +195,7 @@ _ins:		_exe
 
 #
 #
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+verify:
 		$(SC_SOURCE_VERIFY)
 
 #
@@ -247,9 +246,8 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
-		  | awk '{print "sh ../" $$0}' \
-		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
+#		@test -x repatch.sh
+#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi

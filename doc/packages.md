@@ -30,6 +30,12 @@ so pre-compiled versions are not published on the open internet.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 3.6.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.5.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| oorexx        | 5.0.0     | http://sourceforge.net/projects/oorexx/files/oorexx/5.0.0/ooRexx-5.0.0-source.tar.gz |         | CD1,SSB2022
+| python        | 3.8.2     | https://www.python.org/ftp/python/3.9.15/Python-3.9.15.tar.xz             | 0xb26995e310250568 | CD1
+| openssl       | 3.0.7     | https://www.openssl.org/source/openssl-3.0.7.tar.gz                       | 0xd9c4d26d0e604491 | CD5
+| lzo           | 2.10      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz          |                    | CD4
 | openssh       | 9.1p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz | 0xd3e5f56b6d920d30 | CD5,SSB2022
 | gnucobol      | 3.1.2     | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.1.2.tar.lz                | 0x71776baedd20ad42 | CD2,SSB2022
 | regina  | 3.9.5 | https://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.5/regina-rexx-3.9.5.tar.gz |          | CD1,SSB2022
@@ -97,7 +103,6 @@ so pre-compiled versions are not published on the open internet.
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
-| ntbtls        | 0.2.0     | https://www.gnupg.org/ftp/gcrypt/ntbtls/ntbtls.0.2.0.tar.bz2              | 0x528897b826403ada | CD5
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d | CD5
 | openssh       | 9.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
@@ -122,7 +127,7 @@ so pre-compiled versions are not published on the open internet.
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
 | texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
-| tor           | 0.4.7.8   | https://dist.torproject.org/tor-0.4.7.8.tar.gz                            | 0xfe43009c4607b1fb | CD5
+| tor           | 0.4.7.9   | https://dist.torproject.org/tor-0.4.7.9.tar.gz                            | 0xfe43009c4607b1fb | CD5
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
@@ -151,8 +156,6 @@ Same goes for `pkg-config` and `libgpg-error`.
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    | CD4
 | glib          | 2.57.1    | http://ftp.gnome.org/pub/gnome/sources/glib/2.57/glib-2.57.1.tar.bz2      |                    | CD4
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    | CD0+
-| glibc         | 2.30      | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.30.tar.gz                        |                    | CD0+
-| glibc         | 2.32      | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.32.tar.gz                        |                    | CD0+
 | hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    | CD5
 | irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
 | kaffe         | 1.1.9     |                                                                           |                    | CD3
@@ -177,7 +180,6 @@ Same goes for `pkg-config` and `libgpg-error`.
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    | CD1
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    | CD0+
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    | CD3
-| swig          | 4.0.1     | http://prdownloads.sourceforge.net/swig/swig-4.0.1.tar.gz                 |                    |
 | tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
 | the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2.tar.gz               |                    | CD1
 | tinyxml       | 2.6.2     | sourceforge                                                               |                    | CD4
@@ -259,6 +261,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2022-12-06 (Tuesday) by RMT
+this page "Chicory Packages" last updated 2023-02-14 (Tuesday) by RMT
 
 
