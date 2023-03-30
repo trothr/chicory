@@ -5,43 +5,18 @@ This is the Chicory Packages list as a markdown file.
 This file lists the latest Chicory-built packages,
 most recent at the top. Time of latest update at the bottom.
 
-## Packages in Sir Santa's bag for 2022
-
-| package       | release   | platforms                                                                                      |
-| ------------- | --------- | ---------------------------------------------------------------------------------------------- |
-| python        | 2.7.18    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
-| rsync         | 3.2.3     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
-| gnupg*        | 1.4.23    | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
-| regina        | 3.9.5     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x,            FreeBSD-amd64                    |
-| the           | 3.3       | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
-| oorexx        | 4.2.0     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x                                              |
-| gnucobol      | 3.1.2     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x                                              |
-| musl          | 1.2.3     | Linux-i386, Linux-x86_64,             Linux-s390x, Linux-arm                                   |
-| openssh*      | 9.1p1     | Linux-i386, Linux-x86_64, Linux-s390, Linux-s390x, Linux-arm, FreeBSD-amd64                    |
-
-Most of the above are available at ...
-
-    rsync://chic.casita.net/opt/
-
-Some of these* are considered contraband or might raise an eyebrow,
-so pre-compiled versions are not published on the open internet.
-
 ## Packages Recently Built
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| libressl      | 3.6.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| libressl      | 3.5.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| oorexx        | 5.0.0     | http://sourceforge.net/projects/oorexx/files/oorexx/5.0.0/ooRexx-5.0.0-source.tar.gz |         | CD1,SSB2022
-| python        | 3.8.2     | https://www.python.org/ftp/python/3.9.15/Python-3.9.15.tar.xz             | 0xb26995e310250568 | CD1
-| openssl       | 3.0.7     | https://www.openssl.org/source/openssl-3.0.7.tar.gz                       | 0xd9c4d26d0e604491 | CD5
-| lzo           | 2.10      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz          |                    | CD4
-| openssh       | 9.1p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz | 0xd3e5f56b6d920d30 | CD5,SSB2022
-| gnucobol      | 3.1.2     | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.1.2.tar.lz                | 0x71776baedd20ad42 | CD2,SSB2022
-| regina  | 3.9.5 | https://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.5/regina-rexx-3.9.5.tar.gz |          | CD1,SSB2022
-| the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1,SSB2022
-| m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
-| nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
+| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0x6dea2ba30bc39eb6 | CD0
+| tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x71112ab16cb33b3a | CD0
+| texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
+| python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0xb26995e310250568 | CD1
+| wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x08302db6a2670428 | CD0
+| curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x78e11c6b279d5c91 | CD0
+| binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
+| xmitmsgx      | 2.1.1     | http://www.casita.net/pub/xmitmsgx-2.1.1.tar.gz                           | 0x96af6544edf138d9 | CD0
 
 ## Packages Previously Built
 
@@ -74,6 +49,7 @@ so pre-compiled versions are not published on the open internet.
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
 | gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
 | gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
+| gnucobol      | 3.1.2     | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.1.2.tar.lz                | 0x71776baedd20ad42 | CD2,SSB2022
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5,SSB2022
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
@@ -92,10 +68,11 @@ so pre-compiled versions are not published on the open internet.
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.4.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| libressl      | 3.5.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.5.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.6.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
-| m4            | 1.4.18    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.18.tar.gz                            | 0x151308092983d606 | CD0+
+| m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
 | make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
 | mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
@@ -104,11 +81,11 @@ so pre-compiled versions are not published on the open internet.
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d | CD5
-| openssh       | 9.0p1     | http://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.0p1.tar.gz  | 0xd3e5f56b6d920d30 | CD5
+| openssh       | 9.1p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz | 0xd3e5f56b6d920d30 | CD5,SSB2022
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.1q    | https://www.openssl.org/source/openssl-1.1.1q.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| openssl       | 3.0.5     | https://www.openssl.org/source/openssl-3.0.5.tar.gz                       | 0xd9c4d26d0e604491 | CD5
+| openssl       | 3.0.7     | https://www.openssl.org/source/openssl-3.0.7.tar.gz                       | 0xd9c4d26d0e604491 | CD5
 | openvpn       | 2.5.0     | https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz      | 0xf132b1cbaf131cae | CD5
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
@@ -165,23 +142,24 @@ Same goes for `pkg-config` and `libgpg-error`.
 | libuuid       | 1.0.3     | http://sourceforge.net/projects/libuuid/files/libuuid/1.0.3/libuuid.1.0.3.tar.gz |             | CD4
 | lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               | CD1
 | lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    | CD4
-| lzo           | 2.09      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz          |                    | CD4
-| nginx         | 1.15.9    | http://www.nginx.org/download/nginx-1.15.9.tar.gz                         |                    | CD3
+| lzo           | 2.10      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz          |                    | CD4
+| nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | nmap          | 7.80      | https://nmap.org/dist/nmap-7.80.tar.gz                                    |                    | CD3
 | ntp           | 4.2.8p15  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz |                   | CD3
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    | CD1
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         | CD1,SSB2022
+| oorexx        | 5.0.0     | http://chic.casita.net/arc/oorexx/oorexx-5.0.0.tar.gz                     |                    | CD1,SSB2022
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    | CD0+
 | pdsh          | 2.31      | http://pdsh.googlecode.com/files/pdsh-2.31.tar.bz2                        |                    | CD3
 | perl          | 5.30.0    | http://www.cpan.org/src/perl-5.30.0.tar.gz                                |                    | CD1
 | pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    | CD2,CD4
-| regina        | 3.9.4     | http://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.4/Regina-REXX-3.9.4.tar.gz | | CD1
+| regina  | 3.9.5 | https://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.5/regina-rexx-3.9.5.tar.gz |          | CD1,SSB2022
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             | CD0
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    | CD1
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    | CD0+
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    | CD3
 | tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
-| the           | 3.2       | http://downloads.sourceforge.net/project/the/THE-3.2.tar.gz               |                    | CD1
+| the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1,SSB2022
 | tinyxml       | 2.6.2     | sourceforge                                                               |                    | CD4
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
@@ -204,7 +182,6 @@ The following packages have issues or previously had issues:
 | groff         | 1.22.4    | mixed text and grapical/X11 so you might need X11 build environment                            |
 | ntp           | 4.2.8p15  | cannot build statically                                                                        |
 | openvpn       | 2.5.0     | sensitive to OpenSSL version                                                                   |
-| regina        | 3.9.4     | forced the build on some systems (required some manual intervention)                           |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        |           | does not build with Musl-ified GCC                                                             |
 | squid         | 3.5.25    | cannot build statically                                                                        |
@@ -261,6 +238,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2023-02-14 (Tuesday) by RMT
+this page "Chicory Packages" last updated 2023-03-29 (Wednesday) by RMT
 
 

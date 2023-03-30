@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+#         Name: chicory-shell (shell script)
+#               Run a shell with installed Chicory packages leading search
+#         Date: 2023-03-29 (Wed)
+#
+
+# default settings
+CHICORY_PREFIX=/usr/opt
+CHICORY_LINKTO=/usr/local
+CHICORY_REPOS=rsync://chic.casita.net/opt
+CHICORY_RESDIR=/local/opt
+
+# optional overrides
+if [ -r /etc/chicoryrc ] ; then . /etc/chicoryrc ; fi
+if [ -r /etc/sysconfig/chicory ] ; then . /etc/sysconfig/chicory ; fi
+if [ -r $HOME/.chicoryrc ] ; then . $HOME/.chicoryrc ; fi
+
+# other variables used
+#  P for package (packagename-dash-packageversion)
+#  R for first repository found to have it
+#  S for local system (systemname-dash-architecture)
+#  Z for short name of this script
+
+#Z=`basename $0`
+Z=chicory
+
+# scan all "production" packages looking for bin sub-dirs
+for P in ` ls $CHICORY_PREFIX/. | grep '.-.' \
+        | awk -F- '{print $1}' | uniq | sort | uniq ` ; do
+    if [ -d $CHICORY_PREFIX/$P/bin ] ; then
+    PATH="$CHICORY_PREFIX/$P/bin:$PATH"
+    echo $P ; fi
+done
+
+exec $SHELL $*
+
+exit
+
+

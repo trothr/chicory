@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Open Object Rexx at La Casita with Chicory
-#	  Date: 2023-02-21 (Tue) addition to Sir Santa's bag for 2022
+#               make rules for XMITMSGX at La Casita brewed with Chicory
+#         Date: 2023-03-27 (Mon) scholarship day
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	oorexx
-SC_APV		=	5.0.0
+APPLID		=	xmitmsgx
+SC_APV		=	2.1.0
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -38,28 +38,20 @@ SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL          =       \
-                   http://chic.casita.net/arc/oorexx/oorexx-5.0.0.tar.gz
+SC_URL		=	\
+	   http://www.casita.net/pub/xmitmsgx/$(SC_SOURCE).$(SC_ARC) \
+	   http://www.casita.net/pub/xmitmsgx/$(SC_SOURCE).$(SC_ARC).asc
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x96af6544edf138d9
 
 #
-# defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
-
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+				--no-check-certificate $(SC_URL)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
 #				--enable-static --disable-shared
-#SC_CONFIG	=	cmake .
-SC_CONFIG	=	CMAKE_INSTALL_PREFIX=$(PREFIX)/$(SC_VRM) ; \
-			export CMAKE_INSTALL_PREFIX ; \
-			cmake .
-
-SC_BUILD	=	$(MAKE)
-
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	cmake --install . --prefix $(PREFIX)/$(SC_VRM)
+SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
 #SC_FIXUP	=	strip ...
@@ -82,7 +74,6 @@ SC_BUILDD	=		$(SC_SOURCE)
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-#			ncurses
 
 ########################################################################
 
@@ -119,7 +110,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -130,7 +121,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #
@@ -165,7 +156,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #

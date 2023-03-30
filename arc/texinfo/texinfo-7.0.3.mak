@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Open Object Rexx at La Casita with Chicory
-#	  Date: 2023-02-21 (Tue) addition to Sir Santa's bag for 2022
+#		make rules for TeXInfo at La Casita with Chicory
+#	  Date: 2020-03-29 (Wed) trapped by Melinda's rule
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,55 +14,45 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	oorexx
-SC_APV		=	5.0.0
+APPLID		=	texinfo
+SC_APV		=	7.0.3
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
+#SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
+SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR		=	tar xzf
-SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
-#SC_TAR		=	(bzcat - | tar xf -) <
-#SC_TAR		=	tar xJf
-#SC_TAR		=	(xzcat - | tar xf -) <
+SC_TAR		=	tar xJf
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar xf -) <
+#SC_TAR		=	(lzip -d | tar -xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL          =       \
-                   http://chic.casita.net/arc/oorexx/oorexx-5.0.0.tar.gz
+SC_URL		=	\
+	http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+	http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xddbc579dab37fba9
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
-
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-#				--enable-static --disable-shared
-#SC_CONFIG	=	cmake .
-SC_CONFIG	=	CMAKE_INSTALL_PREFIX=$(PREFIX)/$(SC_VRM) ; \
-			export CMAKE_INSTALL_PREFIX ; \
-			cmake .
-
-SC_BUILD	=	$(MAKE)
-
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	cmake --install . --prefix $(PREFIX)/$(SC_VRM)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+					--no-check-certificate $(SC_URL)
+SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip bin/info bin/install-info
+#SC_FIXUP	=	strip bin/install-info
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -79,10 +69,11 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
+
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-#			ncurses
+#                       perl >= 5.7.3 with Encode required by Texinfo
 
 ########################################################################
 
@@ -192,7 +183,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"

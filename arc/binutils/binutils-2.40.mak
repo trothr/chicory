@@ -1,7 +1,7 @@
 #
 #	  Name: makefile ('make' rules file)
-#		make rules for Open Object Rexx at La Casita with Chicory
-#	  Date: 2023-02-21 (Tue) addition to Sir Santa's bag for 2022
+#		make rules for BINUTILS at La Casita with Chicory
+#	  Date: 2023-03-29 (Wed)
 #
 #		This makefile is intended to reside "above" the
 #		package source tree, which is otherwise unmodified
@@ -14,55 +14,61 @@
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	oorexx
-SC_APV		=	5.0.0
+APPLID		=	binutils
+SC_APV		=	2.40
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE	=	$(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
+#SC_ARC		=	tar.gz
 #SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
+SC_ARC		=	tar.xz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR		=	tar xzf
-SC_TAR		=	(gunzip -f | tar xf -) <
+#SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
 #SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
-#SC_TAR		=	(xzcat - | tar xf -) <
+SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
 #SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL          =       \
-                   http://chic.casita.net/arc/oorexx/oorexx-5.0.0.tar.gz
+SC_URL		=	\
+	    https://ftp.gnu.org/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+	    https://ftp.gnu.org/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+# http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).$(SC_ARC)
+# http://www.kernel.org/pub/linux/devel/$(APPLID)/$(SC_SOURCE).tar.sign
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+#SC_SOURCE_VERIFY = gzip -d < arc/$(SC_SOURCE).$(SC_ARC) ...
+#SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
+#	      | gpg --verify arc/$(SC_SOURCE).tar.sig -
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x13fcef89dd9e3c4f
 
 #
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+SC_FETCH	=	wget --passive-ftp --no-clobber \
+					--no-check-certificate $(SC_URL)
+# Using "--no-check-certificate" so the fetch works on systems with
+# minimal or empty trust store. The hosting site has bought into HSTS
+# which would be a good thing *except* that it forces legit plain HTTP
+# into HTTPS without any recourse. This build wrapper doesn't really
+# need HTTPS because we check the PGP signature of the source archive.
 
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-#				--enable-static --disable-shared
-#SC_CONFIG	=	cmake .
-SC_CONFIG	=	CMAKE_INSTALL_PREFIX=$(PREFIX)/$(SC_VRM) ; \
-			export CMAKE_INSTALL_PREFIX ; \
-			cmake .
-
-SC_BUILD	=	$(MAKE)
-
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	cmake --install . --prefix $(PREFIX)/$(SC_VRM)
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+					--enable-static --disable-shared
+SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip bin/addr2line bin/ar bin/as bin/c++filt \
+	bin/elfedit bin/gprof bin/ld bin/ld.bfd bin/nm bin/objcopy \
+	bin/objdump bin/ranlib bin/readelf bin/size bin/strings bin/strip
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -79,10 +85,11 @@ SC_BUILDX	=		$(MAKE)
 # default build directory matches source directory
 SC_BUILDD	=		$(SC_SOURCE)
 
+
 # historical
 SHARED		=	man
 REQ		=	package-v.r.m
-#			ncurses
+
 
 ########################################################################
 
@@ -119,7 +126,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -130,7 +137,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #
@@ -165,7 +172,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -223,7 +230,7 @@ clean:
 			sh -c ' cd $(SC_BUILDD) ; \
 				exec $(MAKE) clean ' ; fi
 #		rm -f "$(PREFIX)/$(SC_VRM)"
-
+		find src/. -type f -iname config.cache | xargs -r rm
 
 #
 # restore sources as from distribution
@@ -339,14 +346,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src
