@@ -9,12 +9,12 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0x6dea2ba30bc39eb6 | CD0
-| tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x71112ab16cb33b3a | CD0
+| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
+| tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x65c26e471f45b123 | CD0
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0xb26995e310250568 | CD1
-| wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x08302db6a2670428 | CD0
-| curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x78e11c6b279d5c91 | CD0
+| python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0x64e628f8d684696d | CD1
+| wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
+| curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
 | binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | xmitmsgx      | 2.1.1     | http://www.casita.net/pub/xmitmsgx-2.1.1.tar.gz                           | 0x96af6544edf138d9 | CD0
 
