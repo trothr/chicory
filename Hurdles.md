@@ -8,7 +8,6 @@ None of the hurdles listed here are show stoppers.
 They range from annoyance to time sink, and may provide debate fodder.
 In so far as Chicory is meant to extend ecosystems, they are challenges.
 
-
 ## `sysctl`
 
 Linux broke the traditional use of symbolic links with
@@ -21,9 +20,8 @@ then these new kernel settings should not be a problem.
 But if you want non-admin users to use Chicory without privileges,
 then disable these settings with
 
-   sudo sysctl -w fs.protected_hardlinks=0
-   sudo sysctl -w fs.protected_symlinks=0
-
+    sudo sysctl -w fs.protected_hardlinks=0
+    sudo sysctl -w fs.protected_symlinks=0
 
 ## Mac Darwin and `/usr/opt`
 
@@ -36,16 +34,12 @@ This turns out to be handy for Apple systems: you can put the disk
 into service mode, create the sym-link `/usr/opt`, and then return
 the disk to normal mode.
 
-
 ## RSYNC
 
 As of release 3.2.4, RSYNC has a defense against man-in-the-middle
-attacks when using `rsync://` protocol. Addressing this is a work in
+attacks when using `rsync://` protocol. Sometimes this defense gets
+in the way of legitimate work. Addressing the conflict is a work in
 progress. Some `rsync` clients will not retrieve packages from older
 RSYNC servers.
-
-
-
-
 
 
