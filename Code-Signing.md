@@ -8,16 +8,15 @@ or injected with, malware?
 
 ## PGP Signatures
 
-The majority of packages used in supporting the core system
-(largely C sourced, and distributed as compressed TAR files) is signed
-with PGP. More often than not, it's signed using GnuPG, but that's a PGP
-workalike, so we're talking about the same web of trust is involved.
+The majority of packages used in supporting the core system (largely C
+sourced, and distributed as compressed TAR files) are signed with PGP.
+More often than not, any single tarball is signed using GnuPG, a PGP
+workalike, so we're talking about the same web of trust.
 
-The standard Chicory "wrapper" makefile has a `verify` target
-which drives a check of the signature, if there is a signature.
-For the check to pass, your system will need the PGP key of the signer.
-Most of these wrapper makefiles have a comment indicating the hex ID
-of the key needed.
+The standard Chicory "wrapper" makefile has a `verify` target which drives
+a check of the signature, if there is a signature. For the check to pass,
+your system will need the PGP public key of the signer. Most of these
+wrapper makefiles have a comment indicating the hex ID of the key needed.
 
 More than half the packages under the Chicory umbrella are signed.
 All of that signing is via PGP. NOT all of the keys used in signing

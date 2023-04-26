@@ -1,89 +1,106 @@
 #
-#	  Name: makefile ('make' rules file)
-#		make rules for Open Object Rexx at La Casita with Chicory
-#	  Date: 2023-02-21 (Tue) addition to Sir Santa's bag for 2022
+#         Name: makefile ('make' rules file)
+#               make rules for Tor for La Casita with /usr/opt
+#         Date: 2023-04-04 (Tue) prep for VM Workshop Tor talk
 #
-#		This makefile is intended to reside "above" the
-#		package source tree, which is otherwise unmodified
-#		from the distribution (except for published patches),
-#		and allows automatic coexistence of builds for
-#		different hardware and O/S combinations.
+#               This makefile is intended to reside "above" the
+#               package source tree, which is otherwise unmodified
+#               from the distribution (except for published patches),
+#               and allows automatic coexistence of builds for
+#               different hardware and O/S combinations.
 #
 
 # standard stuff for all apps in this series
-PREFIX		=	/usr/opt
+PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID		=	oorexx
-SC_APV		=	5.0.0
-SC_VRM		=	$(APPLID)-$(SC_APV)
+APPLID          =       tor
+SC_APV          =       0.4.7.13
+SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
-#SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
-#SC_ARC		=	tar.lz
+SC_ARC          =       tar.gz
+#SC_ARC         =       tar.bz2
+#SC_ARC         =       tar.xz
+#SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
-SC_TAR		=	(gunzip -f | tar xf -) <
-#SC_TAR		=	tar xjf
-#SC_TAR		=	(bzcat - | tar xf -) <
-#SC_TAR		=	tar xJf
-#SC_TAR		=	(xzcat - | tar xf -) <
-#SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar xf -) <
+#SC_TAR         =       tar xzf
+SC_TAR          =       (gunzip -f | tar xf -) <
+#SC_TAR         =       tar xjf
+#SC_TAR         =       (bzcat - | tar xf -) <
+#SC_TAR         =       tar xJf
+#SC_TAR         =       (xzcat - | tar xf -) <
+#SC_TAR         =       tar --lzip -xf
+#SC_TAR         =       (lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
-                   http://chic.casita.net/arc/oorexx/oorexx-5.0.0.tar.gz
-#https://github.com/ooRexx/ooRexx
+        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC) \
+        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).sha256sum \
+        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).sha256sum.asc
 
 #SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x28988BF5, 0x19F78451, 0x165733EA, 0x8D29319A
+# Roger Dingledine (0x28988BF5 and 0x19F78451) or Nick Mathewson
+# (0x165733EA, or subkey 0x8D29319A) sign the Tor source code tarballs.
+# Erinn Clark (0x63FEE659) signs the Tor Browser Bundles,
+# Vidalia bundles, and many other packages. She signs RPMs with her
+# other key (0xF1F5C9B5). Andrew Lewman (0x31B0974B, 0x6B4D6475)
+# used to sign packages for RPMs, Windows, and OS X.
+
+# Use the Tor network to get the latest Tor source.
+# This is not strictly required but might sometimes be best practice.
+SC_FETCH        =       echo $(SC_URL) | xargs -n 1 \
+                        curl --remote-time --ftp-pasv --remote-name \
+                                --insecure --socks4a 127.0.0.1:9050
 
 #
-# defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
+# override default SC_CONFIG
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+                        --with-openssl-dir=/usr/opt/openssl \
+                                --enable-static-openssl \
+                        --with-libevent-dir=/usr/opt/libevent \
+                                --enable-static-libevent \
+                        --with-zlib-dir=/usr/opt/zlib \
+                                --enable-static-zlib \
+                        --disable-lzma \
+                        --disable-gcc-hardening \
+                        --enable-static-tor \
+                        --disable-asciidoc
+# we really *do* want man pages, so need to find out what's missing
+# and then remove the --disable-asciidoc flag from configure
 
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-#				--enable-static --disable-shared
-#SC_CONFIG	=	cmake .
-SC_CONFIG	=	CMAKE_INSTALL_PREFIX=$(PREFIX)/$(SC_VRM) ; \
-			export CMAKE_INSTALL_PREFIX ; \
-			cmake .
-
-SC_BUILD	=	$(MAKE)
-
-#SC_INSTALL	=	$(MAKE) install
-SC_INSTALL	=	cmake --install . --prefix $(PREFIX)/$(SC_VRM)
+SC_INSTALL      =       $(MAKE) install
+#SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
-#	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
+SC_FIXUP        =       strip bin/tor bin/tor-gencert bin/tor-resolve \
+                                bin/tor-print-ed-signing-cert
+#       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
 # default "system" string is generated by the 'setup' script
-#SYSTEM		=		`uname`
-#SYSTEM		=		`uname -s`
-SYSTEM		=		`./setup --system`
+#SYSTEM         =               `uname`
+#SYSTEM         =               `uname -s`
+SYSTEM          =               `./setup --system`
 
 #
 # default build executable or command is 'make'
-SC_BUILDX	=		$(MAKE)
+SC_BUILDX       =               $(MAKE)
 
 #
 # default build directory matches source directory
-SC_BUILDD	=		$(SC_SOURCE)
+SC_BUILDD       =               $(SC_SOURCE)
 
 # historical
-SHARED		=	man
-REQ		=	package-v.r.m
-#			ncurses
+SHARED          =       man
+REQ             =       package-v.r.m
+#                       libevent
 
 ########################################################################
 
@@ -120,7 +137,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -131,7 +148,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #
@@ -166,7 +183,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -296,7 +313,6 @@ arc/$(SC_SOURCE).$(SC_ARC):
 		@test -d arc
 		sh -c ' cd arc ; $(SC_FETCH) '
 		@test -s arc/$(SC_SOURCE).$(SC_ARC)
-#		@test -s arc/$(SC_VRM).$(SC_ARC)
 
 sys:		_ins
 		rm -f sys
@@ -340,14 +356,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src
