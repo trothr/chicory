@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
+| flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
 | xmitmsgx      | 2.1.2     | http://www.casita.net/pub/xmitmsgx-2.1.2.tar.gz                           | 0x96af6544edf138d9 | CD0
 | zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
 | tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x65c26e471f45b123 | CD0
