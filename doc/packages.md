@@ -9,6 +9,15 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+
+| openssh       | 9.3p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
+| openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| rsync         | 3.2.7     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.7.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
+| readline      | 8.0       | http://ftp.gnu.org/pub/gnu/readline/readline-8.0.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
+| tcl           | 8.6.10    | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.10-src.tar.gz                      |                    | CD1
+
+| zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
+| fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
 | fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
 | flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
 | xmitmsgx      | 2.1.2     | http://www.casita.net/pub/xmitmsgx-2.1.2.tar.gz                           | 0x96af6544edf138d9 | CD0
@@ -82,6 +91,7 @@ most recent at the top. Time of latest update at the bottom.
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
+| nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d | CD5
 | openssh       | 9.1p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz | 0xd3e5f56b6d920d30 | CD5,SSB2022
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
@@ -111,6 +121,7 @@ most recent at the top. Time of latest update at the bottom.
 | wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
+| zlib          | 1.2.12    | http://www.zlib.net/zlib-1.2.12.tar.gz                                    | 0x783fcd8e58bcafba | CD4,CD0
 | zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
 
 \*Package name or "application ID" in Chicory is never hyphenated.
@@ -145,7 +156,6 @@ Same goes for `pkg-config` and `libgpg-error`.
 | lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               | CD1
 | lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    | CD4
 | lzo           | 2.10      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz          |                    | CD4
-| nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | nmap          | 7.80      | https://nmap.org/dist/nmap-7.80.tar.gz                                    |                    | CD3
 | ntp           | 4.2.8p15  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz |                   | CD3
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    | CD1
@@ -167,7 +177,6 @@ Same goes for `pkg-config` and `libgpg-error`.
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
 | vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD3
-| zlib          | 1.2.12    | http://www.zlib.net/zlib-1.2.12.tar.gz                                    | 0x783fcd8e58bcafba | CD4,CD0
 | zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0+
 
 ## Notes
@@ -181,14 +190,14 @@ The following packages have issues or previously had issues:
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | db            | 6.0.35    | download site enforces manual interaction                                                      |
 | e2fsprogs     | 1.45.6    | does not build on some older 32-bit Linux X86 systems                                          |
-| groff         | 1.22.4    | mixed text and grapical/X11 so you might need X11 build environment                            |
+| groff         | 1.22.4    | package is mixed text and grapical/X11 so you might need X11 build environment                 |
 | ntp           | 4.2.8p15  | cannot build statically                                                                        |
 | openvpn       | 2.5.0     | sensitive to OpenSSL version                                                                   |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        |           | does not build with Musl-ified GCC                                                             |
 | squid         | 3.5.25    | cannot build statically                                                                        |
 | stunnel       | 5.50      | cannot build statically                                                                        |
-| tcl           | 8.6.9     | cannot build statically                                                                        |
+| tcl           | 8.6.x     | cannot build statically                                                                        |
 
 Package name or "application ID" is never hyphenated in Chicory.
 Packages with a dash in the name do not have (and do not need) a dash in
