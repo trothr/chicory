@@ -1,0 +1,2 @@
+fs.protected_hardlinks = 0
+fs.protected_symlinks = 0

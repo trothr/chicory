@@ -7,6 +7,8 @@ This directory is where some public keys for that purpose are found.
 ## Vet Your Keys
 
 This collection is a small subset and is entirely PGP public keys.
+(That is, while Chicory can use PKI certificates, no PKI certs are
+found here at this time.)
 
 Acquiring keys is well documented elsewhere.
 For PGP keys, understanding the Web of Trust is essential.
