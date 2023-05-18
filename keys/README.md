@@ -2,7 +2,7 @@
 
 Chicory build logic (in what we call a "wrapper" makefile)
 can check the signature of a package source archive.
-This is where some public keys for that purpose are found.
+This directory is where some public keys for that purpose are found.
 
 ## Vet Your Keys
 
