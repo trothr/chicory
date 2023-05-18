@@ -10,18 +10,21 @@ In so far as Chicory is meant to extend ecosystems, they are challenges.
 
 ## `sysctl`
 
-Linux broke the traditional use of symbolic links with
+Linux broke the traditional use of symbolic links with the
 `fs.protected_hardlinks` and `fs.protected_symlinks` kernel settings.
 These magical settings, particularly the latter, prevent most users from
 following a symbolic link which is owned by another user (other than root).
 
 If you want to use Chicory entirely as the administrator,
 then these new kernel settings should not be a problem.
-But if you want non-admin users to use Chicory without privileges,
-then disable these settings with
+But if you want non-admin users to use Chicory without privileges
+(without admin intervention), then disable these settings with
 
     sudo sysctl -w fs.protected_hardlinks=0
     sudo sysctl -w fs.protected_symlinks=0
+
+For convenience, a reference `/etc/sysctl.d/99-traditional` file
+is included in the project.
 
 ## Mac Darwin and `/usr/opt`
 
