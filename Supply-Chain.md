@@ -6,7 +6,8 @@ original sources* even when other repositories go 404.
 
 The "wrapper" makefile for any Chicory package automatically retrieves
 the source for the package but never discards it. Neither `make clean`
-nor `make distclean` remove the source.
+nor `make distclean` remove the source archive. (The latter will remove
+exploded source *hierarchy*, resetting the project state.)
 
 ## Chicory
 
@@ -39,7 +40,7 @@ of the package.) Users would run the compiler as `/usr/opt/gcc/bin/gcc`.
 
 Chicory has the following catetories:
 
-* CD1 - scripting langauges (e.g., Perl and Python)
+* CD1 - scripting langauges (e.g.: Perl, Python, Rexx, Tcl)
 * CD2 - compiler and assembler and related tools
 * CD3 - major utilities (e.g., web servers)
 * CD4 - common and popular libraries
@@ -49,6 +50,9 @@ These categories are not mandatory but may facilitate managing packages.
 For example, if a system is considered vulnerable because users can
 compile programs, then removing the CD2 collection is a quick way of
 mitigating that vulnerability.
+
+Chicory has a concept of the core system which it does not manage.
+Packages which might be part of the "core" can be catetorized under CD0.
 
 ## Code Signing
 
@@ -104,8 +108,11 @@ Chicory supports a Unix model and requires some aspects of a POSIX
 environment, specifically symbolic links. While most of the development
 is done on Linux, Chicory does not favor Linux over other systems.
 
-All contemporary (as of this writing) computer operating systems have a
-POSIX interface.
+All contemporary computer operating systems have a POSIX interface.
+For some systems (such as MS Windows), the POSIX-compliant environment
+is layered on top of a non-POSIX base system. For example, Chicory works
+on CYGWIN and under WSL but does not work on plain Windows or MINGW.
+(Chicory *must* have symbolic links.)
 
 ## A word about Darwin
 
@@ -120,5 +127,8 @@ of the `/usr/opt` directory. Apple takes away that ability from the admin
 by locking down `/usr` beyond admin control. Otherwise, the Darwin hack
 would be a valuable feature. Sym-linking `/usr/opt` to `/var/opt`
 is recommended for most systems.
+
+This Apple restriction is one of the issues mentioned in
+[the 'hurdles' doc](Hurdles.md).
 
 
