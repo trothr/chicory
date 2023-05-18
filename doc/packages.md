@@ -9,13 +9,14 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-
+| readline      | 8.2       | http://ftp.gnu.org/pub/gnu/readline/readline-8.2.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
+| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         |                    | CD0+
+|               |           |                                                                           |                    |
 | openssh       | 9.3p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
 | openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | rsync         | 3.2.7     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.7.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
-| readline      | 8.0       | http://ftp.gnu.org/pub/gnu/readline/readline-8.0.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
 | tcl           | 8.6.10    | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.10-src.tar.gz                      |                    | CD1
-
+|               |           |                                                                           |                    |
 | zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
 | fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
 | fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
@@ -28,6 +29,19 @@ most recent at the top. Time of latest update at the bottom.
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
 | binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
+
+## Current Platforms
+
+Chicory has been applied to many platforms.
+The following have been worked in recent weeks:
+
+* Linux-i386
+* Linux-x86_64
+* Linux-s390
+* Linux-s390x
+* Linux-arm
+* FreeBSD-amd64
+* SunOS-x86_64
 
 ## Packages Previously Built
 
