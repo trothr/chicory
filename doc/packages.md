@@ -211,7 +211,8 @@ The following packages have issues or previously had issues:
 | screen        |           | does not build with Musl-ified GCC                                                             |
 | squid         | 3.5.25    | cannot build statically                                                                        |
 | stunnel       | 5.50      | cannot build statically                                                                        |
-| tcl           | 8.6.x     | cannot build statically                                                                        |
+| regina        | any       | cannot build statically                                                                        |
+| tcl           | any       | cannot build statically                                                                        |
 
 Package name or "application ID" is never hyphenated in Chicory.
 Packages with a dash in the name do not have (and do not need) a dash in
