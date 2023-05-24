@@ -221,11 +221,10 @@ separating the package name from the version, only one dash is allowed.
 
 ## More Notes
 
-Taken from the Wikepedia page, 
-in September 2002, the GNU `coreutils` package was created by merging
- the earlier
-packages `textutils`, `shellutils`, and `fileutils`, along with some other
-miscellaneous utilities.
+Taken from the Wikepedia page, in September 2002, the GNU `coreutils` package
+was created by merging the earlier packages `textutils`, `shellutils`, and
+`fileutils`, along with some other miscellaneous utilities.
+
 `https://en.wikipedia.org/wiki/GNU_Core_Utilities`
 
 | package       | release   | notes                                                                                          |
