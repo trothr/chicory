@@ -9,6 +9,15 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0+
+| libressl      | 3.7.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| xmitmsgx      | 2.1.3     | http://www.casita.net/pub/xmitmsgx-2.1.3.tar.gz                           | 0x96af6544edf138d9 | CD4
+| glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0+
+| musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
+| libgcrypt     | 1.10.1    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2             | 0x528897b826403ada | CD5
+| libksba       | 1.6.2     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.2.tar.bz2                  | 0x528897b826403ada | CD4
+| libgpg-error* | 1.46      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.46.tar.bz2         | 0x528897b826403ada | CD4
+|               |           |                                                                           |                    |
 | readline      | 8.2       | http://ftp.gnu.org/pub/gnu/readline/readline-8.2.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
 | dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         |                    | CD0+
 |               |           |                                                                           |                    |
