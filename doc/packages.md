@@ -9,35 +9,27 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gnucobol      | 3.2       | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.2.tar.xz                  | 0x13e96b53c005604e | CD2
+| xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4
+| apache        | 2.4.57    | https://downloads.apache.org/httpd/httpd-2.4.57.tar.bz2                   | 0x82781de46d5954fa | CD3
+| apr           | 1.7.4     | https://dlcdn.apache.org/apr/apr-1.7.4.tar.bz2                            | 0x82781de46d5954fa | CD4
+| aprutil       | 1.6.3     | https://downloads.apache.org/apr/aprutil-1.6.3.tar.bz2                    | 0x82781de46d5954fa | CD4
+| expat         | 2.5.0     | https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2 | 0x96262acffbd3aec6 | CD4
+| openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+|               |           |                                                                           |                    |
+| curl          | 8.2.0     | https://curl.haxx.se/download/curl-8.2.0.tar.bz2                          | 0x5cc908fdb71e12c2 | CD0
+| tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
+| bash          | 5.2.15    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.15.tar.gz                       | 0xbb5869f064ea74ab | CD0
+| openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2tar.gz  | 0x2a3f414e736060ba | CD5
+|               |           |                                                                           |                    |
+| snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
 | bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0+
 | libressl      | 3.7.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| xmitmsgx      | 2.1.3     | http://www.casita.net/pub/xmitmsgx-2.1.3.tar.gz                           | 0x96af6544edf138d9 | CD4
 | glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0+
 | musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
 | libgcrypt     | 1.10.1    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2             | 0x528897b826403ada | CD5
 | libksba       | 1.6.2     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.2.tar.bz2                  | 0x528897b826403ada | CD4
 | libgpg-error* | 1.46      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.46.tar.bz2         | 0x528897b826403ada | CD4
-|               |           |                                                                           |                    |
-| readline      | 8.2       | http://ftp.gnu.org/pub/gnu/readline/readline-8.2.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
-| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         |                    | CD0+
-|               |           |                                                                           |                    |
-| openssh       | 9.3p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
-| openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| rsync         | 3.2.7     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.7.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
-| tcl           | 8.6.10    | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.10-src.tar.gz                      |                    | CD1
-|               |           |                                                                           |                    |
-| zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
-| fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
-| fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
-| flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
-| xmitmsgx      | 2.1.2     | http://www.casita.net/pub/xmitmsgx-2.1.2.tar.gz                           | 0x96af6544edf138d9 | CD0
-| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
-| tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x65c26e471f45b123 | CD0
-| texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0x64e628f8d684696d | CD1
-| wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
-| curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
-| binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 
 ## Current Platforms
 
@@ -64,18 +56,20 @@ The following have been worked in recent weeks:
 | bash          | 5.1.8     | http://ftp.gnu.org/pub/gnu/bash/bash-5.1.8.tar.gz                         | 0xbb5869f064ea74ab | CD0+
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
-| binutils      | 2.38      | https://ftp.gnu.org/gnu/binutils/binutils-2.38.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
+| binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
 | bison         | 3.5.3     | http://ftp.gnu.org/pub/gnu/bison/bison-3.5.3.tar.xz                       | 0x0ddcaa3278d5264e | CD0+
 | cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
-| curl          | 7.81.0    | http://curl.haxx.se/download/curl-7.81.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0+
-| curl          | 7.67.0    | http://curl.haxx.se/download/curl-7.67.0.tar.xz                           | 0x78e11c6b279d5c91 | CD0
+| curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
+| fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 | CD0+
+| fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 | CD0+
+| flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gcc           | 9.2.0     | http://ftp.gnu.org/pub/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.bz2                | 0x3ab00996fc26a641 | CD2
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 | CD2
@@ -116,19 +110,19 @@ The following have been worked in recent weeks:
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d | CD5
-| openssh       | 9.1p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.1p1.tar.gz | 0xd3e5f56b6d920d30 | CD5,SSB2022
+| openssh       | 9.3p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| openssl       | 1.1.1q    | https://www.openssl.org/source/openssl-1.1.1q.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 3.0.7     | https://www.openssl.org/source/openssl-3.0.7.tar.gz                       | 0xd9c4d26d0e604491 | CD5
 | openvpn       | 2.5.0     | https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz      | 0xf132b1cbaf131cae | CD5
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
-| python        | 3.8.2     | https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz               | 0xb26995e310250568 | CD1
-| python        | 3.7.6     | https://www.python.org/ftp/python/3.7.6/Python-3.7.6.tar.xz               | 0xb26995e310250568 | CD1
+| python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0x64e628f8d684696d | CD1
 | python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,SSB2022
-| readline      | 7.0       | http://ftp.gnu.org/pub/gnu/readline/readline-7.0.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
+| readline      | 8.2       | http://ftp.gnu.org/pub/gnu/readline/readline-8.2.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
+| rsync         | 3.2.7     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.7.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
 | rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0,SSB2022
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0+
@@ -137,14 +131,15 @@ The following have been worked in recent weeks:
 | sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
 | tar           | 1.22      | https://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
-| tcsh          | 6.22.02   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.22.02.tar.gz               | 0x71112ab16cb33b3a | CD0+
-| texinfo       | 6.7       | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-6.7.tar.xz                    | 0xddbc579dab37fba9 | CD0+
+| tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x65c26e471f45b123 | CD0
+| texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
 | tor           | 0.4.7.13  | https://dist.torproject.org/tor-0.4.7.13.tar.gz                           | 0xfe43009c4607b1fb | CD5
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
-| wget          | 1.20.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.20.3.tar.gz                       | 0x08302db6a2670428 | CD0+
+| wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
+| xmitmsgx      | 2.1.3     | http://www.casita.net/pub/xmitmsgx-2.1.3.tar.gz                           | 0x96af6544edf138d9 | CD4
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
-| zlib          | 1.2.12    | http://www.zlib.net/zlib-1.2.12.tar.gz                                    | 0x783fcd8e58bcafba | CD4,CD0
+| zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
 | zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
 
 \*Package name or "application ID" in Chicory is never hyphenated.
@@ -161,7 +156,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 |               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    | CD3
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    | CD3
-| dash          | 0.5.10.2  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.10.2.tar.gz       |                    | CD0+
+| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         |                    | CD0+
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    | CD0+
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    | CD3
 | file          | 5.42      | http://distfiles.macports.org/file/file-5.42.tar.gz                       |                    | CD0+
@@ -193,14 +188,14 @@ Same goes for `pkg-config` and `libgpg-error`.
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    | CD1
 | sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    | CD0+
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    | CD3
-| tcl           | 8.6.9     | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.9-src.tar.gz                       |                    | CD1
+| tcl           | 8.6.10    | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.10-src.tar.gz                      |                    | CD1
 | the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1,SSB2022
 | tinyxml       | 2.6.2     | sourceforge                                                               |                    | CD4
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
 | vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD3
-| zsh           | 5.8       | http://www.zsh.org/pub/old/zsh-5.8.tar.xz                                 |                    | CD0+
+| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
 
 ## Notes
 
