@@ -7,8 +7,15 @@ most recent at the top. Time of latest update at the bottom.
 
 ## Packages Recently Built
 
+
+
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
+! pcre          | 8.45      | http://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
+| bind          | 9.18.17   | http://ftp.isc.org/isc/bind9/9.18.17/bind-9.18.17.tar.gz                  | 0x6fa6ebc9911a4c02 | CD3
+| zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4
+|               |           |                                                                           |                    |
 | gnucobol      | 3.2       | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.2.tar.xz                  | 0x13e96b53c005604e | CD2
 | xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4
 | apache        | 2.4.57    | https://downloads.apache.org/httpd/httpd-2.4.57.tar.bz2                   | 0x82781de46d5954fa | CD3
@@ -25,21 +32,15 @@ most recent at the top. Time of latest update at the bottom.
 | snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
 | bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0+
 | libressl      | 3.7.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0+
-| musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
-| libgcrypt     | 1.10.1    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2             | 0x528897b826403ada | CD5
-| libksba       | 1.6.2     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.2.tar.bz2                  | 0x528897b826403ada | CD4
-| libgpg-error* | 1.46      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.46.tar.bz2         | 0x528897b826403ada | CD4
+| libressl      | 3.6.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 
 ## Current Platforms
 
 Chicory has been applied to many platforms.
 The following have been worked in recent weeks:
 
-* Linux-i386
-* Linux-x86_64
-* Linux-s390
-* Linux-s390x
+* Linux-i386, Linux-x86_64
+* Linux-s390, Linux-s390x
 * Linux-arm
 * FreeBSD-amd64
 * SunOS-x86_64
@@ -88,10 +89,10 @@ The following have been worked in recent weeks:
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
 | libassuan     | 2.5.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.5.tar.bz2              | 0x528897b826403ada | CD4
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
-| libgcrypt     | 1.8.7     | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.8.7.tar.bz2              | 0x528897b826403ada | CD5
-| libgpg-error* | 1.41      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.41.tar.bz2         | 0x528897b826403ada | CD4
+| libgcrypt     | 1.10.1    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2             | 0x528897b826403ada | CD5
+| libgpg-error* | 1.46      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.46.tar.bz2         | 0x528897b826403ada | CD4
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
-| libksba       | 1.5.0     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.5.0.tar.bz2                  | 0x528897b826403ada | CD4
+| libksba       | 1.6.2     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.2.tar.bz2                  | 0x528897b826403ada | CD4
 | libressl      | 3.1.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
@@ -104,7 +105,7 @@ The following have been worked in recent weeks:
 | make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
 | mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
 | mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
-| musl          | 1.2.3     | http://www.musl-libc.org/releases/musl-1.2.3.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
+| musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
@@ -163,6 +164,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 |               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    | CD4
 | glib          | 2.57.1    | http://ftp.gnome.org/pub/gnome/sources/glib/2.57/glib-2.57.1.tar.bz2      |                    | CD4
+| glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0+
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    | CD0+
 | hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    | CD5
 | irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
