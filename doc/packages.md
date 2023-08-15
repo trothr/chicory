@@ -11,8 +11,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5
 | gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
-! pcre          | 8.45      | http://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
+| pcre          | 8.45      | http://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | bind          | 9.18.17   | http://ftp.isc.org/isc/bind9/9.18.17/bind-9.18.17.tar.gz                  | 0x6fa6ebc9911a4c02 | CD3
 | zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4
 |               |           |                                                                           |                    |
