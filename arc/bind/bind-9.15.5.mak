@@ -1,107 +1,103 @@
 #
-#	  Name: makefile ('make' rules file)
+#         Name: makefile ('make' rules file)
 #               make rules for ISC BIND at La Casita brewed with Chicory
-#	  Date: 2019-Oct-27 (Sun)
+#         Date: 2023-08-25 (Fri)
 #
-#		This makefile is intended to reside "above" the
-#		package source tree, which is otherwise unmodified
-#		from the distribution (except for published patches),
-#		and allows automatic coexistence of builds for
-#		different hardware and O/S combinations.
+#               This makefile is intended to reside "above" the
+#               package source tree, which is otherwise unmodified
+#               from the distribution (except for published patches),
+#               and allows automatic coexistence of builds for
+#               different hardware and O/S combinations.
 #
 
 # standard stuff for all apps in this series
-PREFIX		=	/usr/opt
+PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID		=	bind
-SC_APV		=	9.15.5
-SC_VRM		=	$(APPLID)-$(SC_APV)
+APPLID          =       bind
+SC_APV          =       9.15.5
+SC_VRM          =       $(APPLID)-$(SC_APV)
 
+#
 # default source directory matches the VRM string
-SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
-#SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
+SC_ARC          =       tar.gz
+#SC_ARC         =       tar.bz2
+#SC_ARC         =       tar.xz
+#SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
-SC_TAR		=	tar xzf
-#SC_TAR		=	tar xjf
-#SC_TAR		=	tar xJf
-#SC_TAR		=	tar --lzip -xf
+#SC_TAR         =       tar xzf
+SC_TAR          =       (gunzip -f | tar xf -) <
+#SC_TAR         =       tar xjf
+#SC_TAR         =       (bzcat - | tar xf -) <
+#SC_TAR         =       tar xJf
+#SC_TAR         =       (xzcat - | tar xf -) <
+#SC_TAR         =       tar --lzip -xf
+#SC_TAR         =       (lzip -d | tar xf -) <
 
+#
 # where to find the source on the internet (no default)
-SC_URL		=	\
- http://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
- http://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc \
- http://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).sha1.asc \
- http://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).sha256.asc \
- http://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).sha512.asc \
- http://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).txt
-#http://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).html
-#http://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).pdf
+SC_URL          =       \
+ https://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
+ https://ftp.isc.org/isc/bind9/$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc \
+ https://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).html
+#https://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).txt
+#https://ftp.isc.org/isc/bind9/$(SC_APV)/RELEASE-NOTES-bind-$(SC_APV).pdf
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xf1b11bf05cf02e57
 #                                                           0x74bb6b9a4cbb3d38
 
 #
-SC_FETCH	=	wget --passive-ftp --no-clobber \
-				--no-check-certificate $(SC_URL)
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--enable-static --disable-shared \
-				--with-openssl=/usr/opt/openssl \
-				--disable-linux-caps \
-				LIBS=-lrt \
-				--without-python \
-				--without-gssapi
-#				--enable-rrl
+# defaults
+SC_FETCH        =       wget --passive-ftp --no-clobber \
+                                        --no-check-certificate $(SC_URL)
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+                                --with-openssl=/usr/opt/openssl \
+                                --disable-linux-caps \
+                                LIBS=-lrt \
+                                --without-gssapi --disable-doh \
+						--without-python \
+					--enable-static --disable-shared
+# Unrecognized options:    --disable-doh
 
-SC_INSTALL	=	$(MAKE) install
-#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
+SC_INSTALL      =       $(MAKE) install
+#SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
+#
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/dig bin/host bin/nslookup \
-	bin/nsupdate sbin/named sbin/rndc sbin/rndc-confgen \
-	sbin/dnssec-keygen sbin/dnssec-signzone sbin/named-checkconf \
-	sbin/named-checkzone \
-	\
-	sbin/ddns-confgen \
-	sbin/dnssec-keyfromlabel \
-	sbin/dnssec-dsfromkey \
-	sbin/named-journalprint \
-	sbin/dnssec-revoke \
-	sbin/dnssec-settime \
-	sbin/nsec3hash \
-	\
-	bin/delv \
-	sbin/dnssec-importkey \
-	sbin/dnssec-verify \
-	\
-	bin/arpaname bin/mdig bin/named-rrchecker
-#	sbin/arpaname sbin/named-rrchecker
-#	sbin/genrandom sbin/isc-hmac-fixup
-#	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
+SC_FIXUP        =       strip bin/dig bin/host bin/nslookup \
+        bin/nsupdate bin/delv bin/arpaname bin/mdig bin/named-rrchecker \
+        sbin/named sbin/rndc sbin/rndc-confgen sbin/ddns-confgen \
+        \
+        sbin/named-checkconf sbin/named-checkzone sbin/nsec3hash \
+        sbin/dnssec-keyfromlabel sbin/dnssec-keygen sbin/dnssec-importkey \
+        sbin/dnssec-revoke sbin/dnssec-cds sbin/dnssec-dsfromkey \
+        sbin/dnssec-signzone sbin/dnssec-settime sbin/dnssec-verify \
+                              sbin/named-journalprint sbin/tsig-keygen
+#       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
 # default "system" string is generated by the 'setup' script
-#SYSTEM		=		`uname`
-#SYSTEM		=		`uname -s`
-SYSTEM		=		`./setup --system`
+#SYSTEM         =               `uname`
+#SYSTEM         =               `uname -s`
+SYSTEM          =               `./setup --system`
 
-#
+# 
 # default build executable or command is 'make'
-SC_BUILDX	=		$(MAKE)
+SC_BUILDX       =               $(MAKE)
 
 #
 # default build directory matches source directory
-SC_BUILDD	=		$(SC_SOURCE)
+SC_BUILDD       =               $(SC_SOURCE)
 
 # historical
-SHARED		=	man
-REQ		=	package-v.r.m
+SHARED          =       man
+REQ             =       package-v.r.m
+
 
 ########################################################################
 
@@ -138,7 +134,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -149,7 +145,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #
@@ -184,7 +180,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -211,19 +207,13 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
 		if [ ! -z "$(SC_FIXUP)" ] ; then \
 			sh -c " cd $(SYSTEM) ; $(SC_FIXUP) " ; fi
 		mv install.log $(SYSTEM)/.
-
-
-#
-#
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
-		$(SC_SOURCE_VERIFY)
 
 #
 #
@@ -273,8 +263,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi
@@ -288,6 +279,11 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 			| grep -v ' ' | xargs chmod u+w
 		find $(SC_SOURCE) -type d -print \
 			| grep -v ' ' | xargs chmod u+wx
+
+#
+#
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_SOURCE_VERIFY)
 
 #
 #
@@ -357,14 +353,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src

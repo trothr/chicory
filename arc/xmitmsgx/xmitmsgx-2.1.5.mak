@@ -54,7 +54,7 @@ SC_INSTALL	=	$(MAKE) install
 #SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
+SC_FIXUP	=	strip bin/xmitmsg bin/xmiterr
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #

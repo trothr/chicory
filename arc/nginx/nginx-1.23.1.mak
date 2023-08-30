@@ -49,7 +49,9 @@ SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 # defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-					--without-http_rewrite_module
+					--without-http_rewrite_module \
+					--with-openssl=$(PREFIX)/openssl
+
 SC_INSTALL	=	$(MAKE) install
 
 # default for this is blank, varies widely per package
