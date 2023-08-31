@@ -54,6 +54,7 @@ SC_INSTALL	=	$(MAKE) install
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 						--enable-shared=no
 #configure: WARNING: unrecognized options: --disable-nls, --enable-static
+#configure: WARNING: unrecognized options: --with-tclinclude, --enable-shared
 
 # default for this is blank, varies widely per package
 #SC_FIXUP	=	strip ...
