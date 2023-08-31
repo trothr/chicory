@@ -27,11 +27,6 @@ most recent at the top. Time of latest update at the bottom.
 | tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
 | bash          | 5.2.15    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.15.tar.gz                       | 0xbb5869f064ea74ab | CD0
 | openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2tar.gz  | 0x2a3f414e736060ba | CD5
-|               |           |                                                                           |                    |
-| snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
-| bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0+
-| libressl      | 3.7.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| libressl      | 3.6.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 
 ## Current Platforms
 
@@ -97,7 +92,8 @@ The following have been worked in recent weeks:
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.4.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.4.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.5.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5
-| libressl      | 3.6.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.6.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.7.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
@@ -126,6 +122,7 @@ The following have been worked in recent weeks:
 | rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0,SSB2022
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0+
+| snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 | CD3
 | stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
 | sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
@@ -151,6 +148,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0+
 | bin86         | 0.16.18   | http://distro.ibiblio.org/slitaz/sources/packages-stable/b/bin86-0.16.18.tar.gz |              | CD2
 | bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   |                    | CD0+
 |               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
