@@ -21,12 +21,6 @@ most recent at the top. Time of latest update at the bottom.
 | apr           | 1.7.4     | https://dlcdn.apache.org/apr/apr-1.7.4.tar.bz2                            | 0x82781de46d5954fa | CD4
 | aprutil       | 1.6.3     | https://downloads.apache.org/apr/aprutil-1.6.3.tar.bz2                    | 0x82781de46d5954fa | CD4
 | expat         | 2.5.0     | https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2 | 0x96262acffbd3aec6 | CD4
-| openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-|               |           |                                                                           |                    |
-| curl          | 8.2.0     | https://curl.haxx.se/download/curl-8.2.0.tar.bz2                          | 0x5cc908fdb71e12c2 | CD0
-| tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
-| bash          | 5.2.15    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.15.tar.gz                       | 0xbb5869f064ea74ab | CD0
-| openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2tar.gz  | 0x2a3f414e736060ba | CD5
 
 ## Current Platforms
 
@@ -37,7 +31,7 @@ The following have been worked in recent weeks:
 * Linux-s390, Linux-s390x
 * Linux-arm
 * FreeBSD-amd64
-* SunOS-x86_64
+* SunOS-x86_64, SunOS-i386
 
 ## Packages Previously Built
 
@@ -48,7 +42,7 @@ The following have been worked in recent weeks:
 | attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 | CD0+
 | autoconf      | 2.69      | http://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.69.tar.gz                  | 0xa7a16b4a2527436a | CD0+
 | automake      | 1.16.2    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.2.tar.gz                | 0x0adee10094604d37 | CD0+
-| bash          | 5.1.8     | http://ftp.gnu.org/pub/gnu/bash/bash-5.1.8.tar.gz                         | 0xbb5869f064ea74ab | CD0+
+| bash          | 5.2.15    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.15.tar.gz                       | 0xbb5869f064ea74ab | CD0
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
 | binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
@@ -57,6 +51,7 @@ The following have been worked in recent weeks:
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
 | curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
+| curl          | 8.2.0     | https://curl.haxx.se/download/curl-8.2.0.tar.bz2                          | 0x5cc908fdb71e12c2 | CD0
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
@@ -106,7 +101,7 @@ The following have been worked in recent weeks:
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.2     | http://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.2.tar.gz | 0x860b7fbb32f8119d | CD5
-| openssh       | 9.3p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
+| openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2tar.gz  | 0x2a3f414e736060ba | CD5
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
@@ -128,7 +123,7 @@ The following have been worked in recent weeks:
 | sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
 | tar           | 1.22      | https://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
-| tcsh          | 6.24.07   | http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz | 0x65c26e471f45b123 | CD0
+| tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
 | tor           | 0.4.7.13  | https://dist.torproject.org/tor-0.4.7.13.tar.gz                           | 0xfe43009c4607b1fb | CD5
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
@@ -266,6 +261,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2023-03-29 (Wednesday) by RMT
+this page "Chicory Packages" last updated 2023-09-01 (Friday) by RMT
 
 
