@@ -9,18 +9,14 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
-| oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5
+| tor           | 0.4.8.5   | https://dist.torproject.org/tor-0.4.8.5.tar.gz                            | 0x42e86a2a11f48d36 | CD5, 20230906
+| nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+, 20230700
+| oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
 | gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
+| mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
+| mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
 | pcre          | 8.45      | http://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
-| zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4
-|               |           |                                                                           |                    |
-| gnucobol      | 3.2       | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.2.tar.xz                  | 0x13e96b53c005604e | CD2
-| xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4
-| apache        | 2.4.57    | https://downloads.apache.org/httpd/httpd-2.4.57.tar.bz2                   | 0x82781de46d5954fa | CD3
-| apr           | 1.7.4     | https://dlcdn.apache.org/apr/apr-1.7.4.tar.bz2                            | 0x82781de46d5954fa | CD4
-| aprutil       | 1.6.3     | https://downloads.apache.org/apr/aprutil-1.6.3.tar.bz2                    | 0x82781de46d5954fa | CD4
-| expat         | 2.5.0     | https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2 | 0x96262acffbd3aec6 | CD4
+| zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
 ## Current Platforms
 
@@ -38,7 +34,9 @@ The following have been worked in recent weeks:
 | package*      | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | acl           | 2.2.53    | http://download.savannah.nongnu.org/releases/acl/acl-2.2.53.tar.gz        | 0x41633b9fe837f581 | CD0+
-| apache        | 2.4.27    | http://archive.apache.org/dist/httpd/httpd-2.4.27.tar.gz                  | 0xa348b9847f7214a7 | CD3
+| apache        | 2.4.57    | https://downloads.apache.org/httpd/httpd-2.4.57.tar.bz2                   | 0x82781de46d5954fa | CD3, 20230700
+| apr           | 1.7.4     | https://dlcdn.apache.org/apr/apr-1.7.4.tar.bz2                            | 0x82781de46d5954fa | CD4, 20230700
+| aprutil       | 1.6.3     | https://downloads.apache.org/apr/aprutil-1.6.3.tar.bz2                    | 0x82781de46d5954fa | CD4, 20230700
 | attr          | 2.4.48    | http://download.savannah.nongnu.org/releases/attr/attr-2.4.48.tar.gz      | 0x41633b9fe837f581 | CD0+
 | autoconf      | 2.69      | http://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.69.tar.gz                  | 0xa7a16b4a2527436a | CD0+
 | automake      | 1.16.2    | http://ftp.gnu.org/pub/gnu/automake/automake-1.16.2.tar.gz                | 0x0adee10094604d37 | CD0+
@@ -55,6 +53,7 @@ The following have been worked in recent weeks:
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.15      | http://ftp.gnu.org/pub/gnu/ed/ed-1.15.tar.lz                              | 0x8fe99503132d7742 | CD0+
+| expat         | 2.5.0     | https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2 | 0x96262acffbd3aec6 | CD4, 20230700
 | fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 | CD0+
 | fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
@@ -66,8 +65,7 @@ The following have been worked in recent weeks:
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.20.1.tar.xz                  | 0x4f494a942e4616c2 | CD0+
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
 | gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
-| gnu-cobol*    | 3.1       | https://ftp.gnu.org/gnu/gnucobol/gnu-cobol-3.1.tar.gz                     | 0x71776baedd20ad42 | CD2
-| gnucobol      | 3.1.2     | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.1.2.tar.lz                | 0x71776baedd20ad42 | CD2,SSB2022
+| gnucobol      | 3.2       | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.2.tar.xz                  | 0x13e96b53c005604e | CD2, 20230700
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5,SSB2022
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
@@ -129,14 +127,13 @@ The following have been worked in recent weeks:
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
-| xmitmsgx      | 2.1.3     | http://www.casita.net/pub/xmitmsgx-2.1.3.tar.gz                           | 0x96af6544edf138d9 | CD4
+| xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4, 20230700
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
 | zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
 | zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
 
 \*Package name or "application ID" in Chicory is never hyphenated.
 `util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
-Similarly, `gnu-cobol` is hyphenated above, but is just `gnucobol` in Chicory packaging speak.
 Same goes for `pkg-config` and `libgpg-error`.
 
 ## Packages Without Signatures
