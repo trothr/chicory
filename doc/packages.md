@@ -9,13 +9,14 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| tor           | 0.4.8.5   | https://dist.torproject.org/tor-0.4.8.5.tar.gz                            | 0x42e86a2a11f48d36 | CD5, 20230906
+| autoconf      | 2.71      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.71.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20230915
+| automake      | 1.16.5    | https://ftp.gnu.org/pub/gnu/automake/automake-1.16.5.tar.xz               | 0x91fcc32b6769aa64 | CD0, 20230915
+| pgpdump       | 0.35      | https://www.mew.org/~kazu/proj/pgpdump/pgpdump-0.35.tar.gz                |                    | CD3, 20230914
 | nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+, 20230700
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
 | gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
 | mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
 | mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
-| pcre          | 8.45      | http://ftp.pcre.org/pub/pcre/pcre-8.45.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
 ## Current Platforms
@@ -123,7 +124,7 @@ The following have been worked in recent weeks:
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| tor           | 0.4.7.13  | https://dist.torproject.org/tor-0.4.7.13.tar.gz                           | 0xfe43009c4607b1fb | CD5
+| tor           | 0.4.8.5   | https://dist.torproject.org/tor-0.4.8.5.tar.gz                            | 0x42e86a2a11f48d36 | CD5, 20230906
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
