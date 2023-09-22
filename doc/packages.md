@@ -9,6 +9,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
+| acl           | 2.3.1     | https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.xz        | 0xd5bf9feb0313653a | CD0, 20230921
+| ed            | 1.19      | https://ftp.gnu.org/pub/gnu/ed/ed-1.19.tar.lz                             | 0x8fe99503132d7742 | CD0, 20230921
 | autoconf      | 2.71      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.71.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20230915
 | automake      | 1.16.5    | https://ftp.gnu.org/pub/gnu/automake/automake-1.16.5.tar.xz               | 0x91fcc32b6769aa64 | CD0, 20230915
 | pgpdump       | 0.35      | https://www.mew.org/~kazu/proj/pgpdump/pgpdump-0.35.tar.gz                |                    | CD3, 20230914
