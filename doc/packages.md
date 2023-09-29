@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libressl      | 3.8.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20230929
+| openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
 | acl           | 2.3.1     | https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.xz        | 0xd5bf9feb0313653a | CD0, 20230921
 | ed            | 1.19      | https://ftp.gnu.org/pub/gnu/ed/ed-1.19.tar.lz                             | 0x8fe99503132d7742 | CD0, 20230921
