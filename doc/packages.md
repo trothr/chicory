@@ -11,6 +11,7 @@ most recent at the top. Time of latest update at the bottom.
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | libressl      | 3.8.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20230929
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
+|               |           |                                                                           |                    |
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
 | acl           | 2.3.1     | https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.xz        | 0xd5bf9feb0313653a | CD0, 20230921
 | ed            | 1.19      | https://ftp.gnu.org/pub/gnu/ed/ed-1.19.tar.lz                             | 0x8fe99503132d7742 | CD0, 20230921
@@ -19,10 +20,6 @@ most recent at the top. Time of latest update at the bottom.
 | pgpdump       | 0.35      | https://www.mew.org/~kazu/proj/pgpdump/pgpdump-0.35.tar.gz                |                    | CD3, 20230914
 | nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+, 20230700
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
-| gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
-| mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
-| mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
-| zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
 ## Current Platforms
 
@@ -70,7 +67,7 @@ The following have been worked in recent weeks:
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 | CD2
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.20.1.tar.xz                  | 0x4f494a942e4616c2 | CD0+
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
-| gmp           | 6.2.1     | https://gmplib.org/download/gmp/gmp-6.2.1.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
+| gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
 | gnucobol      | 3.2       | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.2.tar.xz                  | 0x13e96b53c005604e | CD2, 20230700
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5,SSB2022
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
@@ -97,8 +94,8 @@ The following have been worked in recent weeks:
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
 | make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
-| mpc           | 1.2.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.2.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4
-| mpfr          | 4.1.0     | http://www.mpfr.org/mpfr-4.1.0/mpfr-4.1.0.tar.xz                          | 0x980c197698c3739d | CD2,CD4
+| mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
+| mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
 | musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 5.5       | https://www.nano-editor.org/dist/v5/nano-5.5.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+
@@ -136,7 +133,8 @@ The following have been worked in recent weeks:
 | xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4, 20230700
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
 | zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
-| zstd          | 1.5.2     | https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz | 0xef8fe99528b52ffd | CD4
+| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
+| zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
 \*Package name or "application ID" in Chicory is never hyphenated.
 `util-linux` is hyphenated above for clarity, but is named `utillinux` in Chicory repostories.
@@ -192,7 +190,6 @@ Same goes for `pkg-config` and `libgpg-error`.
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
 | vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD3
-| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
 
 ## Notes
 
