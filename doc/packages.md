@@ -256,11 +256,14 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 \*Package name or "application ID" is never hyphenated in Chicory.
 `btrfs-tools` is hyphenated above for clarity, but is named `btrfstools` in Chicory repostories.
 
+Most of these packages are available pre-compiled at
+
+    rsync://chic.casita.net/opt/
 
 This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2023-09-01 (Friday) by RMT
+this page "Chicory Packages" last updated 2023-10-02 (Monday) by RMT
 
 
