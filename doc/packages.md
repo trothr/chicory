@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 | libressl      | 3.8.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20230929
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 |               |           |                                                                           |                    |
