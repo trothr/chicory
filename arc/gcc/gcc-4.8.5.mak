@@ -38,7 +38,6 @@ SC_URL		=	\
  http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_VRM)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x3ab00996fc26a641 (subkey?)
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x6eeb81f8981c74c7
 
 #
