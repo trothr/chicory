@@ -65,8 +65,8 @@ The following have been worked in recent weeks:
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 | CD0+
 | flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
-| gcc           | 9.2.0     | http://ftp.gnu.org/pub/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.bz2                | 0x3ab00996fc26a641 | CD2
-| gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x3ab00996fc26a641 | CD2
+| gcc           | 9.2.0     | http://ftp.gnu.org/pub/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.bz2                | 0x6eeb81f8981c74c7 | CD2
+| gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x6eeb81f8981c74c7 | CD2
 | gettext       | 0.20.1    | http://ftp.gnu.org/pub/gnu/gettext/gettext-0.20.1.tar.xz                  | 0x4f494a942e4616c2 | CD0+
 | git           | 2.29.2    | https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.29.2.tar.xz    | 0xb0b5e88696afe6cb | CD3
 | gmp           | 6.3.0     | https://gmplib.org/download/gmp/gmp-6.3.0.tar.lz                          | 0xf3599ff828c67298 | CD2,CD4
