@@ -64,7 +64,6 @@ esac
 S=$US-$UM
 SYSTEM="$S"
 
-
 #
 #         Name: nord-build-opt (shell script)
 #         Date: 2016-June
@@ -120,12 +119,16 @@ if [ ! -f $WD/$P1/makefile ] ; then
 
 # get the common 'setup' script
 if [ ! -f $WD/$P1/setup ] ; then
-  wget -O $WD/$P1/setup http://www.casita.net/pub/opt.setup.sh
+# wget -O $WD/$P1/setup http://www.casita.net/pub/opt.setup.sh
+  wget -O $WD/$P1/setup \
+    https://raw.githubusercontent.com/trothr/chicory/master/lib/setup
   chmod a+rx $WD/$P1/setup
   fi
 
 # check that it's not already built
-SYSTEM=`$WD/$P1/setup --system`
+#SYSTEM=`$WD/$P1/setup --system`
+SYSTEM="$CHICORY_SYSTEM" ; export CHICORY_SYSTEM
+if [ -z "$SYSTEM" ] ; then SYSTEM=`$WD/$P1/setup --system` ; fi
 if [ -z "$SYSTEM" ] ; then
   echo "$Z: error running '$WD/$P1/setup' script for '$P1'" 1>&2
   exit 1 ; fi
@@ -133,6 +136,7 @@ if [ -d $WD/$P1/$SYSTEM ] ; then
   echo "$Z: package '$P1' is already built for '$SYSTEM'" 1>&2
   echo "$Z: run '$WD/$P1/setup' to install it" 1>&2
   exit 0 ; fi
+CHICORY_SYSTEM=$SYSTEM ; export CHICORY_SYSTEM
 
 # create or reference the archive directory
 if [ ! -d $WD/$P1/arc -a -d /arc/$P1N ] ; then
