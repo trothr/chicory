@@ -1,0 +1,211 @@
+#!/bin/sh
+#
+#	  Name: setup (shell script)
+#	  Date: 1999-Jun-11 (Fri)
+#		generic 'setup' script for La Casita built packages
+#
+#	Search: OS-version-hwtype
+#		OS-hwtype
+#		hwtype
+#		OS-version
+#		OS
+#
+
+# some defaults:
+P=/usr/opt	# packages reference directory ("prefix" directory)
+L=/usr/local	# "local installations" directory
+# (above should be override-able, but are not presently)
+
+# if running as root, then change insallation directory
+UIDN=`id | awk -F'=' '{print $2}' | awk -F'(' '{print $1}'`
+if [ "$UIDN" = "0" ] ; then
+  L=/usr	# more formal place for installations
+fi
+
+# basename of this script:
+Z=`basename "$0"`
+
+# where are we running from?
+D=`dirname "$0"`
+if [ "$D" = "." ] ; then D=`pwd` ; fi
+# best to check relative -vs- absolute
+cd "$D" ; D=`pwd`
+
+#
+US=`uname -s`
+UM=`uname -m | sed 's#^i.86$#i386#' | sed 's#^armv.l$#arm#'`
+case "$US" in
+  Linux|FreeBSD)
+    :
+    ;;
+  CYGWIN*)
+    US="CYGWIN"
+    ;;
+  SunOS|AIX)
+    UM=`uname -p`
+    ;;
+  OS390)
+    UM="s390x" # guessing! since both "s390x" and "s390" are viable
+    ;;
+esac
+S="$US-$UM"
+
+# override the system/platform indicator from the environment
+if [ ! -z "$CHICORY_SYSTEM" ] ; then S=$CHICORY_SYSTEM ; fi
+
+# report only
+if [ "$1" = "--system" ] ; then
+  echo "$S"
+  exit 0
+fi
+
+# what's the VRM and Appl ID?
+V=`basename "$D"`
+A=`echo "$V" | awk -F- '{print $1}'`
+if [ "$V" = "$A" ] ; then
+	echo "$Z: '$D' is not a package root directory."
+	exit 28
+	fi
+echo "$Z: installing '$V' from '$D' ..."
+
+# sanity check, can we write to the reference directory?
+if [ ! -w "$P" ] ; then
+	echo "$Z: '$P' does not exist or is not writable."
+	exit 28
+	fi
+
+_S="$S"
+
+#
+# determine several ways to identify this platform:
+T=""	# initially empty "target" string
+S=`uname -s`
+#
+R=`uname -r`
+M=`uname -p 2>/dev/null`
+if [ "$M" = "unknown" -o "$M" = "" ] ; then M=`uname -m 2>/dev/null` ; fi
+SRM="${S}-${R}-${M}"
+G=""
+if [ -x /usr/local/lib/config.guess ] ; then
+	G=`/usr/local/lib/config.guess` ; fi
+
+#
+# find the "best fit" for this platform:
+if [ "$_S" = "Linux-x86_64" \
+    -a -d "$D/Linux-i386" ] ; then T="$D/Linux-i386" ; fi
+echo "$Z: checking '$_S' ..."
+if [ -d "$D/$_S" ] ; then T="$D/$_S" ; fi
+echo "$Z: checking '$S' ..."
+if [ -d "$D/$S" ] ; then T="$D/$S" ; fi
+echo "$Z: checking '${S}-${R}' ..."
+if [ -d "$D/$S-$R" ] ; then T="$D/$S-$R" ; fi
+echo "$Z: checking '$M' ..."
+if [ -d "$D/$M" ] ; then T="$D/$M" ; fi
+echo "$Z: checking '${S}-${M}' ..."
+if [ -d "$D/$S-$M" ] ; then T="$D/$S-$M" ; fi
+
+if [ "$M" = "i686" ] ; then
+	M2="i386"
+echo "$Z: checking '${S}-${M2}' ..."
+if [ -d "$D/$S-$M2" ] ; then T="$D/$S-$M2" ; fi
+	fi
+
+echo "$Z: checking '${S}-${R}-${M}' ..."
+if [ -d "$D/$S-$R-$M" ] ; then T="$D/$S-$R-$M" ; fi
+if [ ! -z "$G" ] ; then
+	echo "$Z: checking '$G' ..."
+	if [ -d "$D/$G" ] ; then T="$D/$G" ; fi
+	fi
+
+#
+# did we find a match??
+if [ -z "$T" ] ; then
+	echo "$Z: '$D' does not support this host platform."
+#	echo "$Z: '$V' does not support this host platform."
+	exit 28
+	fi
+
+#
+# sym-link reference the package:
+echo "	ln -s '$T' '$P/$V'"
+rm -f "$P/$V" ; ln -s "$T" "$P/$V"
+echo "$P/$V" >> /tmp/$$.inv
+echo "	ln -s '$V' '$P/$A'"
+rm -f "$P/$A" ; ln -s "$V" "$P/$A"
+echo "$P/$A" >> /tmp/$$.inv
+
+#
+# now sym-link reference everything in the package:
+for D in bin lib man/man1 man/man5 man/man7 man/man8 ; do
+	if [ ! -d "$P/$A/$D" ] ; then continue ; fi
+	for F in `cd "$P/$A/$D" ; echo *` ; do
+		if [ ! -f "$P/$A/$D/$F" ] ; then continue ; fi
+		if [ -f "$L/$D/$F" ] ; then continue ; fi
+		echo "	ln -s '$P/$A/$D/$F' '$L/$D/$F'"
+		rm -f "$L/$D/$F"
+		if [ -f "$L/$D/$F" ] ; then continue ; fi
+		if [ -h "$L/$D/$F" ] ; then continue ; fi
+		if [ -d "$L/$D/$F" ] ; then continue ; fi
+		ln -s "$P/$A/$D/$F" "$L/$D/$F"
+		if [ -h "$L/$D/$F" ] ; then
+		  echo "$L/$D/$F" >> /tmp/$$.inv ; fi
+		done
+	done
+
+# retain inventory
+mv /tmp/$$.inv "$P/$V.inv"
+
+### RPM support ###
+
+# Name field must be present in package
+echo "Name: $A" > /usr/opt/$V.spec
+
+# Version field must be present in package
+VRM=`echo "$V" | awk -F- '{print $2}'`
+echo "Version: $VRM" >> /usr/opt/$V.spec
+
+# Release field must be present in package
+echo "Release: usropt" >> /usr/opt/$V.spec
+
+# Summary field must be present in package
+echo "Summary: N/A" >> /usr/opt/$V.spec
+
+# Group field must be present in package
+echo "Group: N/A" >> /usr/opt/$V.spec
+
+# License field must be present in package
+echo "License: N/A" >> /usr/opt/$V.spec
+
+# Package has no %description
+echo "%description" >> /usr/opt/$V.spec
+echo "this package was installed via /usr/opt scheme automation" \
+  >> /usr/opt/$V.spec
+
+echo "%prefix /usr/local" >> /usr/opt/$V.spec
+
+# oddly, the files section is optional
+echo "%files" >> /usr/opt/$V.spec
+cat /usr/opt/$V.inv >> /usr/opt/$V.spec
+echo "$P/$V.inv" >> /usr/opt/$V.spec
+
+rpmbuild -bb  /usr/opt/$V.spec 1> /tmp/$$.log 2> /dev/null ; RC="$?"
+rm /usr/opt/$V.spec
+if [ "$RC" != 0 ] ; then
+  cat /tmp/$$.log
+  rm /tmp/$$.log
+  exit $RC
+fi
+grep '^Wrote: ' /tmp/$$.log \
+  | awk '{print "mv" , $2 , "/usr/opt/%V%.rpm"}' \
+  | sed "s#%V%#$V#g" \
+  | sh
+rm /tmp/$$.log
+
+rpm -U /usr/opt/$V.rpm 2> /dev/null ; RC="$?"
+rm /usr/opt/$V.rpm
+
+exit
+exit
+exit
+
+
