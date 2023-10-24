@@ -12,7 +12,4 @@ to produce deliverables which do not depend on either shared MuslLibc
 nor on GLIBC.) Static linkage against GLIBC could perhaps also fill
 this role, but GLIBC is a much bigger package to manage.
 
-There is only one wrapper makefile for GLIBC simply because
-it has been run through Chicory build so rarely up to now.
-
 
