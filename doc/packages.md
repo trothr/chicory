@@ -9,10 +9,17 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libgpg-error* | 1.47      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2         | 0x528897b826403ada | CD4, 20231025
+| libgcrypt     | 1.10.2    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2             | 0x528897b826403ada | CD5, 20231025
+| libksba       | 1.6.4     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.4.tar.bz2                  | 0x528897b826403ada | CD4, 20231025
+| binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
+| bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
+|               |           |                                                                           |                    |
 | xastir        | 2.2.0     | https://github.com/Xastir/Xastir/archive/refs/tags/Release-2.2.0.tar.gz   |                    | CD3, 20231012
 | inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 | libressl      | 3.8.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20230929
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
+| openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 |               |           |                                                                           |                    |
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
 | acl           | 2.3.1     | https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.xz        | 0xd5bf9feb0313653a | CD0, 20230921
@@ -22,6 +29,10 @@ most recent at the top. Time of latest update at the bottom.
 | pgpdump       | 0.35      | https://www.mew.org/~kazu/proj/pgpdump/pgpdump-0.35.tar.gz                |                    | CD3, 20230914
 | nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0+, 20230700
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
+
+\*Package name or "application ID" in Chicory is never hyphenated.
+`libgpg-error` is hyphenated above for clarity,
+but is named `libgpgerror` in Chicory repostories.
 
 ## Current Platforms
 
@@ -82,9 +93,9 @@ The following have been worked in recent weeks:
 | libassuan     | 2.5.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.5.tar.bz2              | 0x528897b826403ada | CD4
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
 | libgcrypt     | 1.10.1    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2             | 0x528897b826403ada | CD5
-| libgpg-error* | 1.46      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.46.tar.bz2         | 0x528897b826403ada | CD4
+| libgpg-error* | 1.47      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2         | 0x528897b826403ada | CD4
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
-| libksba       | 1.6.2     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.2.tar.bz2                  | 0x528897b826403ada | CD4
+| libksba       | 1.6.4     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.4.tar.bz2                  | 0x528897b826403ada | CD4
 | libressl      | 3.1.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
@@ -128,7 +139,7 @@ The following have been worked in recent weeks:
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| tor           | 0.4.8.7   | https://dist.torproject.org/tor-0.4.8.7.tar.gz                            | 0x42e86a2a11f48d36 | CD5, 20230906
+| tor           | 0.4.8.7   | https://dist.torproject.org/tor-0.4.8.7.tar.gz                            | 0x42e86a2a11f48d36 | CD5, 20231024
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
