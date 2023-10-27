@@ -14,12 +14,12 @@ most recent at the top. Time of latest update at the bottom.
 | libksba       | 1.6.4     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.4.tar.bz2                  | 0x528897b826403ada | CD4, 20231025
 | binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
 | bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
+| openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
+| openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 |               |           |                                                                           |                    |
 | xastir        | 2.2.0     | https://github.com/Xastir/Xastir/archive/refs/tags/Release-2.2.0.tar.gz   |                    | CD3, 20231012
 | inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 | libressl      | 3.8.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20230929
-| openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
-| openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 |               |           |                                                                           |                    |
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
 | acl           | 2.3.1     | https://download.savannah.nongnu.org/releases/acl/acl-2.3.1.tar.xz        | 0xd5bf9feb0313653a | CD0, 20230921
