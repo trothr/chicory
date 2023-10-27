@@ -7,6 +7,8 @@ package manager of the system without interfering.
 The first goal of Chicory is to require very little infrastructure.
 Many Chicory packages can with no additional support.
 
+Chicory is intended to promote the use of open source software.
+
 ## Chicory
 
 Chicory is the key ingredient in a special blend, traditionally of coffee. 

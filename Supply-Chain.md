@@ -9,6 +9,8 @@ the source for the package but never discards it. Neither `make clean`
 nor `make distclean` remove the source archive. (The latter will remove
 exploded source *hierarchy*, resetting the project state.)
 
+Chicory is intended to promote the use of open source software.
+
 ## Chicory
 
 The effect of a Chicory supply chain is ready-to-run artifacts for

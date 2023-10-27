@@ -2,7 +2,7 @@
 
 Chicory is built on historically well understood POSIX concepts.
 When advances in systems and security take an odd turn,
-Chicory might not work as smoothly as it did before.
+Chicory need a boost or work less smoothly than it did before.
 
 None of the hurdles listed here are show stoppers.
 They range from annoyance to time sink, and may provide debate fodder.
