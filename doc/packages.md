@@ -9,9 +9,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| libgpg-error* | 1.47      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2         | 0x528897b826403ada | CD4, 20231025
-| libgcrypt     | 1.10.2    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2             | 0x528897b826403ada | CD5, 20231025
-| libksba       | 1.6.4     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.4.tar.bz2                  | 0x528897b826403ada | CD4, 20231025
+| libgpg-error* | 1.47      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2   | 0x528897b826403ada | CD4, 20231025
+| libgcrypt     | 1.10.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2       | 0x528897b826403ada | CD5, 20231025
+| libksba       | 1.6.4     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2            | 0x528897b826403ada | CD4, 20231025
 | binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
 | bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929

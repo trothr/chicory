@@ -39,8 +39,10 @@ SC_TAR          =       (bzcat - | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
-         ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-         ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+#        ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+#        ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x249b39d24f25e3b6

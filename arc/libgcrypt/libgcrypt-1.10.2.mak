@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
 #               make rules for Libgcrypt at La Casita with /usr/opt Chicory
-#         Date: 2021-10-25 (Wed)
+#         Date: 2023-10-25 (Wed)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -39,10 +39,8 @@ SC_TAR          =       (bzcat - | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
-         ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-         ftp://ftp.gnupg.org/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
-#  https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-#  https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x528897b826403ada
