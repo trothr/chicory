@@ -9,9 +9,12 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libassuan     | 2.5.6     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.6.tar.bz2              | 0x528897b826403ada | CD4
 | libgpg-error* | 1.47      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2   | 0x528897b826403ada | CD4, 20231025
 | libgcrypt     | 1.10.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2       | 0x528897b826403ada | CD5, 20231025
+| libgcrypt     | 1.8.10    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.10.tar.bz2       | 0x528897b826403ada | CD5, LTS
 | libksba       | 1.6.4     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2            | 0x528897b826403ada | CD4, 20231025
+| gnupg         | 2.4.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.4.3.tar.bz2                      | 0x528897b826403ada | CD5
 | binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
 | bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
@@ -44,6 +47,17 @@ The following have been worked in recent weeks:
 * Linux-arm
 * FreeBSD-amd64
 * SunOS-x86_64, SunOS-i386
+
+Other platforms less often built include:
+
+* CYGWIN-i386, CYGWIN-x86_64
+* Darwin-x86_64
+* FreeBSD-i386
+* Linux-ppc
+* Linux-sparc
+* OpenBSD-i386
+
+And there are more platforms recognized but not available (to me).
 
 ## Packages Previously Built
 
