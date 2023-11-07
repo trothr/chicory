@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for LibGPG-Error at La Casita with /usr/opt Chicory
-#         Date: 2023-10-26 (Thu)
+#               make rules for LIBASSUAN for La Casita with Chicory
+#         Date: 2023-11-01 (Wed)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,13 +14,12 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       libgpgerror
-SC_APV          =       1.47
+APPLID          =       libassuan
+SC_APV          =       2.5.6
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE      =       $(SC_VRM)
-SC_SOURCE       =       libgpg-error-$(SC_APV)
+SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
 #SC_ARC         =       tar.gz
@@ -40,28 +39,25 @@ SC_TAR          =       (bzcat - | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
- https://www.gnupg.org/ftp/gcrypt/libgpg-error/$(SC_SOURCE).$(SC_ARC) \
- https://www.gnupg.org/ftp/gcrypt/libgpg-error/$(SC_SOURCE).$(SC_ARC).sig
+   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x249b39d24f25e3b6
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x2071b08a33bd3f06
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x528897b826403ada <<<
 
 #
 # defaults
 SC_FETCH        =       wget --passive-ftp --no-clobber \
                                         --no-check-certificate $(SC_URL)
-
+# using --no-check-certificate to ease HSTS trust burden
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-                               --enable-install-gpg-error-config \
-                                --enable-static --disable-shared
-
+                        --with-libgpg-error-prefix=/usr/opt/libgpgerror \
+                                        --enable-static --disable-shared
 SC_INSTALL      =       $(MAKE) install
-#SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP        =       strip bin/gpg-error ; \
+SC_FIXUP        =       \
         sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
@@ -78,10 +74,10 @@ SC_BUILDX       =               $(MAKE)
 # default build directory matches source directory
 SC_BUILDD       =               $(SC_SOURCE)
 
-
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
+#                       libgpgerror
 
 ########################################################################
 
