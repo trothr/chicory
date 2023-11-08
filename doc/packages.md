@@ -9,6 +9,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
+| libressl      | 3.8.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
+|               |           |                                                                           |                    |
 | libassuan     | 2.5.6     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.6.tar.bz2              | 0x528897b826403ada | CD4
 | libgpg-error* | 1.47      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2   | 0x528897b826403ada | CD4, 20231025
 | libgcrypt     | 1.10.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2       | 0x528897b826403ada | CD5, 20231025
@@ -22,7 +25,6 @@ most recent at the top. Time of latest update at the bottom.
 |               |           |                                                                           |                    |
 | xastir        | 2.2.0     | https://github.com/Xastir/Xastir/archive/refs/tags/Release-2.2.0.tar.gz   |                    | CD3, 20231012
 | inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
-| libressl      | 3.8.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20230929
 
 \*Package name or "application ID" in Chicory is never hyphenated.
 `libgpg-error` is hyphenated above for clarity,
@@ -150,7 +152,7 @@ And there are more platforms recognized but not available (to me).
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4, 20230700
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
-| zlib          | 1.2.13    | http://www.zlib.net/zlib-1.2.13.tar.gz                                    | 0x783fcd8e58bcafba | CD4
+| zlib          | 1.2.13    | http://de.casita.net/pub/zlib/zlib-1.2.13.tar.gz                          | 0x783fcd8e58bcafba | CD4
 | zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
 | zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
