@@ -39,11 +39,16 @@ SC_TAR          =       (bzcat - | tar xf -) <
 #SC_TAR         =       (lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
+#SC_URL         =       \
+#     https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC) \
+#     https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC).asc \
+#     https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC).sha256 \
+#     https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC).sha512
 SC_URL          =       \
-      https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC) \
-      https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC).asc \
-      https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC).sha256 \
-      https://downloads.apache.org/httpd/$(SC_SOURCE).$(SC_ARC).sha512
+   https://archive.apache.org/dist/httpd/$(SC_SOURCE).$(SC_ARC) \
+   https://archive.apache.org/dist/httpd/$(SC_SOURCE).$(SC_ARC).asc \
+   https://archive.apache.org/dist/httpd/$(SC_SOURCE).$(SC_ARC).sha256 \
+   https://archive.apache.org/dist/httpd/$(SC_SOURCE).$(SC_ARC).sha512
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x4f7dbaa99a59b973

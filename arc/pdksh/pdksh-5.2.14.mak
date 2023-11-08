@@ -1,52 +1,54 @@
 #
 #
-#	  Name: makefile (make rules file)
-#		make rules for PDKSH at La Casita with /usr/opt
-#	  Date: 2011-Aug-10 (Wednesday) for COLUG
+#         Name: makefile (make rules file)
+#               make rules for PDKSH at La Casita with /usr/opt
+#         Date: 2011-Aug-10 (Wednesday) for COLUG
 #
 #
 
 # no default
-SC_VRM		=	pdksh-5.2.14
-APPLID		=	pdksh
+SC_VRM          =       pdksh-5.2.14
+APPLID          =       pdksh
 
 # no default
-SC_URL		=	\
-	http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM).tar.gz \
-	http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM).man.cat.gz \
-	http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM)-patches.1 \
-	http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM)-patches.2
+#SC_URL         =       \
+#       http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM).tar.gz \
+#       http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM).man.cat.gz \
+#       http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM)-patches.1 \
+#       http://gd.tuwien.ac.at/utils/shells/pdksh/$(SC_VRM)-patches.2
 # yeah yeah ... we download two patches but then do not use them :-(
+SC_URL          =       \
+ https://mirrors.slackware.com/slackware/slackware-8.0/contrib/contrib-sources/pdksh-5.2.14/pdksh-5.2.14.tar.gz
 
 # defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber $(SC_URL)
-SC_FETCH_BZ	=	wget --passive-ftp --no-clobber $(SC_URL) ; \
-		bzcat $(SC_VRM).tar.bz2 | gzip > $(SC_VRM).tar.gz ; \
-			touch -r $(SC_VRM).tar.bz2 $(SC_VRM).tar.gz
+SC_FETCH        =       wget --passive-ftp --no-clobber $(SC_URL)
+SC_FETCH_BZ     =       wget --passive-ftp --no-clobber $(SC_URL) ; \
+                bzcat $(SC_VRM).tar.bz2 | gzip > $(SC_VRM).tar.gz ; \
+                        touch -r $(SC_VRM).tar.bz2 $(SC_VRM).tar.gz
 
 # default
-SC_SOURCE	=	$(SC_VRM)
+SC_SOURCE       =       $(SC_VRM)
 
 # first is default
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM)
 
 # default
-SC_BUILD	=	_POSIX2_VERSION=2 ; export _POSIX2_VERSION ; \
-			$(MAKE)
+SC_BUILD        =       _POSIX2_VERSION=2 ; export _POSIX2_VERSION ; \
+                        $(MAKE)
 
 # default is blank
-SC_FIXUP	=	strip bin/ksh
+SC_FIXUP        =       strip bin/ksh
 
 # default
-SC_INSTALL	=	$(MAKE) install
+SC_INSTALL      =       $(MAKE) install
 
-PREFIX		=	/usr/opt
-#SYSTEM		=	`uname -s`
-SYSTEM		=	`./setup --system`
+PREFIX          =       /usr/opt
+#SYSTEM         =       `uname -s`
+SYSTEM          =       `./setup --system`
 
-SHARED		=	man
-STRIPPED	=	
-#CUSTOM		=	/sbin/ldconfig
+SHARED          =       man
+STRIPPED        =       
+#CUSTOM         =       /sbin/ldconfig
 
 # include $(APPLID).mk
 

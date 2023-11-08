@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
 #               make rules for ZLib at La Casita with Chicory
-#         Date: 2023-05-03 (Wed)
+#         Date: 2023-11-08 (Wed)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -15,7 +15,7 @@ PREFIX          =       /usr/opt
 
 # no default for VRM string
 APPLID          =       zlib
-SC_APV          =       1.2.13
+SC_APV          =       1.3
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -38,10 +38,10 @@ SC_TAR          =       (gunzip -f | tar xf -) <
 #SC_TAR         =       (lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-#SC_URL         =       http://www.zlib.net/$(SC_SOURCE).$(SC_ARC) \
-#                       http://www.zlib.net/$(SC_SOURCE).$(SC_ARC).asc
-SC_URL        = http://de.casita.net/pub/zlib/$(SC_SOURCE).$(SC_ARC) \
-                http://de.casita.net/pub/zlib/$(SC_SOURCE).$(SC_ARC).asc
+SC_URL          =        https://www.zlib.net/$(SC_SOURCE).$(SC_ARC) \
+                         https://www.zlib.net/$(SC_SOURCE).$(SC_ARC).asc
+#SC_URL       = http://de.casita.net/pub/zlib/$(SC_SOURCE).$(SC_ARC) \
+#               http://de.casita.net/pub/zlib/$(SC_SOURCE).$(SC_ARC).asc
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 # gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 0x783fcd8e58bcafba
