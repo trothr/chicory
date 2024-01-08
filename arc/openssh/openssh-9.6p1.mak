@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for GLIB with Chicory
-#         Date: 2018-Jul-15 (Sun), 2024-01-02 (Tue)
+#               make rules for OpenSSH for La Casita with Chicory
+#         Date: 2024-01-08 (Mon) responding to CVE-2023-48795
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,56 +14,61 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       glib
-SC_APV          =       2.57.1
+APPLID          =       openssh
+SC_APV          =       9.6p1
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
-#
 # default source directory matches the VRM string
 SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC         =       tar.gz
+SC_ARC          =       tar.gz
 #SC_ARC         =       tar.bz2
-SC_ARC          =       tar.xz
+#SC_ARC         =       tar.xz
+#SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR         =       tar xzf
+SC_TAR          =       (gunzip -f | tar xf -) <
 #SC_TAR         =       tar xjf
-SC_TAR          =       tar xJf
+#SC_TAR         =       (bzcat - | tar xf -) <
+#SC_TAR         =       tar xJf
+#SC_TAR         =       (xzcat - | tar xf -) <
 #SC_TAR         =       tar --lzip -xf
+#SC_TAR         =       (lzip -d | tar xf -) <
 
-#
-# where to find the source on the internet
+# where to find the source on the internet (no default)
 SC_URL          =       \
- http://ftp.gnome.org/pub/gnome/sources/glib/2.57/$(SC_SOURCE).$(SC_ARC) \
- http://ftp.gnome.org/pub/gnome/sources/glib/2.57/$(SC_SOURCE).sha256sum
+ https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC) \
+ https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/$(SC_SOURCE).$(SC_ARC).asc \
+ https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
+#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub \
+#http://mirror.planetunix.net/pub/OpenBSD/OpenSSH/portable/openssh_gzsig_key.pub.asc
+# list-o-mirrors http://www.openssh.com/portable.html
+# some alternates ...
+#  http://mirror.esc7.net/pub/OpenBSD/OpenSSH/portable/
+#  ftp://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/
+#  rsync://ftp3.usa.openbsd.org/ftp/OpenSSH/portable/
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0xnnnnnnnnnnnnnnnn
-#gpg --keyserver wwwkeys.pgp.net --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd3e5f56b6d920d30
 
 #
 # defaults
 SC_FETCH        =       wget --passive-ftp --no-clobber \
                                         --no-check-certificate $(SC_URL)
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-                                                --disable-libmount \
-                                                --with-pcre=internal \
-                                        --enable-static --disable-shared
-#                                       --with-libffi=/usr/opt/libffi
-
-# default build executable or command is 'make'
-SC_BUILDX       =               $(MAKE)
-
-# default build directory matches source directory
-SC_BUILDD       =               $(SC_SOURCE)
+                                --sysconfdir=/etc/ssh \
+                                --with-ssl-dir=$(PREFIX)/openssl \
+                                --without-hardening LIBS=-lpthread \
+                                --with-zlib=$(PREFIX)/zlib
+#                               --with-pid-dir=/var/run
+#configure: WARNING: unrecognized options: --enable-static, --disable-shared
 
 SC_INSTALL      =       $(MAKE) install
 #SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
-#
-# default is blank
+# default for this is blank, varies widely per package
 #SC_FIXUP       =       strip ...
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
@@ -73,10 +78,19 @@ SC_INSTALL      =       $(MAKE) install
 #SYSTEM         =               `uname -s`
 SYSTEM          =               `./setup --system`
 
+#
+# default build executable or command is 'make'
+SC_BUILDX       =               $(MAKE)
+
+#
+# default build directory matches source directory
+SC_BUILDD       =               $(SC_SOURCE)
+
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-# GLIB (at least version 2.0) is required to compile Irssi
+#                       /usr/opt/openssl
+#                       /usr/opt/zlib
 
 ########################################################################
 
@@ -113,7 +127,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 #		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
@@ -124,7 +138,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #
@@ -159,7 +173,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -186,7 +200,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(SC_INSTALL) ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -194,6 +208,10 @@ _ins:		_exe
 			sh -c " cd $(SYSTEM) ; $(SC_FIXUP) " ; fi
 		mv install.log $(SYSTEM)/.
 
+#
+#
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_SOURCE_VERIFY)
 
 #
 #
@@ -212,7 +230,6 @@ clean:
 			sh -c ' cd $(SC_BUILDD) ; \
 				exec $(MAKE) clean ' ; fi
 #		rm -f "$(PREFIX)/$(SC_VRM)"
-
 
 #
 # restore sources as from distribution
@@ -243,8 +260,9 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		ln -s $(SC_SOURCE) src
-#		@test -x repatch.sh
-#		sh -c ' cd $(SC_SOURCE) ; exec ../repatch.sh ../arc/*.diff '
+		@sh -c ' ls arc/$(SC_SOURCE).patch* 2> /dev/null ; : ' \
+		  | awk '{print "sh ../" $$0}' \
+		  | sh -c ' cd $(SC_SOURCE) ; exec sh -x '
 		if [ ! -x $(SC_SOURCE)/configure \
 			-a -x $(SC_SOURCE)/config ] ; then \
 			ln -s config $(SC_SOURCE)/configure ; fi
@@ -258,11 +276,6 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 			| grep -v ' ' | xargs chmod u+w
 		find $(SC_SOURCE) -type d -print \
 			| grep -v ' ' | xargs chmod u+wx
-
-#
-#
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
-		$(SC_SOURCE_VERIFY)
 
 #
 #
