@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| openssh       | 9.6p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz | 0x2a3f414e736060ba | CD5
 | zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
 | libressl      | 3.8.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
 |               |           |                                                                           |                    |
@@ -27,8 +28,7 @@ most recent at the top. Time of latest update at the bottom.
 | inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 
 \*Package name or "application ID" in Chicory is never hyphenated.
-`libgpg-error` is hyphenated above for clarity,
-but is named `libgpgerror` in Chicory repostories.
+`libgpg-error` is hyphenated above for clarity but is named `libgpgerror` in Chicory repostories.
 
 ## Current Platforms
 
@@ -94,6 +94,7 @@ And there are more platforms recognized but not available (to me).
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
 | gzip          | 1.12      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.12.tar.xz                          | 0x7fd9fccb000beeee | CD0+
+| irssi         | 1.4.5     | https://codeberg.org/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz | 0x00ccb587ddbef0e1 | CD3
 | jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
 | less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0+
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
@@ -122,7 +123,7 @@ And there are more platforms recognized but not available (to me).
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
-| openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2tar.gz  | 0x2a3f414e736060ba | CD5
+| openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2.tar.gz | 0x2a3f414e736060ba | CD5
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
