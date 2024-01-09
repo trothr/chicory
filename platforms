@@ -1,0 +1,68 @@
+
+current:
+Linux-i386, Linux-x86_64
+Linux-s390, Linux-s390x
+Linux-arm, Linux-armel, Linux-armhf
+FreeBSD-amd64
+SunOS-x86_64, SunOS-i386
+
+recent:
+Darwin-x86_64
+CYGWIN-i386
+CYGWIN-x86_64
+FreeBSD-i386
+OpenBSD-i386
+Linux-ppc
+Linux-sparc
+
+recognized:
+AIX-powerpc, AIX-ppc
+AIX-powerpc64, AIX-powerpc64
+HPUX-ia64
+HPUX-parisc
+SunOS-sparc, Solaris-sparc
+SunOS-sparc64, Solaris-sparc64
+Darwin-i386
+Darwin-arm64
+NetBSD-i386
+NetBSD-amd64
+OpenBSD-amd64
+Minix-i386
+OS390-s390
+OS390-s390x
+Windows-x86, Windows-i386
+Windows-amd64
+
+reported:
+Linux-aarch64, Linux-arm64
+Linux-ppc64             (unofficial port)
+Linux-ppc64le
+Linux-ppc64el           (Debian)
+Linux-mips, Linux-mipsel
+Linux-mips64, Linux-mips64el
+Linux-alpha             (unofficial port)
+Linux-hppa              (unofficial port)
+Linux-ia64              (unofficial port)
+Linux-m68k              (unofficial port)
+Linux-riscv64           (unofficial port)
+Linux-sh4               (unofficial port)
+Linux-sparc64           (unofficial port)
+Linux-x32               (unofficial port)
+
+aliased:
+AIX-ppc -> AIX-powerpc
+AIX-ppc64 -> AIX-powerpc64
+Linux-amd64 -> Linux-x86_64
+Linux-arm64 -> Linux-aarch64
+Linux-i486 -> Linux-i386
+Linux-i586 -> Linux-i386
+Linux-i686 -> Linux-i386
+Solaris-amd64 -> Solaris-x86_64
+Solaris-i386 -> SunOS-i386
+Solaris-sparc -> SunOS-sparc
+Solaris-sparc64 -> SunOS-sparc64
+Solaris-x86_64 -> SunOS-x86_64
+SunOS-amd64 -> SunOS-x86_64
+Windows-i386 -> Windows-x86
+
+
