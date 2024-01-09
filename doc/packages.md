@@ -9,7 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| openssh       | 9.6p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz | 0x2a3f414e736060ba | CD5
+| stunnel       | 5.71      | https://www.stunnel.org/downloads/stunnel-5.71.tar.gz                     | 0xb1048932dd3aaaa3 | CD4, 20240109
+| openssh       | 9.6p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240108
 | zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
 | libressl      | 3.8.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
 |               |           |                                                                           |                    |
@@ -278,6 +279,23 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 \*Package name or "application ID" is never hyphenated in Chicory.
 `btrfs-tools` is hyphenated above for clarity, but is named `btrfstools` in Chicory repostories.
 
+## Packages for z/OS
+
+Perhaps the acid test of any open source package
+is to see it build and run on IBM's flagship mainframe operating system, z/OS.
+
+Some packages which Chicory should also follow include:
+
+| package       | release   | source URL                                                                | source signing key |
+| ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| unzip         |           |                                                                           |                    | CD0
+| zip           |           |                                                                           |                    | CD0
+| php           |           |                                                                           |                    | CD3
+| ant           |           |                                                                           |                    | CD3
+| man           |           |                                                                           |                    | CD0
+| libxml        |           |                                                                           |                    | CD4
+| libxslt       |           |                                                                           |                    | CD4
+
 Most of these packages are available pre-compiled at
 
     rsync://chic.casita.net/opt/
@@ -286,6 +304,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2023-10-02 (Monday) by RMT
+this page "Chicory Packages" last updated 2024-01-09 (Tuesday) by RMT
 
 
