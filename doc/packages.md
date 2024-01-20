@@ -148,7 +148,7 @@ And there are more platforms recognized but not available (to me).
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| tor           | 0.4.8.7   | https://dist.torproject.org/tor-0.4.8.7.tar.gz                            | 0x42e86a2a11f48d36 | CD5, 20231024
+| tor           | 0.4.8.10  | https://dist.torproject.org/tor-0.4.8.10.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20231024
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
