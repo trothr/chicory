@@ -10,6 +10,11 @@ This collection is a small subset and is entirely PGP public keys.
 (That is, while Chicory can use PKI certificates, no PKI certs are
 found here at this time.)
 
+Important note: <br/>
+These keys (and more) have been used in Chicory development, but their
+mere presence in this collection is not an endorsement. You'll have to
+vet keys yourself.
+
 Acquiring keys is well documented elsewhere.
 For PGP keys, understanding the Web of Trust is essential.
 And the vetting of keys is a manual process if you're going to use
