@@ -251,30 +251,36 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 | package       | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | fileutils     |           | absorbed into the coreutils package                                                            |
-| textutils     |           | absorbed into the coreutils package                                                            |
 | shellutils    |           | absorbed into the coreutils package                                                            |
+| textutils     |           | absorbed into the coreutils package                                                            |
 
 ## Packages We'd Like To See
 
 | package*      | release   | notes                                                                                          |
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
-| dejagnu       | 1.6.2     |                                                                           |                    | CD3
-| expect        | 5.45.4    |                                                                           |                    | CD3
-| gnutls        | 3.5.9     |                                                                           |                    | CD5
-| inetutils     | 1.8       |                                                                           |                    | CD3
-| lz4           | 1.9.2     |                                                                           |                    | CD4
-| ppp           | 2.4.5     |                                                                           |                    | CD3
-| qclib         | 2.2.0     |                                                                           |                    | CD4
-| unison        | 2.51.2    |                                                                           |                    | CD3
-| cdrtools      | 2.01      |                                                                           |                    | CD3
-| cups          | 2.3.1     |                                                                           |                    | CD3
-| emacs         | 23.3b     |                                                                           |                    | CD3
-| libtasn1      | 3.3       |                                                                           |                    | CD4
-| libunistring  | 0.9.7     |                                                                           |                    | CD4
-| netcat        | 0.7.1     |                                                                           |                    | CD3
-| parted        |           |                                                                           |                    | CD3
-| btrfs-tools   |           |                                                                           |                    | CD3
-| lvm2          |           |                                                                           |                    | CD3
+| ant           |           |                                                                                                | CD2
+| btrfs-tools   |           |                                                                                                | CD3
+| cdrtools      | 2.01      |                                                                                                | CD3
+| cups          | 2.3.1     |                                                                                                | CD3
+| dejagnu       | 1.6.2     |                                                                                                | CD3
+| emacs         | 23.3b     |                                                                                                | CD3
+| expect        | 5.45.4    |                                                                                                | CD3
+| gnutls        | 3.5.9     |                                                                                                | CD5
+| libtasn1      | 3.3       |                                                                                                | CD4
+| libunistring  | 0.9.7     |                                                                                                | CD4
+| libxml        |           |                                                                                                | CD4
+| libxslt       |           |                                                                                                | CD4
+| lvm2          |           |                                                                                                | CD0
+| lz4           | 1.9.2     |                                                                                                | CD4
+| man           |           |                                                                                                | CD0
+| netcat        | 0.7.1     |                                                                                                | CD3
+| parted        |           |                                                                                                | CD3
+| php           |           |                                                                                                | CD3
+| ppp           | 2.4.5     |                                                                                                | CD3
+| qclib         | 2.2.0     |                                                                                                | CD4
+| unison        | 2.51.2    |                                                                                                | CD3
+| unzip         |           |                                                                                                | CD0
+| zip           |           |                                                                                                | CD0
 
 \*Package name or "application ID" is never hyphenated in Chicory.
 `btrfs-tools` is hyphenated above for clarity, but is named `btrfstools` in Chicory repostories.
@@ -284,21 +290,14 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 Perhaps the acid test of any open source package
 is to see it build and run on IBM's flagship mainframe operating system, z/OS.
 
-Some packages which Chicory should also follow include:
-
-| package       | release   | source URL                                                                | source signing key |
-| ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| unzip         |           |                                                                           |                    | CD0
-| zip           |           |                                                                           |                    | CD0
-| php           |           |                                                                           |                    | CD3
-| ant           |           |                                                                           |                    | CD3
-| man           |           |                                                                           |                    | CD0
-| libxml        |           |                                                                           |                    | CD4
-| libxslt       |           |                                                                           |                    | CD4
+## Pre-compiled and Ready-to-run
 
 Most of these packages are available pre-compiled at
 
     rsync://chic.casita.net/opt/
+
+But the idea behind the Chicory project is that you DO IT YOURSELF
+so that YOU control what's running on YOUR systems.
 
 This file is part of the collection found on GitHub at ...
 
