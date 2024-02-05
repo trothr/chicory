@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| cmsfs         | 1.1.12    | http://www.casita.net/pub/cmsfs/cmsfs-1.1.12.tar.gz                       | 0x96af6544edf138d9 | CD0
 | stunnel       | 5.71      | https://www.stunnel.org/downloads/stunnel-5.71.tar.gz                     | 0xb1048932dd3aaaa3 | CD4, 20240109
 | openssh       | 9.6p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240108
 | zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
