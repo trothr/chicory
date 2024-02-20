@@ -5,32 +5,15 @@ This is the Chicory Packages list as a markdown file.
 This file lists the latest Chicory-built packages,
 most recent at the top. Time of latest update at the bottom.
 
-## Packages Recently Built
+## Current Shells
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| cmsfs         | 1.1.12    | http://www.casita.net/pub/cmsfs/cmsfs-1.1.12.tar.gz                       | 0x96af6544edf138d9 | CD0
-| stunnel       | 5.71      | https://www.stunnel.org/downloads/stunnel-5.71.tar.gz                     | 0xb1048932dd3aaaa3 | CD4, 20240109
-| openssh       | 9.6p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240108
-| zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
-| libressl      | 3.8.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
-|               |           |                                                                           |                    |
-| libassuan     | 2.5.6     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.6.tar.bz2              | 0x528897b826403ada | CD4
-| libgpg-error* | 1.47      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2   | 0x528897b826403ada | CD4, 20231025
-| libgcrypt     | 1.10.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2       | 0x528897b826403ada | CD5, 20231025
-| libgcrypt     | 1.8.10    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.10.tar.bz2       | 0x528897b826403ada | CD5, LTS
-| libksba       | 1.6.4     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2            | 0x528897b826403ada | CD4, 20231025
-| gnupg         | 2.4.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.4.3.tar.bz2                      | 0x528897b826403ada | CD5
-| binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
-| bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
-| openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
-| openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
-|               |           |                                                                           |                    |
-| xastir        | 2.2.0     | https://github.com/Xastir/Xastir/archive/refs/tags/Release-2.2.0.tar.gz   |                    | CD3, 20231012
-| inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
-
-\*Package name or "application ID" in Chicory is never hyphenated.
-`libgpg-error` is hyphenated above for clarity but is named `libgpgerror` in Chicory repostories.
+| bash          | 5.2.21    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.21.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240219
+| zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0
+| dash          | 0.5.12    | https://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz        | sha512             | CD0
+| pdksh         | 5.2.14    | https://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz            |                    | CD0
+| tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0
 
 ## Current Platforms
 
@@ -68,9 +51,10 @@ And there are more platforms recognized but not available (to me).
 | bash          | 5.2.15    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.15.tar.gz                       | 0xbb5869f064ea74ab | CD0
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
-| binutils      | 2.40      | https://ftp.gnu.org/gnu/binutils/binutils-2.40.tar.xz                     | 0x13fcef89dd9e3c4f | CD2
-| bison         | 3.5.3     | http://ftp.gnu.org/pub/gnu/bison/bison-3.5.3.tar.xz                       | 0x0ddcaa3278d5264e | CD0+
+| binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
+| bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
 | cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2
+| cmsfs         | 1.1.12    | http://www.casita.net/pub/cmsfs/cmsfs-1.1.12.tar.gz                       | 0x96af6544edf138d9 | CD0
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
 | cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
 | curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
@@ -93,19 +77,22 @@ And there are more platforms recognized but not available (to me).
 | gnucobol      | 3.2       | https://ftp.gnu.org/pub/gnu/gnucobol/gnucobol-3.2.tar.xz                  | 0x13e96b53c005604e | CD2, 20230700
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5,SSB2022
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
+| gnupg         | 2.4.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.4.3.tar.bz2                      | 0x528897b826403ada | CD5
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
 | gzip          | 1.12      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.12.tar.xz                          | 0x7fd9fccb000beeee | CD0+
+| inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 | irssi         | 1.4.5     | https://codeberg.org/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz | 0x00ccb587ddbef0e1 | CD3
 | jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
 | less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0+
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
-| libassuan     | 2.5.5     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.5.tar.bz2              | 0x528897b826403ada | CD4
+| libassuan     | 2.5.6     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.6.tar.bz2              | 0x528897b826403ada | CD4
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
-| libgcrypt     | 1.10.1    | ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.10.1.tar.bz2             | 0x528897b826403ada | CD5
-| libgpg-error* | 1.47      | ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2         | 0x528897b826403ada | CD4
+| libgcrypt     | 1.10.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2       | 0x528897b826403ada | CD5, 20231025
+| libgcrypt     | 1.8.10    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.10.tar.bz2       | 0x528897b826403ada | CD5, LTS
+| libgpg-error* | 1.47      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2   | 0x528897b826403ada | CD4, 20231025
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
-| libksba       | 1.6.4     | ftp://ftp.gnupg.org/gcrypt/libksba/libksba-1.6.4.tar.bz2                  | 0x528897b826403ada | CD4
+| libksba       | 1.6.4     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2            | 0x528897b826403ada | CD4, 20231025
 | libressl      | 3.1.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
@@ -113,6 +100,7 @@ And there are more platforms recognized but not available (to me).
 | libressl      | 3.5.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.6.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.6.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.7.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.7.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5
+| libressl      | 3.8.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.2.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
@@ -125,11 +113,11 @@ And there are more platforms recognized but not available (to me).
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
-| openssh       | 9.3p2     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2.tar.gz | 0x2a3f414e736060ba | CD5
+| openssh       | 9.6p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.6p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240108
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| openssl       | 1.1.1t    | https://www.openssl.org/source/openssl-1.1.1t.tar.gz                      | 0xd9c4d26d0e604491 | CD5
-| openssl       | 3.0.7     | https://www.openssl.org/source/openssl-3.0.7.tar.gz                       | 0xd9c4d26d0e604491 | CD5
+| openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
+| openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 | openvpn       | 2.5.0     | https://swupdate.openvpn.org/community/releases/openvpn-2.5.0.tar.xz      | 0xf132b1cbaf131cae | CD5
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
@@ -143,7 +131,7 @@ And there are more platforms recognized but not available (to me).
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0+
 | snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 | CD3
-| stunnel       | 5.50      | http://www.stunnel.org/downloads/stunnel-5.50.tar.gz                      | 0xb1048932dd3aaaa3 |
+| stunnel       | 5.71      | https://www.stunnel.org/downloads/stunnel-5.71.tar.gz                     | 0xb1048932dd3aaaa3 | CD4, 20240109
 | sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
 | tar           | 1.22      | https://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
@@ -155,7 +143,7 @@ And there are more platforms recognized but not available (to me).
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4, 20230700
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
-| zlib          | 1.2.13    | http://de.casita.net/pub/zlib/zlib-1.2.13.tar.gz                          | 0x783fcd8e58bcafba | CD4
+| zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
 | zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
 | zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
@@ -213,6 +201,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | tmux          | 2.8       | https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz        |                    |
 | unixodbc      | 2.3.9     | http://www.unixodbc.org/unixodbc-2.3.9.tar.gz                             |                    | CD4
 | vim           | 9.0       | http://ftp.nluug.nl/vim/unix/vim-9.0.tar.bz2                              |                    | CD0+
+| xastir        | 2.2.0     | https://github.com/Xastir/Xastir/archive/refs/tags/Release-2.2.0.tar.gz   |                    | CD3, 20231012
 | xinetd        | 2.3.15    | ftp://mirror.ovh.net/gentoo-distfiles/distfiles/xinetd-2.3.15.tar.gz      |                    | CD3
 
 ## Notes
@@ -232,7 +221,7 @@ The following packages have issues or previously had issues:
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        |           | does not build with Musl-ified GCC                                                             |
 | squid         | 3.5.25    | cannot build statically                                                                        |
-| stunnel       | 5.50      | cannot build statically                                                                        |
+| stunnel       | any       | cannot build statically                                                                        |
 | regina        | any       | cannot build statically                                                                        |
 | tcl           | any       | cannot build statically                                                                        |
 
