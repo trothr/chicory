@@ -12,7 +12,7 @@ most recent at the top. Time of latest update at the bottom.
 | bash          | 5.2.21    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.21.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240219
 | zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0
 | dash          | 0.5.12    | https://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz        | sha512             | CD0
-| pdksh         | 5.2.14    | https://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz            |                    | CD0
+| pdksh         | 5.2.14    | https://www.casita.net/pub/pdksh/pdksh-5.2.14.tar.gz                      |                    | CD0
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0
 
 ## Current Platforms
@@ -35,7 +35,7 @@ Other platforms less often built include:
 * Linux-sparc
 * OpenBSD-i386
 
-And there are more platforms recognized but not available (to me).
+And there are more platforms recognized but not available for build.
 
 ## Packages Previously Built
 
@@ -63,11 +63,8 @@ And there are more platforms recognized but not available (to me).
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0+
 | ed            | 1.19      | https://ftp.gnu.org/pub/gnu/ed/ed-1.19.tar.lz                             | 0x8fe99503132d7742 | CD0, 20230921
 | expat         | 2.5.0     | https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2 | 0x96262acffbd3aec6 | CD4, 20230700
-| fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
 | findutils     | 4.6.0     | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.6.0.tar.gz               | 0xa15b725964a95ee5 | CD0+
-| fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
 | flex          | 2.6.4     | https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz | 0xe4b29c8d64885307 | CD0+
-| flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
 | gawk          | 5.0.1     | http://ftp.gnu.org/pub/gnu/gawk/gawk-5.0.1.tar.xz                         | 0xdf597815937ec0d2 | CD0+
 | gcc           | 9.2.0     | http://ftp.gnu.org/pub/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.bz2                | 0x6eeb81f8981c74c7 | CD2
 | gcc           | 4.8.5     | http://ftp.gnu.org/pub/gnu/gcc/gcc-4.8.5/gcc-4.8.5.tar.bz2                | 0x6eeb81f8981c74c7 | CD2
@@ -164,8 +161,11 @@ Same goes for `pkg-config` and `libgpg-error`.
 | dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         |                    | CD0+
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    | CD0+
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    | CD3
+| fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
 | file          | 5.42      | http://distfiles.macports.org/file/file-5.42.tar.gz                       |                    | CD0+
 |               |           | ftp://ftp.astron.com/pub/file/file-5.37.tar.gz                            |                    |
+| fldigi        | 4.1.26    | http://www.w1hkj.com/files/fldigi/fldigi-4.1.26.tar.gz                    |                    | CD3
+| flrig         | 1.4.8     | http://www.w1hkj.com/files/flrig/flrig-1.4.8.tar.gz                       |                    | CD3
 | glib          | 2.23.6    | http://ftp.gnome.org/pub/gnome/sources/glib/2.23/glib-2.23.6.tar.bz2      |                    | CD4
 | glib          | 2.57.1    | http://ftp.gnome.org/pub/gnome/sources/glib/2.57/glib-2.57.1.tar.bz2      |                    | CD4
 | glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0+
