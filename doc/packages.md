@@ -260,20 +260,29 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 | libunistring  | 0.9.7     |                                                                                                | CD4
 | libxml        |           |                                                                                                | CD4
 | libxslt       |           |                                                                                                | CD4
+| lilo          | 23.2      | difficult for relocation                                                                       | CD0
 | lvm2          |           |                                                                                                | CD0
 | lz4           | 1.9.2     |                                                                                                | CD4
 | man           |           |                                                                                                | CD0
+| module-init-tools | 3.5   | difficult for relocation                                                                       | CD0
+| mutt          | 1.4.2.3   | difficult for relocation                                                                       | CD0
 | netcat        | 0.7.1     |                                                                                                | CD3
 | parted        |           |                                                                                                | CD3
 | php           |           |                                                                                                | CD3
+| postfix       | 2.10.2    | difficult for relocation                                                                       | CD0
 | ppp           | 2.4.5     |                                                                                                | CD3
+| procps        | 3.2.8     | difficult for relocation                                                                       | CD0
 | qclib         | 2.2.0     |                                                                                                | CD4
+| shadow        | 4.1.4.3   | difficult for relocation                                                                       | CD0
+| sysklogd      | 1.5       | difficult for relocation                                                                       | CD0
+| sysvinit      | 2.88dsf   | difficult for relocation                                                                       | CD0
 | unison        | 2.51.2    |                                                                                                | CD3
 | unzip         |           |                                                                                                | CD0
 | zip           |           |                                                                                                | CD0
 
 \*Package name or "application ID" is never hyphenated in Chicory.
 `btrfs-tools` is hyphenated above for clarity, but is named `btrfstools` in Chicory repostories.
+Same for `module-init-tools`.
 
 ## Packages for z/OS
 
@@ -293,6 +302,6 @@ This file is part of the collection found on GitHub at ...
 
     https://github.com/trothr/chicory/tree/master/doc/
 
-this page "Chicory Packages" last updated 2024-01-09 (Tuesday) by RMT
+this page "Chicory Packages" last updated 2024-02-22 (Thursday) by RMT
 
 
