@@ -119,6 +119,7 @@ And there are more platforms recognized but not available for build.
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0+
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
+| pth           | 2.0.7     | https://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                              | 0x6e744acba9c09e30 | CD2,CD4
 | python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0x64e628f8d684696d | CD1
 | python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,SSB2022
 | readline      | 8.2       | http://ftp.gnu.org/pub/gnu/readline/readline-8.2.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
@@ -126,6 +127,7 @@ And there are more platforms recognized but not available for build.
 | rsync         | 3.2.3     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.3.tar.gz                   | 0x6c859fb14b96a8c5 | CD0,SSB2022
 | sed           | 4.8       | https://ftp.gnu.org/pub/gnu/sed/sed-4.8.tar.xz                            | 0x7fd9fccb000beeee | CD0+
 | screen        | 4.8.0     | https://ftp.gnu.org/pub/gnu/screen/screen-4.8.0.tar.gz                    | 0xb708a383c53ef3a4 | CD0+
+| sharutils     | 4.15.2    | https://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                 | 0xd9204cb5bfbf0221 | CD0+
 | snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 | CD3
 | stunnel       | 5.71      | https://www.stunnel.org/downloads/stunnel-5.71.tar.gz                     | 0xb1048932dd3aaaa3 | CD4, 20240109
@@ -189,11 +191,9 @@ Same goes for `pkg-config` and `libgpg-error`.
 | pdsh          | 2.31      | http://pdsh.googlecode.com/files/pdsh-2.31.tar.bz2                        |                    | CD3
 | perl          | 5.30.0    | http://www.cpan.org/src/perl-5.30.0.tar.gz                                |                    | CD1
 | pgpdump       | 0.35      | https://www.mew.org/~kazu/proj/pgpdump/pgpdump-0.35.tar.gz                |                    | CD3, 20230914
-| pth           | 2.0.7     | ftp://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                                |                    | CD2,CD4
 | regina  | 3.9.5 | https://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.5/regina-rexx-3.9.5.tar.gz |          | CD1,SSB2022
 | rsyslog       | 8.38.0    | http://www.rsyslog.com/files/download/rsyslog/rsyslog-8.38.0.tar.gz       | sha256             | CD0
 | ruby          | 1.9.1     | http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz              |                    | CD1
-| sharutils     | 4.15.2    | http://ftp.gnu.org/gnu/sharutils/sharutils-4.15.2.tar.gz                  |                    | CD0+
 | subversion    | 1.9.4     | http://mirrors.sonic.net/apache/subversion/subversion-1.9.4.tar.bz2       |                    | CD3
 | tcl           | 8.6.10    | ftp://ftp.tcl.tk/pub/tcl/tcl8_6/tcl8.6.10-src.tar.gz                      |                    | CD1
 | the           | 3.3       | http://downloads.sourceforge.net/project/the/THE-3.3.tar.gz               |                    | CD1,SSB2022
