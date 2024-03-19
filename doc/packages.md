@@ -15,6 +15,14 @@ most recent at the top. Time of latest update at the bottom.
 | pdksh         | 5.2.14    | https://www.casita.net/pub/pdksh/pdksh-5.2.14.tar.gz                      |                    | CD0
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0
 
+## Packages Recently Built
+
+| package       | release   | source URL                                                                | source signing key |
+| ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| hercules      | 3.13      | http://downloads.hercules-390.eu/hercules-3.13.tar.gz                     |                    | CD3
+| libressl      | 3.9.0     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.9.0.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
+| libressl      | 3.8.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
+
 ## Current Platforms
 
 Chicory has been applied to many platforms.

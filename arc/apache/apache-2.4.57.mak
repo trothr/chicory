@@ -51,7 +51,7 @@ SC_URL          =       \
    https://archive.apache.org/dist/httpd/$(SC_SOURCE).$(SC_ARC).sha512
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x4f7dbaa99a59b973
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x82781de46d5954fa
 
 #
 # defaults

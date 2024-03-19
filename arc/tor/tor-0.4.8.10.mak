@@ -73,6 +73,7 @@ SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
                                 --enable-static-libevent \
                         --with-zlib-dir=$(PREFIX)/zlib \
                                 --enable-static-zlib \
+	--with-malloc=system \
                         --disable-lzma \
                         --disable-gcc-hardening \
                         --enable-static-tor \
