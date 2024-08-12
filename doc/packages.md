@@ -5,6 +5,26 @@ This is the Chicory Packages list as a markdown file.
 This file lists the latest Chicory-built packages,
 most recent at the top. Time of latest update at the bottom.
 
+## Packages Recently Built
+
+| package       | release   | source URL                                                                | source signing key |
+| ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| openblas      | 0.3.28    | https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz |     | CD4
+| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3
+| tncattach     | 0.1.9     | https://github.com/markqvist/tncattach/archive/refs/tags/0.1.9.tar.gz     |                    | CD3
+| openvpn       | 2.6.9     | https://github.com/OpenVPN/openvpn/releases/download/v2.6.9/openvpn-2.6.9.tar.gz | 0xf132b1cbaf131cae | CD5
+| zlib          | 1.2.13    | https://www.zlib.net/zlib-1.2.13.tar.gz                                   | 0x783fcd8e58bcafba | CD4
+| openssh       | 9.8p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssn-9.8p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240702
+| openssh       | 8.4p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
+| xfl           | 1.0.1     | http://www.casita.net/pub/xfl/xfl-1.0.1.tar.gz                            | 0x96af6544edf138d9 | CD0
+| xz            | 5.6.2     | https://www.tukaani.org/xz/xz-5.6.2.tar.gz                                |                    | CD0
+| utillinux     | 2.40.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz |             | CD0
+| libressl      | 3.9.2     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.9.2.tar.gz        |                    | CD5
+| libressl      | 3.8.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
+
+Note: OpenSSH 9.8p1 is in response to CVE-2024-6387
+and OpenSSH 8.4p1 is a back-stop against it.
+
 ## Current Shells
 
 | package       | release   | source URL                                                                | source signing key |
@@ -14,14 +34,6 @@ most recent at the top. Time of latest update at the bottom.
 | dash          | 0.5.12    | https://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz        | sha512             | CD0
 | pdksh         | 5.2.14    | https://www.casita.net/pub/pdksh/pdksh-5.2.14.tar.gz                      |                    | CD0
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0
-
-## Packages Recently Built
-
-| package       | release   | source URL                                                                | source signing key |
-| ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| hercules      | 3.13      | http://downloads.hercules-390.eu/hercules-3.13.tar.gz                     |                    | CD3
-| libressl      | 3.9.0     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.9.0.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
-| libressl      | 3.8.3     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.3.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20231108
 
 ## Current Platforms
 
@@ -181,6 +193,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0+
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    | CD0+
 | hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    | CD5
+| hercules      | 3.13      | http://downloads.hercules-390.eu/hercules-3.13.tar.gz                     |                    | CD3
 | irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
 | kaffe         | 1.1.9     |                                                                           |                    | CD3
 | libestr       | 0.1.10    | http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz           | sha256             | CD4
