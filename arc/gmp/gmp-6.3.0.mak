@@ -42,7 +42,7 @@ SC_URL          =       \
 	https://gmplib.org/download/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
 	https://gmplib.org/download/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
 #gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xf3599ff828c67298
 
 #

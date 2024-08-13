@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for Tor for La Casita with /usr/opt
-#         Date: 2024-01-18 (Thu)
+#               make rules for OpenVPN at La Casita with Chicory
+#         Date: 2024-02-14 (Wed)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       tor
-SC_APV          =       0.4.8.10
+APPLID          =       openvpn
+SC_APV          =       2.6.9
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -39,56 +39,26 @@ SC_TAR          =       (gunzip -f | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
-        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC) \
-        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).sha256sum \
-        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).sha256sum.asc
+ https://github.com/OpenVPN/openvpn/releases/download/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
+ https://github.com/OpenVPN/openvpn/releases/download/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).tar.gz.sha256sum.asc && \
- (cd arc ; sha256sum $(SC_VRM).tar.gz) > /tmp/$(SC_VRM).tar.gz.sha256sum && \
- cmp arc/$(SC_VRM).tar.gz.sha256sum /tmp/$(SC_VRM).tar.gz.sha256sum && \
- rm /tmp/$(SC_VRM).tar.gz.sha256sum
-
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x42e86a2a11f48d36
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x28988BF5, 0x19F78451, 0x165733EA, 0x8D29319A
-# Roger Dingledine (0x28988BF5 and 0x19F78451) or Nick Mathewson
-# (0x165733EA, or subkey 0x8D29319A) sign the Tor source code tarballs.
-# Erinn Clark (0x63FEE659) signs the Tor Browser Bundles,
-# Vidalia bundles, and many other packages. She signs RPMs with her
-# other key (0xF1F5C9B5). Andrew Lewman (0x31B0974B, 0x6B4D6475)
-# used to sign packages for RPMs, Windows, and OS X.
-# 0x21194ebb165733ea
-# 0xc218525819f78451
-
-# Use the Tor network to get the latest Tor source.
-# This is not strictly required but might sometimes be best practice.
-SC_FETCH        =       echo $(SC_URL) | xargs -n 1 \
-                        curl --remote-time --ftp-pasv --remote-name \
-                                --insecure --socks4a 127.0.0.1:9050
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x41d20965c2e82dc7
 
 #
-# override default SC_CONFIG
+# defaults
+SC_FETCH        =       wget --passive-ftp --no-clobber \
+                                        --no-check-certificate $(SC_URL)
+
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-                        --with-openssl-dir=$(PREFIX)/openssl \
-                                --enable-static-openssl \
-                        --with-libevent-dir=$(PREFIX)/libevent \
-                                --enable-static-libevent \
-                        --with-zlib-dir=$(PREFIX)/zlib \
-                                --enable-static-zlib \
-	--with-malloc=system \
-                        --disable-lzma \
-                        --disable-gcc-hardening \
-                        --enable-static-tor \
-                        --disable-asciidoc
-# we really *do* want man pages, so need to find out what's missing
-# and then remove the --disable-asciidoc flag from configure
+                                        --disable-plugin-auth-pam
+#                               --enable-static --disable-shared
 
 SC_INSTALL      =       $(MAKE) install
 #SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP        =       strip bin/tor bin/tor-gencert bin/tor-resolve \
-                                bin/tor-print-ed-signing-cert
+#SC_FIXUP       =       strip ...
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -105,10 +75,13 @@ SC_BUILDX       =               $(MAKE)
 # default build directory matches source directory
 SC_BUILDD       =               $(SC_SOURCE)
 
+
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-#                       libevent
+#                       GMP
+#                       MPFR
+#                       libnl-genl-3.4.0
 
 ########################################################################
 
@@ -146,7 +119,6 @@ install:	_ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
 		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
-#		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
 #
@@ -321,6 +293,7 @@ arc/$(SC_SOURCE).$(SC_ARC):
 		@test -d arc
 		sh -c ' cd arc ; $(SC_FETCH) '
 		@test -s arc/$(SC_SOURCE).$(SC_ARC)
+#		@test -s arc/$(SC_VRM).$(SC_ARC)
 
 sys:		_ins
 		rm -f sys
@@ -364,14 +337,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src

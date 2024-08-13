@@ -51,7 +51,7 @@ SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
 				--with-gmp=$(PREFIX)/gmp \
 				--with-mpfr=$(PREFIX)/mpfr \
 				--with-mpc=$(PREFIX)/mpc \
-				--enable-languages=c,c++ \
+				--enable-languages=c,c++,fortran \
 				--disable-nls \
 				--enable-static --disable-shared
 #The following languages will be built: c,c++
