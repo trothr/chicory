@@ -7,10 +7,15 @@ most recent at the top. Time of latest update at the bottom.
 
 ## Packages Recently Built
 
+
+
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| openblas      | 0.3.28    | https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz |     | CD4
-| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3
+| autoconf      | 2.72      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.72.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
+| automake      | 1.17      | https://ftp.gnu.org/pub/gnu/automake/automake-1.17.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
+| uft           | 1.10.3    | https://github.com/trothr/uft/archive/refs/tags/1.10.3.tar.gz             |                    | CD3
+| openblas      | 0.3.28    | https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz |     | CD4, 20240911
+| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3. 20240909
 | tncattach     | 0.1.9     | https://github.com/markqvist/tncattach/archive/refs/tags/0.1.9.tar.gz     |                    | CD3
 | openvpn       | 2.6.9     | https://github.com/OpenVPN/openvpn/releases/download/v2.6.9/openvpn-2.6.9.tar.gz | 0xf132b1cbaf131cae | CD5
 | zlib          | 1.2.13    | https://www.zlib.net/zlib-1.2.13.tar.gz                                   | 0x783fcd8e58bcafba | CD4
