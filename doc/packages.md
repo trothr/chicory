@@ -35,10 +35,10 @@ and OpenSSH 8.4p1 is a back-stop against it.
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
 | bash          | 5.2.21    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.21.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240219
-| zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0
-| dash          | 0.5.12    | https://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz        | sha512             | CD0
+| zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0, 20220514
+| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         | sha512             | CD0, 20221211
 | pdksh         | 5.2.14    | https://www.casita.net/pub/pdksh/pdksh-5.2.14.tar.gz                      |                    | CD0
-| tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0
+| tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 
 ## Current Platforms
 
@@ -159,7 +159,7 @@ And there are more platforms recognized but not available for build.
 | sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
 | tar           | 1.22      | https://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
-| tcsh          | 6.24.10   | ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz               | 0x65c26e471f45b123 | CD0
+| tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
 | tor           | 0.4.8.10  | https://dist.torproject.org/tor-0.4.8.10.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20231024
 | util-linux*   | 2.38.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.1.tar.xz | a78cbeaed9c39094b96a48ba8f891d50 | CD0
@@ -168,7 +168,7 @@ And there are more platforms recognized but not available for build.
 | xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4, 20230700
 | xz            | 5.2.5     | http://www.tukaani.org/xz/xz-5.2.5.tar.gz                                 | 0x38ee757d69184620 | CD0
 | zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
-| zsh           | 5.9       | http://www.zsh.org/pub/old/zsh-5.9.tar.xz                                 | 0xacf8146cae8cbbc4 | CD0
+| zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0, 20220514
 | zstd          | 1.5.5     | https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz | 0xef8fe99528b52ffd | CD4, 20230700
 
 \*Package name or "application ID" in Chicory is never hyphenated.
@@ -185,7 +185,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 |               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    | CD3
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    | CD3
-| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         |                    | CD0+
+| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         | sha512             | CD0, 20221211
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    | CD0+
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    | CD3
 | fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
