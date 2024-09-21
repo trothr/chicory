@@ -9,6 +9,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| gettext       | 0.22.5    | https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.xz                 | 0x4f494a942e4616c2 | CD0, 20240221
+| libtool       | 2.4.7     | https://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.7.tar.gz                  | 0x151308092983d606 | CD0, 20220317
+| ncurses       | 6.5       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.5.tar.gz                    | 0x702353e0f7e48edb | CD0, 20240427
 | bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
 | make          | 4.4.1     | https://ftp.gnu.org/pub/gnu/make/make-4.4.1.tar.gz                        | 0xdeaccaaedb78137a | CD0, 20230226
 | cpio          | 2.15      | https://ftp.gnu.org/pub/gnu/cpio/cpio-2.15.tar.gz                         | 0x3602b07f55d0c732 | CD0, 20240114
