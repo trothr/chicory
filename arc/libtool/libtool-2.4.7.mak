@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for Less at La Casita with Chicory
-#         Date: 2024-09-18 (Wed)
+#               make rules for GNU LibTool at La Casita with Chicory
+#         Date: 2024-09-20 (Fri)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,8 +14,8 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       less
-SC_APV          =       661
+APPLID          =       libtool
+SC_APV          =       2.4.7
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -39,25 +39,24 @@ SC_TAR          =       (gunzip -f | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
-      https://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-      https://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig \
-      https://www.greenwoodsoftware.com/less/news.$(SC_APV).html
-#     https://www.greenwoodsoftware.com/less/download.html
+        http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
+        http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
 
 SC_SOURCE_VERIFY = gpg --keyid-format long --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xf153a7c833235259
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x6eac957f8eeb55c0
 
 #
 # defaults
 SC_FETCH        =       wget --passive-ftp --no-clobber \
                                         --no-check-certificate $(SC_URL)
-SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM)
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+                                --enable-static --disable-shared
+
 SC_INSTALL      =       $(MAKE) install
 #SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP        =       strip bin/less bin/lessecho bin/lesskey
+#SC_FIXUP       =       strip ...
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
