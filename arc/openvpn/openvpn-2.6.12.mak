@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
 #               make rules for OpenVPN at La Casita with Chicory
-#         Date: 2024-02-14 (Wed)
+#         Date: 2024-10-02 (Wed)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -15,7 +15,7 @@ PREFIX          =       /usr/opt
 
 # no default for VRM string
 APPLID          =       openvpn
-SC_APV          =       2.6.9
+SC_APV          =       2.6.12
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -40,10 +40,11 @@ SC_TAR          =       (gunzip -f | tar xf -) <
 # where to find the source on the internet (no default)
 SC_URL          =       \
  https://github.com/OpenVPN/openvpn/releases/download/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC) \
- https://github.com/OpenVPN/openvpn/releases/download/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc
+ https://github.com/OpenVPN/openvpn/releases/download/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC).asc.txt
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x41d20965c2e82dc7
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+SC_SOURCE_VERIFY = gpg --verify arc/openvpn-2.6.12.tar.gz.asc.txt arc/openvpn-2.6.12.tar.gz 2>&1 | tr A-Z a-z 
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x533a6860529f23c5
 
 #
 # defaults
