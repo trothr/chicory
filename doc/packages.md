@@ -9,6 +9,10 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| xmitmsgx      | 2.1.6     | http://www.casita.net/pub/xmitmsgx-2.1.6.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
+| uft           | 1.10.4    | https://github.com/trothr/uft/archive/refs/tags/1.10.4.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
+| libressl      | 3.8.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20241014
+| openvpn       | 2.6.12    | https://github.com/OpenVPN/openvpn/releases/download/v2.6.12/openvpn-2.6.12.tar.gz | 0xf132b1cbaf131cae | CD5, 20241014
 | gettext       | 0.22.5    | https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.xz                 | 0x4f494a942e4616c2 | CD0, 20240221
 | libtool       | 2.4.7     | https://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.7.tar.gz                  | 0x151308092983d606 | CD0, 20220317
 | ncurses       | 6.5       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.5.tar.gz                    | 0x702353e0f7e48edb | CD0, 20240427
