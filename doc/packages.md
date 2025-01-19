@@ -9,8 +9,10 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| xmitmsgx      | 2.1.6     | http://www.casita.net/pub/xmitmsgx-2.1.6.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
-| uft           | 1.10.4    | https://github.com/trothr/uft/archive/refs/tags/1.10.4.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
+| diffutils     | 3.10      | https://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.10.tar.xz               | 0x7fd9fccb000beeee | CD0
+| xfl           | 1.0.5     | http://www.casita.net/pub/xfl/xfl-1.0.5.tar.gz                            | 0x96af6544edf138d9 | CD3
+| xmitmsgx      | 2.1.7     | http://www.casita.net/pub/xmitmsgx-2.1.7.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
+| uft           | 1.10.5    | https://github.com/trothr/uft/archive/refs/tags/1.10.5.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
 | libressl      | 3.8.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20241014
 | openvpn       | 2.6.12    | https://github.com/OpenVPN/openvpn/releases/download/v2.6.12/openvpn-2.6.12.tar.gz | 0xf132b1cbaf131cae | CD5, 20241014
 | gettext       | 0.22.5    | https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.xz                 | 0x4f494a942e4616c2 | CD0, 20240221
@@ -160,12 +162,12 @@ And there are more platforms recognized but not presently build-able.
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
 | tor           | 0.4.8.10  | https://dist.torproject.org/tor-0.4.8.10.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20231024
-| uft           | 1.10.3    | https://github.com/trothr/uft/archive/refs/tags/1.10.3.tar.gz             | 0x96af6544edf138d9 | CD3
+| uft           | 1.10.4    | https://github.com/trothr/uft/archive/refs/tags/1.10.4.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
 | util-linux*   | 2.40.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz |             | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
 | xfl           | 1.0.1     | http://www.casita.net/pub/xfl/xfl-1.0.1.tar.gz                            | 0x96af6544edf138d9 | CD0
-| xmitmsgx      | 2.1.5     | http://www.casita.net/pub/xmitmsgx-2.1.5.tar.gz                           | 0x96af6544edf138d9 | CD4, 20230700
+| xmitmsgx      | 2.1.6     | http://www.casita.net/pub/xmitmsgx-2.1.6.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
 | xz            | 5.6.2     | https://www.tukaani.org/xz/xz-5.6.2.tar.gz                                | 0x38ee757d69184620 | CD0, 20240529
 | zlib          | 1.2.13    | https://www.zlib.net/zlib-1.2.13.tar.gz                                   | 0x783fcd8e58bcafba | CD4
 | zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108

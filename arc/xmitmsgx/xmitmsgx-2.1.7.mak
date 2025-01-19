@@ -1,21 +1,21 @@
 #
-#	  Name: makefile ('make' rules file)
-#		make rules for Patch at La Casita with Chicory
-#	  Date: 2019-Mar-16 (Sat)
+#         Name: makefile ('make' rules file)
+#               make rules for XMITMSGX at La Casita brewed with Chicory
+#         Date: 2024-10-13 (Sun) for release 2.1.6, Regina, ooRexx, RPM
 #
-#		This makefile is intended to reside "above" the
-#		package source tree, which is otherwise unmodified
-#		from the distribution (except for published patches),
-#		and allows automatic coexistence of builds for
-#		different hardware and O/S combinations.
+#               This makefile is intended to reside "above" the
+#               package source tree, which is otherwise unmodified
+#               from the distribution (except for published patches),
+#               and allows automatic coexistence of builds for
+#               different hardware and O/S combinations.
 #
 
 # standard stuff for all apps in this series
 PREFIX		=	/usr/opt
 
 # no default for VRM string
-APPLID		=	patch
-SC_APV		=	2.7.6
+APPLID		=	xmitmsgx
+SC_APV		=	2.1.7
 SC_VRM		=	$(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
@@ -28,31 +28,33 @@ SC_ARC		=	tar.gz
 #SC_ARC		=	tar.lz
 
 # varying extract commands to match compression ...
-SC_TAR		=	tar xzf
+#SC_TAR		=	tar xzf
+SC_TAR		=	(gunzip -f | tar xf -) <
 #SC_TAR		=	tar xjf
+#SC_TAR		=	(bzcat - | tar xf -) <
 #SC_TAR		=	tar xJf
+#SC_TAR		=	(xzcat - | tar xf -) <
 #SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar -xf -) <
+#SC_TAR		=	(lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL		=	\
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-	 http://ftp.gnu.org/pub/gnu/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+	   http://www.casita.net/pub/xmitmsgx/$(SC_SOURCE).$(SC_ARC) \
+	   http://www.casita.net/pub/xmitmsgx/$(SC_SOURCE).$(SC_ARC).asc
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xd5bf9feb0313653a
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x96af6544edf138d9
 
 #
-# defaults
 SC_FETCH	=	wget --passive-ftp --no-clobber \
-					--no-check-certificate $(SC_URL)
+				--no-check-certificate $(SC_URL)
 SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM)
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
-SC_BUILD	=	$(MAKE)
+#				--enable-static --disable-shared
 SC_INSTALL	=	$(MAKE) install
+#SC_INSTALL	=	$(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP	=	strip bin/patch
+SC_FIXUP	=	strip bin/xmitmsg bin/xmiterr
 #	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
@@ -108,8 +110,7 @@ install:	_ins
 #install:	$(APPLID).ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
-		@echo "$(MAKE): next step is '$(MAKE) clean'."
-#		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
+		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
 		@echo " "
 
 #
@@ -119,7 +120,7 @@ _src src source :
 		rm -f  _src src source $(APPLID).src
 		$(MAKE) $(SC_SOURCE)
 		test -d $(SC_SOURCE)
-		ln -s $(SC_SOURCE) src
+		ln -sf $(SC_SOURCE) src
 		touch _src
 
 #
@@ -154,7 +155,7 @@ _exe:		_cfg
 		echo "$(MAKE): checking that config matches target ..."
 		test "`cat _cfg`" = "$(SYSTEM)"
 		@echo "$(MAKE): compiling '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_BUILDD) ; exec $(MAKE) '
+		sh -c ' cd $(SC_BUILDD) ; $(SC_BUILDX) '
 		echo "$(SYSTEM)" > _exe
 
 #
@@ -181,7 +182,7 @@ _ins:		_exe
 			ln -s `pwd` "$(PREFIX)/$(SC_VRM)" '
 #
 		@echo "$(MAKE): post-building '$(SC_VRM)' for '$(SYSTEM)' ..."
-		sh -c ' cd $(SC_SOURCE) ; exec $(MAKE) install ' \
+		sh -c ' cd $(SC_BUILDD) ; $(SC_INSTALL) ' \
 			2>&1 | tee install.log
 		echo "$(SYSTEM)" > _ins
 		rm "$(PREFIX)/$(SC_VRM)"
@@ -328,14 +329,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src
