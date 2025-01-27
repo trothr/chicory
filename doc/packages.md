@@ -9,6 +9,10 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        |                    | CD4, 20250126
+| libgcrypt     | 1.11.0    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2       |                    | CD5, 20250126
+| libgpgerror   | 1.51      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2   |                    | CD4, 20250126
+| gnupg         | 2.5.3     | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.3.tar.bz2                |                    | CD5, 20250126
 | diffutils     | 3.10      | https://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.10.tar.xz               | 0x7fd9fccb000beeee | CD0
 | xfl           | 1.0.5     | http://www.casita.net/pub/xfl/xfl-1.0.5.tar.gz                            | 0x96af6544edf138d9 | CD3
 | xmitmsgx      | 2.1.7     | http://www.casita.net/pub/xmitmsgx-2.1.7.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
@@ -22,11 +26,6 @@ most recent at the top. Time of latest update at the bottom.
 | make          | 4.4.1     | https://ftp.gnu.org/pub/gnu/make/make-4.4.1.tar.gz                        | 0xdeaccaaedb78137a | CD0, 20230226
 | cpio          | 2.15      | https://ftp.gnu.org/pub/gnu/cpio/cpio-2.15.tar.gz                         | 0x3602b07f55d0c732 | CD0, 20240114
 | less          | 661       | https://ftp.gnu.org/pub/gnu/less/less-661.tar.gz                          | 0xf153a7c833235259 | CD0, 20240630
-| musl          | 1.2.5     | https://musl.libc.org/releases/musl-1.2.5.tar.gz                          | 0x56bcdb593020450f | CD0, 20240229
-| autoconf      | 2.72      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.72.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
-| automake      | 1.17      | https://ftp.gnu.org/pub/gnu/automake/automake-1.17.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
-| openblas      | 0.3.28    | https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz |     | CD4, 20240911
-| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3. 20240909
 
 ## Current Shells
 
@@ -69,8 +68,8 @@ And there are more platforms recognized but not presently build-able.
 | apr           | 1.7.4     | https://dlcdn.apache.org/apr/apr-1.7.4.tar.bz2                            | 0x82781de46d5954fa | CD4, 20230700
 | aprutil       | 1.6.3     | https://downloads.apache.org/apr/aprutil-1.6.3.tar.bz2                    | 0x82781de46d5954fa | CD4, 20230700
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
-| autoconf      | 2.71      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.71.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20230915
-| automake      | 1.16.5    | https://ftp.gnu.org/pub/gnu/automake/automake-1.16.5.tar.xz               | 0x91fcc32b6769aa64 | CD0, 20230915
+| autoconf      | 2.72      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.72.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
+| automake      | 1.17      | https://ftp.gnu.org/pub/gnu/automake/automake-1.17.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
 | bash          | 5.2.21    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.21.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240219
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
@@ -129,11 +128,13 @@ And there are more platforms recognized but not presently build-able.
 | mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
 | mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
 | musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
+| musl          | 1.2.5     | https://musl.libc.org/releases/musl-1.2.5.tar.gz                          | 0x56bcdb593020450f | CD0, 20240229
 | npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
 | nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0, 20230700
 | ncurses       | 6.1       | http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz                     | 0x702353e0f7e48edb | CD0+
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
+| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3. 20240909
 | openssh       | 8.4p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
 | openssh       | 9.8p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssn-9.8p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240702
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
@@ -209,10 +210,12 @@ Same goes for `pkg-config` and `libgpg-error`.
 | libuuid       | 1.0.3     | http://sourceforge.net/projects/libuuid/files/libuuid/1.0.3/libuuid.1.0.3.tar.gz |             | CD4
 | lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               | CD1
 | lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    | CD4
+|               |           | see XZ which includes LZMA                                                |                    |
 | lzo           | 2.10      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz          |                    | CD4
 | nmap          | 7.80      | https://nmap.org/dist/nmap-7.80.tar.gz                                    |                    | CD3
 | ntp           | 4.2.8p15  | https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p15.tar.gz |                   | CD3
 | ocaml         | 4.08.0    | http://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.0.tar.gz           |                    | CD1
+| openblas      | 0.3.28    | https://github.com/OpenMathLib/OpenBLAS/releases/download/v0.3.28/OpenBLAS-0.3.28.tar.gz |     | CD4, 20240911
 | oorexx        | 4.2.0     | http://sourceforge.net/projects/oorexx/files/oorexx/4.1.0/ooRexx-4.2.0-source.tar.gz |         | CD1,SSB2022
 | oorexx        | 5.0.0     | http://chic.casita.net/arc/oorexx/oorexx-5.0.0.tar.gz                     |                    | CD1,SSB2022
 | pdksh         | 5.2.14    | http://gd.tuwien.ac.at/utils/shells/pdksh/pdksh-5.2.14.tar.gz             |                    | CD0+
