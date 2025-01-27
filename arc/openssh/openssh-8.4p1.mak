@@ -89,8 +89,9 @@ SC_BUILDD       =               $(SC_SOURCE)
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-#                       /usr/opt/openssl
 #                       /usr/opt/zlib
+#                       /usr/opt/openssl 1.0.1u or better
+#                       does not work with LibreSSL
 
 ########################################################################
 
