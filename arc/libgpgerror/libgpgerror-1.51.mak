@@ -1,6 +1,6 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for GPG2 at La Casita with Chicory
+#               make rules for libgpg-error at La Casita with Chicory
 #         Date: 2025-01-24 (Fri)
 #
 #               This makefile is intended to reside "above" the

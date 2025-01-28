@@ -9,10 +9,12 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        |                    | CD4, 20250126
-| libgcrypt     | 1.11.0    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2       |                    | CD5, 20250126
-| libgpgerror   | 1.51      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2   |                    | CD4, 20250126
-| gnupg         | 2.5.3     | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.3.tar.bz2                |                    | CD5, 20250126
+| libksba       | 1.6.7     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.7.tar.bz2            | 0x528897b826403ada | CD4, 20250127
+| npth          | 1.8       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.8.tar.bz2                    | 0x528897b826403ada | CD2, 20250127
+| libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        | 0x528897b826403ada | CD4, 20250126
+| libgcrypt     | 1.11.0    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2       | 0x528897b826403ada | CD5, 20250126
+| libgpgerror   | 1.51      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2   | 0x528897b826403ada | CD4, 20250126
+| gnupg         | 2.5.3     | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.3.tar.bz2                | 0x528897b826403ada | CD5, 20250126
 | diffutils     | 3.10      | https://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.10.tar.xz               | 0x7fd9fccb000beeee | CD0
 | xfl           | 1.0.5     | http://www.casita.net/pub/xfl/xfl-1.0.5.tar.gz                            | 0x96af6544edf138d9 | CD3
 | xmitmsgx      | 2.1.7     | http://www.casita.net/pub/xmitmsgx-2.1.7.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014

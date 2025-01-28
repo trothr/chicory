@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
 #               make rules for XMITMSGX at La Casita brewed with Chicory
-#         Date: 2024-10-13 (Sun) for release 2.1.6, Regina, ooRexx, RPM
+#         Date: 2024-10-13 (Sun)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
