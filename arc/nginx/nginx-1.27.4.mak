@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for Util-Linux at La Casita with Chicory
-#         Date: 2024-06-04 (Tue)
+#               make rules for NGINX at La Casita with Chicory
+#         Date: 2025-02-08 (Sat)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,53 +14,57 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       utillinux
-SC_APV          =       2.40.1
+APPLID          =       nginx
+SC_APV          =       1.27.4
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE      =       $(SC_VRM)
-SC_SOURCE       =       util-linux-$(SC_APV)
+SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC         =       tar.gz
+SC_ARC          =       tar.gz
 #SC_ARC         =       tar.bz2
-SC_ARC          =       tar.xz
+#SC_ARC         =       tar.xz
 #SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR         =       tar xzf
-#SC_TAR         =       (gunzip -f | tar xf -) <
+SC_TAR          =       (gunzip -f | tar xf -) <
 #SC_TAR         =       tar xjf
 #SC_TAR         =       (bzcat - | tar xf -) <
 #SC_TAR         =       tar xJf
-SC_TAR          =       (xzcat - | tar xf -) <
-#SC_TAR         =       tar --lzip -xf
+#SC_TAR         =       (xzcat - | tar xf -) <
+#SC_TAR         =       tar --lzip xf
 #SC_TAR         =       (lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
- https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/$(SC_SOURCE).$(SC_ARC) \
- https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/$(SC_SOURCE).tar.sign \
- https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/sha256sums.asc
+                    http://nginx.org/download/$(SC_SOURCE).$(SC_ARC) \
+                    http://nginx.org/download/$(SC_SOURCE).$(SC_ARC).asc
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
-                              | gpg --verify arc/$(SC_SOURCE).tar.sign -
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+# gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 0xc8464d549af75c0a
 
 #
+# defaults
 SC_FETCH        =       wget --passive-ftp --no-clobber \
-                                --no-check-certificate $(SC_URL)
+                                        --no-check-certificate $(SC_URL)
+# using --no-check-certificate to ease HSTS trust burden
 
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-                                --enable-static --disable-shared
+                                         --without-http_rewrite_module \
+                                         --without-http_gzip_module
+#./configure: error: invalid option "--enable-static"
+#./configure: error: invalid option "--disable-shared"
+#                                             --with-pcre=$(PREFIX)/pcre
+
+#SC_CONFREQS    =
 
 SC_INSTALL      =       $(MAKE) install
 #SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP       =       strip bin/...
+SC_FIXUP        =       strip sbin/nginx
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
@@ -77,11 +81,10 @@ SC_BUILDX       =               $(MAKE)
 # default build directory matches source directory
 SC_BUILDD       =               $(SC_SOURCE)
 
+
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-#                       pkgconfig >= 0.9.0
-#                       libuser >= 0.58
 
 ########################################################################
 
@@ -92,7 +95,7 @@ REQ             =       package-v.r.m
 
 # include $(APPLID).mk
 
-.PHONY:		clean distclean check help
+.PHONY:		clean distclean check help chictable chicreqs
 
 .SUFFIXES:	.mk .src .cfg .exe .ins .inv
 
@@ -198,7 +201,6 @@ _ins:		_exe
 		if [ ! -z "$(SC_FIXUP)" ] ; then \
 			sh -c " cd $(SYSTEM) ; $(SC_FIXUP) " ; fi
 		mv install.log $(SYSTEM)/.
-
 
 #
 #
@@ -392,6 +394,17 @@ $(APPLID).ins:	$(APPLID).exe
 #		find / /usr -xdev -newer $(APPLID).exe > $(APPLID).inv
 		touch $(APPLID).ins
 	     if [ ! -z "$(SC_FIXUP)" ] ; then sh -c " $(SC_FIXUP) " ; fi
+
+#
+#
+chictable:
+		@echo "| $(APPLID) | $(SC_APV) |" \
+		  "`echo $(SC_URL) | awk '{print $$1}'` | |"
+
+#
+#
+chicreqs:
+		@echo "$(SC_CONFREQS)" | xargs -r -n 1 readlink
 
 #
 #

@@ -54,7 +54,8 @@ SC_FETCH        =       wget --passive-ftp --no-clobber \
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
                     --with-libgpg-error-prefix=$(PREFIX)/libgpgerror \
                     --with-libgcrypt-prefix=$(PREFIX)/libgcrypt \
-                    --with-libassuan-prefix=$(PREFIX)/libassuan
+                    --with-libassuan-prefix=$(PREFIX)/libassuan \
+                    --with-npth-prefix=$(PREFIX)/npth
 #configure: WARNING: unrecognized options: --enable-static, --disable-shared
 
 SC_CONFREQS     =       $(PREFIX)/libgpgerror $(PREFIX)/libgcrypt \
@@ -66,13 +67,12 @@ SC_INSTALL      =       $(MAKE) install
 # default for this is blank, varies widely per package
 SC_FIXUP        =       strip bin/gpg bin/gpgconf bin/gpg-agent \
         bin/gpg-card bin/gpg-connect-agent bin/gpg-mail-tube \
-        bin/gpgparsemail bin/gpgscm bin/gpgsm bin/gpgsplit bin/gpgtar \
+        bin/gpgparsemail bin/gpgsm bin/gpgsplit bin/gpgtar \
         bin/gpgv bin/gpg-wks-client bin/gpg-wks-server bin/kbxutil \
-        bin/watchgnupg \
-        \
-        libexec/gpg-auth libexec/gpg-check-pattern \
-        libexec/gpg-pair-tool libexec/gpg-preset-passphrase \
-        libexec/gpg-protect-tool libexec/scdaemon
+        bin/watchgnupg
+#        libexec/gpg-auth libexec/gpg-check-pattern \
+#        libexec/gpg-pair-tool libexec/gpg-preset-passphrase \
+#        libexec/gpg-protect-tool libexec/scdaemon
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
@@ -96,6 +96,7 @@ REQ             =       package-v.r.m
 #                       libgcrypt >= 1.11.0
 #                       libksba >= 3.0.0
 #                       libassuan >= 1.6.3
+#                       npth >= 1.2
 
 ########################################################################
 

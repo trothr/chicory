@@ -19,7 +19,7 @@ recognized:
 AIX-powerpc, AIX-ppc
 AIX-powerpc64, AIX-powerpc64
 HPUX-ia64
-HPUX-parisc
+HPUX-parisc             (best)
 SunOS-sparc, Solaris-sparc
 SunOS-sparc64, Solaris-sparc64
 Darwin-i386
@@ -64,5 +64,12 @@ Solaris-sparc64 -> SunOS-sparc64
 Solaris-x86_64 -> SunOS-x86_64
 SunOS-amd64 -> SunOS-x86_64
 Windows-i386 -> Windows-x86
+
+best:
+VMS --> Alpha
+HPUX --> RISCPA
+IRIX --> mips
+
+x86_64 == amd64
 
 

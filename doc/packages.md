@@ -9,6 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| nginx         | 1.27.4    | http://www.nginx.org/download/nginx-1.27.4.tar.gz                         | 0xa0ea981b66b0d967 | CD3, 20250212
+| lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz          |                    | CD4, 20250210
 | libksba       | 1.6.7     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.7.tar.bz2            | 0x528897b826403ada | CD4, 20250127
 | npth          | 1.8       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.8.tar.bz2                    | 0x528897b826403ada | CD2, 20250127
 | libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        | 0x528897b826403ada | CD4, 20250126
@@ -18,22 +20,18 @@ most recent at the top. Time of latest update at the bottom.
 | diffutils     | 3.10      | https://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.10.tar.xz               | 0x7fd9fccb000beeee | CD0
 | xfl           | 1.0.5     | http://www.casita.net/pub/xfl/xfl-1.0.5.tar.gz                            | 0x96af6544edf138d9 | CD3
 | xmitmsgx      | 2.1.7     | http://www.casita.net/pub/xmitmsgx-2.1.7.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
-| uft           | 1.10.5    | https://github.com/trothr/uft/archive/refs/tags/1.10.5.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
+| uft           | 1.10.6    | https://github.com/trothr/uft/archive/refs/tags/1.10.6.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
 | libressl      | 3.8.4     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.8.4.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20241014
 | openvpn       | 2.6.12    | https://github.com/OpenVPN/openvpn/releases/download/v2.6.12/openvpn-2.6.12.tar.gz | 0xf132b1cbaf131cae | CD5, 20241014
 | gettext       | 0.22.5    | https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.xz                 | 0x4f494a942e4616c2 | CD0, 20240221
 | libtool       | 2.4.7     | https://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.7.tar.gz                  | 0x151308092983d606 | CD0, 20220317
 | ncurses       | 6.5       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.5.tar.gz                    | 0x702353e0f7e48edb | CD0, 20240427
-| bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
-| make          | 4.4.1     | https://ftp.gnu.org/pub/gnu/make/make-4.4.1.tar.gz                        | 0xdeaccaaedb78137a | CD0, 20230226
-| cpio          | 2.15      | https://ftp.gnu.org/pub/gnu/cpio/cpio-2.15.tar.gz                         | 0x3602b07f55d0c732 | CD0, 20240114
-| less          | 661       | https://ftp.gnu.org/pub/gnu/less/less-661.tar.gz                          | 0xf153a7c833235259 | CD0, 20240630
 
 ## Current Shells
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| bash          | 5.2.21    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.21.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240219
+| bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
 | zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0, 20220514
 | dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         | sha512             | CD0, 20221211
 | pdksh         | 5.2.14    | https://www.casita.net/pub/pdksh/pdksh-5.2.14.tar.gz                      |                    | CD0
@@ -72,7 +70,7 @@ And there are more platforms recognized but not presently build-able.
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
 | autoconf      | 2.72      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.72.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
 | automake      | 1.17      | https://ftp.gnu.org/pub/gnu/automake/automake-1.17.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
-| bash          | 5.2.21    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.21.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240219
+| bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0+
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
 | binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
@@ -80,7 +78,7 @@ And there are more platforms recognized but not presently build-able.
 | cmake         | 3.23.0    | http://www.cmake.org/files/v3.23/cmake-3.23.0.tar.gz                      | 0xec8fef3a7bfb4eda | CD2
 | cmsfs         | 1.1.12    | http://www.casita.net/pub/cmsfs/cmsfs-1.1.12.tar.gz                       | 0x96af6544edf138d9 | CD0
 | coreutils     | 8.31      | http://ftp.gnu.org/pub/gnu/coreutils/coreutils-8.31.tar.xz                | 0xdf6fd971306037d9 | CD0+
-| cpio          | 2.13      | https://ftp.gnu.org/gnu/cpio/cpio-2.13.tar.bz2                            | 0x3602b07f55d0c732 | CD0+
+| cpio          | 2.15      | https://ftp.gnu.org/pub/gnu/cpio/cpio-2.15.tar.gz                         | 0x3602b07f55d0c732 | CD0, 20240114
 | curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
 | curl          | 8.2.0     | https://curl.haxx.se/download/curl-8.2.0.tar.bz2                          | 0x5cc908fdb71e12c2 | CD0
 | diffutils     | 3.7       | http://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.7.tar.xz                 | 0x7fd9fccb000beeee | CD0+
@@ -105,7 +103,7 @@ And there are more platforms recognized but not presently build-able.
 | inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 | irssi         | 1.4.5     | https://codeberg.org/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz | 0x00ccb587ddbef0e1 | CD3
 | jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
-| less          | 557       | http://www.greenwoodsoftware.com/less/less-557.tar.gz                     | 0xf153a7c833235259 | CD0+
+| less          | 661       | https://ftp.gnu.org/pub/gnu/less/less-661.tar.gz                          | 0xf153a7c833235259 | CD0, 20240630
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
 | libassuan     | 2.5.6     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.6.tar.bz2              | 0x528897b826403ada | CD4
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
@@ -126,7 +124,7 @@ And there are more platforms recognized but not presently build-able.
 | libtool       | 2.4.6     | http://ftp.gnu.org/pub/gnu/libtool/libtool-2.4.6.tar.gz                   | 0x151308092983d606 | CD0+
 | lzip          | 1.23      | http://download.savannah.gnu.org/releases/lzip/lzip-1.23.tar.gz           | 0x8fe99503132d7742 | CD0+
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
-| make          | 4.3       | http://ftp.gnu.org/pub/gnu/make/make-4.3.tar.gz                           | 0x96b047156338b6d4 | CD0+
+| make          | 4.4.1     | https://ftp.gnu.org/pub/gnu/make/make-4.4.1.tar.gz                        | 0xdeaccaaedb78137a | CD0, 20230226
 | mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
 | mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
 | musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
@@ -164,7 +162,7 @@ And there are more platforms recognized but not presently build-able.
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| tor           | 0.4.8.10  | https://dist.torproject.org/tor-0.4.8.10.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20231024
+| tor           | 0.4.8.15  | https://dist.torproject.org/tor-0.4.8.15.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20231024
 | uft           | 1.10.4    | https://github.com/trothr/uft/archive/refs/tags/1.10.4.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
 | util-linux*   | 2.40.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz |             | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0

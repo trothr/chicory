@@ -53,6 +53,7 @@ SC_FETCH        =       wget --passive-ftp --no-clobber \
 
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
                         --with-libgpg-error-prefix=/usr/opt/libgpgerror \
+                                                          --disable-asm \
                                         --enable-static --disable-shared
 
 SC_INSTALL      =       $(MAKE) install

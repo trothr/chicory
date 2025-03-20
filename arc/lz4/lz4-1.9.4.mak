@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for Util-Linux at La Casita with Chicory
-#         Date: 2024-06-04 (Tue)
+#               make rules for LZ4 at La Casita with Chicory
+#         Date: 2025-02-10 (Mon)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,53 +14,55 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       utillinux
-SC_APV          =       2.40.1
+APPLID          =       lz4
+SC_APV          =       1.9.4
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE      =       $(SC_VRM)
-SC_SOURCE       =       util-linux-$(SC_APV)
+SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC         =       tar.gz
+SC_ARC          =       tar.gz
 #SC_ARC         =       tar.bz2
-SC_ARC          =       tar.xz
+#SC_ARC         =       tar.xz
 #SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR         =       tar xzf
-#SC_TAR         =       (gunzip -f | tar xf -) <
+SC_TAR          =       (gunzip -f | tar xf -) <
 #SC_TAR         =       tar xjf
 #SC_TAR         =       (bzcat - | tar xf -) <
 #SC_TAR         =       tar xJf
-SC_TAR          =       (xzcat - | tar xf -) <
+#SC_TAR         =       (xzcat - | tar xf -) <
 #SC_TAR         =       tar --lzip -xf
 #SC_TAR         =       (lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
 SC_URL          =       \
- https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/$(SC_SOURCE).$(SC_ARC) \
- https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/$(SC_SOURCE).tar.sign \
- https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.40/sha256sums.asc
+ https://github.com/lz4/$(APPLID)/releases/download/v$(SC_APV)/$(SC_SOURCE).$(SC_ARC)
+#https://lz4.github.io/lz4/
+#https://github.com/lz4/lz4/
+#lz4-1.9.4.tar.gz
+#lz4-1.9.4.tar.gz.sha256
 
-#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-SC_SOURCE_VERIFY = xzcat < arc/$(SC_SOURCE).$(SC_ARC) \
-                              | gpg --verify arc/$(SC_SOURCE).tar.sign -
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xnnnnnnnnnnnnnnnn
+SC_SOURCE_VERIFY = gpg --keyid-format 0xlong --verify arc/$(SC_SOURCE).$(SC_ARC).sig
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x528897b826403ada
 
 #
+# defaults
 SC_FETCH        =       wget --passive-ftp --no-clobber \
-                                --no-check-certificate $(SC_URL)
+                                        --no-check-certificate $(SC_URL)
+# using --no-check-certificate to ease HSTS trust burden
 
-SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-                                --enable-static --disable-shared
+#SC_CONFIG      =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+#                                       --enable-static --disable-shared
+SC_CONFIG       =       true
 
-SC_INSTALL      =       $(MAKE) install
-#SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
+#SC_INSTALL     =       $(MAKE) install
+SC_INSTALL      =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP       =       strip bin/...
+SC_FIXUP        =       strip bin/lz4
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
@@ -80,8 +82,7 @@ SC_BUILDD       =               $(SC_SOURCE)
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-#                       pkgconfig >= 0.9.0
-#                       libuser >= 0.58
+#                       libgpgerror >= 1.49
 
 ########################################################################
 
@@ -92,7 +93,7 @@ REQ             =       package-v.r.m
 
 # include $(APPLID).mk
 
-.PHONY:		clean distclean check help
+.PHONY:		clean distclean check help chictable
 
 .SUFFIXES:	.mk .src .cfg .exe .ins .inv
 
@@ -119,7 +120,6 @@ install:	_ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
 		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
-#		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
 #
@@ -222,7 +222,7 @@ clean:
 			sh -c ' cd $(SC_BUILDD) ; \
 				exec $(MAKE) clean ' ; fi
 #		rm -f "$(PREFIX)/$(SC_VRM)"
-
+		find src/. -type f -iname config.cache | xargs -r rm
 
 #
 # restore sources as from distribution
@@ -392,6 +392,12 @@ $(APPLID).ins:	$(APPLID).exe
 #		find / /usr -xdev -newer $(APPLID).exe > $(APPLID).inv
 		touch $(APPLID).ins
 	     if [ ! -z "$(SC_FIXUP)" ] ; then sh -c " $(SC_FIXUP) " ; fi
+
+#
+#
+chictable:
+		@echo "| $(APPLID) | $(SC_APV) |" \
+		  "`echo $(SC_URL) | awk '{print $$1}'` | |"
 
 #
 #

@@ -57,7 +57,11 @@ SC_INSTALL      =       $(MAKE) install
 #SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-SC_FIXUP        =       strip bin/gettext bin/ngettext bin/envsubst
+SC_FIXUP        =       strip bin/gettext bin/ngettext bin/envsubst \
+        bin/msgattrib bin/msgcat bin/msgcmp bin/msgcomm bin/msgconv \
+        bin/msgen bin/msgexec bin/msgfilter bin/msgfmt bin/msggrep \
+        bin/msginit bin/msgmerge bin/msgunfmt bin/msguniq \
+        bin/recode-sr-latin bin/xgettext
 #       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
 
 #
