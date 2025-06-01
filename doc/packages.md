@@ -9,15 +9,10 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| zlib          | 1.3.1     | https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz | 0x783fcd8e58bcafba | CD4, 20250601
 | uft           | 1.10.7    | https://github.com/trothr/uft/archive/refs/tags/1.10.7.tar.gz             | 0x96af6544edf138d9 | CD3, 20250402
 | nginx         | 1.27.4    | http://www.nginx.org/download/nginx-1.27.4.tar.gz                         | 0xa0ea981b66b0d967 | CD3, 20250212
 | lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz          |                    | CD4, 20250210
-| libksba       | 1.6.7     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.7.tar.bz2            | 0x528897b826403ada | CD4, 20250127
-| npth          | 1.8       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.8.tar.bz2                    | 0x528897b826403ada | CD2, 20250127
-| libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        | 0x528897b826403ada | CD4, 20250126
-| libgcrypt     | 1.11.0    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2       | 0x528897b826403ada | CD5, 20250126
-| libgpgerror   | 1.51      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2   | 0x528897b826403ada | CD4, 20250126
-| gnupg         | 2.5.3     | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.3.tar.bz2                | 0x528897b826403ada | CD5, 20250126
 
 ## Current Shells
 
@@ -89,6 +84,7 @@ And there are more platforms recognized but not presently build-able.
 | gnupg         | 1.4.23    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.23.tar.bz2                     | 0x249b39d24f25e3b6 | CD5,SSB2022
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
 | gnupg         | 2.4.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.4.3.tar.bz2                      | 0x528897b826403ada | CD5
+| gnupg         | 2.5.3     | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.3.tar.bz2                | 0x528897b826403ada | CD5, 20250126
 | grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0+
 | groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0+
 | gzip          | 1.12      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.12.tar.xz                          | 0x7fd9fccb000beeee | CD0+
@@ -97,13 +93,13 @@ And there are more platforms recognized but not presently build-able.
 | jansson       | 2.14      | http://www.digip.org/jansson/releases/jansson-2.14.tar.bz2                | 0xd3657d24d058434c | CD4
 | less          | 661       | https://ftp.gnu.org/pub/gnu/less/less-661.tar.gz                          | 0xf153a7c833235259 | CD0, 20240630
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
-| libassuan     | 2.5.6     | ftp://ftp.gnupg.org/gcrypt/libassuan/libassuan-2.5.6.tar.bz2              | 0x528897b826403ada | CD4
+| libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        | 0x528897b826403ada | CD4, 20250126
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
-| libgcrypt     | 1.10.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2       | 0x528897b826403ada | CD5, 20231025
+| libgcrypt     | 1.11.0    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2       | 0x528897b826403ada | CD5, 20250126
 | libgcrypt     | 1.8.10    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.10.tar.bz2       | 0x528897b826403ada | CD5, LTS
-| libgpg-error* | 1.47      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2   | 0x528897b826403ada | CD4, 20231025
+| libgpg-error* | 1.51      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2   | 0x528897b826403ada | CD4, 20250126
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
-| libksba       | 1.6.4     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.4.tar.bz2            | 0x528897b826403ada | CD4, 20231025
+| libksba       | 1.6.7     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.7.tar.bz2            | 0x528897b826403ada | CD4, 20250127
 | libressl      | 3.1.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.2.7     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.2.7.tar.gz        | 0x663af51bd5e4d8d5 | CD5
 | libressl      | 3.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
@@ -121,7 +117,7 @@ And there are more platforms recognized but not presently build-able.
 | mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
 | musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
 | musl          | 1.2.5     | https://musl.libc.org/releases/musl-1.2.5.tar.gz                          | 0x56bcdb593020450f | CD0, 20240229
-| npth          | 1.6       | ftp://ftp.gnu.org/gnu/npth/npth-1.6.tar.bz2                               | 0x249b39d24f25e3b6 | CD2,CD4
+| npth          | 1.8       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.8.tar.bz2                    | 0x528897b826403ada | CD2, 20250127
 | nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0, 20230700
 | ncurses       | 6.5       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.5.tar.gz                    | 0x702353e0f7e48edb | CD0, 20240427
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3

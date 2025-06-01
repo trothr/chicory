@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
 #               make rules for ZLib at La Casita with Chicory
-#         Date: 2023-11-08 (Wed)
+#         Date: 2025-05-29 (Thu)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -15,25 +15,25 @@ PREFIX          =       /usr/opt
 
 # no default for VRM string
 APPLID          =       zlib
-SC_APV          =       1.3
+SC_APV          =       1.3.1
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
 SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC          =       tar.gz
+#SC_ARC         =       tar.gz
 #SC_ARC         =       tar.bz2
-#SC_ARC         =       tar.xz
+SC_ARC          =       tar.xz
 #SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR         =       tar xzf
-SC_TAR          =       (gunzip -f | tar xf -) <
+#SC_TAR         =       (gunzip -f | tar xf -) <
 #SC_TAR         =       tar xjf
 #SC_TAR         =       (bzcat - | tar xf -) <
 #SC_TAR         =       tar xJf
-#SC_TAR         =       (xzcat - | tar xf -) <
+SC_TAR          =       (xzcat - | tar xf -) <
 #SC_TAR         =       tar --lzip xf
 #SC_TAR         =       (lzip -d | tar xf -) <
 
@@ -43,8 +43,8 @@ SC_TAR          =       (gunzip -f | tar xf -) <
 #SC_URL       = http://de.casita.net/pub/zlib/$(SC_SOURCE).$(SC_ARC) \
 #               http://de.casita.net/pub/zlib/$(SC_SOURCE).$(SC_ARC).asc
 SC_URL          =       \
- https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz \
- https://github.com/madler/zlib/releases/download/v1.3/zlib-1.3.tar.gz.asc
+ https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz \
+ https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz.asc
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
 # gpg --keyserver hkp://pgp.mit.edu/ --recv-keys 0x783fcd8e58bcafba
