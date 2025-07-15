@@ -1,86 +1,114 @@
 #
-#	  Name: makefile ('make' rules file)
-#		make rules for LIBEVENT for La Casita with /usr/opt
-#	  Date: 2022-08-10 (Wed)
+#         Name: makefile ('make' rules file)
+#               make rules for Tor for La Casita with /usr/opt
+#         Date: 2025-03-20 (Thu)
 #
-#		This makefile is intended to reside "above" the
-#		package source tree, which is otherwise unmodified
-#		from the distribution (except for published patches),
-#		and allows automatic coexistence of builds for
-#		different hardware and O/S combinations.
+#               This makefile is intended to reside "above" the
+#               package source tree, which is otherwise unmodified
+#               from the distribution (except for published patches),
+#               and allows automatic coexistence of builds for
+#               different hardware and O/S combinations.
 #
 
 # standard stuff for all apps in this series
-PREFIX		=	/usr/opt
+PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID		=	libevent
-SC_APV		=	2.1.12
-SC_VRM		=	$(APPLID)-$(SC_APV)
+APPLID          =       tor
+SC_APV          =       0.4.8.16
+SC_VRM          =       $(APPLID)-$(SC_APV)
 
 # default source directory matches the VRM string
-#SC_SOURCE	=	$(SC_VRM)
-SC_SOURCE	=	$(SC_VRM)-stable
+SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-SC_ARC		=	tar.gz
-#SC_ARC		=	tar.bz2
-#SC_ARC		=	tar.xz
-#SC_ARC		=	tar.lz
+SC_ARC          =       tar.gz
+#SC_ARC         =       tar.bz2
+#SC_ARC         =       tar.xz
+#SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
-#SC_TAR		=	tar xzf
-SC_TAR		=	(gunzip -f | tar xf -) <
-#SC_TAR		=	tar xjf
-#SC_TAR		=	(bzcat - | tar xf -) <
-#SC_TAR		=	tar xJf
-#SC_TAR		=	(xzcat - | tar xf -) <
-#SC_TAR		=	tar --lzip -xf
-#SC_TAR		=	(lzip -d | tar xf -) <
+#SC_TAR         =       tar xzf
+SC_TAR          =       (gunzip -f | tar xf -) <
+#SC_TAR         =       tar xjf
+#SC_TAR         =       (bzcat - | tar xf -) <
+#SC_TAR         =       tar xJf
+#SC_TAR         =       (xzcat - | tar xf -) <
+#SC_TAR         =       tar --lzip -xf
+#SC_TAR         =       (lzip -d | tar xf -) <
 
 # where to find the source on the internet (no default)
-SC_URL		=	\
- https://github.com/libevent/libevent/releases/download/release-$(SC_APV)-stable/$(SC_SOURCE).$(SC_ARC) \
- https://github.com/libevent/libevent/releases/download/release-$(SC_APV)-stable/$(SC_SOURCE).$(SC_ARC).asc
+SC_URL          =       \
+        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC) \
+        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).sha256sum \
+        https://dist.torproject.org/$(SC_SOURCE).$(SC_ARC).sha256sum.asc
 
-SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xb86086848ef8686d
+#SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).tar.gz.sha256sum.asc && \
+ (cd arc ; sha256sum $(SC_VRM).tar.gz) > /tmp/$(SC_VRM).tar.gz.sha256sum && \
+ cmp arc/$(SC_VRM).tar.gz.sha256sum /tmp/$(SC_VRM).tar.gz.sha256sum && \
+ rm /tmp/$(SC_VRM).tar.gz.sha256sum
+
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x42e86a2a11f48d36
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x28988BF5, 0x19F78451, 0x165733EA, 0x8D29319A
+# Roger Dingledine (0x28988BF5 and 0x19F78451) or Nick Mathewson
+# (0x165733EA, or subkey 0x8D29319A) sign the Tor source code tarballs.
+# Erinn Clark (0x63FEE659) signs the Tor Browser Bundles,
+# Vidalia bundles, and many other packages. She signs RPMs with her
+# other key (0xF1F5C9B5). Andrew Lewman (0x31B0974B, 0x6B4D6475)
+# used to sign packages for RPMs, Windows, and OS X.
+# 0x21194ebb165733ea
+# 0xc218525819f78451
+
+# Use the Tor network to get the latest Tor source.
+# This is not strictly required but might sometimes be best practice.
+SC_FETCH        =       echo $(SC_URL) | xargs -n 1 \
+                        curl --remote-time --ftp-pasv --remote-name \
+                                --insecure --socks4a 127.0.0.1:9050
 
 #
-# defaults
-SC_FETCH	=	wget --passive-ftp --no-clobber \
-				--no-check-certificate $(SC_URL)
-# using --no-check-certificate to ease HSTS trust burden
-SC_CONFIG	=	./configure --prefix=$(PREFIX)/$(SC_VRM) \
-				--disable-openssl \
-				--enable-static --disable-shared
-#SC_BUILD	=	$(MAKE)
-SC_INSTALL	=	$(MAKE) install
+# override default SC_CONFIG
+SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+                        --with-openssl-dir=$(PREFIX)/openssl \
+                                --enable-static-openssl \
+                        --with-libevent-dir=$(PREFIX)/libevent \
+                                --enable-static-libevent \
+                        --with-zlib-dir=$(PREFIX)/zlib \
+                                --enable-static-zlib \
+	--with-malloc=system \
+                        --disable-lzma \
+                        --disable-gcc-hardening \
+                        --enable-static-tor \
+                        --disable-asciidoc
+# we really *do* want man pages, so need to find out what's missing
+# and then remove the --disable-asciidoc flag from configure
+
+SC_INSTALL      =       $(MAKE) install
+#SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
 # default for this is blank, varies widely per package
-#SC_FIXUP	=	strip ...
-SC_FIXUP	=	\
-	sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
+SC_FIXUP        =       strip bin/tor bin/tor-gencert bin/tor-resolve \
+                                bin/tor-print-ed-signing-cert
+#       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
 # default "system" string is generated by the 'setup' script
-#SYSTEM		=		`uname`
-#SYSTEM		=		`uname -s`
-SYSTEM		=		`./setup --system`
+#SYSTEM         =               `uname`
+#SYSTEM         =               `uname -s`
+SYSTEM          =               `./setup --system`
 
 #
 # default build executable or command is 'make'
-SC_BUILDX	=		$(MAKE)
+SC_BUILDX       =               $(MAKE)
 
 #
 # default build directory matches source directory
-SC_BUILDD	=		$(SC_SOURCE)
-
+SC_BUILDD       =               $(SC_SOURCE)
 
 # historical
-SHARED		=	man
-REQ		=	package-v.r.m
-
+SHARED          =       man
+REQ             =       package-v.r.m
+#                       libevent
 
 ########################################################################
 

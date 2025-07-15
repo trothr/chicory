@@ -9,8 +9,8 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| xmitmsgx      | 2.1.8     | https://github.com/trothtech/xmm/releases/download/2.1.8/xmitmsgx-2.1.8.tar.gz | 0x96af6544edf138d9 | CD4, 20250715
 | zlib          | 1.3.1     | https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz | 0x783fcd8e58bcafba | CD4, 20250601
-| uft           | 1.10.7    | https://github.com/trothr/uft/archive/refs/tags/1.10.7.tar.gz             | 0x96af6544edf138d9 | CD3, 20250402
 | nginx         | 1.27.4    | http://www.nginx.org/download/nginx-1.27.4.tar.gz                         | 0xa0ea981b66b0d967 | CD3, 20250212
 | lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz          |                    | CD4, 20250210
 
@@ -150,8 +150,8 @@ And there are more platforms recognized but not presently build-able.
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0+
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| tor           | 0.4.8.15  | https://dist.torproject.org/tor-0.4.8.15.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20231024
-| uft           | 1.10.6    | https://github.com/trothr/uft/archive/refs/tags/1.10.6.tar.gz             | 0x96af6544edf138d9 | CD3, 20241014
+| tor           | 0.4.8.16  | https://dist.torproject.org/tor-0.4.8.16.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20250627
+| uft           | 1.10.7    | https://github.com/trothr/uft/archive/refs/tags/1.10.7.tar.gz             | 0x96af6544edf138d9 | CD3, 20250402
 | util-linux*   | 2.40.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz |             | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
 | which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0+
