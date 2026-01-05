@@ -9,6 +9,7 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| findutils     | 4.10.0    | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.10.0.tar.xz              | 0x46502ef796917195 | CD0, 20260105
 | xmitmsgx      | 2.1.8     | https://github.com/trothtech/xmm/releases/download/2.1.8/xmitmsgx-2.1.8.tar.gz | 0x96af6544edf138d9 | CD4, 20250715
 | zlib          | 1.3.1     | https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz | 0x783fcd8e58bcafba | CD4, 20250601
 | nginx         | 1.27.4    | http://www.nginx.org/download/nginx-1.27.4.tar.gz                         | 0xa0ea981b66b0d967 | CD3, 20250212
@@ -158,6 +159,7 @@ And there are more platforms recognized but not presently build-able.
 | xfl           | 1.0.5     | http://www.casita.net/pub/xfl/xfl-1.0.5.tar.gz                            | 0x96af6544edf138d9 | CD3
 | xmitmsgx      | 2.1.7     | http://www.casita.net/pub/xmitmsgx-2.1.7.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
 | xz            | 5.6.2     | https://www.tukaani.org/xz/xz-5.6.2.tar.gz                                | 0x38ee757d69184620 | CD0, 20240529
+| xz            | 5.2.5     | https://www.tukaani.org/xz/xz-5.2.5.tar.gz                                | 0x38ee757d69184620 | CD0, 20240529
 | zlib          | 1.2.13    | https://www.zlib.net/zlib-1.2.13.tar.gz                                   | 0x783fcd8e58bcafba | CD4
 | zlib          | 1.3       | https://www.zlib.net/zlib-1.3.tar.gz                                      | 0x783fcd8e58bcafba | CD4, 20231108
 | zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0, 20220514

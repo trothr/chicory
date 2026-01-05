@@ -77,6 +77,7 @@ SC_BUILDD       =               $(SC_SOURCE)
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
+#                       m4
 
 ########################################################################
 

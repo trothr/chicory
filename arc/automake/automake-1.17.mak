@@ -79,6 +79,7 @@ SC_BUILDD       =               $(SC_SOURCE)
 SHARED          =       man
 REQ             =       package-v.r.m
 #                       autoconf-2.71
+#                       perl
 
 ########################################################################
 
