@@ -18,9 +18,8 @@ most recent at the top. Time of latest update at the bottom.
 | xmitmsgx      | 2.1.8     | https://github.com/trothtech/xmm/releases/download/2.1.8/xmitmsgx-2.1.8.tar.gz | 0x96af6544edf138d9 | CD4, 20250715
 | zlib          | 1.3.1     | https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz | 0x783fcd8e58bcafba | CD4, 20250601
 | nginx         | 1.27.4    | http://www.nginx.org/download/nginx-1.27.4.tar.gz                         | 0xa0ea981b66b0d967 | CD3, 20250212
-| lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz          |                    | CD4, 20250210
 
-## Current Shells
+## Current Command Shells
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
@@ -40,6 +39,8 @@ The following have been worked in recent weeks:
 * Linux-arm
 * FreeBSD-amd64
 * SunOS-x86_64, SunOS-i386
+* NetBSD-amd64
+* NetBSD-arm
 
 Other platforms less often built include:
 
@@ -127,7 +128,7 @@ And there are more platforms recognized but not presently build-able.
 | ncurses       | 6.5       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.5.tar.gz                    | 0x702353e0f7e48edb | CD0, 20240427
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
-| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3. 20240909
+| openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3, 20240909
 | openssh       | 8.4p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
 | openssh       | 9.8p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssn-9.8p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240702
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
@@ -288,7 +289,7 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 | libxslt       |           |                                                                                                | CD4
 | lilo          | 23.2      | difficult for relocation                                                                       | CD0
 | lvm2          |           |                                                                                                | CD0
-| lz4           | 1.9.2     |                                                                                                | CD4
+| lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz          |                    | CD4, 20250210
 | man           |           |                                                                                                | CD0
 | module-init-tools | 3.5   | difficult for relocation                                                                       | CD0
 | mutt          | 1.4.2.3   | difficult for relocation                                                                       | CD0
