@@ -41,7 +41,7 @@ SC_URL		=	\
 # or ftp://ftp.funet.fi/pub/unix/shells/tcsh/old/
 
 SC_SOURCE_VERIFY = gpg --verify arc/$(SC_SOURCE).$(SC_ARC).asc
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x71112ab16cb33b3a
+#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x65c26e471f45b123
 
 #
 # defaults
