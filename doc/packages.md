@@ -64,7 +64,6 @@ And there are more platforms recognized but not presently build-able.
 | autoconf      | 2.72      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.72.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
 | automake      | 1.17      | https://ftp.gnu.org/pub/gnu/automake/automake-1.17.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
 | bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
-| bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
 | binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
 | bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
@@ -178,6 +177,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0
 | bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0
 | bin86         | 0.16.18   | http://distro.ibiblio.org/slitaz/sources/packages-stable/b/bin86-0.16.18.tar.gz |              | CD2
 | bzip2         | 1.0.8     | https://www.sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz                   |                    | CD0
