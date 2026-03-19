@@ -9,6 +9,11 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bash          | 5.2.37    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.37.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20260316
+| dash          | 0.5.13.1  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.1.tar.gz       | sha512             | CD0, 20260316
+| ncurses       | 6.6       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.6.tar.gz                    | 0x702353e0f7e48edb | CD0, 20260316
+| openssl       | 3.0.19    | https://www.openssl.org/source/openssl-3.0.19.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20260212
+| dmidecode     | 3.7       | http://download.savannah.nongnu.org/releases/dmidecode-3.7/dmidecode-3.7.tar.xz | 0xa5526b9bb3cd4e6a | CD3, 20260126
 | findutils     | 4.10.0    | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.10.0.tar.xz              | 0x46502ef796917195 | CD0, 20260105
 | xmitmsgx      | 2.1.8     | https://github.com/trothtech/xmm/releases/download/2.1.8/xmitmsgx-2.1.8.tar.gz | 0x96af6544edf138d9 | CD4, 20250715
 | zlib          | 1.3.1     | https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz | 0x783fcd8e58bcafba | CD4, 20250601
