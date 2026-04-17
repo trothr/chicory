@@ -9,6 +9,18 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| npth          | 1.6       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2                    | 0x249b39d24f25e3b6 | CD2, 20260417
+| libgpg-error* | 1.59      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.59.tar.bz2   | 0x528897b826403ada | CD4, 20260417
+| libgcrypt     | 1.12.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.2.tar.bz2       | 0x528897b826403ada | CD5, 20260417
+| stunnel       | 5.78      | https://www.stunnel.org/downloads/stunnel-5.78.tar.gz                     | 0x2efc7ff0d416e014 | CD4, 20260417
+| which         | 2.23      | http://ftp.gnu.org/pub/gnu/which/which-2.23.tar.gz                        | 0xc155a4eee4e527a2 | CD0, 20260417
+| groff         | 1.24.1    | http://ftp.gnu.org/pub/gnu/groff/groff-1.24.1.tar.gz                      | 0xd19e9c7d71266dce | CD0, 20260417
+| grep          | 3.12      | http://ftp.gnu.org/pub/gnu/grep/grep-3.12.tar.xz                          | 0x7fd9fccb000beeee | CD0, 20260417
+| gnutls        | 3.8.12    | https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8.12/gnutls-3.8.12.tar.xz      |                    | CD5, 20260417
+| mpfr          | 4.2.2     | http://www.mpfr.org/mpfr-4.2.2/mpfr-4.2.2.tar.xz                          | 0x5831d11a0d4db02a | CD2, 20260106
+| lua           | 5.5.0     | http://www.lua.org/ftp/lua-5.5.0.tar.gz                                   | sha1               | CD1, 20260105
+| oathtool      | 2.6.13    | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.13.tar.gz | 0x51722b08fe4745a2 | CD5, 20251216
+| bc            | 1.08.2    | https://ftp.gnu.org/pub/gnu/bc/bc-1.08.2.tar.gz                           | 0xa186278d426a38e9 | CD0, 20260330
 | bash          | 5.2.37    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.37.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20260316
 | dash          | 0.5.13.1  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.1.tar.gz       | sha512             | CD0, 20260316
 | ncurses       | 6.6       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.6.tar.gz                    | 0x702353e0f7e48edb | CD0, 20260316
@@ -133,6 +145,7 @@ And there are more platforms recognized but not presently build-able.
 | openssh       | 9.8p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssn-9.8p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240702
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
+| openssl       | 1.1.1k    | https://www.openssl.org/source/openssl-1.1.1k.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 | openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 | openvpn       | 2.6.12    | https://github.com/OpenVPN/openvpn/releases/download/v2.6.12/openvpn-2.6.12.tar.gz | 0xf132b1cbaf131cae | CD5, 20241014
@@ -156,7 +169,7 @@ And there are more platforms recognized but not presently build-able.
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 | texinfo       | 7.0.3     | https://ftp.gnu.org/pub/gnu/texinfo/texinfo-7.0.3.tar.xz                  | 0xddbc579dab37fba9 | CD0
-| tor           | 0.4.8.16  | https://dist.torproject.org/tor-0.4.8.16.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20250627
+| tor           | 0.4.8.19  | https://dist.torproject.org/tor-0.4.8.19.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20250627
 | uft           | 1.10.7    | https://github.com/trothr/uft/archive/refs/tags/1.10.7.tar.gz             | 0x96af6544edf138d9 | CD3, 20250402
 | util-linux*   | 2.40.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz |             | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
@@ -282,14 +295,14 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 | dejagnu       | 1.6.2     |                                                                                                | CD3
 | emacs         | 23.3b     |                                                                                                | CD3
 | expect        | 5.45.4    |                                                                                                | CD3
-| gnutls        | 3.5.9     |                                                                                                | CD5
+| gnutls        | 3.5.9     |                                                                           |                    | CD5
 | libtasn1      | 3.3       |                                                                                                | CD4
 | libunistring  | 0.9.7     |                                                                                                | CD4
 | libxml        |           |                                                                                                | CD4
 | libxslt       |           |                                                                                                | CD4
 | lilo          | 23.2      | difficult for relocation                                                                       | CD0
 | lvm2          |           |                                                                                                | CD0
-| lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz          |                    | CD4, 20250210
+| lz4           | 1.9.4     | https://github.com/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz                               | CD4, 20250210
 | man           |           |                                                                                                | CD0
 | module-init-tools | 3.5   | difficult for relocation                                                                       | CD0
 | mutt          | 1.4.2.3   | difficult for relocation                                                                       | CD0
