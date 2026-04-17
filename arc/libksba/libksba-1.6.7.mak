@@ -53,6 +53,7 @@ SC_FETCH        =       wget --passive-ftp --no-clobber \
 # using --no-check-certificate to ease HSTS trust burden
 
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
+		--with-libgpg-error-prefix=$(PREFIX)/libgpgerror \
                                         --enable-static --disable-shared
 
 #SC_CONFREQS    =

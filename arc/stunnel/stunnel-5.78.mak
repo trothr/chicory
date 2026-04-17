@@ -1,7 +1,7 @@
 #
 #         Name: makefile ('make' rules file)
-#               make rules for GPG2 at La Casita with Chicory
-#         Date: 2025-01-22 (Wed)
+#               make rules for STUNNEL with Chicory
+#         Date: 2026-04-10 (Fri)
 #
 #               This makefile is intended to reside "above" the
 #               package source tree, which is otherwise unmodified
@@ -14,67 +14,63 @@
 PREFIX          =       /usr/opt
 
 # no default for VRM string
-APPLID          =       gnupg
-SC_APV          =       2.5.3
+APPLID          =       stunnel
+SC_APV          =       5.78
 SC_VRM          =       $(APPLID)-$(SC_APV)
 
+#
 # default source directory matches the VRM string
 SC_SOURCE       =       $(SC_VRM)
 
 # improved fetch and extract logic, variable compression ...
-#SC_ARC         =       tar.gz
-SC_ARC          =       tar.bz2
+SC_ARC          =       tar.gz
+#SC_ARC         =       tar.bz2
 #SC_ARC         =       tar.xz
 #SC_ARC         =       tar.lz
 
 # varying extract commands to match compression ...
 #SC_TAR         =       tar xzf
-#SC_TAR         =       (gunzip -f | tar xf -) <
+SC_TAR          =       (gunzip -f | tar xf -) <
 #SC_TAR         =       tar xjf
-SC_TAR          =       (bzcat - | tar xf -) <
+#SC_TAR         =       (bzcat - | tar xf -) <                                                                                                                                          00021
 #SC_TAR         =       tar xJf
-#SC_TAR         =       (xzcat - | tar xf -) <
-#SC_TAR         =       tar --lzip -xf
-#SC_TAR         =       (lzip -d | tar xf -) <
+#SC_TAR         =       (xzcat - | tar xf -) <                                                                                                                                          00023
+#SC_TAR         =       tar --lzip xf
+#SC_TAR         =       (lzip -d | tar xf -) <                                                                                                                                          00025
 
-# where to find the source on the internet (no default)
+#
+# where to find the source on the internet
 SC_URL          =       \
-   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC) \
-   https://www.gnupg.org/ftp/gcrypt/$(APPLID)/$(SC_SOURCE).$(SC_ARC).sig
+       https://www.stunnel.org/downloads/$(SC_SOURCE).$(SC_ARC) \
+       https://www.stunnel.org/downloads/$(SC_SOURCE).$(SC_ARC).asc \
+       https://www.stunnel.org/downloads/$(SC_SOURCE).$(SC_ARC).sha256 \
+       https://www.stunnel.org/pgp.asc
 
-SC_SOURCE_VERIFY = gpg --keyid-format 0xlong --verify arc/$(SC_SOURCE).$(SC_ARC).sig
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0x528897b826403ada
-#gpg --keyserver hkp://pool.sks-keyservers.net/ --recv-keys 0xe98e9b2d19c6c8bd
+SC_SOURCE_VERIFY = gpg --verify arc/$(SC_VRM).$(SC_ARC).asc
+#gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 0x2efc7ff0d416e014
 
 #
 # defaults
 SC_FETCH        =       wget --passive-ftp --no-clobber \
                                         --no-check-certificate $(SC_URL)
-
 SC_CONFIG       =       ./configure --prefix=$(PREFIX)/$(SC_VRM) \
-                    --with-libgpg-error-prefix=$(PREFIX)/libgpgerror \
-                    --with-libgcrypt-prefix=$(PREFIX)/libgcrypt \
-                    --with-libassuan-prefix=$(PREFIX)/libassuan \
-                    --with-libksba-prefix=$(PREFIX)/libksba \
-                    --with-npth-prefix=$(PREFIX)/npth
-#configure: WARNING: unrecognized options: --enable-static, --disable-shared
+                                --enable-static --disable-shared \
+                                        --with-ssl=/usr/opt/openssl \
+                                        --disable-fips
 
-SC_CONFREQS     =       $(PREFIX)/libgpgerror $(PREFIX)/libgcrypt \
-                        $(PREFIX)/libassuan $(PREFIX)/libksba
+# default build executable or command is 'make'
+SC_BUILDX       =               $(MAKE)
 
-SC_INSTALL      =       $(MAKE) install
+# default build directory matches source directory
+SC_BUILDD       =               $(SC_SOURCE)
+
+SC_INSTALL      =               $(MAKE) install
 #SC_INSTALL     =       $(MAKE) PREFIX=$(PREFIX)/$(SC_VRM) install
 
+#
 # default for this is blank, varies widely per package
-SC_FIXUP        =       strip bin/gpg bin/gpgconf bin/gpg-agent \
-        bin/gpg-card bin/gpg-connect-agent bin/gpg-mail-tube \
-        bin/gpgparsemail bin/gpgsm bin/gpgsplit bin/gpgtar \
-        bin/gpgv bin/gpg-wks-client bin/gpg-wks-server bin/kbxutil \
-        bin/watchgnupg
-#        libexec/gpg-auth libexec/gpg-check-pattern \
-#        libexec/gpg-pair-tool libexec/gpg-preset-passphrase \
-#        libexec/gpg-protect-tool libexec/scdaemon
-#       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib*/pkgconfig/*.pc
+SC_FIXUP        =       strip bin/stunnel
+#       sed -i 's~$(PREFIX)/$(SC_VRM)~$(PREFIX)/$(APPLID)~g' lib/pkgconfig/*.pc
 
 #
 # default "system" string is generated by the 'setup' script
@@ -82,22 +78,9 @@ SC_FIXUP        =       strip bin/gpg bin/gpgconf bin/gpg-agent \
 #SYSTEM         =               `uname -s`
 SYSTEM          =               `./setup --system`
 
-#
-# default build executable or command is 'make'
-SC_BUILDX       =               $(MAKE)
-
-#
-# default build directory matches source directory
-SC_BUILDD       =               $(SC_SOURCE)
-
 # historical
 SHARED          =       man
 REQ             =       package-v.r.m
-#                       libgpg-error >= 1.51
-#                       libgcrypt >= 1.11.0
-#                       libksba >= 3.0.0
-#                       libassuan >= 1.6.3
-#                       npth >= 1.2
 
 ########################################################################
 
@@ -108,7 +91,7 @@ REQ             =       package-v.r.m
 
 # include $(APPLID).mk
 
-.PHONY:		clean distclean check help chictable chicreqs
+.PHONY:		clean distclean check help
 
 .SUFFIXES:	.mk .src .cfg .exe .ins .inv
 
@@ -135,7 +118,6 @@ install:	_ins
 		@echo " "
 		@echo "$(MAKE): '$(SC_VRM)' now ready for '$(SYSTEM)'."
 		@echo "$(MAKE): next step is '$(MAKE) clean' or '$(MAKE) distclean'."
-#		@echo "$(MAKE): next step is '/sww/$(SC_VRM)/setup'."
 		@echo " "
 
 #
@@ -218,11 +200,6 @@ _ins:		_exe
 
 #
 #
-verify: 	arc/$(SC_SOURCE).$(SC_ARC)
-		$(SC_SOURCE_VERIFY)
-
-#
-#
 clean:
 #		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
@@ -285,6 +262,11 @@ $(SC_SOURCE):	makefile arc/$(SC_SOURCE).$(SC_ARC)
 			| grep -v ' ' | xargs chmod u+w
 		find $(SC_SOURCE) -type d -print \
 			| grep -v ' ' | xargs chmod u+wx
+
+#
+#
+verify: 	arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_SOURCE_VERIFY)
 
 #
 #
@@ -354,14 +336,14 @@ check:
 
 #
 #
-$(APPLID).src:	arc/$(SC_SOURCE).$(SC_ARC)
+$(APPLID).src:	arc/$(SC_VRM).$(SC_ARC)
 		@test ! -z "$(APPLID)"
 		@test ! -z "$(SC_VRM)"
 		@test ! -z "$(SC_SOURCE)"
 		@rm -f $(SC_VRM).src $(APPLID).src
 		@echo "$(MAKE): [re]making the source tree ..."
 		rm -rf $(SC_SOURCE) $(SC_VRM)
-		$(SC_TAR) arc/$(SC_SOURCE).$(SC_ARC)
+		$(SC_TAR) arc/$(SC_VRM).$(SC_ARC)
 		test -d $(SC_SOURCE)
 		@chmod -R +w $(SC_SOURCE)
 #		touch $(SC_VRM).src $(APPLID).src
@@ -408,17 +390,6 @@ $(APPLID).ins:	$(APPLID).exe
 #		find / /usr -xdev -newer $(APPLID).exe > $(APPLID).inv
 		touch $(APPLID).ins
 	     if [ ! -z "$(SC_FIXUP)" ] ; then sh -c " $(SC_FIXUP) " ; fi
-
-#
-#
-chictable:
-		@echo "| $(APPLID) | $(SC_APV) |" \
-		  "`echo $(SC_URL) | awk '{print $$1}'` | |"
-
-#
-#
-chicreqs:
-		@echo "$(SC_CONFREQS)" | xargs -r -n 1 readlink
 
 #
 #
