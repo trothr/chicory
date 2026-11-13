@@ -9,23 +9,33 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| npth          | 1.6       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2                    | 0x249b39d24f25e3b6 | CD2, 20260417
-| libgpg-error* | 1.59      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.59.tar.bz2   | 0x528897b826403ada | CD4, 20260417
-| libgcrypt     | 1.12.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.2.tar.bz2       | 0x528897b826403ada | CD5, 20260417
-| stunnel       | 5.78      | https://www.stunnel.org/downloads/stunnel-5.78.tar.gz                     | 0x2efc7ff0d416e014 | CD4, 20260417
-| which         | 2.23      | http://ftp.gnu.org/pub/gnu/which/which-2.23.tar.gz                        | 0xc155a4eee4e527a2 | CD0, 20260417
-| groff         | 1.24.1    | http://ftp.gnu.org/pub/gnu/groff/groff-1.24.1.tar.gz                      | 0xd19e9c7d71266dce | CD0, 20260417
-| grep          | 3.12      | http://ftp.gnu.org/pub/gnu/grep/grep-3.12.tar.xz                          | 0x7fd9fccb000beeee | CD0, 20260417
-| gnutls        | 3.8.12    | https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8.12/gnutls-3.8.12.tar.xz      |                    | CD5, 20260417
-| mpfr          | 4.2.2     | http://www.mpfr.org/mpfr-4.2.2/mpfr-4.2.2.tar.xz                          | 0x5831d11a0d4db02a | CD2, 20260106
-| lua           | 5.5.0     | http://www.lua.org/ftp/lua-5.5.0.tar.gz                                   | sha1               | CD1, 20260105
-| oathtool      | 2.6.13    | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.13.tar.gz | 0x51722b08fe4745a2 | CD5, 20251216
-| bc            | 1.08.2    | https://ftp.gnu.org/pub/gnu/bc/bc-1.08.2.tar.gz                           | 0xa186278d426a38e9 | CD0, 20260330
-| bash          | 5.2.37    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.37.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20260316
-| dash          | 0.5.13.1  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.1.tar.gz       | sha512             | CD0, 20260316
-| ncurses       | 6.6       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.6.tar.gz                    | 0x702353e0f7e48edb | CD0, 20260316
-| openssl       | 3.0.19    | https://www.openssl.org/source/openssl-3.0.19.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20260212
-| dmidecode     | 3.7       | http://download.savannah.nongnu.org/releases/dmidecode-3.7/dmidecode-3.7.tar.xz | 0xa5526b9bb3cd4e6a | CD3, 20260126
+| libressl      | 4.3.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.3.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20261113
+| libressl      | 4.4.1     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1.tar.gz        | 0x663af51bd5e4d8d5 | CD5, 20261113
+| expat         | 2.8.5     | https://github.com/libexpat/libexpat/releases/download/R_2_8_5/expat-2.8.5.tar.bz2 | 0x96262acffbd3aec6 | CD4, 20261113
+| expat         | 2.7.5     | https://github.com/libexpat/libexpat/releases/download/R_2_7_5/expat-2.7.5.tar.bz2 | 0x96262acffbd3aec6 | CD4, 20261113
+| expat         | 2.9.0     | https://github.com/libexpat/libexpat/releases/download/R_2_9_0/expat-2.9.0.tar.bz2 | 0x96262acffbd3aec6 | CD4, 20261113
+| python        | 3.14.8    | https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tar.xz             | 0x64e628f8d684696d | CD1, 20261113
+| the           | 4.0       | http://downloads.sourceforge.net/project/the/THE-4.0.tar.gz               |                    | CD1, 20261113
+| nmap          | 7.991     | https://nmap.org/dist/nmap-7.991.tar.gz                                   |                    | CD3, 20261113
+| regina        | 3.9.7     | https://sourceforge.net/projects/regina-rexx/files/regina-rexx/3.9.7/regina-rexx-3.9.7.tar.gz | | CD1, 20261113
+| openssh       | 10.5p1    | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-10.5p1.tar.gz | 0x2a3f414e736060ba | CD5, 20261113
+| nano          | 9.2       | https://www.nano-editor.org/dist/v9/nano-9.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0, 20261113
+| wget          | 1.25.0    | https://ftp.gnu.org/pub/gnu/wget/wget-1.25.0.tar.gz                       | 0x2a1743eda91a35b6 | CD0, 20261113
+| curl          | 8.22.0    | https://curl.haxx.se/download/curl-8.22.0.tar.bz2                         | 0x5cc908fdb71e12c2 | CD0, 20261113
+| pgpdump       | 0.38      | https://www.mew.org/~kazu/proj/pgpdump/pgpdump-0.38.tar.gz                |                    | CD3, 20261113
+| tor           | 0.4.9.13  | https://dist.torproject.org/tor-0.4.9.13.tar.gz                           | 0x42e86a2a11f48d36 | CD5, 20261113
+| musl          | 1.2.6     | https://musl.libc.org/releases/musl-1.2.6.tar.gz                          | 0x56bcdb593020450f | CD0, 20261113
+| libassuan     | 3.0.2     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.2.tar.bz2        | 0x528897b826403ada | CD4, 20261113
+| libksba       | 1.8.0     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.8.0.tar.bz2            | 0x528897b826403ada | CD4, 20261113
+| libgpg-error* | 1.61      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.61.tar.bz2   | 0x528897b826403ada | CD4, 20261113
+| gnupg         | 2.5.21    | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.21.tar.bz2               | 0x528897b826403ada | CD5, 20261113
+| tar           | 1.35      | https://ftp.gnu.org/pub/gnu/tar/tar-1.35.tar.xz                           | 0x3602b07f55d0c732 | CD0, 20261113
+| sed           | 4.10      | https://ftp.gnu.org/pub/gnu/sed/sed-4.10.tar.xz                           | 0x7fd9fccb000beeee | CD0, 20261113
+| dhcp          | 4.4.3     | ftp://ftp.isc.org/isc/dhcp/4.4.3/dhcp-4.4.3.tar.gz                        |                    | CD3, 20261113
+| oorexx        | 5.2.0     | http://chic.casita.net/arc/oorexx/oorexx-5.2.0.tar.gz                     |                    | CD1, 20261113
+| npth          | 1.8       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.8.tar.bz2                    | 0x249b39d24f25e3b6 | CD2, 20261113
+| stunnel       | 5.79      | https://www.stunnel.org/downloads/stunnel-5.79.tar.gz                     | 0x2efc7ff0d416e014 | CD4, 20261113
+| oathtool      | 2.6.14    | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.14.tar.gz | 0x51722b08fe4745a2 | CD5, 20261113
 | findutils     | 4.10.0    | http://ftp.gnu.org/pub/gnu/findutils/findutils-4.10.0.tar.xz              | 0x46502ef796917195 | CD0, 20260105
 | xmitmsgx      | 2.1.8     | https://github.com/trothtech/xmm/releases/download/2.1.8/xmitmsgx-2.1.8.tar.gz | 0x96af6544edf138d9 | CD4, 20250715
 | zlib          | 1.3.1     | https://github.com/madler/zlib/releases/download/v1.3.1/zlib-1.3.1.tar.xz | 0x783fcd8e58bcafba | CD4, 20250601
@@ -35,9 +45,9 @@ most recent at the top. Time of latest update at the bottom.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
-| bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
+| bash          | 5.2.37    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.37.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20260316
 | zsh           | 5.9       | https://www.zsh.org/pub/old/zsh-5.9.tar.xz                                | 0xacf8146cae8cbbc4 | CD0, 20220514
-| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         | sha512             | CD0, 20221211
+| dash          | 0.5.13.1  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.1.tar.gz       | sha512             | CD0, 20260316
 | pdksh         | 5.2.14    | https://www.casita.net/pub/pdksh/pdksh-5.2.14.tar.gz                      |                    | CD0
 | tcsh          | 6.24.10   | https://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.24.10.tar.gz             | 0x65c26e471f45b123 | CD0, 20230414
 
@@ -76,7 +86,7 @@ And there are more platforms recognized but not presently build-able.
 | attr          | 2.5.1     | https://download.savannah.nongnu.org/releases/attr/attr-2.5.1.tar.xz      | 0xd5bf9feb0313653a | CD0, 20230921
 | autoconf      | 2.72      | https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.72.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
 | automake      | 1.17      | https://ftp.gnu.org/pub/gnu/automake/automake-1.17.tar.xz                 | 0x91fcc32b6769aa64 | CD0, 20240915
-| bash          | 5.2.32    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.32.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20240802
+| bash          | 5.2.37    | https://ftp.gnu.org/pub/gnu/bash/bash-5.2.37.tar.gz                       | 0xbb5869f064ea74ab | CD0, 20260316
 | bind          | 9.15.5    | http://ftp.isc.org/isc/bind9/9.15.5/bind-9.15.5.tar.gz                    | 0x6fa6ebc9911a4c02 | CD3
 | binutils      | 2.41      | https://ftp.gnu.org/gnu/binutils/binutils-2.41.tar.xz                     | 0x13fcef89dd9e3c4f | CD2, 20231025
 | bison         | 3.8.2     | http://ftp.gnu.org/pub/gnu/bison/bison-3.8.2.tar.xz                       | 0x0ddcaa3278d5264e | CD0, 20231025
@@ -87,6 +97,7 @@ And there are more platforms recognized but not presently build-able.
 | curl          | 7.88.1    | http://curl.haxx.se/download/curl-7.88.1.tar.xz                           | 0x5cc908fdb71e12c2 | CD0
 | curl          | 8.2.0     | https://curl.haxx.se/download/curl-8.2.0.tar.bz2                          | 0x5cc908fdb71e12c2 | CD0
 | diffutils     | 3.10      | https://ftp.gnu.org/pub/gnu/diffutils/diffutils-3.10.tar.xz               | 0x7fd9fccb000beeee | CD0
+| dmidecode     | 3.7       | http://download.savannah.nongnu.org/releases/dmidecode-3.7/dmidecode-3.7.tar.xz | 0xa5526b9bb3cd4e6a | CD3, 20260126
 | e2fsprogs     | 1.45.6    | https://mirrors.edge.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.45.6/e2fsprogs-1.45.6.tar.xz | 0xf2f95956950d81a3 | CD0
 | ed            | 1.19      | https://ftp.gnu.org/pub/gnu/ed/ed-1.19.tar.lz                             | 0x8fe99503132d7742 | CD0, 20230921
 | expat         | 2.5.0     | https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2 | 0x96262acffbd3aec6 | CD4, 20230700
@@ -103,8 +114,8 @@ And there are more platforms recognized but not presently build-able.
 | gnupg         | 2.2.36    | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.2.36.tar.bz2                     | 0x528897b826403ada | CD5
 | gnupg         | 2.4.3     | ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-2.4.3.tar.bz2                      | 0x528897b826403ada | CD5
 | gnupg         | 2.5.3     | https://www.gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.3.tar.bz2                | 0x528897b826403ada | CD5, 20250126
-| grep          | 3.3       | http://ftp.gnu.org/pub/gnu/grep/grep-3.3.tar.xz                           | 0x7fd9fccb000beeee | CD0
-| groff         | 1.22.4    | http://ftp.gnu.org/pub/gnu/groff/groff-1.22.4.tar.gz                      | 0x72d23fbac99d4e75 | CD0
+| grep          | 3.12      | http://ftp.gnu.org/pub/gnu/grep/grep-3.12.tar.xz                          | 0x7fd9fccb000beeee | CD0, 20260417
+| groff         | 1.24.1    | http://ftp.gnu.org/pub/gnu/groff/groff-1.24.1.tar.gz                      | 0xd19e9c7d71266dce | CD0, 20260417
 | gzip          | 1.12      | http://ftp.gnu.org/pub/gnu/gzip/gzip-1.12.tar.xz                          | 0x7fd9fccb000beeee | CD0
 | inetutils     | 2.4       | https://ftp.gnu.org/gnu/inetutils/inetutils-2.4.tar.xz                    | 0x51722b08fe4745a2 | CD0, 20231011
 | irssi         | 1.4.5     | https://codeberg.org/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz | 0x00ccb587ddbef0e1 | CD3
@@ -113,9 +124,9 @@ And there are more platforms recognized but not presently build-able.
 | libapreq      | 2.16      | http://archive.apache.org/dist/httpd/libapreq/libapreq-2.16.tar.gz        | 0x5a4b10ae43b56a27 | CD4
 | libassuan     | 3.0.1     | https://www.gnupg.org/ftp/gcrypt/libassuan/libassuan-3.0.1.tar.bz2        | 0x528897b826403ada | CD4, 20250126
 | libevent      | 2.1.12    | https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz | 0xb86086848ef8686d | CD4
-| libgcrypt     | 1.11.0    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.0.tar.bz2       | 0x528897b826403ada | CD5, 20250126
 | libgcrypt     | 1.8.10    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.8.10.tar.bz2       | 0x528897b826403ada | CD5, LTS
-| libgpg-error* | 1.51      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.51.tar.bz2   | 0x528897b826403ada | CD4, 20250126
+| libgcrypt     | 1.12.2    | https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.2.tar.bz2       | 0x528897b826403ada | CD5, 20260417
+| libgpg-error* | 1.59      | https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.59.tar.bz2   | 0x528897b826403ada | CD4, 20260417
 | libiconv      | 1.15      | https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz                     | 0x4f494a942e4616c2 |
 | libksba       | 1.6.7     | https://www.gnupg.org/ftp/gcrypt/libksba/libksba-1.6.7.tar.bz2            | 0x528897b826403ada | CD4, 20250127
 | libressl      | 3.1.5     | https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.1.5.tar.gz        | 0x663af51bd5e4d8d5 | CD5
@@ -132,28 +143,30 @@ And there are more platforms recognized but not presently build-able.
 | m4            | 1.4.19    | http://ftp.gnu.org/pub/gnu/m4/m4-1.4.19.tar.gz                            | 0x151308092983d606 | CD0
 | make          | 4.4.1     | https://ftp.gnu.org/pub/gnu/make/make-4.4.1.tar.gz                        | 0xdeaccaaedb78137a | CD0, 20230226
 | mpc           | 1.3.1     | https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz                              | 0xf7d5c9bf765c61e3 | CD2,CD4, 20230906
-| mpfr          | 4.2.1     | http://www.mpfr.org/mpfr-4.2.1/mpfr-4.2.1.tar.xz                          | 0x980c197698c3739d | CD2,CD4, 20230906
+| mpfr          | 4.2.2     | http://www.mpfr.org/mpfr-4.2.2/mpfr-4.2.2.tar.xz                          | 0x5831d11a0d4db02a | CD2, 20260106
 | musl          | 1.2.4     | http://www.musl-libc.org/releases/musl-1.2.4.tar.gz                       | 0x56bcdb593020450f | CD0,SSB2022
 | musl          | 1.2.5     | https://musl.libc.org/releases/musl-1.2.5.tar.gz                          | 0x56bcdb593020450f | CD0, 20240229
 | npth          | 1.8       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.8.tar.bz2                    | 0x528897b826403ada | CD2, 20250127
+| npth          | 1.6       | https://www.gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2                    | 0x249b39d24f25e3b6 | CD2, 20260417
 | nano          | 7.2       | https://www.nano-editor.org/dist/v7/nano-7.2.tar.xz                       | 0x0d28d4d2a0ace884 | CD0, 20230700
-| ncurses       | 6.5       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.5.tar.gz                    | 0x702353e0f7e48edb | CD0, 20240427
+| ncurses       | 6.6       | https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.6.tar.gz                    | 0x702353e0f7e48edb | CD0, 20260316
 | nginx         | 1.23.1    | http://www.nginx.org/download/nginx-1.23.1.tar.gz                         | 0xa0ea981b66b0d967 | CD3
 | oathtool      | 2.6.9     | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.9.tar.gz | 0x51722b08fe4745a2 | CD5, 20230700
+| oathtool      | 2.6.13    | https://download.savannah.nongnu.org/releases/oath-toolkit/oath-toolkit-2.6.13.tar.gz | 0x51722b08fe4745a2 | CD5, 20251216
 | openldap      | 2.5.18    | https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.18.tar.gz | 0x7f67d5fd1ce1cbce | CD3, 20240909
 | openssh       | 8.4p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-8.4p1.tar.gz | 0xd3e5f56b6d920d30 | CD5
-| openssh       | 9.8p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssn-9.8p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240702
+| openssh       | 9.8p1     | https://mirrors.mit.edu/pub/OpenBSD/OpenSSH/portable/openssh-9.8p1.tar.gz | 0x2a3f414e736060ba | CD5, 20240702
 | openssl       | 1.0.2u    | https://www.openssl.org/source/openssl-1.0.2u.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.0h    | https://www.openssl.org/source/openssl-1.1.0h.tar.gz                      | 0xd9c4d26d0e604491 | CD5
 | openssl       | 1.1.1k    | https://www.openssl.org/source/openssl-1.1.1k.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
 | openssl       | 1.1.1w    | https://www.openssl.org/source/openssl-1.1.1w.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
-| openssl       | 3.0.12    | https://www.openssl.org/source/openssl-3.0.12.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20230929
+| openssl       | 3.0.19    | https://www.openssl.org/source/openssl-3.0.19.tar.gz                      | 0xd9c4d26d0e604491 | CD5, 20260212
 | openvpn       | 2.6.12    | https://github.com/OpenVPN/openvpn/releases/download/v2.6.12/openvpn-2.6.12.tar.gz | 0xf132b1cbaf131cae | CD5, 20241014
 | patch         | 2.7.6     | http://ftp.gnu.org/pub/gnu/patch/patch-2.7.6.tar.gz                       | 0xd5bf9feb0313653a | CD0
 | pcre          | 8.44      | http://ftp.pcre.org/pub/pcre/pcre-8.44.tar.bz2                            | 0x9766e084fb0f43d8 | CD4
 | pkg-config*   | 0.29.2    | http://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz        | 0x023a4420c7ec6914 | CD0
 | pth           | 2.0.7     | https://ftp.gnu.org/gnu/pth/pth-2.0.7.tar.gz                              | 0x6e744acba9c09e30 | CD2,CD4
-| python        | 3.11.2    | https://www.python.org/ftp/python/3.9.15/Python-3.11.2.tar.xz             | 0x64e628f8d684696d | CD1
+| python        | 3.11.2    | https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tar.xz             | 0x64e628f8d684696d | CD1
 | python        | 2.7.18    | https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz             | 0x04c367c218add4ff | CD1,SSB2022
 | readline      | 8.2       | http://ftp.gnu.org/pub/gnu/readline/readline-8.2.tar.gz                   | 0xbb5869f064ea74ab | CD0,CD4
 | rsync         | 3.2.7     | http://rsync.samba.org/ftp/rsync/src/rsync-3.2.7.tar.gz                   | 0x6c859fb14b96a8c5 | CD0
@@ -164,6 +177,7 @@ And there are more platforms recognized but not presently build-able.
 | snmp          | 5.9.1     | https://sourceforge.net/projects/net-snmp/                                | 0xf07b9d2dacb19fd6 | CD4
 | squid         | 3.5.25    | http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.25.tar.xz            | 0xb268e706ff5cf463 | CD3
 | stunnel       | 5.71      | https://www.stunnel.org/downloads/stunnel-5.71.tar.gz                     | 0xb1048932dd3aaaa3 | CD4, 20240109
+| stunnel       | 5.78      | https://www.stunnel.org/downloads/stunnel-5.78.tar.gz                     | 0x2efc7ff0d416e014 | CD4, 20260417
 | sudo          | 1.9.10    | https://www.sudo.ws/dist/sudo-1.9.10.tar.gz                               | 0xa9f4c021cea470fb | CD0
 | tar           | 1.22      | https://ftp.gnu.org/pub/gnu/tar/tar-1.22.tar.xz                           | 0x3602b07f55d0c732 | CD0
 | tar           | 1.34      | https://ftp.gnu.org/pub/gnu/tar/tar-1.34.tar.xz                           | 0x3602b07f55d0c732 | CD0
@@ -173,7 +187,7 @@ And there are more platforms recognized but not presently build-able.
 | uft           | 1.10.7    | https://github.com/trothr/uft/archive/refs/tags/1.10.7.tar.gz             | 0x96af6544edf138d9 | CD3, 20250402
 | util-linux*   | 2.40.1    | https://www.kernel.org/pub/linux/utils/util-linux/v2.40/util-linux-2.40.1.tar.xz |             | CD0
 | wget          | 1.21.3    | https://ftp.gnu.org/pub/gnu/wget/wget-1.21.3.tar.gz                       | 0x2a1743eda91a35b6 | CD0
-| which         | 2.21      | http://ftp.gnu.org/pub/gnu/which/which-2.21.tar.gz                        | 0x6fd2c61d624acad5 | CD0
+| which         | 2.23      | http://ftp.gnu.org/pub/gnu/which/which-2.23.tar.gz                        | 0xc155a4eee4e527a2 | CD0, 20260417
 | xfl           | 1.0.5     | http://www.casita.net/pub/xfl/xfl-1.0.5.tar.gz                            | 0x96af6544edf138d9 | CD3
 | xmitmsgx      | 2.1.7     | http://www.casita.net/pub/xmitmsgx-2.1.7.tar.gz                           | 0x96af6544edf138d9 | CD4, 20241014
 | xz            | 5.6.2     | https://www.tukaani.org/xz/xz-5.6.2.tar.gz                                | 0x38ee757d69184620 | CD0, 20240529
@@ -191,6 +205,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 
 | package       | release   | source URL                                                                | source signing key |
 | ------------- | --------- | ------------------------------------------------------------------------- | ------------------ |
+| bc            | 1.08.2    | https://ftp.gnu.org/pub/gnu/bc/bc-1.08.2.tar.gz                           | 0xa186278d426a38e9 | CD0, 20260330
 | bc            | 2.1.3     | http://ftp.gnu.org/pub/gnu/bc/bc-2.1.3.tar.gz                             | 0x81c24ff12fb7b14b | CD0
 | bc            | 6.6.0     | https://git.gavinhoward.com/gavin/bc/archive/6.6.0.tar.gz                 |                    | CD0
 | bin86         | 0.16.18   | http://distro.ibiblio.org/slitaz/sources/packages-stable/b/bin86-0.16.18.tar.gz |              | CD2
@@ -198,7 +213,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 |               |           | http://sources.redhat.com/pub/bzip2/v108/bzip2-1.0.8.tar.gz               |                    |
 | c3270         | 3.3       | http://voxel.dl.sourceforge.net/sourceforge/x3270/c3270-3.3.5p4.tgz       |                    | CD3
 | cvs           | 1.11.23   | http://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-1.11.23.tar.gz   |                    | CD3
-| dash          | 0.5.12    | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz         | sha512             | CD0, 20221211
+| dash          | 0.5.13.1  | http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.13.1.tar.gz       | sha512             | CD0, 20260316
 | db            | 6.0.35    | http://download.oracle.com/otn/berkeley-db/db-6.0.35.tar.gz               |                    | CD0
 | dhcp          | 4.3.3     | ftp://ftp.isc.org/isc/dhcp/4.3.3/dhcp-4.3.3.tar.gz                        |                    | CD3
 | fftw          | 3.3.10    | http://www.fftw.org/fftw-3.3.10.tar.gz                                    | md5                | CD4
@@ -209,6 +224,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | glib          | 2.57.1    | http://ftp.gnome.org/pub/gnome/sources/glib/2.57/glib-2.57.1.tar.bz2      |                    | CD4
 | glibc         | 2.6.1     | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.6.1.tar.gz                       |                    | CD0
 | glibc         | 2.14.1    | http://ftp.gnu.org/pub/gnu/glibc/glibc-2.14.1.tar.gz                      |                    | CD0
+| gnutls        | 3.8.12    | https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8.12/gnutls-3.8.12.tar.xz      |                    | CD5, 20260417
 | hashcat       | 5.1.0     | https://hashcat.net/files/hashcat-5.1.0.tar.gz                            |                    | CD5
 | hercules      | 3.13      | http://downloads.hercules-390.eu/hercules-3.13.tar.gz                     |                    | CD3
 | irssi         | 1.1.1     | http://www.irssi.org/files/irssi-1.1.1.tar.gz                             |                    | CD3
@@ -217,7 +233,7 @@ Same goes for `pkg-config` and `libgpg-error`.
 | libfastjson   | 0.99.8    | http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz         | sha256             | CD4
 | libffi        | 3.3       | ftp://sourceware.org/pub/libffi/libffi-3.3.tar.gz                         | sha512             | CD4
 | libuuid       | 1.0.3     | http://sourceforge.net/projects/libuuid/files/libuuid/1.0.3/libuuid.1.0.3.tar.gz |             | CD4
-| lua           | 5.3.5     | http://www.lua.org/ftp/lua-5.3.5.tar.gz                                   | sha1               | CD1
+| lua           | 5.5.0     | http://www.lua.org/ftp/lua-5.5.0.tar.gz                                   | sha1               | CD1, 20260105
 | lzma          | 4.32.7    | http://www.tukaani.org/lzma/lzma-4.32.7.tar.xz                            |                    | CD4
 |               |           | see XZ which includes LZMA                                                |                    |
 | lzo           | 2.10      | http://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz          |                    | CD4
@@ -256,7 +272,7 @@ The following packages have issues or previously had issues:
 | ------------- | --------- | ---------------------------------------------------------------------------------------------- |
 | db            | 6.0.35    | download site enforces manual interaction                                                      |
 | e2fsprogs     | 1.45.6    | does not build on some older 32-bit Linux X86 systems                                          |
-| groff         | 1.22.4    | package is mixed text and grapical/X11 so you might need X11 build environment                 |
+| groff         | 1.24.1    | package is mixed text and grapical/X11 so you might need X11 build environment                 |
 | ntp           | 4.2.8p15  | cannot build statically                                                                        |
 | rsyslog       | 8.38.0    | cannot build statically                                                                        |
 | screen        |           | does not build with Musl-ified GCC                                                             |
@@ -295,7 +311,6 @@ was created by merging the earlier packages `textutils`, `shellutils`, and
 | dejagnu       | 1.6.2     |                                                                                                | CD3
 | emacs         | 23.3b     |                                                                                                | CD3
 | expect        | 5.45.4    |                                                                                                | CD3
-| gnutls        | 3.5.9     |                                                                           |                    | CD5
 | libtasn1      | 3.3       |                                                                                                | CD4
 | libunistring  | 0.9.7     |                                                                                                | CD4
 | libxml        |           |                                                                                                | CD4
